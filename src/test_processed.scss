@@ -1,9 +1,48 @@
 
+:root {
+	--themer-dog-background: red;
+	--themer-dog-border-color: rgba(0, 0, 0, 0.5);
+	--themer-dog-dog-large-background: purple;
+	--themer-giraffe-color: currentColor;
+	--themer-icon-fill: red;
+	--themer-icon-stroke: blue;
+}
+
+@media (min-width: 980px) {
+    :root {
+    	--themer-dog-background: green;
+    }
+}
+
+
 .dog {
     background: var(--themer-dog-background);
     border: 1px solid var(--themer-dog-border-color);
 }
 
+
+@media (min-width: 980px) {
+    .dog {
+        background: var(--themer-dog-background);
+    }
+}
+
 .cat {
     border: 1px solid;
+    border-radius: 6px;
+}
+
+.dog.dog--large {
+    background: var(--themer-dog-dog-large-background) !important;
+    width: 300px;
+}
+
+.giraffe {
+    color: var(--themer-giraffe-color);
+    background-position-y: 0;
+}
+
+.icon {
+    fill: var(--themer-icon-fill);
+    stroke: var(--themer-icon-stroke);
 }

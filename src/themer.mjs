@@ -4,6 +4,7 @@ import path from 'path';
 import {createCustomPropertyObject} from './createCustomPropertyObject.mjs';
 import {makeCommentsSafe} from './makeCommentsSafe.mjs';
 import {declarationColorRegex, declarationSpacingRegex} from './regexHelpers.mjs';
+import { constructRootPseudo } from './constructRootPseudo.mjs';
 
 // TODO - Make arguments
 const prefix = `--themer`;
@@ -79,8 +80,10 @@ export const themer = () => {
         Can I get Postcss to insert a root node at the top?
     */
 
+    // console.log(root);
+
     const stringified = root.toResult().css;
-    fs.writeFileSync(path.resolve(outputDir, fileOutput), stringified);   
+    fs.writeFileSync(path.resolve(outputDir, fileOutput), `${constructRootPseudo(themeRootVarItems)}${stringified}`);   
 }
 
 themer();

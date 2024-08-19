@@ -4,6 +4,29 @@
     border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
+
+@media (min-width: 980px) {
+    .dog {
+        background: green;
+    }
+}
+
 .cat {
     border: 1px solid;
+    border-radius: 6px;
+}
+
+.dog.dog--large {
+    background: purple !important;
+    width: 300px;
+}
+
+.giraffe {
+    color: currentColor;
+    background-position-y: 0;
+}
+
+.icon {
+    fill: red;
+    stroke: blue;
 }
