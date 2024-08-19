@@ -1,4 +1,9 @@
 
 .dog {
     background: var(--themer-dog-background);
+    border: 1px solid var(--themer-dog-border-color);
+}
+
+.cat {
+    border: 1px solid;
 }

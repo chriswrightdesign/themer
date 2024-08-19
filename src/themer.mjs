@@ -21,17 +21,13 @@ const themeRootVarItems = [];
 const spacingRootVarItems = [];
 const fontRootVarItems = [];
 
-const getProcessedValueString = ({prop, value, customProperty}) => {
+const generatePropertyValue = ({name, prop, originalValue}) => {
 
-    /* Border split with weight/style/color */
     if (prop === 'border') {
-        const [weight, style] = value.split(' ');
-        return `${weight} ${style} var(${customProperty})`;
+        const [width, style] = originalValue.split(' ').slice(0, 2);
+        return `${width} ${style} var(${name})`;
     }
-
-    // Happy path, just return the custom property as the new value
-    return `var(${customProperty})`;
-
+    return `var(${name})`;
 }
 
 export const themer = () => {
@@ -43,21 +39,34 @@ export const themer = () => {
 
             const {prop, value, important, parent} = decl;
 
+            /* Do not continue if we see a var() in the value */
             if (value.trim().includes('var')) {
                 return;
             }
 
-            const variable = createCustomPropertyObject({prefix, selector: parent.selector, prop, value, important, parent});
-
+            const variable = createCustomPropertyObject({prefix, prop, value, important, parent});
+    
+            /* Handle when we get nothing back in return */
+            if (variable === null) {
+                return;
+            }
+        
             themeRootVarItems.push(variable);
 
-            decl.assign({ prop, value: `var(${variable.name})` })
+            decl.assign({ 
+                prop, 
+                value: generatePropertyValue({
+                    name: variable.name,
+                    prop,
+                    originalValue: variable.originalValue,
+                }) 
+            });
         });
 
         rule.walkDecls(declarationSpacingRegex, function(decl) {
-            const {prop, value, important} = decl;
+            const {prop, value, important, parent} = decl;
 
-            const variable = createCustomPropertyObject({prefix, selector: rule.selector, prop, value, important});
+            const variable = createCustomPropertyObject({prefix, prop, value, important, parent});
 
             spacingRootVarItems.push(variable);
         });

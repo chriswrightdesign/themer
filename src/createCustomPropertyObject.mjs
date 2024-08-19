@@ -18,16 +18,24 @@ export const createCustomPropertyName = ({prefix, selector, prop, parent}) => {
     return customPropertyName;
 }
 
-export const createCustomPropertyObject = ({prefix, selector, prop, value, important, parent}) => {
+
+export const createCustomPropertyObject = ({prefix, prop, value, important, parent}) => {
     const {parentAtRule, params} = getParentAtRule(parent);
+
+    const {selector} = parent;
 
     const objKey = createCustomPropertyName({prefix, selector, prop, parent});
 
-    const parsedValue = prop === 'border' ? value.split(' ').slice(-1)[0] : value;
+    const parsedValue = prop === 'border' ? value.split(' ').slice(2).join(' ') : value;
+
+    if (parsedValue === '') {
+        return null;
+    }
 
     return {
         name: objKey,
         value: parsedValue,
+        originalValue: value,
         propertyType: prop,
         originalSelector: selector,
         important,
