@@ -1,0 +1,21 @@
+{
+  "name": "themer",
+  "version": "1.0.0",
+  "description": "A project to help theme CSS",
+  "main": "src/themer.mjs",
+  "type": "module",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chriswrightdesign/themer.git"
+  },
+  "author": "Chris Wright",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chriswrightdesign/themer/issues"
+  },
+  "homepage": "https://github.com/chriswrightdesign/themer#readme",
+  "dependencies": {
+    "postcss": "^8.4.41"
+  }
+}
