@@ -58,23 +58,3 @@
     fill: var(--themer-icon-fill);
     stroke: var(--themer-icon-stroke);
 }
-
-
-/**
-Problem output
-    @media (min-width: 980px) {
-    :root {
-    	--themer-dog-background: green;
-	--themer-dog-font-size: 18px;
-    }
-}
-
-@media (min-width: 980px) {
-    :root {
-    	--themer-dog-background: green;
-	--themer-dog-font-size: 18px;
-    }
-}
-
-double the media query
-*/
