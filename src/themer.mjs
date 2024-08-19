@@ -1,67 +1,77 @@
 import postcss from 'postcss';
 import fs from 'fs';
 import path from 'path';
-import {parseSelector} from './parseSelector.mjs';
 import {createCustomPropertyObject} from './createCustomPropertyObject.mjs';
-import {getParentAtRule} from './getParentAtRule.mjs';
 import {makeCommentsSafe} from './makeCommentsSafe.mjs';
+import {declarationColorRegex, declarationSpacingRegex} from './regexHelpers.mjs';
 
-const srcPath = path.resolve(process.cwd(), 'test.scss');
-const content = fs.readFileSync(srcPath); // might need to toString it
+// TODO - Make arguments
+const prefix = `--themer`;
+const fileInput = 'test.scss';
+const fileOutput = 'test_processed.scss';
+const outputDir = process.cwd();
+
+const srcPath = path.resolve(process.cwd(), fileInput);
+const content = fs.readFileSync(srcPath);
 
 // Replace any // with /* */ becase postcss hates it
 const safeContent = makeCommentsSafe(content);
-
-// TODO - make prefix an argument
-const prefix = `--themer`;
 
 const themeRootVarItems = [];
 const spacingRootVarItems = [];
 const fontRootVarItems = [];
 
+const getProcessedValueString = ({prop, value, customProperty}) => {
+
+    /* Border split with weight/style/color */
+    if (prop === 'border') {
+        const [weight, style] = value.split(' ');
+        return `${weight} ${style} var(${customProperty})`;
+    }
+
+    // Happy path, just return the custom property as the new value
+    return `var(${customProperty})`;
+
+}
+
 export const themer = () => {
 
     const root = postcss.parse(safeContent);
 
+    root.walkRules(function(rule) {
+        rule.walkDecls(declarationColorRegex, function(decl) {
 
-root.walkRules(function(rule) {
-    rule.walkDecls(/^(border|box-shadow|border-color|fill|stroke|color|background-color|background$)/, function(decl) {
+            const {prop, value, important, parent} = decl;
 
-        const {prop, value, important, parent} = decl;
+            if (value.trim().includes('var')) {
+                return;
+            }
 
-        if (value.trim().startsWith('var')) {
-            return;
-        }
+            const variable = createCustomPropertyObject({prefix, selector: parent.selector, prop, value, important, parent});
 
-        const parentInfo = getParentAtRule(parent);
+            themeRootVarItems.push(variable);
 
-        const parsedValue = prop === 'border' ? value.split(' ').slice(-1)[0] : value;
-
-        const parsedProp = prop === 'border' ? `${prop}-color` : prop;
-
-        const variable = createCustomPropertyObject({prefix, selector: parent.selector, prop: parsedProp, value: parsedValue, important, parent});
-
-        themeRootVarItems.push({
-            ...variable,
-            ...parentInfo,
+            decl.assign({ prop, value: `var(${variable.name})` })
         });
 
-        decl.value = `var(${variable})`;
+        rule.walkDecls(declarationSpacingRegex, function(decl) {
+            const {prop, value, important} = decl;
 
+            const variable = createCustomPropertyObject({prefix, selector: rule.selector, prop, value, important});
+
+            spacingRootVarItems.push(variable);
+        });
     });
 
-    rule.walkDecls(/^(padding-?|margin-?)/, function(decl) {
-        const {prop, value, important} = decl;
 
-        const variable = createCustomPropertyObject({prefix, selector: rule.selector, prop, value, important});
+    console.log(themeRootVarItems);
 
-        spacingRootVarItems.push(variable);
-    });
-});
+    /*
+        Can I get Postcss to insert a root node at the top?
+    */
 
-
-console.log(themeRootVarItems);
-    
+    const stringified = root.toResult().css;
+    fs.writeFileSync(path.resolve(outputDir, fileOutput), stringified);   
 }
 
 themer();
