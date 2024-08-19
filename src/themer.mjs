@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import {createCustomPropertyObject} from './createCustomPropertyObject.mjs';
 import {makeCommentsSafe} from './makeCommentsSafe.mjs';
-import {declarationColorRegex, declarationSpacingRegex} from './regexHelpers.mjs';
+import {declarationColorRegex, declarationSpacingRegex, declarationFontRegex} from './regexHelpers.mjs';
 import { constructRootPseudo } from './constructRootPseudo.mjs';
 
 // TODO - Make arguments
@@ -70,20 +70,38 @@ export const themer = () => {
             const variable = createCustomPropertyObject({prefix, prop, value, important, parent});
 
             spacingRootVarItems.push(variable);
+
+            decl.assign({ 
+                prop, 
+                value: generatePropertyValue({
+                    name: variable.name,
+                    prop,
+                    originalValue: variable.originalValue,
+                }) 
+            });
+        });
+
+        rule.walkDecls(declarationFontRegex, function(decl) {
+            const {prop, value, important, parent} = decl;
+
+            const variable = createCustomPropertyObject({prefix, prop, value, important, parent});
+
+            fontRootVarItems.push(variable);
+
+            decl.assign({ 
+                prop, 
+                value: generatePropertyValue({
+                    name: variable.name,
+                    prop,
+                    originalValue: variable.originalValue,
+                }) 
+            });
+
         });
     });
 
-
-    console.log(themeRootVarItems);
-
-    /*
-        Can I get Postcss to insert a root node at the top?
-    */
-
-    // console.log(root);
-
     const stringified = root.toResult().css;
-    fs.writeFileSync(path.resolve(outputDir, fileOutput), `${constructRootPseudo(themeRootVarItems)}${stringified}`);   
+    fs.writeFileSync(path.resolve(outputDir, fileOutput), `${constructRootPseudo([...themeRootVarItems, ...spacingRootVarItems, ...fontRootVarItems])}${stringified}`);   
 }
 
 themer();

@@ -2,31 +2,57 @@
 .dog {
     background: red;
     border: 1px solid rgba(0, 0, 0, 0.5);
+    font-size: 16px;
 }
 
 
 @media (min-width: 980px) {
     .dog {
         background: green;
+        font-size: 18px;
     }
 }
 
 .cat {
     border: 1px solid;
     border-radius: 6px;
+    padding: 4px;
+    font-size: 12px;
 }
 
 .dog.dog--large {
     background: purple !important;
     width: 300px;
+    margin: 8px;
 }
 
 .giraffe {
     color: currentColor;
     background-position-y: 0;
+    padding: 16px;
 }
 
 .icon {
     fill: red;
     stroke: blue;
 }
+
+
+/**
+Problem output
+    @media (min-width: 980px) {
+    :root {
+    	--themer-dog-background: green;
+	--themer-dog-font-size: 18px;
+    }
+}
+
+@media (min-width: 980px) {
+    :root {
+    	--themer-dog-background: green;
+	--themer-dog-font-size: 18px;
+    }
+}
+
+double the media query
+*/

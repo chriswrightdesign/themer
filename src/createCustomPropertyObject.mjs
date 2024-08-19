@@ -7,9 +7,17 @@ import {getParentAtRule} from './getParentAtRule.mjs';
  * @returns {`--customPropertyKey`: value}
  */
 
+const getParsedPropName = (prop) => {
+
+    if (prop === 'border') {
+        return `${prop}-color`;
+    }
+
+    return prop;
+}
 export const createCustomPropertyName = ({prefix, selector, prop, parent}) => {
 
-    const parsedProp = prop === 'border' ? `${prop}-color` : prop;
+    const parsedProp = getParsedPropName(prop);
 
     const appendedParent = parent.parent.selector ? `${parseSelector(parent.parent.selector)}-` : ``;
 

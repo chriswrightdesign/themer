@@ -1,15 +1,20 @@
 
-const getMediaQueries = (customPropertyList) => customPropertyList.reduce((acc, curr) => {
-    if (curr.parentAtRule === 'media') {
-        return [...acc, curr.params];
-    }
-    return acc;
-}, []);
+const getMediaQueries = (customPropertyList) => {
+    const mqList = customPropertyList.reduce((acc, curr) => {
+        if (curr.parentAtRule === 'media') {
+            return [...acc, curr.params];
+        }
+        return acc;
+    }, []);
 
-const generateCustomProperties = (customPropsArr) => {
+    const mqListDeduped = [...new Set(mqList)];
+    return mqListDeduped;
+} 
+
+const generateCustomProperties = (customPropsArr, spacingValue = '') => {
     return customPropsArr.reduce((acc, customProperty, index) => {
-        return `${acc}${customProperty.name}: ${customProperty.value};${index === (customPropsArr.length - 1) ? '' : `\n\t`}`;
-    }, `\t`)
+        return `${acc}\t${spacingValue}${customProperty.name}: ${customProperty.value};${index === (customPropsArr.length - 1) ? '' : `\n`}`;
+    }, spacingValue)
 }
 
 const getPropertysByMediaQueryParams = (customPropertyList, params) => {
@@ -21,8 +26,6 @@ const getPropertysByMediaQueryParams = (customPropertyList, params) => {
 }
 
 export const constructRootPseudo = (customPropertyList) => {
-
-    /* TODO - construct media queries */
 
     const customPropertiesWithNoAtRules = customPropertyList.filter((customProperty) => {
         return customProperty.parentAtRule === null;
@@ -36,7 +39,7 @@ ${generateCustomProperties(customPropertiesWithNoAtRules)}
 }\n\n${mediaQueries.length > 0 ? `${mediaQueries.reduce((acc, mq) => {
     return `${acc}@media ${mq} {
     :root {
-    ${generateCustomProperties(getPropertysByMediaQueryParams(customPropertyList, mq))}
+${generateCustomProperties(getPropertysByMediaQueryParams(customPropertyList, mq))}
     }
 }\n\n`;
     }, '')}` : ``}`

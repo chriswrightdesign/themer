@@ -6,11 +6,17 @@
 	--themer-giraffe-color: currentColor;
 	--themer-icon-fill: red;
 	--themer-icon-stroke: blue;
+	--themer-cat-padding: 4px;
+	--themer-dog-dog-large-margin: 8px;
+	--themer-giraffe-padding: 16px;
+	--themer-dog-font-size: 16px;
+	--themer-cat-font-size: 12px;
 }
 
 @media (min-width: 980px) {
     :root {
-    	--themer-dog-background: green;
+	--themer-dog-background: green;
+	--themer-dog-font-size: 18px;
     }
 }
 
@@ -18,31 +24,57 @@
 .dog {
     background: var(--themer-dog-background);
     border: 1px solid var(--themer-dog-border-color);
+    font-size: var(--themer-dog-font-size);
 }
 
 
 @media (min-width: 980px) {
     .dog {
         background: var(--themer-dog-background);
+        font-size: var(--themer-dog-font-size);
     }
 }
 
 .cat {
     border: 1px solid;
     border-radius: 6px;
+    padding: var(--themer-cat-padding);
+    font-size: var(--themer-cat-font-size);
 }
 
 .dog.dog--large {
     background: var(--themer-dog-dog-large-background) !important;
     width: 300px;
+    margin: var(--themer-dog-dog-large-margin);
 }
 
 .giraffe {
     color: var(--themer-giraffe-color);
     background-position-y: 0;
+    padding: var(--themer-giraffe-padding);
 }
 
 .icon {
     fill: var(--themer-icon-fill);
     stroke: var(--themer-icon-stroke);
 }
+
+
+/**
+Problem output
+    @media (min-width: 980px) {
+    :root {
+    	--themer-dog-background: green;
+	--themer-dog-font-size: 18px;
+    }
+}
+
+@media (min-width: 980px) {
+    :root {
+    	--themer-dog-background: green;
+	--themer-dog-font-size: 18px;
+    }
+}
+
+double the media query
+*/
