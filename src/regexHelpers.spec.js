@@ -5,8 +5,6 @@ describe('colorSyntaxRegex', () => {
 
   const regexMatch = (str) => str.match(colorSyntaxRegex);
 
-  // expected needs to be an array for multi
-
   const backgroundColorTests = [
     {value: 'background-color: #fff;', expected: ['#fff'], exclusions: []},
     {value: 'background-color: #fff;', expected: ['#fff'], exclusions: []},
@@ -58,7 +56,7 @@ const multiBoxShadowTests = [
 const borderColorTests = [
     {value: 'border-color: red;', expected: ['red'], exclusions: []},
     {value: 'border-color: red #32a1ce;', expected: ['red', '#32a1ce'], exclusions: []},
-    {value: 'border-color: red rgba(170, 50, 220, 0.2) green', expected: ['red', 'rgba(170, 50, 220, 0.2), green'], exclusions: []},
+    {value: 'border-color: red rgba(170, 50, 220, 0.2) green', expected: ['red', 'rgba(170, 50, 220, 0.2)','green'], exclusions: []},
     {value: 'border-color: red yellow green transparent', expected: ['red', 'yellow', 'green'], exclusions: ['transparent']},
 ];
 
@@ -88,5 +86,17 @@ const generateTests = (testArr) => {
 generateTests(backgroundColorTests);
 
 generateTests(fillTests);
+
+generateTests(strokeTests);
+
+generateTests(backgroundTests);
+
+generateTests(singleBoxShadowTests);
+
+generateTests(multiBoxShadowTests);
+
+generateTests(borderColorTests);
+
+generateTests(borderTests);
 
 });
