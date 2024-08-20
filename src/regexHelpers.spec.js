@@ -1,9 +1,11 @@
 import {describe, expect, test} from '@jest/globals';
 import {colorSyntaxRegex} from './regexHelpers.mjs';
 
+const regexTest = (regEx) => regexMatch = (str) => str.match(regEx) || [];
+
 describe('colorSyntaxRegex', () => {
 
-  const regexMatch = (str) => str.match(colorSyntaxRegex) || [];
+  const colorSyntaxRegExMatch = regexTest(colorSyntaxRegex);
 
   const backgroundColorTests = [
     {value: 'background-color: #fff;', expected: ['#fff'], exclusions: []},
@@ -76,7 +78,7 @@ const generateTests = (testArr) => {
 
             const exclusionsList = testItem.exclusions;
 
-            const testedValue = regexMatch(testItem.value);
+            const testedValue = colorSyntaxRegExMatch(testItem.value);
 
             expList.forEach((exp) => {
                 
