@@ -3,7 +3,7 @@ import {colorSyntaxRegex} from './regexHelpers.mjs';
 
 describe('colorSyntaxRegex', () => {
 
-  const regexMatch = (str) => str.match(colorSyntaxRegex);
+  const regexMatch = (str) => str.match(colorSyntaxRegex) || [];
 
   const backgroundColorTests = [
     {value: 'background-color: #fff;', expected: ['#fff'], exclusions: []},
@@ -13,7 +13,7 @@ describe('colorSyntaxRegex', () => {
     {value: 'background-color: rgb(0, 0, 255);', expected: ['rgb(0, 0, 255)'], exclusions: []},
     {value: 'background-color: hsl(30deg 82% 43%)', expected: ['hsl(30deg 82% 43%)'], exclusions: []},
     {value: 'background-color: hsla(237deg 74% 33% / 61%);', expected: ['hsla(237deg 74% 33% / 61%)'], exclusions: []},
-    {value: 'background-color: hwb(152deg 0% / 70%);', expected: ['hwb(152deg 0% / 70%)']},
+    {value: 'background-color: hwb(152deg 0% / 70%);', expected: ['hwb(152deg 0% / 70%)'], exclusions: []},
     {value: 'background-color: green;', expected: ['green'], exclusions: []},
 ];
 
@@ -24,10 +24,10 @@ const strokeTests = [
 ];
 
 const fillTests = [
-    {value: `fill: url(#gradientElementId) blue;`, expected: ['blue']},
+    {value: `fill: url(#gradientElementId) blue;`, expected: ['blue'], exclusions: []},
     {value: `fill: url(star.png) none;`, expected: [],  exclusions: ['none']}, // avoid none
     {value: `fill: red;`, expected: ['red'], exclusions: []},
-    {value: `fill: hsl(120deg 75% 25% / 60%);`, expected: ['hsl(120deg 75% 25% / 60%)']},
+    {value: `fill: hsl(120deg 75% 25% / 60%);`, expected: ['hsl(120deg 75% 25% / 60%)'], exclusions: []},
     {value: `fill: context-stroke;`, expected: [], exclusions: ['content-stroke']}, // avoid context stroke
     {value: `fill: context-fill;`, expected: [], exclusions: ['context-fill']},
     {value: `fill: none;`, expected: [], exclusions: ['none']} // avoid none
@@ -74,10 +74,18 @@ const generateTests = (testArr) => {
         test(`${testItem.value}`, () => {
             const expList = testItem.expected;
 
+            const exclusionsList = testItem.exclusions;
+
+            const testedValue = regexMatch(testItem.value);
+
             expList.forEach((exp) => {
-                const testedValue = regexMatch(testItem.value);
+                
                 expect(testedValue).toContain(exp);
             });
+
+            exclusionsList.forEach((exclusion) => {
+                expect(testedValue).not.toContain(exclusion);
+            })
 
         });
     });
