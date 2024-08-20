@@ -4,7 +4,9 @@
   "description": "A project to help theme CSS",
   "main": "src/themer.mjs",
   "type": "module",
-  "scripts": {},
+  "scripts": {
+    "test": "yarn node --experimental-vm-modules $(yarn bin jest)"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chriswrightdesign/themer.git"
@@ -16,6 +18,7 @@
   },
   "homepage": "https://github.com/chriswrightdesign/themer#readme",
   "dependencies": {
+    "jest": "^29.7.0",
     "postcss": "^8.4.41"
   }
 }

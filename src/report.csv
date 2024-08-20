@@ -1,0 +1,11 @@
+Color, Occurrence 
+"#f0f", 1
+"rgba(0, 0, 0, 0.5)", 1
+"green", 1
+"purple", 2
+"currentColor", 1
+"red", 1
+"blue", 1
+"#f0f #d2d7df", 1
+"rgb(0 200 0 / 30%)", 1
+"rgb(200 0 0 / 60%)", 1

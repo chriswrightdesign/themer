@@ -1,6 +1,6 @@
 
 .dog {
-    background: red;
+    background: #f0f;
     border: 1px solid rgba(0, 0, 0, 0.5);
     font-size: 16px;
 }
@@ -20,6 +20,10 @@
     font-size: 12px;
 }
 
+.llama {
+    background: purple;
+}
+
 .dog.dog--large {
     background: purple !important;
     width: 300px;
@@ -35,4 +39,12 @@
 .icon {
     fill: red;
     stroke: blue;
+    border-color: #f0f #d2d7df;
+}
+
+.complex-shadow {
+    box-shadow:
+    inset 0 -3em 3em rgb(0 200 0 / 30%),
+    0 0 0 2px white,
+    0.3em 0.3em 1em rgb(200 0 0 / 60%);
 }

@@ -1,11 +1,15 @@
 
 :root {
-	--themer-dog-background: red;
+	--themer-dog-background: #f0f;
 	--themer-dog-border-color: rgba(0, 0, 0, 0.5);
+	--themer-llama-background: purple;
 	--themer-dog-dog-large-background: purple;
 	--themer-giraffe-color: currentColor;
 	--themer-icon-fill: red;
 	--themer-icon-stroke: blue;
+	--themer-complex-shadow-box-shadow: inset 0 -3em 3em rgb(0 200 0 / 30%),
+    0 0 0 2px white,
+    0.3em 0.3em 1em rgb(200 0 0 / 60%);
 	--themer-cat-padding: 4px;
 	--themer-dog-dog-large-margin: 8px;
 	--themer-giraffe-padding: 16px;
@@ -42,6 +46,10 @@
     font-size: var(--themer-cat-font-size);
 }
 
+.llama {
+    background: var(--themer-llama-background);
+}
+
 .dog.dog--large {
     background: var(--themer-dog-dog-large-background) !important;
     width: 300px;
@@ -57,4 +65,9 @@
 .icon {
     fill: var(--themer-icon-fill);
     stroke: var(--themer-icon-stroke);
+}
+
+.complex-shadow {
+    box-shadow:
+    var(--themer-complex-shadow-box-shadow);
 }
