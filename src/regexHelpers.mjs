@@ -6,13 +6,13 @@ export const declarationColorRegex = /^(border$|box-shadow|border-color|border-\
 /**
  * Searches declaration for properties which 'spacing' is likely to occur.
  */
-export const declarationSpacingRegex = /^(padding-?|margin-?)/;
+export const declarationSpacingRegex = /^(padding(-\w+)?|margin(-\w+)?|gap|row-gap|column-gap|flex-gap|grid-gap)/;
 
 /**
  * Searches declaration for properties which font related properties will likely occur.
  */
 
-export const declarationFontRegex = /^(font-?|line-height)/;
+export const declarationFontRegex = /^(font(-\w+)?|line-height)/;
 
 /**
  * Find all color syntaxes, useful in border-color/border/box-shadow
