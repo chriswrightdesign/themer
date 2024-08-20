@@ -4,6 +4,7 @@
 	--themer-dog-border-color: rgba(0, 0, 0, 0.5);
 	--themer-llama-background: purple;
 	--themer-dog-dog-large-background: purple;
+	--themer-snake-color: purple;
 	--themer-giraffe-color: currentColor;
 	--themer-icon-fill: red;
 	--themer-icon-stroke: blue;
@@ -57,6 +58,10 @@
     width: 300px;
     margin: var(--themer-dog-dog-large-margin);
     margin-left: var(--themer-dog-dog-large-margin-left);
+}
+
+.snake {
+    color: var(--themer-snake-color);
 }
 
 .giraffe {

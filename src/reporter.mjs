@@ -42,7 +42,17 @@ const writeCSV = ({data, headings = 'Color, Occurrence'}) => {
 
     // sort first, then output
 
-    const dataOutput = Object.keys(data).reduce((acc, value) => {
+    const sortedData = Object.keys(data).sort((a, b) => {
+        if (data[a] > data[b]) {
+            return -1;
+        }
+        if (data[a] < data[b]) {
+            return 1;
+        }
+        return 0;
+    });
+
+    const dataOutput = sortedData.reduce((acc, value) => {
         return acc += `"${value}", ${data[value]}\n`
     }, `${headings} \n`);
 
@@ -72,6 +82,7 @@ const generateColorStats = (colorList) => {
             }
         }
         return stats;
+
     }, {});
 
     return colorStats;
@@ -91,14 +102,13 @@ export const reportColors = () => {
                 return;
             }
 
-
             const colors = (value.match(colorSyntaxRegex) || []).filter(Boolean);
 
             colors.forEach((color) => {
                 generalColorInfo.push({
                     value: color,
                     category: prop,
-                })
+                });
             });
 
         });
