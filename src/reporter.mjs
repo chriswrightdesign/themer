@@ -36,11 +36,11 @@ const simpleProps = ['fill', 'background-color', 'stroke', 'color'];
  * }
  */
 
-
-
 const writeCSV = ({data, headings = 'Color, Occurrence'}) => {
 
     const output = path.resolve(outputDir, CSVFileOutput);
+
+    // sort first, then output
 
     const dataOutput = Object.keys(data).reduce((acc, value) => {
         return acc += `"${value}", ${data[value]}\n`
@@ -91,79 +91,15 @@ export const reportColors = () => {
                 return;
             }
 
-            console.log(value);
 
-            // blows up on green
-            // cases we need box-shadow: 0px 0px 0 green;
-            // case box-shadow: 0px 0px 0px green, inset 0px 0px green;
-
-            const colors = value.match(/\w+(-)?\w+\(.+\)|#\w+|([a-z]+);|([a-z]+),/gi).filter(Boolean);
-
-            console.log(colors);
+            const colors = (value.match(colorSyntaxRegex) || []).filter(Boolean);
 
             colors.forEach((color) => {
                 generalColorInfo.push({
                     value: color,
                     category: prop,
                 })
-            })
-
-            // if (simpleProps.includes(prop)) {
-            //     // report
-            //     generalColorInfo.push({
-            //         value,
-            //         category: prop,
-            //     })
-            // }
-
-            // if (prop === 'border') {
-
-            //     const borderValue = value.split(' ').slice(2).join(' ');
-            //     if (borderValue === '') {
-            //         return;
-            //     }
-
-            //     generalColorInfo.push({
-            //         value: value.split(' ').slice(2).join(' '),
-            //         category: prop,
-            //     })
-            // }
-
-            // if (prop === 'background') {
-            //     generalColorInfo.push({
-            //         value,
-            //         category: prop,
-            //     })
-            // }
-
-            // if (prop === 'border-color') {
-
-              
-            //     generalColorInfo.push({
-            //         value: value,
-            //         category: prop,
-            //     });
-                
-            // }
-
-            // if (prop === 'box-shadow') {
-
-            //     const boxShadowColors = value.match(/\w+(-)?\w+\(.+\)|#\w+/gi);
-
-            //     boxShadowColors.forEach((boxShadowColor) => {
-            //         generalColorInfo.push({
-            //             value: boxShadowColor,
-            //             category: prop,
-            //         });
-            //     })
-
-
-            //     // will need to write a lot to handle box shadows
-            // }
-
-            // box-shadow is always the last value, but it doesn't alway start at the same area
-
-            // /^(|box-shadow|border-color|background$)
+            });
 
         });
 
