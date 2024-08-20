@@ -2,100 +2,64 @@ import postcss from 'postcss';
 import fs from 'fs';
 import path from 'path';
 import {makeCommentsSafe} from './makeCommentsSafe.mjs';
-import {declarationColorRegex, colorSyntaxRegex} from './regexHelpers.mjs';
+import {declarationColorRegex, colorSyntaxRegex, declarationSpacingRegex} from './regexHelpers.mjs';
+import {generateStatsObject, getColorsByCategory, writeCSV} from './utils.mjs';
 
 const fileInput = 'test.scss';
 const outputDir = process.cwd();
-const CSVFileOutput = 'report.csv';
 
 const srcPath = path.resolve(process.cwd(), fileInput);
 const content = fs.readFileSync(srcPath);
 
 const safeContent = makeCommentsSafe(content);
-/**
- * 
- * Report occurrences of 'color'
- * Report by property (how many box shadows exist and what are they)
- * find selectors with similar combinations of properties (max-width: 1600, margin auto for example)
- */
 
 const generalColorInfo = [];
+const generalSpacingInfo = [];
+const generalBoxShadowInfo = [];
 
-const borderColors = [];
-const backgroundColors = [];
-const textColors = [];
-const svgColors = [];
-const shadowColors = [];
-
-const simpleProps = ['fill', 'background-color', 'stroke', 'color'];
-
-/**
- * {
- *    propertyType: 'color' | 'fill' | 'stroke' | 'background-color'
- *    value: #hexrgba  
- * }
- */
-
-const writeCSV = ({data, headings = 'Color, Occurrence'}) => {
-
-    const output = path.resolve(outputDir, CSVFileOutput);
-
-    // sort first, then output
-
-    const sortedData = Object.keys(data).sort((a, b) => {
-        if (data[a] > data[b]) {
-            return -1;
-        }
-        if (data[a] < data[b]) {
-            return 1;
-        }
-        return 0;
-    });
-
-    const dataOutput = sortedData.reduce((acc, value) => {
-        return acc += `"${value}", ${data[value]}\n`
-    }, `${headings} \n`);
-
-
-    fs.writeFileSync(output, dataOutput, 'utf8');
-
-    console.log('CSV written');
-}
-
-
-const generateColorStats = (colorList) => {
-    const colorStats = colorList.reduce((stats, curr) => {
-
-        const colorValue = curr.value;
-        // for every colour that you find, add it to the list
-        if (!stats[colorValue]) {
-            return {
-                ...stats,
-                [colorValue]: 1,
-            }
-        }
-
-        if (stats[colorValue]) {
-            return {
-                ...stats,
-                [colorValue]: stats[colorValue] + 1,
-            }
-        }
-        return stats;
-
-    }, {});
-
-    return colorStats;
-}
-
-export const reportColors = () => {
+export const createReport = () => {
     const root = postcss.parse(safeContent);
 
     root.walkRules(function(rule) {
 
+        rule.walkDecls(/box-shadow/, function(decl) {
+            const {prop, value} = decl;
+
+            /* Do not continue if we see a var() in the value */
+            if (value.trim().includes('var')) {
+                return;
+            }
+
+            generalBoxShadowInfo.push({
+                value,
+                prop,
+            });
+
+        });
+
+        rule.walkDecls(declarationSpacingRegex, function(decl) {
+            const {prop, value} = decl;
+
+            /* Do not continue if we see a var() in the value */
+            if (value.trim().includes('var')) {
+                return;
+            }
+
+            // handle shorthand
+            const values = value.split(' ');
+
+            values.forEach((splitValue) => {
+                generalSpacingInfo.push({
+                    value: splitValue,
+                    category: prop,
+                });
+            });
+
+        });
+
         rule.walkDecls(declarationColorRegex, function(decl) {
 
-            const {prop, value, parent} = decl;
+            const {prop, value} = decl;
 
             /* Do not continue if we see a var() in the value */
             if (value.trim().includes('var')) {
@@ -115,11 +79,22 @@ export const reportColors = () => {
 
     });
 
-    const colorReport = generateColorStats(generalColorInfo);
+    const colorReport = generateStatsObject(generalColorInfo);
+    const borderReport = generateStatsObject(getColorsByCategory({categoryName: 'border', colorList: generalColorInfo, exact: false}));
+    const textColors = generateStatsObject(getColorsByCategory({categoryName: 'color', colorList: generalColorInfo, exact: true}));
+    const boxShadowColors = generateStatsObject(getColorsByCategory({categoryName: 'box-shadow', colorList: generalColorInfo, exact: false}));
 
-    writeCSV({data: colorReport});
+    const spacingReport = generateStatsObject(generalSpacingInfo);
 
-    
+    const boxShadowReport = generateStatsObject(generalBoxShadowInfo);
+
+    writeCSV({data: colorReport, outputDir, outputFile: 'report-colors-general.csv'});
+    writeCSV({data: borderReport, outputDir, outputFile: 'report-border-colors.csv'});
+    writeCSV({data: textColors, outputDir, outputFile: 'report-text-colors.csv'});
+    writeCSV({data: boxShadowColors, outputDir, outputFile: 'report-shadow-colors.csv'});
+
+    writeCSV({data: spacingReport, outputDir, outputFile: 'report-spacings.csv', headings: 'Spacing, Occurrence'});
+    writeCSV({data: boxShadowReport, outputDir, outputFile: 'report-box-shadows.csv', headings: 'Shadows, Occurrence'});
 }
 
-reportColors();
+createReport();
