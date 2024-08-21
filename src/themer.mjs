@@ -1,9 +1,9 @@
 import postcss from 'postcss';
 import fs from 'fs';
 import path from 'path';
-import { Command, Option } from 'commander';
+import {Command, Option} from 'commander';
 import {constructRootPseudo, makeCommentsSafe, createCustomPropertyObject, generatePropertyValue} from './utils.mjs';
-import {declarationColorRegex, declarationSpacingRegex, declarationFontRegex} from './regexHelpers.mjs';
+import {declarationColorRegex, declarationSpacingRegex, declarationFontRegex, declarationRadiusRegex} from './regexHelpers.mjs';
 
 const cwd = process.cwd();
 const program = new Command();
@@ -17,8 +17,6 @@ program.parse();
 
 const options = program.opts();
 
-console.log(options);
-
 const fileInput = options.input;
 const fileOutput = fileInput.replace(/.((s?)css)/, `.processed.$1`);
 
@@ -28,12 +26,14 @@ const outputDir = options.outputdir;
 const srcPath = path.resolve(process.cwd(), fileInput);
 const content = fs.readFileSync(srcPath);
 
-// Replace any // with /* */ becase postcss hates it
+// Replace any // with /* */ because postcss hates it
 const safeContent = makeCommentsSafe(content);
 
 const themeRootVarItems = [];
 const spacingRootVarItems = [];
 const fontRootVarItems = [];
+const radiusRootVarItems = [];
+const backgroundImageRootVarItems = [];
 
 const recordAndReassignCustomProps = (declaration, recordArray) => {
 
@@ -68,22 +68,33 @@ export const themer = () => {
     const root = postcss.parse(safeContent);
 
     root.walkRules(function(rule) {
+        // colors
         rule.walkDecls(declarationColorRegex, function(declaration) {
             recordAndReassignCustomProps(declaration, themeRootVarItems);
         });
 
+        // spacings
         rule.walkDecls(declarationSpacingRegex, function(declaration) {
             recordAndReassignCustomProps(declaration, spacingRootVarItems);
         });
 
+        // fonts
         rule.walkDecls(declarationFontRegex, function(declaration) {
             recordAndReassignCustomProps(declaration, fontRootVarItems);
+        });
 
+        // border-radius
+        rule.walkDecls(declarationRadiusRegex, function(declaration) {
+            recordAndReassignCustomProps(declaration, radiusRootVarItems);
+        });
+
+        rule.walkDecls(/background-image/, function(declaration) {
+            recordAndReassignCustomProps(declaration, backgroundImageRootVarItems);
         });
     });
 
     const stringified = root.toResult().css;
-    fs.writeFileSync(path.resolve(outputDir, fileOutput), `${constructRootPseudo([...themeRootVarItems, ...spacingRootVarItems, ...fontRootVarItems])}${stringified}`);
+    fs.writeFileSync(path.resolve(outputDir, fileOutput), `${constructRootPseudo([...themeRootVarItems, ...backgroundImageRootVarItems, ...spacingRootVarItems, ...fontRootVarItems, ...radiusRootVarItems])}${stringified}`);
     console.log('Output CSS file written.'); 
 }
 

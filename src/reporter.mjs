@@ -1,11 +1,24 @@
 import postcss from 'postcss';
 import fs from 'fs';
 import path from 'path';
-import {declarationColorRegex, colorSyntaxRegex, declarationSpacingRegex} from './regexHelpers.mjs';
+import {Command, Option} from 'commander';
+import {declarationColorRegex, colorSyntaxRegex, declarationSpacingRegex, declarationRadiusRegex} from './regexHelpers.mjs';
 import {generateStatsObject, getColorsByCategory, makeCommentsSafe, writeCSV} from './utils.mjs';
 
-const fileInput = 'test.scss';
-const outputDir = process.cwd();
+const cwd = process.cwd();
+const program = new Command();
+
+program
+.addOption(new Option('-i, --input <file>', 'file to process'))
+.addOption(new Option('-o, --outputdir <dir>', 'directory output').default(cwd));
+
+program.parse();
+
+const options = program.opts();
+
+
+const fileInput = options.input;
+const outputDir = options.outputdir;
 
 const srcPath = path.resolve(process.cwd(), fileInput);
 const content = fs.readFileSync(srcPath);
@@ -15,14 +28,31 @@ const safeContent = makeCommentsSafe(content);
 const generalColorInfo = [];
 const generalSpacingInfo = [];
 const generalBoxShadowInfo = [];
+const generalRadiusInfo = [];
+
+const generalFontSizeInfo = [];
 
 export const createReport = () => {
     const root = postcss.parse(safeContent);
 
     root.walkRules(function(rule) {
 
-        rule.walkDecls(/box-shadow/, function(decl) {
-            const {prop, value} = decl;
+        rule.walkDecls(/font-size/, function(declaration) {
+            const {prop, value} = declaration;
+
+            /* Do not continue if we see a var() in the value */
+            if (value.trim().includes('var')) {
+                return;
+            }
+
+            generalFontSizeInfo.push({
+                value,
+                prop,
+            });
+        });
+
+        rule.walkDecls(/box-shadow/, function(declaration) {
+            const {prop, value} = declaration;
 
             /* Do not continue if we see a var() in the value */
             if (value.trim().includes('var')) {
@@ -36,8 +66,27 @@ export const createReport = () => {
 
         });
 
-        rule.walkDecls(declarationSpacingRegex, function(decl) {
-            const {prop, value} = decl;
+        rule.walkDecls(declarationRadiusRegex, function(declaration) {
+            const {prop, value} = declaration;
+
+            /* Do not continue if we see a var() in the value */
+            if (value.trim().includes('var')) {
+                return;
+            }
+
+            // handle shorthand
+            const values = value.split(' ');
+
+            values.forEach((splitValue) => {
+                generalRadiusInfo.push({
+                    value: splitValue,
+                    category: prop,
+                });
+            });
+        });
+
+        rule.walkDecls(declarationSpacingRegex, function(declaration) {
+            const {prop, value} = declaration;
 
             /* Do not continue if we see a var() in the value */
             if (value.trim().includes('var')) {
@@ -56,9 +105,9 @@ export const createReport = () => {
 
         });
 
-        rule.walkDecls(declarationColorRegex, function(decl) {
+        rule.walkDecls(declarationColorRegex, function(declaration) {
 
-            const {prop, value} = decl;
+            const {prop, value} = declaration;
 
             /* Do not continue if we see a var() in the value */
             if (value.trim().includes('var')) {
@@ -86,13 +135,19 @@ export const createReport = () => {
     const spacingReport = generateStatsObject(generalSpacingInfo);
     const boxShadowReport = generateStatsObject(generalBoxShadowInfo);
 
+    const radiusReport = generateStatsObject(generalRadiusInfo);
+
+    const fontSizeReport = generateStatsObject(generalFontSizeInfo);
+
     writeCSV({data: colorReport, outputDir, outputFile: 'report-colors-general.csv', headings: 'Color, Occurrence'});
     writeCSV({data: borderReport, outputDir, outputFile: 'report-border-colors.csv', headings: 'Color, Occurrence'});
     writeCSV({data: textColors, outputDir, outputFile: 'report-text-colors.csv', headings: 'Color, Occurrence'});
     writeCSV({data: boxShadowColors, outputDir, outputFile: 'report-shadow-colors.csv', headings: 'Color, Occurrence'});
 
     writeCSV({data: spacingReport, outputDir, outputFile: 'report-spacings.csv', headings: 'Spacing, Occurrence'});
+    writeCSV({data: radiusReport, outputDir, outputFile: 'report-border-radii.csv', headings: 'Radius, Occurrence'});
     writeCSV({data: boxShadowReport, outputDir, outputFile: 'report-box-shadows.csv', headings: 'Shadow, Occurrence'});
+    writeCSV({data: fontSizeReport, outputDir, outputFile: 'report-font-sizes.csv', headings: 'Font size, Occurrence'});
 }
 
 createReport();

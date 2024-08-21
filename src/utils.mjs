@@ -1,6 +1,8 @@
 import path from 'path';
 import fs from 'fs';
-import {selectorBracketsRegex} from './regexHelpers.mjs';
+import {colorSyntaxRegex} from './regexHelpers.mjs';
+
+const borderProperties = ['border', 'border-top', 'border-bottom', 'border-left', 'border-right'];
 
 /**
  * Ensure any props passed in match their output.
@@ -9,7 +11,7 @@ import {selectorBracketsRegex} from './regexHelpers.mjs';
  */
 export const getParsedPropName = (prop) => {
 
-    if (prop === 'border') {
+    if (borderProperties.includes(prop)) {
         return `${prop}-color`;
     }
 
@@ -42,7 +44,7 @@ export const getParentAtRule = (parent) => {
  * @returns {string}
  */
 export const makeCommentsSafe = (cssFile) => {
-    return cssFile.toString().replace(/(\/\/).(.+)/gi, `/* $2 */`);
+    return cssFile.toString().replace(/(\/\/\s).(.+)/gi, `/* $2 */`);
 }
 
 /**
@@ -93,7 +95,7 @@ export const parseSelector = (selector) => {
 
     const selectorNormalized = firstSelector.match(selectorRegex).join('-');
 
-    const selectorWithoutStar = selectorNormalized.replace(starReplacementRegex, '_');
+    const selectorWithoutStar = selectorNormalized.replace(starReplacementRegex, '_all_');
 
     return selectorWithoutStar;
 };
@@ -126,8 +128,7 @@ export const createCustomPropertyObject = ({prefix, prop, value, important, pare
 
     const objKey = createCustomPropertyName({prefix, selector, prop, parent});
 
-    // TODO: replace with color regex
-    const parsedValue = prop === 'border' ? value.split(' ').slice(2).join(' ') : value;
+    const parsedValue = borderProperties.includes(prop) ? value.split(' ').slice(2).join(' ') : value;
 
     if (parsedValue === '') {
         return null;
@@ -279,8 +280,7 @@ ${generateCustomProperties(getPropertysByMediaQueryParams(customPropertyList, mq
  */
 export const generatePropertyValue = ({name, prop, originalValue}) => {
 
-    // use regex replace
-    if (prop === 'border') {
+    if (borderProperties.includes(prop)) {
         const [width, style] = originalValue.split(' ').slice(0, 2);
         return `${width} ${style} var(${name})`;
     }

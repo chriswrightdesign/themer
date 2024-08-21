@@ -10,6 +10,14 @@ describe('makeCommentsSafe', () => {
 
         expect(makeCommentsSafe(cssLine)).not.toContain('//');
     });
+
+    it('should not replace a url in a comment', () => {
+        const comment = `/*
+        * http://harvesthq.github.com/chosen/
+        */`;
+
+        expect(makeCommentsSafe(comment)).toContain('http://harvesthq.github.com/chosen/');
+    });
 });
 
 describe('parseSelector', () => {
@@ -25,7 +33,7 @@ describe('parseSelector', () => {
         {value: '#person #hand', expectation: 'person-hand'},
         {value: '.tooltip::active', expectation: 'tooltip-active'},
         {value: '.tooltip, .someotherthing, .yep:focus', expectation: 'tooltip'},
-        {value: '.something *', expectation: 'something-_'}
+        {value: '.something *', expectation: 'something-_all_'}
     ];
 
     const bemSelectorList = [

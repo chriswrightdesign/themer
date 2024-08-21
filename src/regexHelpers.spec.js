@@ -1,14 +1,7 @@
 import {describe, expect, test} from '@jest/globals';
-import {selectorBracketsRegex, colorSyntaxRegex, declarationColorRegex, declarationFontRegex, declarationSpacingRegex} from './regexHelpers.mjs';
+import {colorSyntaxRegex, declarationColorRegex, declarationFontRegex, declarationSpacingRegex} from './regexHelpers.mjs';
 
 const regexTest = (regEx) => (str) => str.match(regEx) || [];
-
-describe('selectorBracketsRegex', () => {
-    const selectorBracketsMatch = regexTest(selectorBracketsRegex);
-
-    expect(selectorBracketsMatch(`input[type="text"]`)).toContain('[type="text"]');
-    expect(selectorBracketsMatch(`input[type=text]`)).toContain('[type=text]');
-});
 
 describe('declarationColorRegex', () => {
     const declarationColorRegexMatch = regexTest(declarationColorRegex);
