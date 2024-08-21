@@ -211,7 +211,11 @@ export const writeCSV = ({data, outputFile, outputDir, headings = 'Color, Occurr
     console.log(`CSV written: ${outputFile}`);
 }
 
-
+/**
+ * Filters custom properties and returns only those that exist within a media query.
+ * @param {{name: string, value: string, originalValue: string, propertyType: string, originalSelector: string, important?: boolean, parentAtRule: null | string, params: null | string}[]} customPropertyList 
+ * @returns {{name: string, value: string, originalValue: string, propertyType: string, originalSelector: string, important?: boolean, parentAtRule: 'media', params: string}[]}
+ */
 export const getMediaQueries = (customPropertyList) => {
     const mqList = customPropertyList.reduce((acc, curr) => {
         if (curr.parentAtRule === 'media') {
@@ -224,12 +228,24 @@ export const getMediaQueries = (customPropertyList) => {
     return mqListDeduped;
 } 
 
+/**
+ * 
+ * @param {{name: string, value: string, originalValue: string, propertyType: string, originalSelector: string, important?: boolean, parentAtRule: null | string, params: null | string}[]} customPropsArr 
+ * @param {string?} spacingValue 
+ * @returns 
+ */
 export const generateCustomProperties = (customPropsArr, spacingValue = '') => {
     return customPropsArr.reduce((acc, customProperty, index) => {
         return `${acc}\t${spacingValue}${customProperty.name}: ${customProperty.value};${index === (customPropsArr.length - 1) ? '' : `\n`}`;
     }, spacingValue)
 }
 
+/**
+ * 
+ * @param {{name: string, value: string, originalValue: string, propertyType: string, originalSelector: string, important?: boolean, parentAtRule: null | string, params: null | string}[]} customPropertyList
+ * @param {string} params 
+ * @returns 
+ */
 export const getPropertysByMediaQueryParams = (customPropertyList, params) => {
     const filteredProperties = customPropertyList.filter((customProp) => {
         return customProp.params === params;
@@ -238,6 +254,12 @@ export const getPropertysByMediaQueryParams = (customPropertyList, params) => {
     return filteredProperties;
 }
 
+/**
+ * 
+ * @param {{name: string, value: string, originalValue: string, propertyType: string, originalSelector: string, important?: boolean, parentAtRule: null | string, params: null | string}[]} customPropertyList
+ * @param {string} cssFile 
+ * @returns 
+ */
 export const constructRootPseudo = (customPropertyList) => {
 
     const customPropertiesWithNoAtRules = customPropertyList.filter((customProperty) => {
