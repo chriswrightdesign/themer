@@ -1,13 +1,12 @@
-import { parseSelector } from "./parseSelector.mjs";
+import {parseSelector} from "./parseSelector.mjs";
 import {getParentAtRule} from './getParentAtRule.mjs';
 
 /**
- * 
- * Takes a declaration from Postcss and turns into a custom property
- * @returns {`--customPropertyKey`: value}
+ * Ensure any props passed in match their output.
+ * @param prop {string}
+ * @returns {string}
  */
-
-const getParsedPropName = (prop) => {
+export const getParsedPropName = (prop) => {
 
     if (prop === 'border') {
         return `${prop}-color`;
@@ -15,6 +14,12 @@ const getParsedPropName = (prop) => {
 
     return prop;
 }
+
+/**
+ * Takes a series of PostCSS inputs and produces a custom property name with a prefix.
+ * @param {{prefix: string, selector: string, prop: string, parent: {parent: {selector: string}}}} props
+ * @returns string
+ */
 export const createCustomPropertyName = ({prefix, selector, prop, parent}) => {
 
     const parsedProp = getParsedPropName(prop);
@@ -26,7 +31,11 @@ export const createCustomPropertyName = ({prefix, selector, prop, parent}) => {
     return customPropertyName;
 }
 
-
+/**
+ * Takes a series of postCSS inputs and produces an object with a parsed value and custom property name.
+ * @param {{prefix: string, prop: sting, value: string, important: boolean, parent: {parentAtRule: string, params: string}}} props
+ * @returns {{name: string, value: string, originalValue: string, originalSelector: string, important: boolean, parentAtRule: string, params: string}}
+ */
 export const createCustomPropertyObject = ({prefix, prop, value, important, parent}) => {
     const {parentAtRule, params} = getParentAtRule(parent);
 
@@ -34,6 +43,7 @@ export const createCustomPropertyObject = ({prefix, prop, value, important, pare
 
     const objKey = createCustomPropertyName({prefix, selector, prop, parent});
 
+    // replace with color regex
     const parsedValue = prop === 'border' ? value.split(' ').slice(2).join(' ') : value;
 
     if (parsedValue === '') {

@@ -1,5 +1,5 @@
 
-const getMediaQueries = (customPropertyList) => {
+export const getMediaQueries = (customPropertyList) => {
     const mqList = customPropertyList.reduce((acc, curr) => {
         if (curr.parentAtRule === 'media') {
             return [...acc, curr.params];
@@ -11,13 +11,13 @@ const getMediaQueries = (customPropertyList) => {
     return mqListDeduped;
 } 
 
-const generateCustomProperties = (customPropsArr, spacingValue = '') => {
+export const generateCustomProperties = (customPropsArr, spacingValue = '') => {
     return customPropsArr.reduce((acc, customProperty, index) => {
         return `${acc}\t${spacingValue}${customProperty.name}: ${customProperty.value};${index === (customPropsArr.length - 1) ? '' : `\n`}`;
     }, spacingValue)
 }
 
-const getPropertysByMediaQueryParams = (customPropertyList, params) => {
+export const getPropertysByMediaQueryParams = (customPropertyList, params) => {
     const filteredProperties = customPropertyList.filter((customProp) => {
         return customProp.params === params;
     });

@@ -4,7 +4,7 @@ import path from 'path';
 import {createCustomPropertyObject} from './createCustomPropertyObject.mjs';
 import {makeCommentsSafe} from './makeCommentsSafe.mjs';
 import {declarationColorRegex, declarationSpacingRegex, declarationFontRegex} from './regexHelpers.mjs';
-import { constructRootPseudo } from './constructRootPseudo.mjs';
+import {constructRootPseudo} from './constructRootPseudo.mjs';
 
 // TODO - Make arguments
 const prefix = `--themer`;
@@ -24,6 +24,7 @@ const fontRootVarItems = [];
 
 const generatePropertyValue = ({name, prop, originalValue}) => {
 
+    // use regex replace
     if (prop === 'border') {
         const [width, style] = originalValue.split(' ').slice(0, 2);
         return `${width} ${style} var(${name})`;

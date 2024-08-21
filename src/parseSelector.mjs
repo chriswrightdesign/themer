@@ -5,10 +5,13 @@ export const parseSelector = (selector) => {
      */
     const [firstSelector] = selector.split(',');
 
+    const selectorBrackets = firstSelector.replace(/\[(?<attribute>\w+)=("?)(?<contents>\w+)("?)\]/, `-$<attribute>-$<contents>`);
     /*
      *  Handle parent selectors e.g. .box h1 make box-h1, handle .box .boxchild as box-boxchild
      */
-    const selectorWithNoSpaces = firstSelector.replace(/\s/ig, '-').replace(/\./ig, '-');
+    const selectorWithNoSpaces = selectorBrackets.replace(/\s/ig, '-').replace(/\./ig, '-');
+
+    
 
 
     /**

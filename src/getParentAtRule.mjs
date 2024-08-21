@@ -1,7 +1,7 @@
 /**
  * Returns an object with information around parent at rule.
- * If none are specificied returns 'none' as parentAtRule
- * If one is present, also returns params
+ * @param {{parent: {parent: {type: string}}}} parent
+ * @returns {{parentAtRule: string, params: string}}
  */
 export const getParentAtRule = (parent) => {
 
