@@ -24,29 +24,28 @@ const recordAndReassignCustomProps = (declaration, recordArray) => {
 
     const {prop, value, important, parent} = declaration;
 
-            /* Do not continue if we see a var() in the value */
-            if (value.trim().includes('var')) {
-                return;
-            }
+    /* Do not continue if we see a var() in the value */
+    if (value.trim().includes('var')) {
+        return;
+    }
 
-            const variable = createCustomPropertyObject({prefix, prop, value, important, parent});
-    
-            /* Handle when we get nothing back in return */
-            if (variable === null) {
-                return;
-            }
-        
-            recordArray.push(variable);
+    const variable = createCustomPropertyObject({prefix, prop, value, important, parent});
 
-            declaration.assign({ 
-                prop, 
-                value: generatePropertyValue({
-                    name: variable.name,
-                    prop,
-                    originalValue: variable.originalValue,
-                }) 
-            });
+    /* Handle when we get nothing back in return */
+    if (variable === null) {
+        return;
+    }
 
+    recordArray.push(variable);
+
+    declaration.assign({ 
+        prop, 
+        value: generatePropertyValue({
+            name: variable.name,
+            prop,
+            originalValue: variable.originalValue,
+        }) 
+    });
 }
 
 export const themer = () => {
