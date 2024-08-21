@@ -1,9 +1,8 @@
 import postcss from 'postcss';
 import fs from 'fs';
 import path from 'path';
-import {makeCommentsSafe} from './makeCommentsSafe.mjs';
 import {declarationColorRegex, colorSyntaxRegex, declarationSpacingRegex} from './regexHelpers.mjs';
-import {generateStatsObject, getColorsByCategory, writeCSV} from './utils.mjs';
+import {generateStatsObject, getColorsByCategory, makeCommentsSafe, writeCSV} from './utils.mjs';
 
 const fileInput = 'test.scss';
 const outputDir = process.cwd();

@@ -1,13 +1,11 @@
 import postcss from 'postcss';
 import fs from 'fs';
 import path from 'path';
-import {createCustomPropertyObject} from './createCustomPropertyObject.mjs';
-import {makeCommentsSafe} from './makeCommentsSafe.mjs';
+import {constructRootPseudo, makeCommentsSafe, createCustomPropertyObject} from './utils.mjs';
 import {declarationColorRegex, declarationSpacingRegex, declarationFontRegex} from './regexHelpers.mjs';
-import {constructRootPseudo} from './constructRootPseudo.mjs';
 
 // TODO - Make arguments
-const prefix = `--themer`;
+const prefix = `themer`;
 const fileInput = 'test.scss';
 const fileOutput = 'test_processed.scss';
 const outputDir = process.cwd();
@@ -102,7 +100,8 @@ export const themer = () => {
     });
 
     const stringified = root.toResult().css;
-    fs.writeFileSync(path.resolve(outputDir, fileOutput), `${constructRootPseudo([...themeRootVarItems, ...spacingRootVarItems, ...fontRootVarItems])}${stringified}`);   
+    fs.writeFileSync(path.resolve(outputDir, fileOutput), `${constructRootPseudo([...themeRootVarItems, ...spacingRootVarItems, ...fontRootVarItems])}${stringified}`);
+    console.log('Output CSS file written.'); 
 }
 
 themer();
