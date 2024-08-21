@@ -195,10 +195,10 @@ export const convertStatsObjectToSortedArray = (data) => {
 }
 
 /**
- * 
+ * Writes a two column CSV showing occurrences of a property value 
  * @param {{data: {[key: string]: number}, outputFile: string, outputDir: string, headings?: string}} param0 
  */
-export const writeCSV = ({data, outputFile, outputDir, headings = 'Color, Occurrence'}) => {
+export const writeCSV = ({data, outputFile, outputDir, headings = 'Value, Occurrence'}) => {
 
     const output = path.resolve(outputDir, outputFile);
 
@@ -229,7 +229,7 @@ export const getMediaQueries = (customPropertyList) => {
 } 
 
 /**
- * 
+ * Generates custom properties ready to be input into a :root{} string
  * @param {{name: string, value: string, originalValue: string, propertyType: string, originalSelector: string, important?: boolean, parentAtRule: null | string, params: null | string}[]} customPropsArr 
  * @param {string?} spacingValue 
  * @returns 
@@ -241,7 +241,7 @@ export const generateCustomProperties = (customPropsArr, spacingValue = '') => {
 }
 
 /**
- * 
+ * Gets custom properties with a specific media query param
  * @param {{name: string, value: string, originalValue: string, propertyType: string, originalSelector: string, important?: boolean, parentAtRule: null | string, params: null | string}[]} customPropertyList
  * @param {string} params 
  * @returns 
@@ -255,7 +255,7 @@ export const getPropertysByMediaQueryParams = (customPropertyList, params) => {
 }
 
 /**
- * 
+ * Constructs a :root {} to be used within a css file
  * @param {{name: string, value: string, originalValue: string, propertyType: string, originalSelector: string, important?: boolean, parentAtRule: null | string, params: null | string}[]} customPropertyList
  * @param {string} cssFile 
  * @returns 
@@ -278,4 +278,19 @@ ${generateCustomProperties(getPropertysByMediaQueryParams(customPropertyList, mq
     }
 }\n\n`;
     }, '')}` : ``}`
+}
+
+/**
+ * Ensures output of property values match what we expect.
+ * @param {{name: string, prop: string, originalValue: string}} props 
+ * @returns {string}
+ */
+export const generatePropertyValue = ({name, prop, originalValue}) => {
+
+    // use regex replace
+    if (prop === 'border') {
+        const [width, style] = originalValue.split(' ').slice(0, 2);
+        return `${width} ${style} var(${name})`;
+    }
+    return `var(${name})`;
 }

@@ -84,13 +84,12 @@ export const createReport = () => {
     const boxShadowColors = generateStatsObject(getColorsByCategory({categoryName: 'box-shadow', colorList: generalColorInfo, exact: false}));
 
     const spacingReport = generateStatsObject(generalSpacingInfo);
-
     const boxShadowReport = generateStatsObject(generalBoxShadowInfo);
 
-    writeCSV({data: colorReport, outputDir, outputFile: 'report-colors-general.csv'});
-    writeCSV({data: borderReport, outputDir, outputFile: 'report-border-colors.csv'});
-    writeCSV({data: textColors, outputDir, outputFile: 'report-text-colors.csv'});
-    writeCSV({data: boxShadowColors, outputDir, outputFile: 'report-shadow-colors.csv'});
+    writeCSV({data: colorReport, outputDir, outputFile: 'report-colors-general.csv', headings: 'Color, Occurrence'});
+    writeCSV({data: borderReport, outputDir, outputFile: 'report-border-colors.csv', headings: 'Color, Occurrence'});
+    writeCSV({data: textColors, outputDir, outputFile: 'report-text-colors.csv', headings: 'Color, Occurrence'});
+    writeCSV({data: boxShadowColors, outputDir, outputFile: 'report-shadow-colors.csv', headings: 'Color, Occurrence'});
 
     writeCSV({data: spacingReport, outputDir, outputFile: 'report-spacings.csv', headings: 'Spacing, Occurrence'});
     writeCSV({data: boxShadowReport, outputDir, outputFile: 'report-box-shadows.csv', headings: 'Shadow, Occurrence'});
