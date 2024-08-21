@@ -88,7 +88,7 @@ export const themer = () => {
             recordAndReassignCustomProps(declaration, radiusRootVarItems);
         });
 
-        rule.walkDecls(/background-image/, function(declaration) {
+        rule.walkDecls(/^background-image$/, function(declaration) {
             recordAndReassignCustomProps(declaration, backgroundImageRootVarItems);
         });
     });

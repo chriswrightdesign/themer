@@ -139,15 +139,15 @@ export const createReport = () => {
 
     const fontSizeReport = generateStatsObject(generalFontSizeInfo);
 
-    writeCSV({data: colorReport, outputDir, outputFile: 'report-colors-general.csv', headings: 'Color, Occurrence'});
-    writeCSV({data: borderReport, outputDir, outputFile: 'report-border-colors.csv', headings: 'Color, Occurrence'});
-    writeCSV({data: textColors, outputDir, outputFile: 'report-text-colors.csv', headings: 'Color, Occurrence'});
-    writeCSV({data: boxShadowColors, outputDir, outputFile: 'report-shadow-colors.csv', headings: 'Color, Occurrence'});
+    writeCSV({data: colorReport, outputDir, outputFile: `${fileInput}-report-colors-general.csv`, headings: 'Color, Occurrence'});
+    writeCSV({data: borderReport, outputDir, outputFile: `${fileInput}-report-border-colors.csv`, headings: 'Color, Occurrence'});
+    writeCSV({data: textColors, outputDir, outputFile: `${fileInput}-report-text-colors.csv`, headings: 'Color, Occurrence'});
+    writeCSV({data: boxShadowColors, outputDir, outputFile: `${fileInput}-report-shadow-colors.csv`, headings: 'Color, Occurrence'});
 
-    writeCSV({data: spacingReport, outputDir, outputFile: 'report-spacings.csv', headings: 'Spacing, Occurrence'});
-    writeCSV({data: radiusReport, outputDir, outputFile: 'report-border-radii.csv', headings: 'Radius, Occurrence'});
-    writeCSV({data: boxShadowReport, outputDir, outputFile: 'report-box-shadows.csv', headings: 'Shadow, Occurrence'});
-    writeCSV({data: fontSizeReport, outputDir, outputFile: 'report-font-sizes.csv', headings: 'Font size, Occurrence'});
+    writeCSV({data: spacingReport, outputDir, outputFile: `${fileInput}-report-spacings.csv`, headings: 'Spacing, Occurrence'});
+    writeCSV({data: radiusReport, outputDir, outputFile: `${fileInput}-report-border-radii.csv`, headings: 'Radius, Occurrence'});
+    writeCSV({data: boxShadowReport, outputDir, outputFile: `${fileInput}-report-box-shadows.csv`, headings: 'Shadow, Occurrence'});
+    writeCSV({data: fontSizeReport, outputDir, outputFile: `${fileInput}-report-font-sizes.csv`, headings: 'Font size, Occurrence'});
 }
 
 createReport();

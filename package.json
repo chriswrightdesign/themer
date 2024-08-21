@@ -7,6 +7,9 @@
   "scripts": {
     "test": "yarn node --experimental-vm-modules $(yarn bin jest)"
   },
+  "bin": {
+    "themer": "./src/themer.mjs"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chriswrightdesign/themer.git"

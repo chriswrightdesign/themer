@@ -1,7 +1,7 @@
 /*
  * Searches declaration for properties which a color value will likely occur.
  */
-export const declarationColorRegex = /^(border$|box-shadow|border-color|border-\w+-color|border-(bottom|top|left|right)|fill|stroke|color|background-color|background$)/;
+export const declarationColorRegex = /^(border$|box-shadow|border-color|border-\w+-color|border-(bottom|top|left|right)|fill$|stroke$|color|background-color|background$)/;
 
 /**
  * Searches declaration for properties which 'spacing' is likely to occur.
