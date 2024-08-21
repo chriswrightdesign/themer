@@ -85,10 +85,12 @@ export const parseSelector = (selector) => {
         return '';
     }
 
+    const cleanSelectorStart = selector.includes('\n') ? selector.split('\n').slice(-1)[0] : selector;
+
     /**
      * Handle comma separated selectors, e.g. .something, somethingelse, somethingelse {} take the first one
      */
-    const [firstSelector] = selector.split(',');
+    const [firstSelector] = cleanSelectorStart.split(',');
 
     /**
      * Handle input[type="text"] / input[type=text]

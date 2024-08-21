@@ -4,10 +4,11 @@ import path from 'path';
 import {constructRootPseudo, makeCommentsSafe, createCustomPropertyObject, generatePropertyValue} from './utils.mjs';
 import {declarationColorRegex, declarationSpacingRegex, declarationFontRegex} from './regexHelpers.mjs';
 
+
 // TODO - Make arguments
 const prefix = `themer`;
-const fileInput = 'test.scss';
-const fileOutput = 'test_processed.scss';
+const fileInput = 'chosen.css';
+const fileOutput = 'chosen_processed.css';
 const outputDir = process.cwd();
 
 const srcPath = path.resolve(process.cwd(), fileInput);
@@ -23,6 +24,8 @@ const fontRootVarItems = [];
 const recordAndReassignCustomProps = (declaration, recordArray) => {
 
     const {prop, value, important, parent} = declaration;
+
+    console.log(declaration);
 
     /* Do not continue if we see a var() in the value */
     if (value.trim().includes('var')) {

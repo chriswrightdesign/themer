@@ -1,0 +1,20 @@
+
+:root {
+	--themer-chzn-container-font-size: 14px;
+}
+
+/*
+ * Chosen.css
+ *
+ * Chosen is a JavaScript plugin that makes long, unwieldy select boxes much more user-friendly.
+ * The styles hav been altered so please be careful when updating the plugin.
+ * http:/* arvesthq.github.com/chosen/ */
+
+/* @group Base */
+.chzn-container {
+  font-size: var(--themer-chzn-container-font-size);
+  position: relative;
+  display: inline-block;
+  color: var(--cmds-g-form-field-text-color);
+
+}
