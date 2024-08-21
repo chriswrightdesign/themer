@@ -85,13 +85,17 @@ export const parseSelector = (selector) => {
         return '';
     }
 
-    const [firstSelector] = selector.split(',')
+    const [firstSelector] = selector.split(',');
+
+    const starReplacementRegex = /\*/gi;
 
     const selectorRegex = /(\w+|\*)/gi;
 
     const selectorNormalized = firstSelector.match(selectorRegex).join('-');
 
-    return selectorNormalized;
+    const selectorWithoutStar = selectorNormalized.replace(starReplacementRegex, '_');
+
+    return selectorWithoutStar;
 };
 
 /**

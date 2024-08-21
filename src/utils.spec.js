@@ -24,7 +24,8 @@ describe('parseSelector', () => {
         {value: '.person#hand', expectation: 'person-hand'},
         {value: '#person #hand', expectation: 'person-hand'},
         {value: '.tooltip::active', expectation: 'tooltip-active'},
-        {value: '.tooltip, .someotherthing, .yep:focus', expectation: 'tooltip'}
+        {value: '.tooltip, .someotherthing, .yep:focus', expectation: 'tooltip'},
+        {value: '.something *', expectation: 'something-_'}
     ];
 
     const bemSelectorList = [

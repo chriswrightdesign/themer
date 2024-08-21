@@ -1,15 +1,29 @@
 import postcss from 'postcss';
 import fs from 'fs';
 import path from 'path';
+import { Command, Option } from 'commander';
 import {constructRootPseudo, makeCommentsSafe, createCustomPropertyObject, generatePropertyValue} from './utils.mjs';
 import {declarationColorRegex, declarationSpacingRegex, declarationFontRegex} from './regexHelpers.mjs';
 
+const cwd = process.cwd();
+const program = new Command();
 
-// TODO - Make arguments
-const prefix = `themer`;
-const fileInput = 'editor.scss';
-const fileOutput = 'editor_processed.scss';
-const outputDir = process.cwd();
+program
+.addOption(new Option('-i, --input <file>', 'file to process'))
+.addOption(new Option('-o, --outputdir <dir>', 'directory output').default(cwd))
+.addOption(new Option('-p, --prefix <string>', 'prefix for all variables').default('themer'));
+
+program.parse();
+
+const options = program.opts();
+
+console.log(options);
+
+const fileInput = options.input;
+const fileOutput = fileInput.replace(/.((s?)css)/, `.processed.$1`);
+
+const prefix = options.prefix;
+const outputDir = options.outputdir;
 
 const srcPath = path.resolve(process.cwd(), fileInput);
 const content = fs.readFileSync(srcPath);
@@ -24,8 +38,6 @@ const fontRootVarItems = [];
 const recordAndReassignCustomProps = (declaration, recordArray) => {
 
     const {prop, value, important, parent} = declaration;
-
-    console.log(declaration);
 
     /* Do not continue if we see a var() in the value */
     if (value.trim().includes('var')) {

@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/chriswrightdesign/themer#readme",
   "dependencies": {
+    "commander": "^12.1.0",
     "jest": "^29.7.0",
     "postcss": "^8.4.41"
   }
