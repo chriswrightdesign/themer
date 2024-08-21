@@ -93,7 +93,7 @@ export const createReport = () => {
     writeCSV({data: boxShadowColors, outputDir, outputFile: 'report-shadow-colors.csv'});
 
     writeCSV({data: spacingReport, outputDir, outputFile: 'report-spacings.csv', headings: 'Spacing, Occurrence'});
-    writeCSV({data: boxShadowReport, outputDir, outputFile: 'report-box-shadows.csv', headings: 'Shadows, Occurrence'});
+    writeCSV({data: boxShadowReport, outputDir, outputFile: 'report-box-shadows.csv', headings: 'Shadow, Occurrence'});
 }
 
 createReport();
