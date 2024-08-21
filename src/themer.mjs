@@ -7,8 +7,8 @@ import {declarationColorRegex, declarationSpacingRegex, declarationFontRegex} fr
 
 // TODO - Make arguments
 const prefix = `themer`;
-const fileInput = 'chosen.css';
-const fileOutput = 'chosen_processed.css';
+const fileInput = 'editor.scss';
+const fileOutput = 'editor_processed.scss';
 const outputDir = process.cwd();
 
 const srcPath = path.resolve(process.cwd(), fileInput);

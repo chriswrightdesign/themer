@@ -85,27 +85,13 @@ export const parseSelector = (selector) => {
         return '';
     }
 
-    const cleanSelectorStart = selector.includes('\n') ? selector.split('\n').slice(-1)[0] : selector;
+    const [firstSelector] = selector.split(',')
 
-    /**
-     * Handle comma separated selectors, e.g. .something, somethingelse, somethingelse {} take the first one
-     */
-    const [firstSelector] = cleanSelectorStart.split(',');
+    const selectorRegex = /(\w+|\*)/gi;
 
-    /**
-     * Handle input[type="text"] / input[type=text]
-     */
-    const selectorBrackets = firstSelector.replace(selectorBracketsRegex, `-$<attribute>-$<contents>`);
-    /*
-     *  Handle parent selectors e.g. .box h1 make box-h1, handle .box .boxchild as box-boxchild
-     */
-    const selectorWithNoSpaces = selectorBrackets.replace(/\s/ig, '-').replace(/\./ig, '-');
+    const selectorNormalized = firstSelector.match(selectorRegex).join('-');
 
-    /**
-     * Handle pseudo selectors, pseudo classes, BEM __, --, and any remaining .
-     * We leave # so there is no confusion around . and # selection
-     */
-    return `${selectorWithNoSpaces}`.replace(/::|:|__|--/gi, '-');
+    return selectorNormalized;
 };
 
 /**
@@ -117,9 +103,9 @@ export const createCustomPropertyName = ({prefix, selector, prop, parent}) => {
 
     const parsedProp = getParsedPropName(prop);
 
-    const appendedParent = parent.parent.selector ? `${parseSelector(parent.parent.selector)}-` : ``;
+    const appendedParent = parent.parent.selector ? `${parseSelector(parent.parent.selector)}__` : ``;
 
-    const customPropertyName = `--${prefix}${appendedParent}${parseSelector(selector)}-${parsedProp}`;
+    const customPropertyName = `--${prefix}-${appendedParent}${parseSelector(selector)}-${parsedProp}`;
 
     return customPropertyName;
 }

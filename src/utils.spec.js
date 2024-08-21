@@ -15,21 +15,21 @@ describe('makeCommentsSafe', () => {
 describe('parseSelector', () => {
 
     const standardSelectorList = [
-        {value: '.box h1', expectation: '-box-h1'},
-        {value: '.box.heading', expectation: '-box-heading'},
-        {value: '.box heading', expectation: '-box-heading'},
+        {value: '.box h1', expectation: 'box-h1'},
+        {value: '.box.heading', expectation: 'box-heading'},
+        {value: '.box heading', expectation: 'box-heading'},
         {value: `input[type="text"]`, expectation: 'input-type-text'},
-        {value: '.person:focus', expectation: '-person-focus'},
-        {value: '.person:focus-within', expectation: '-person-focus-within'},
-        {value: '.person#hand', expectation: '-person#hand'},
-        {value: '#person #hand', expectation: '#person-#hand'},
-        {value: '.tooltip::active', expectation: '-tooltip-active'},
-        {value: '.tooltip, .someotherthing, .yep:focus', expectation: '-tooltip'}
+        {value: '.person:focus', expectation: 'person-focus'},
+        {value: '.person:focus-within', expectation: 'person-focus-within'},
+        {value: '.person#hand', expectation: 'person-hand'},
+        {value: '#person #hand', expectation: 'person-hand'},
+        {value: '.tooltip::active', expectation: 'tooltip-active'},
+        {value: '.tooltip, .someotherthing, .yep:focus', expectation: 'tooltip'}
     ];
 
     const bemSelectorList = [
-        {value: '.c-box .c-box__heading', expectation: '-c-box-c-box-heading'},
-        {value: '.c-box.c-box--dark', expectation: '-c-box-c-box-dark'}
+        {value: '.c-box .c-box__heading', expectation: 'c-box-c-box__heading'},
+        {value: '.c-box.c-box--dark', expectation: 'c-box-c-box-dark'}
     ];
 
     const allSelectors = [
@@ -71,7 +71,7 @@ describe ('createCustomPropertyName', () => {
             }
         }
 
-        expect(createCustomPropertyName(inputObject)).toBe('--themer-c-form--c-box-border-color');
+        expect(createCustomPropertyName(inputObject)).toBe('--themer-c-form__c-box-border-color');
     });
 
     it('should handle no parent selector selector', () => {
