@@ -1,7 +1,7 @@
 import {describe, expect, test} from '@jest/globals';
 import {selectorBracketsRegex, colorSyntaxRegex, declarationColorRegex, declarationFontRegex, declarationSpacingRegex} from './regexHelpers.mjs';
 
-const regexTest = (regEx) => regexMatch = (str) => str.match(regEx) || [];
+const regexTest = (regEx) => (str) => str.match(regEx) || [];
 
 describe('selectorBracketsRegex', () => {
     const selectorBracketsMatch = regexTest(selectorBracketsRegex);

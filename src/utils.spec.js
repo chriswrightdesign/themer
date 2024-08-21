@@ -1,5 +1,5 @@
 import {describe, expect, test} from '@jest/globals';
-import {makeCommentsSafe, parseSelector, getParsedPropName, createCustomPropertyName, createCustomPropertyObject, getPropertysByMediaQueryParams, getMediaQueries, generateCustomProperties, constructRootPseudo} from './utils.mjs';
+import {makeCommentsSafe, parseSelector, getParsedPropName, createCustomPropertyName, createCustomPropertyObject, getPropertysByMediaQueryParams, getMediaQueries, generateCustomProperties, constructRootPseudo, generatePropertyValue} from './utils.mjs';
 
 describe('makeCommentsSafe', () => {
     it('should take // comment and replace with /* comment */', () => {
@@ -137,14 +137,67 @@ describe('getPropertysByMediaQueryParams', () => {
     });
 });
 
+describe('generatePropertyValue', () => {
+    it('should create the value for a property', () => {
+        const props = {name: '--box-background', prop: 'background', originalValue: '#fff'};
+
+        expect(generatePropertyValue(props)).toEqual(`var(--box-background)`);
+    });
+
+    it('should handle the value of a border shorthand', () => {
+
+        const props = {name: '--box-border', prop: 'border', originalValue: '1px solid #fff'};
+
+        expect(generatePropertyValue(props)).toEqual(`1px solid var(--box-border)`);
+
+    })
+});
+
 describe('getMediaQueries', () => {
 
+    it('should get properties with media queries', () => {
+
+        const customPropertyList = [
+            {name: '--themer-box-background', value: '#fff' , originalValue: '#fff', propertyType: 'background', originalSelector: '.box', important: false, parentAtRule: 'media', params: '(min-width: 360px)'},
+            {name: '--themer-box-color', value: '#fff' , originalValue: '#fff', propertyType: 'color', originalSelector: '.box', important: false, parentAtRule: 'media', params: '(max-width: 300px)'},
+            {name: '--themer-box-padding', value: '0px' , originalValue: '0px', propertyType: 'padding', originalSelector: '.box', important: false, parentAtRule: null, params: null}
+        ];
+
+    expect(getMediaQueries(customPropertyList).length).toEqual(2);
+
+    });
+    
+        
 });
 
 describe('generateCustomProperties', () => {
+    it('should generate a string with custom properties', () => {
+        const customPropertyList = [
+            {name: '--themer-box-background', value: '#fff' , originalValue: '#fff', propertyType: 'background', originalSelector: '.box', important: false, parentAtRule: 'media', params: '(min-width: 360px)'},
+            {name: '--themer-box-color', value: '#fff' , originalValue: '#fff', propertyType: 'color', originalSelector: '.box', important: false, parentAtRule: 'media', params: '(max-width: 300px)'},
+            {name: '--themer-box-padding', value: '0px' , originalValue: '0px', propertyType: 'padding', originalSelector: '.box', important: false, parentAtRule: null, params: null}
+        ];
 
+        const generatedPropertyString = generateCustomProperties(customPropertyList);
+        expect(generatedPropertyString).toContain('--themer-box-background: #fff;');
+        expect(generatedPropertyString).toContain('--themer-box-color: #fff;');
+        expect(generatedPropertyString).toContain('--themer-box-padding: 0px;');
+    });
 });
 
 describe('constructRootPseudo', () => {
+    const customPropertyList = [
+        {name: '--themer-box-background', value: '#fff' , originalValue: '#fff', propertyType: 'background', originalSelector: '.box', important: false, parentAtRule: 'media', params: '(min-width: 360px)'},
+        {name: '--themer-box-color', value: '#fff' , originalValue: '#fff', propertyType: 'color', originalSelector: '.box', important: false, parentAtRule: 'media', params: '(max-width: 300px)'},
+        {name: '--themer-box-padding', value: '0px' , originalValue: '0px', propertyType: 'padding', originalSelector: '.box', important: false, parentAtRule: null, params: null}
+    ];
 
+    it('should generate a string with a :root{} and custom properties', () => {
+        const constructedRoot = constructRootPseudo(customPropertyList);
+
+        expect(constructedRoot).toContain(':root {');
+        expect(constructedRoot).toContain('--themer-box-background: #fff;');
+        expect(constructedRoot).toContain('--themer-box-color: #fff;');
+        expect(constructedRoot).toContain('--themer-box-padding: 0px;');
+    });
 });
