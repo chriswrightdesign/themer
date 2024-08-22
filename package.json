@@ -4,6 +4,7 @@
   "description": "A project to help extract values into custom properties in CSS",
   "main": "src/themer.mjs",
   "type": "module",
+  "private": false,
   "scripts": {
     "test": "yarn node --experimental-vm-modules $(yarn bin jest)"
   },
