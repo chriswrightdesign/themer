@@ -3,12 +3,12 @@ A project to help extract CSS property values into custom properties.
 Also comes with reporting tools to help understand the occurrences of property values.
 
 ## Themer usage
-`npx themer -i inputfile.css`
+`npx @chriswrightdesign/themer -i inputfile.css`
 
 This will output a file named `inputfile.processed.css` that will have the custom properties.
 
 ## Reporter usage
-`npx -p themer reporter -i inputfile.css -o /data`
+`npx -p @chriswrightdesign/themer reporter -i inputfile.css -o /data`
 
 This will then output multiple csv files to `/data`
 
