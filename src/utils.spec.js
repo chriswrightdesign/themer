@@ -152,6 +152,23 @@ describe ('createCustomPropertyObject', () => {
         expect(createdObject2).toEqual(null);
     });
 
+    it('should handle one transparent value with one non transparent', () => {
+        const inputObject = {
+            prefix: 'themer', 
+            prop: 'border-color', 
+            value: 'transparent green', 
+            important: false, 
+            parent: {
+                parent: {
+                    type: null,
+                }
+            }
+        };
+
+        const createdObject = createCustomPropertyObject(inputObject);
+        expect(createdObject.value).toContain('green');
+    });
+
     it('should parse the border value', () => {
         const inputObject = {
             prefix: 'themer', 

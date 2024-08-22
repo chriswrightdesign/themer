@@ -3,7 +3,7 @@ import fs from 'fs';
 import {colorSyntaxRegex} from './regexHelpers.mjs';
 
 const borderProperties = ['border', 'border-top', 'border-bottom', 'border-left', 'border-right'];
-const valueDisallowList = ['transparent', 'none'];
+const valueDisallowList = ['transparent', 'none', 'initial', 'auto', 'inherit'];
 
 /**
  * Ensure any props passed in match their output.
@@ -131,7 +131,10 @@ export const createCustomPropertyObject = ({prefix, prop, value, important, pare
 
     const parsedValue = borderProperties.includes(prop) ? value.split(' ').slice(2).join(' ') : value;
 
-    if (parsedValue === '' || valueDisallowList.includes(parsedValue)) {
+    const isDisallowed = valueDisallowList.some(disallowedValue => parsedValue === disallowedValue);
+
+    if (parsedValue === '' || isDisallowed) {
+        console.log('returning null');
         return null;
     }
 
