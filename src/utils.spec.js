@@ -120,6 +120,38 @@ describe ('createCustomPropertyObject', () => {
         expect(createdObject).toHaveProperty('originalValue');
     });
 
+    it('should exclude transparency and none values ', () => {
+        const inputObject = {
+            prefix: 'themer', 
+            prop: 'background', 
+            value: 'transparent', 
+            important: false, 
+            parent: {
+                parent: {
+                    type: null,
+                }
+            }
+        };
+
+        const inputObject2 = {
+            prefix: 'themer', 
+            prop: 'border', 
+            value: '1px solid transparent', 
+            important: false, 
+            parent: {
+                parent: {
+                    type: null,
+                }
+            }
+        };
+
+        const createdObject = createCustomPropertyObject(inputObject);
+        const createdObject2 = createCustomPropertyObject(inputObject2);
+
+        expect(createdObject).toEqual(null);
+        expect(createdObject2).toEqual(null);
+    });
+
     it('should parse the border value', () => {
         const inputObject = {
             prefix: 'themer', 
