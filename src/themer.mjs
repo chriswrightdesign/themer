@@ -94,8 +94,15 @@ export const themer = () => {
     });
 
     const stringified = root.toResult().css;
-    fs.writeFileSync(path.resolve(outputDir, fileOutput), `${constructRootPseudo([...themeRootVarItems, ...backgroundImageRootVarItems, ...spacingRootVarItems, ...fontRootVarItems, ...radiusRootVarItems])}${stringified}`);
-    console.log('Output CSS file written.'); 
+
+    try {
+        fs.writeFileSync(path.resolve(outputDir, fileOutput), `${constructRootPseudo([...themeRootVarItems, ...backgroundImageRootVarItems, ...spacingRootVarItems, ...fontRootVarItems, ...radiusRootVarItems])}${stringified}`);
+        console.log(`File written: ${fileOutput}`); 
+    } catch(err) {
+        console.log('Error writing file')
+    }
+    
+    
 }
 
 themer();

@@ -7,6 +7,12 @@
   "scripts": {
     "test": "yarn node --experimental-vm-modules $(yarn bin jest)"
   },
+  "files": [
+    "src/regexHelpers.mjs",
+    "src/reporter.mjs",
+    "src/utils.mjs",
+    "src/themer.mjs"
+  ],
   "bin": {
     "themer": "./src/themer.mjs"
   },

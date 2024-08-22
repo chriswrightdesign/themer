@@ -199,9 +199,14 @@ export const writeCSV = ({data, outputFile, outputDir, headings = 'Value, Occurr
 
     const dataOutput = arrayToCSVFormat({dataArr: sortedData, headings, data});
 
-    fs.writeFileSync(output, dataOutput, 'utf8');
+    try {
+        fs.writeFileSync(output, dataOutput, 'utf8');
+        console.log(`CSV written: ${outputFile}`);
+    } catch(err) {
+        console.log('Error writing file')
+    }
 
-    console.log(`CSV written: ${outputFile}`);
+    
 }
 
 /**

@@ -18,6 +18,7 @@
 	--themer-giraffe-padding: 16px;
 	--themer-dog-font-size: 16px;
 	--themer-cat-font-size: 12px;
+	--themer-cat-border-radius: 6px;
 }
 
 @media (min-width: 980px) {
@@ -44,7 +45,7 @@
 
 .cat {
     border: 1px solid;
-    border-radius: 6px;
+    border-radius: var(--themer-cat-border-radius);
     padding: var(--themer-cat-padding);
     font-size: var(--themer-cat-font-size);
 }
