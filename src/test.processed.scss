@@ -1,4 +1,4 @@
-
+/* Start: Colors */
 :root {
 	--themer-dog-background: #f0f;
 	--themer-dog-border-color: rgba(0, 0, 0, 0.5);
@@ -8,25 +8,57 @@
 	--themer-giraffe-color: currentColor;
 	--themer-icon-fill: red;
 	--themer-icon-stroke: blue;
-	--themer-icon-border-color: #f0f #d2d7df;
-	--themer-complex-shadow-box-shadow: inset 0 -3em 3em rgb(0 200 0 / 30%),
-    0 0 0 2px white,
-    0.3em 0.3em 1em rgb(200 0 0 / 60%);
-	--themer-cat-padding: 4px;
-	--themer-dog-dog-large-margin: 8px;
-	--themer-dog-dog-large-margin-left: 16px;
-	--themer-giraffe-padding: 16px;
-	--themer-dog-font-size: 16px;
-	--themer-cat-font-size: 12px;
-	--themer-cat-border-radius: 6px;
+	--themer-icon-border-color: #f0f #d2d7df transparent;
 }
 
 @media (min-width: 980px) {
     :root {
 	--themer-dog-background: green;
+    }
+}
+/* End: Colors */
+
+/* Start: Box-shadow */
+:root {
+	--themer-complex-shadow-box-shadow: inset 0 -3em 3em rgb(0 200 0 / 30%),
+    0 0 0 2px white,
+    0.3em 0.3em 1em rgb(200 0 0 / 60%);
+}
+/* End: Box-shadow */
+
+/* Start: Border-radius */
+:root {
+	--themer-cat-border-radius: 6px;
+}
+/* End: Border-radius */
+
+/* Start: Border-radius */
+:root {
+	--themer-cat-border-radius: 6px;
+}
+/* End: Border-radius */
+
+/* Start: Typography */
+:root {
+	--themer-dog-font-size: 16px;
+	--themer-cat-font-size: 12px;
+}
+
+@media (min-width: 980px) {
+    :root {
 	--themer-dog-font-size: 18px;
     }
 }
+/* End: Typography */
+
+/* Start: Spacing */
+:root {
+	--themer-cat-padding: 4px;
+	--themer-dog-dog-large-margin: 8px;
+	--themer-dog-dog-large-margin-left: 16px;
+	--themer-giraffe-padding: 16px;
+}
+/* End: Spacing */
 
 
 .dog {
@@ -48,6 +80,7 @@
     border-radius: var(--themer-cat-border-radius);
     padding: var(--themer-cat-padding);
     font-size: var(--themer-cat-font-size);
+    background: none;
 }
 
 .llama {
@@ -62,11 +95,13 @@
 }
 
 .snake {
+    box-shadow: none;
     color: var(--themer-snake-color);
 }
 
 .giraffe {
     color: var(--themer-giraffe-color);
+    background: transparent;
     background-position-y: 0;
     padding: var(--themer-giraffe-padding);
 }

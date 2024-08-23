@@ -14,11 +14,10 @@ describe('declarationColorRegex', () => {
         expect(declarationColorRegexMatch('border-width')).not.toContain('border-width');
     });
 
-    it('should identify stroke, fill, color, and box-shadow', () => {
+    it('should identify stroke, fill, color', () => {
         expect(declarationColorRegexMatch('stroke')).toContain('stroke');
         expect(declarationColorRegexMatch('fill')).toContain('fill');
         expect(declarationColorRegexMatch('color')).toContain('color');
-        expect(declarationColorRegexMatch('box-shadow')).toContain('box-shadow');
     });
 
     it('should identify background, background-color, but not background-image', () => {

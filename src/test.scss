@@ -18,6 +18,7 @@
     border-radius: 6px;
     padding: 4px;
     font-size: 12px;
+    background: none;
 }
 
 .llama {
@@ -32,11 +33,13 @@
 }
 
 .snake {
+    box-shadow: none;
     color: purple;
 }
 
 .giraffe {
     color: currentColor;
+    background: transparent;
     background-position-y: 0;
     padding: 16px;
 }
@@ -44,7 +47,7 @@
 .icon {
     fill: red;
     stroke: blue;
-    border-color: #f0f #d2d7df;
+    border-color: #f0f #d2d7df transparent;
 }
 
 .complex-shadow {

@@ -1,6 +1,5 @@
 import path from 'path';
 import fs from 'fs';
-import {colorSyntaxRegex} from './regexHelpers.mjs';
 
 const borderProperties = ['border', 'border-top', 'border-bottom', 'border-left', 'border-right'];
 const valueDisallowList = ['transparent', 'none', 'initial', 'auto', 'inherit'];
@@ -134,7 +133,6 @@ export const createCustomPropertyObject = ({prefix, prop, value, important, pare
     const isDisallowed = valueDisallowList.some(disallowedValue => parsedValue === disallowedValue);
 
     if (parsedValue === '' || isDisallowed) {
-        console.log('returning null');
         return null;
     }
 
@@ -270,15 +268,14 @@ export const constructRootPseudo = (customPropertyList) => {
 
    const mediaQueries = getMediaQueries(customPropertyList);
 
-    return `
-:root {
+    return `:root {
 ${generateCustomProperties(customPropertiesWithNoAtRules)}
-}\n\n${mediaQueries.length > 0 ? `${mediaQueries.reduce((acc, mq) => {
+}${mediaQueries.length > 0 ? `\n\n${mediaQueries.reduce((acc, mq) => {
     return `${acc}@media ${mq} {
     :root {
 ${generateCustomProperties(getPropertysByMediaQueryParams(customPropertyList, mq))}
     }
-}\n\n`;
+}`;
     }, '')}` : ``}`
 }
 

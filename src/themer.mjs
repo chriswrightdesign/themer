@@ -5,7 +5,7 @@ import fs from 'fs';
 import path from 'path';
 import {Command, Option} from 'commander';
 import {constructRootPseudo, makeCommentsSafe, createCustomPropertyObject, generatePropertyValue} from './utils.mjs';
-import {declarationColorRegex, declarationSpacingRegex, declarationFontRegex, declarationRadiusRegex} from './regexHelpers.mjs';
+import {declarationColorRegex, declarationBoxShadowRegex, declarationSpacingRegex, declarationFontRegex, declarationRadiusRegex} from './regexHelpers.mjs';
 
 const cwd = process.cwd();
 const program = new Command();
@@ -32,10 +32,17 @@ const content = fs.readFileSync(srcPath);
 const safeContent = makeCommentsSafe(content);
 
 const themeRootVarItems = [];
+const boxShadowVarItems = [];
 const spacingRootVarItems = [];
 const fontRootVarItems = [];
 const radiusRootVarItems = [];
 const backgroundImageRootVarItems = [];
+
+const renderIfPresent = (itemsArr, name) => {
+    return itemsArr.length > 0 ? `/* Start: ${name} */
+${constructRootPseudo(itemsArr)}
+/* End: ${name} */\n\n` : '';
+}
 
 const recordAndReassignCustomProps = (declaration, recordArray) => {
 
@@ -75,6 +82,12 @@ export const themer = () => {
             recordAndReassignCustomProps(declaration, themeRootVarItems);
         });
 
+        rule.walkDecls(declarationBoxShadowRegex, function(declaration) {
+            recordAndReassignCustomProps(declaration, boxShadowVarItems);
+        });
+
+        // box shadow
+
         // spacings
         rule.walkDecls(declarationSpacingRegex, function(declaration) {
             recordAndReassignCustomProps(declaration, spacingRootVarItems);
@@ -98,7 +111,7 @@ export const themer = () => {
     const stringified = root.toResult().css;
 
     try {
-        fs.writeFileSync(path.resolve(outputDir, fileOutput), `${constructRootPseudo([...themeRootVarItems, ...backgroundImageRootVarItems, ...spacingRootVarItems, ...fontRootVarItems, ...radiusRootVarItems])}${stringified}`);
+        fs.writeFileSync(path.resolve(outputDir, fileOutput), `${renderIfPresent(themeRootVarItems, 'Colors')}${renderIfPresent(boxShadowVarItems, 'Box-shadow')}${renderIfPresent(radiusRootVarItems, 'Border-radius')}${renderIfPresent(radiusRootVarItems, 'Border-radius')}${renderIfPresent(fontRootVarItems, 'Typography')}${renderIfPresent(spacingRootVarItems, 'Spacing')}${renderIfPresent(backgroundImageRootVarItems, 'Background images')}${stringified}`);
         console.log(`File written: ${fileOutput}`); 
     } catch(err) {
         console.log('Error writing file')
