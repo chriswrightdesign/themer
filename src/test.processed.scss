@@ -1,14 +1,24 @@
 /* Start: Colors */
 :root {
-	--themer-dog-background: #f0f;
-	--themer-dog-border-color: rgba(0, 0, 0, 0.5);
-	--themer-llama-background: purple;
-	--themer-dog-dog-large-background: purple;
 	--themer-snake-color: purple;
 	--themer-giraffe-color: currentColor;
 	--themer-icon-fill: red;
 	--themer-icon-stroke: blue;
+}
+/* End: Colors */
+
+/* Start: Border */
+:root {
+	--themer-dog-border-color: rgba(0, 0, 0, 0.5);
 	--themer-icon-border-color: #f0f #d2d7df transparent;
+}
+/* End: Border */
+
+/* Start: Background */
+:root {
+	--themer-dog-background: #f0f;
+	--themer-llama-background: purple;
+	--themer-dog-dog-large-background: purple;
 }
 
 @media (min-width: 980px) {
@@ -17,7 +27,7 @@
     }
 }
 
-/* End: Colors */
+/* End: Background */
 
 /* Start: Box-shadow */
 :root {

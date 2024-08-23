@@ -5,7 +5,7 @@ import fs from 'fs';
 import path from 'path';
 import {Command, Option} from 'commander';
 import {constructRootPseudo, makeCommentsSafe, createCustomPropertyObject, generatePropertyValue} from './utils.mjs';
-import {declarationColorRegex, declarationBoxShadowRegex, declarationSpacingRegex, declarationFontRegex, declarationRadiusRegex} from './regexHelpers.mjs';
+import {declarationColorRegex, declarationBackgroundRegex, declarationBorderRegex, declarationBoxShadowRegex, declarationSpacingRegex, declarationFontRegex, declarationRadiusRegex} from './regexHelpers.mjs';
 
 const cwd = process.cwd();
 const program = new Command();
@@ -31,12 +31,14 @@ const content = fs.readFileSync(srcPath);
 // Replace any // with /* */ because postcss hates it
 const safeContent = makeCommentsSafe(content);
 
-const themeRootVarItems = [];
+const colorVarItems = [];
 const boxShadowVarItems = [];
 const spacingRootVarItems = [];
 const fontRootVarItems = [];
 const radiusRootVarItems = [];
-const backgroundImageRootVarItems = [];
+const backgroundImageVarItems = [];
+const backgroundVarItems = [];
+const borderVarItems = [];
 
 const renderIfPresent = (itemsArr, name) => {
     return itemsArr.length > 0 ? `/* Start: ${name} */
@@ -79,11 +81,19 @@ export const themer = () => {
     root.walkRules(function(rule) {
         // colors
         rule.walkDecls(declarationColorRegex, function(declaration) {
-            recordAndReassignCustomProps(declaration, themeRootVarItems);
+            recordAndReassignCustomProps(declaration, colorVarItems);
+        });
+
+        rule.walkDecls(declarationBackgroundRegex, function(declaration) {
+            recordAndReassignCustomProps(declaration, backgroundVarItems);
         });
 
         rule.walkDecls(declarationBoxShadowRegex, function(declaration) {
             recordAndReassignCustomProps(declaration, boxShadowVarItems);
+        });
+
+        rule.walkDecls(declarationBorderRegex, function(declaration) {
+            recordAndReassignCustomProps(declaration, borderVarItems);
         });
 
         // box shadow
@@ -104,14 +114,14 @@ export const themer = () => {
         });
 
         rule.walkDecls(/^background-image$/, function(declaration) {
-            recordAndReassignCustomProps(declaration, backgroundImageRootVarItems);
+            recordAndReassignCustomProps(declaration, backgroundImageVarItems);
         });
     });
 
     const stringified = root.toResult().css;
 
     try {
-        fs.writeFileSync(path.resolve(outputDir, fileOutput), `${renderIfPresent(themeRootVarItems, 'Colors')}${renderIfPresent(boxShadowVarItems, 'Box-shadow')}${renderIfPresent(radiusRootVarItems, 'Border-radius')}${renderIfPresent(fontRootVarItems, 'Typography')}${renderIfPresent(spacingRootVarItems, 'Spacing')}${renderIfPresent(backgroundImageRootVarItems, 'Background images')}${stringified}`);
+        fs.writeFileSync(path.resolve(outputDir, fileOutput), `${renderIfPresent(colorVarItems, 'Colors')}${renderIfPresent(borderVarItems, 'Border')}${renderIfPresent(backgroundVarItems, 'Background')}${renderIfPresent(boxShadowVarItems, 'Box-shadow')}${renderIfPresent(radiusRootVarItems, 'Border-radius')}${renderIfPresent(fontRootVarItems, 'Typography')}${renderIfPresent(spacingRootVarItems, 'Spacing')}${renderIfPresent(backgroundImageVarItems, 'Background images')}${stringified}`);
         console.log(`File written: ${fileOutput}`); 
     } catch(err) {
         console.log('Error writing file')

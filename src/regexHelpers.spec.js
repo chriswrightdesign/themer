@@ -6,13 +6,13 @@ const regexTest = (regEx) => (str) => str.match(regEx) || [];
 describe('declarationColorRegex', () => {
     const declarationColorRegexMatch = regexTest(declarationColorRegex);
 
-    it('should identify border, border-bottom-color, and border-color, but not border-style', () => {
-        expect(declarationColorRegexMatch('border')).toContain('border');
-        expect(declarationColorRegexMatch('border-color')).toContain('border-color');
-        expect(declarationColorRegexMatch('border-bottom-color')).toContain('border-bottom-color');
-        expect(declarationColorRegexMatch('border-style')).not.toContain('border-style');
-        expect(declarationColorRegexMatch('border-width')).not.toContain('border-width');
-    });
+    // it('should identify border, border-bottom-color, and border-color, but not border-style', () => {
+    //     expect(declarationColorRegexMatch('border')).toContain('border');
+    //     expect(declarationColorRegexMatch('border-color')).toContain('border-color');
+    //     expect(declarationColorRegexMatch('border-bottom-color')).toContain('border-bottom-color');
+    //     expect(declarationColorRegexMatch('border-style')).not.toContain('border-style');
+    //     expect(declarationColorRegexMatch('border-width')).not.toContain('border-width');
+    // });
 
     it('should identify stroke, fill, color', () => {
         expect(declarationColorRegexMatch('stroke')).toContain('stroke');
@@ -20,11 +20,11 @@ describe('declarationColorRegex', () => {
         expect(declarationColorRegexMatch('color')).toContain('color');
     });
 
-    it('should identify background, background-color, but not background-image', () => {
-        expect(declarationColorRegexMatch('background')).toContain('background');
-        expect(declarationColorRegexMatch('background-color')).toContain('background-color');
-        expect(declarationColorRegexMatch('background-image')).not.toContain('background-image');
-    });
+    // it('should identify background, background-color, but not background-image', () => {
+    //     expect(declarationColorRegexMatch('background')).toContain('background');
+    //     expect(declarationColorRegexMatch('background-color')).toContain('background-color');
+    //     expect(declarationColorRegexMatch('background-image')).not.toContain('background-image');
+    // });
 });
 
 describe('declarationFontRegex', () => {

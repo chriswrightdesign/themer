@@ -1,7 +1,11 @@
 /*
  * Searches declaration for properties which a color value will likely occur.
  */
-export const declarationColorRegex = /^(border$|border-color|border-\w+-color|border-(bottom$|top$|left$|right$)|fill$|stroke$|color|background-color|background$)/;
+export const declarationColorRegex = /^(fill$|stroke$|color)/;
+
+export const declarationBackgroundRegex = /^(background-color|background$)/;
+
+export const declarationBorderRegex = /^(border$|border-color|border-\w+-color|border-(bottom$|top$|left$|right$))/;
 
 export const declarationBoxShadowRegex = /^(box-shadow$)/;
 /**
