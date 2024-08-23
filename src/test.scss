@@ -5,6 +5,11 @@
     font-size: 16px;
 }
 
+@media (min-width: 600px){
+    .dog {
+        font-size: 17px;
+    }
+}
 
 @media (min-width: 980px) {
     .dog {
@@ -51,8 +56,7 @@
 }
 
 .complex-shadow {
-    box-shadow:
-    inset 0 -3em 3em rgb(0 200 0 / 30%),
+    box-shadow: inset 0 -3em 3em rgb(0 200 0 / 30%),
     0 0 0 2px white,
     0.3em 0.3em 1em rgb(200 0 0 / 60%);
 }

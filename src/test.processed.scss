@@ -16,6 +16,7 @@
 	--themer-dog-background: green;
     }
 }
+
 /* End: Colors */
 
 /* Start: Box-shadow */
@@ -32,23 +33,23 @@
 }
 /* End: Border-radius */
 
-/* Start: Border-radius */
-:root {
-	--themer-cat-border-radius: 6px;
-}
-/* End: Border-radius */
-
 /* Start: Typography */
 :root {
 	--themer-dog-font-size: 16px;
 	--themer-cat-font-size: 12px;
 }
 
+@media (min-width: 600px) {
+    :root {
+	--themer-dog-font-size: 17px;
+    }
+}
 @media (min-width: 980px) {
     :root {
 	--themer-dog-font-size: 18px;
     }
 }
+
 /* End: Typography */
 
 /* Start: Spacing */
@@ -67,6 +68,11 @@
     font-size: var(--themer-dog-font-size);
 }
 
+@media (min-width: 600px){
+    .dog {
+        font-size: var(--themer-dog-font-size);
+    }
+}
 
 @media (min-width: 980px) {
     .dog {
@@ -113,6 +119,5 @@
 }
 
 .complex-shadow {
-    box-shadow:
-    var(--themer-complex-shadow-box-shadow);
+    box-shadow: var(--themer-complex-shadow-box-shadow);
 }

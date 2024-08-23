@@ -111,7 +111,7 @@ export const themer = () => {
     const stringified = root.toResult().css;
 
     try {
-        fs.writeFileSync(path.resolve(outputDir, fileOutput), `${renderIfPresent(themeRootVarItems, 'Colors')}${renderIfPresent(boxShadowVarItems, 'Box-shadow')}${renderIfPresent(radiusRootVarItems, 'Border-radius')}${renderIfPresent(radiusRootVarItems, 'Border-radius')}${renderIfPresent(fontRootVarItems, 'Typography')}${renderIfPresent(spacingRootVarItems, 'Spacing')}${renderIfPresent(backgroundImageRootVarItems, 'Background images')}${stringified}`);
+        fs.writeFileSync(path.resolve(outputDir, fileOutput), `${renderIfPresent(themeRootVarItems, 'Colors')}${renderIfPresent(boxShadowVarItems, 'Box-shadow')}${renderIfPresent(radiusRootVarItems, 'Border-radius')}${renderIfPresent(fontRootVarItems, 'Typography')}${renderIfPresent(spacingRootVarItems, 'Spacing')}${renderIfPresent(backgroundImageRootVarItems, 'Background images')}${stringified}`);
         console.log(`File written: ${fileOutput}`); 
     } catch(err) {
         console.log('Error writing file')

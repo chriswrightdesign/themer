@@ -275,7 +275,7 @@ ${generateCustomProperties(customPropertiesWithNoAtRules)}
     :root {
 ${generateCustomProperties(getPropertysByMediaQueryParams(customPropertyList, mq))}
     }
-}`;
+}\n`;
     }, '')}` : ``}`
 }
 
