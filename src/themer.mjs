@@ -124,7 +124,7 @@ export const themer = () => {
         fs.writeFileSync(path.resolve(outputDir, fileOutput), `${renderIfPresent(colorVarItems, 'Colors')}${renderIfPresent(borderVarItems, 'Border')}${renderIfPresent(backgroundVarItems, 'Background')}${renderIfPresent(boxShadowVarItems, 'Box-shadow')}${renderIfPresent(radiusRootVarItems, 'Border-radius')}${renderIfPresent(fontRootVarItems, 'Typography')}${renderIfPresent(spacingRootVarItems, 'Spacing')}${renderIfPresent(backgroundImageVarItems, 'Background images')}${stringified}`);
         console.log(`File written: ${fileOutput}`); 
     } catch(err) {
-        console.log('Error writing file')
+        console.log('Error writing file: ', err);
     }
     
     

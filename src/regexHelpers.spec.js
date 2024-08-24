@@ -1,30 +1,52 @@
 import {describe, expect, test} from '@jest/globals';
-import {colorSyntaxRegex, declarationColorRegex, declarationFontRegex, declarationSpacingRegex} from './regexHelpers.mjs';
+import {
+    colorSyntaxRegex, 
+    declarationBorderRegex, 
+    declarationBackgroundRegex, 
+    declarationBoxShadowRegex,
+    declarationColorRegex, 
+    declarationFontRegex, 
+    declarationSpacingRegex
+} from './regexHelpers.mjs';
 
 const regexTest = (regEx) => (str) => str.match(regEx) || [];
 
+describe('declarationBoxShadowRegex', () => {
+    const declarationBoxShadowRegexMatch = regexTest(declarationBoxShadowRegex);
+    it('should identify box-shadow correctly', () => {
+        expect(declarationBoxShadowRegexMatch('box-shadow')).toContain('box-shadow');
+    });
+});
+describe('declarationBorderRegex', () => {
+    const declarationBorderRegexMatch = regexTest(declarationBorderRegex);
+    it('should identify border, border-bottom-color, and border-color, but not border-style', () => {
+        expect(declarationBorderRegexMatch('border')).toContain('border');
+        expect(declarationBorderRegexMatch('border-color')).toContain('border-color');
+        expect(declarationBorderRegexMatch('border-bottom-color')).toContain('border-bottom-color');
+        expect(declarationBorderRegexMatch('border-style')).not.toContain('border-style');
+        expect(declarationBorderRegexMatch('border-width')).not.toContain('border-width');
+        expect(declarationBorderRegexMatch('border-top-left-radius')).not.toContain('border-top-left-radius');
+    });
+});
+
+describe('declarationBackgroundRegex', () => {
+    const declarationBackgroundRegexMatch = regexTest(declarationBackgroundRegex);
+      it('should identify background, background-color, but not background-image', () => {
+        expect(declarationBackgroundRegexMatch('background')).toContain('background');
+        expect(declarationBackgroundRegexMatch('background-color')).toContain('background-color');
+        expect(declarationBackgroundRegexMatch('background-image')).not.toContain('background-image');
+    });
+});
+
+ 
 describe('declarationColorRegex', () => {
     const declarationColorRegexMatch = regexTest(declarationColorRegex);
-
-    // it('should identify border, border-bottom-color, and border-color, but not border-style', () => {
-    //     expect(declarationColorRegexMatch('border')).toContain('border');
-    //     expect(declarationColorRegexMatch('border-color')).toContain('border-color');
-    //     expect(declarationColorRegexMatch('border-bottom-color')).toContain('border-bottom-color');
-    //     expect(declarationColorRegexMatch('border-style')).not.toContain('border-style');
-    //     expect(declarationColorRegexMatch('border-width')).not.toContain('border-width');
-    // });
 
     it('should identify stroke, fill, color', () => {
         expect(declarationColorRegexMatch('stroke')).toContain('stroke');
         expect(declarationColorRegexMatch('fill')).toContain('fill');
         expect(declarationColorRegexMatch('color')).toContain('color');
     });
-
-    // it('should identify background, background-color, but not background-image', () => {
-    //     expect(declarationColorRegexMatch('background')).toContain('background');
-    //     expect(declarationColorRegexMatch('background-color')).toContain('background-color');
-    //     expect(declarationColorRegexMatch('background-image')).not.toContain('background-image');
-    // });
 });
 
 describe('declarationFontRegex', () => {

@@ -1,9 +1,11 @@
 /* Start: Colors */
 :root {
-	--themer-snake-color: purple;
-	--themer-giraffe-color: currentColor;
-	--themer-icon-fill: red;
+	--themer-llama-color: #fafafb;
+	--themer-zebra-color: #ff0;
 	--themer-icon-stroke: blue;
+	--themer-giraffe-color: currentColor;
+	--themer-snake-color: purple;
+	--themer-icon-fill: red;
 }
 /* End: Colors */
 
@@ -45,8 +47,8 @@
 
 /* Start: Typography */
 :root {
-	--themer-dog-font-size: 16px;
 	--themer-cat-font-size: 12px;
+	--themer-dog-font-size: 16px;
 }
 
 @media (min-width: 600px) {
@@ -64,10 +66,10 @@
 
 /* Start: Spacing */
 :root {
-	--themer-cat-padding: 4px;
-	--themer-dog-dog-large-margin: 8px;
 	--themer-dog-dog-large-margin-left: 16px;
 	--themer-giraffe-padding: 16px;
+	--themer-cat-padding: 4px;
+	--themer-dog-dog-large-margin: 8px;
 }
 /* End: Spacing */
 
@@ -101,6 +103,7 @@
 
 .llama {
     background: var(--themer-llama-background);
+    color: var(--themer-llama-color);
 }
 
 .dog.dog--large {
@@ -120,6 +123,10 @@
     background: transparent;
     background-position-y: 0;
     padding: var(--themer-giraffe-padding);
+}
+
+.zebra {
+    color: var(--themer-zebra-color);
 }
 
 .icon {

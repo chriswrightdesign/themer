@@ -205,7 +205,7 @@ export const writeCSV = ({data, outputFile, outputDir, headings = 'Value, Occurr
         fs.writeFileSync(output, dataOutput, 'utf8');
         console.log(`CSV written: ${outputFile}`);
     } catch(err) {
-        console.log('Error writing file')
+        console.log('Error writing file: ', err);
     }
 
     
@@ -255,6 +255,26 @@ export const getPropertysByMediaQueryParams = (customPropertyList, params) => {
 }
 
 /**
+ * 
+ * @param {string} value 
+ * @param {string} propertyType 
+ * @returns {number}
+ */
+const createComparisonValue = (value, propertyType) => {
+
+    const matchNumber = value.match((/d+/));
+
+    if (!matchNumber) {
+        return value;
+    };
+
+    const [numberValue] = matchNumber;
+
+    const num = Number(numberValue);
+    return num;
+}
+
+/**
  * Constructs a :root {} to be used within a css file
  * @param {{name: string, value: string, originalValue: string, propertyType: string, originalSelector: string, important?: boolean, parentAtRule: null | string, params: null | string}[]} customPropertyList
  * @param {string} cssFile 
@@ -264,6 +284,23 @@ export const constructRootPseudo = (customPropertyList) => {
 
     const customPropertiesWithNoAtRules = customPropertyList.filter((customProperty) => {
         return customProperty.parentAtRule === null;
+    }).sort((a, b) => {
+
+        const {value: aValue, propertyType} = a;
+        const {value: bValue} = b;
+
+        const comparableValueA = createComparisonValue(aValue, propertyType); 
+        const comparableValueB = createComparisonValue(bValue, propertyType);
+
+        if (comparableValueA > comparableValueB) { 
+            return 1;
+        }
+
+        if (comparableValueA < comparableValueB) {
+            return -1;
+        }
+
+        return 0;
     });
 
    const mediaQueries = getMediaQueries(customPropertyList);
