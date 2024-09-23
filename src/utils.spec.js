@@ -1,5 +1,5 @@
 import {describe, expect, test} from '@jest/globals';
-import {makeCommentsSafe, parseSelector, getParsedPropName, createCustomPropertyName, createCustomPropertyObject, getPropertysByMediaQueryParams, getMediaQueries, generateCustomProperties, constructRootPseudo, generatePropertyValue} from './utils.mjs';
+import {makeCommentsSafe, parseSelector, getParsedPropName, createCustomPropertyName, createCustomPropertyObject, getPropertiesByMediaQueryParams, getMediaQueries, generateCustomProperties, constructRootPseudo, generatePropertyValue} from './utils.mjs';
 
 describe('makeCommentsSafe', () => {
     it('should take // comment and replace with /* comment */', () => {
@@ -200,9 +200,9 @@ describe ('createCustomPropertyObject', () => {
     })
 });
 
-describe('getPropertysByMediaQueryParams', () => {
+describe('getPropertiesByMediaQueryParams', () => {
     it('should return any custom props from the list that match the params given', () => {
-        expect(getPropertysByMediaQueryParams([{params: '(min-width: 360px)'}], `(min-width: 360px)`)[0].params).toBe('(min-width: 360px)');
+        expect(getPropertiesByMediaQueryParams([{name: 'bob', params: '(min-width: 360px)'}], `(min-width: 360px)`)[0].params).toBe('(min-width: 360px)');
     });
 });
 
