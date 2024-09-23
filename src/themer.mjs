@@ -80,7 +80,7 @@ const recordAndReassignCustomProps = (declaration, recordArray) => {
     }
 
     const existsAlready = recordArray.some((record) => {
-        return record.name === variable.name;
+        return record.name === variable.name && record.value === variable.value;
     })
 
     if (!existsAlready) {

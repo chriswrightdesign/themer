@@ -21,6 +21,13 @@
 	--themer-llama-background: purple;
 	--themer-dog-dog-large-background: purple;
 }
+
+@media (min-width: 980px) {
+    :root {
+	--themer-dog-background: green;
+    }
+}
+
 /* End: Background */
 
 /* Start: Box-shadow */
@@ -52,6 +59,18 @@
 	--themer-font-stack-georgia: Georgia, 'Times New Roman', Times, serif;
 	--themer-font-style-italic: italic;
 }
+
+@media (min-width: 600px) {
+    :root {
+	--themer-dog-font-size: 17px;
+    }
+}
+@media (min-width: 980px) {
+    :root {
+	--themer-dog-font-size: 18px;
+    }
+}
+
 /* End: Typography */
 
 /* Start: Spacing */
