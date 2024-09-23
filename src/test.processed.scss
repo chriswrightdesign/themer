@@ -76,9 +76,17 @@
 /* Start: Spacing */
 :root {
 	--themer-spacing-16px: 16px;
+	--themer-spacing-2px: 2px;
 	--themer-spacing-4px: 4px;
 	--themer-spacing-8px: 8px;
 }
+
+@media (min-width: 600px) {
+    :root {
+
+    }
+}
+
 /* End: Spacing */
 
 
@@ -86,11 +94,13 @@
     background: var(--themer-dog-background);
     border: 1px solid var(--themer-dog-border-color);
     font-size: var(--themer-dog-font-size);
+    margin: var(--themer-spacing-2px);
 }
 
 @media (min-width: 600px){
     .dog {
         font-size: var(--themer-dog-font-size);
+        margin: var(--themer-spacing-4px);
     }
 }
 

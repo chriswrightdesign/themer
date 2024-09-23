@@ -273,9 +273,9 @@ export const generateCustomProperties = (customPropsArr, spacingValue = '') => {
  * @param {string} params 
  * @returns 
  */
-export const getPropertysByMediaQueryParams = (customPropertyList, params) => {
+export const getPropertiesByMediaQueryParams = (customPropertyList, params) => {
     const filteredProperties = customPropertyList.filter((customProp) => {
-        return customProp.params === params;
+        return customProp.params === params && !customProp.name.includes('spacing');
     });
 
     return filteredProperties;
@@ -310,7 +310,7 @@ const createComparisonValue = (value, propertyType) => {
 export const constructRootPseudo = (customPropertyList) => {
 
     const customPropertiesWithNoAtRules = customPropertyList.filter((customProperty) => {
-        return customProperty.parentAtRule === null;
+        return customProperty.parentAtRule === null || customProperty.name.includes('spacing');
     }).sort((a, b) => {
 
         const {value: aValue, propertyType} = a;
@@ -337,7 +337,7 @@ ${generateCustomProperties(customPropertiesWithNoAtRules)}
 }${mediaQueries.length > 0 ? `\n\n${mediaQueries.reduce((acc, mq) => {
     return `${acc}@media ${mq} {
     :root {
-${generateCustomProperties(getPropertysByMediaQueryParams(customPropertyList, mq))}
+${generateCustomProperties(getPropertiesByMediaQueryParams(customPropertyList, mq))}
     }
 }\n`;
     }, '')}` : ``}`
