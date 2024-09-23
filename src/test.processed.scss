@@ -3,7 +3,6 @@
 	--themer-llama-color: #fafafb;
 	--themer-zebra-color: #ff0;
 	--themer-icon-stroke: blue;
-	--themer-giraffe-color: currentColor;
 	--themer-snake-color: purple;
 	--themer-icon-fill: red;
 }
@@ -22,13 +21,6 @@
 	--themer-llama-background: purple;
 	--themer-dog-dog-large-background: purple;
 }
-
-@media (min-width: 980px) {
-    :root {
-	--themer-dog-background: green;
-    }
-}
-
 /* End: Background */
 
 /* Start: Box-shadow */
@@ -41,7 +33,10 @@
 
 /* Start: Border-radius */
 :root {
-	--themer-cat-border-radius: 6px;
+	--themer-snake-border-radius: 0px 0px 4px;
+	--themer-border-radius-100-percent: 100%;
+	--themer-border-radius-50-percent: 50%;
+	--themer-border-radius-6px: 6px;
 }
 /* End: Border-radius */
 
@@ -49,27 +44,21 @@
 :root {
 	--themer-cat-font-size: 12px;
 	--themer-dog-font-size: 16px;
+	--themer-font-stack-lucida: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	--themer-snake-line-height: 1.2;
+	--themer-font-weight-400: 400;
+	--themer-font-weight-500: 500;
+	--themer-font-stack-arial: Arial, Helvetica, sans-serif;
+	--themer-font-stack-georgia: Georgia, 'Times New Roman', Times, serif;
+	--themer-font-style-italic: italic;
 }
-
-@media (min-width: 600px) {
-    :root {
-	--themer-dog-font-size: 17px;
-    }
-}
-@media (min-width: 980px) {
-    :root {
-	--themer-dog-font-size: 18px;
-    }
-}
-
 /* End: Typography */
 
 /* Start: Spacing */
 :root {
-	--themer-dog-dog-large-margin-left: 16px;
-	--themer-giraffe-padding: 16px;
-	--themer-cat-padding: 4px;
-	--themer-dog-dog-large-margin: 8px;
+	--themer-spacing-16px: 16px;
+	--themer-spacing-4px: 4px;
+	--themer-spacing-8px: 8px;
 }
 /* End: Spacing */
 
@@ -95,8 +84,8 @@
 
 .cat {
     border: 1px solid;
-    border-radius: var(--themer-cat-border-radius);
-    padding: var(--themer-cat-padding);
+    border-radius: var(--themer-border-radius-6px);
+    padding: var(--themer-spacing-4px);
     font-size: var(--themer-cat-font-size);
     background: none;
 }
@@ -104,25 +93,38 @@
 .llama {
     background: var(--themer-llama-background);
     color: var(--themer-llama-color);
+    font-family:var(--themer-font-stack-lucida);
 }
 
 .dog.dog--large {
     background: var(--themer-dog-dog-large-background) !important;
     width: 300px;
-    margin: var(--themer-dog-dog-large-margin);
-    margin-left: var(--themer-dog-dog-large-margin-left);
+    line-height: 1;
+    margin: var(--themer-spacing-8px);
+    font-weight: var(--themer-font-weight-400);
+    margin-left: var(--themer-spacing-16px);
+    font-family: var(--themer-font-stack-georgia);
 }
 
 .snake {
+    margin: 0;
+    font-style: var(--themer-font-style-italic);
+    font-family: var(--themer-font-stack-arial);
+    padding: 0px;
+    font-weight: var(--themer-font-weight-500);
+    line-height: var(--themer-snake-line-height);
     box-shadow: none;
     color: var(--themer-snake-color);
+    border-radius: var(--themer-snake-border-radius);
 }
 
 .giraffe {
-    color: var(--themer-giraffe-color);
+    font-weight: var(--themer-font-weight-400);
+    color: currentColor;
     background: transparent;
     background-position-y: 0;
-    padding: var(--themer-giraffe-padding);
+    padding: var(--themer-spacing-16px);
+    font-family: var(--themer-font-stack-arial);
 }
 
 .zebra {
@@ -133,8 +135,10 @@
     fill: var(--themer-icon-fill);
     stroke: var(--themer-icon-stroke);
     border-color: var(--themer-icon-border-color);
+    border-radius: var(--themer-border-radius-50-percent);
 }
 
 .complex-shadow {
+    border-radius: var(--themer-border-radius-100-percent);
     box-shadow: var(--themer-complex-shadow-box-shadow);
 }

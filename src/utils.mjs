@@ -1,5 +1,6 @@
 import path from 'path';
 import fs from 'fs';
+import {declarationRadiusRegex} from './regexHelpers.mjs';
 
 const borderProperties = ['border', 'border-top', 'border-bottom', 'border-left', 'border-right'];
 const valueDisallowList = ['transparent', 'none', 'initial', 'auto', 'inherit'];
@@ -100,14 +101,40 @@ export const parseSelector = (selector) => {
     return selectorWithoutStar;
 };
 
+const removeIllegalCharactersFromProperyName = (property) => {
+    return property.replace(/%/, '-percent');
+}
+
 /**
  * Takes a series of PostCSS inputs and produces a custom property name with a prefix.
- * @param {{prefix: string, selector: string, prop: string, parent: {parent: {selector: string}}}} props
+ * @param {{prefix: string, selector: string, prop: string, value: string, parent: {parent: {selector: string}}}} props
  * @returns string
  */
-export const createCustomPropertyName = ({prefix, selector, prop, parent}) => {
+export const createCustomPropertyName = ({prefix, selector, prop, parent, value}) => {
 
     const parsedProp = getParsedPropName(prop);
+
+    // consolidate border-radius, ignore complex border-radius
+    if (parsedProp.match(declarationRadiusRegex) && !value.includes(' ')) {
+
+        return `--${prefix}-border-radius-${removeIllegalCharactersFromProperyName(value)}`;
+    }
+
+    if (parsedProp.match(/^(padding(-\w+)?|margin(-\w+)?)/)) {
+        return `--${prefix}-spacing-${value}`;
+    }
+
+    if (parsedProp === 'font-weight' || parsedProp === 'font-style') {
+        return `--${prefix}-${parsedProp}-${value}`;
+    }
+
+    if (parsedProp === 'font-family') {
+        const fontValueParsed = value.replace(`'`, '');
+        const matchedFontWord = fontValueParsed.match(/(\w+)/g);
+
+        return `--${prefix}-font-stack-${matchedFontWord[0].toLowerCase()}`;
+
+    }
 
     const appendedParent = parent.parent.selector ? `${parseSelector(parent.parent.selector)}__` : ``;
 
@@ -126,7 +153,7 @@ export const createCustomPropertyObject = ({prefix, prop, value, important, pare
 
     const {selector} = parent;
 
-    const objKey = createCustomPropertyName({prefix, selector, prop, parent});
+    const objKey = createCustomPropertyName({prefix, selector, prop, parent, value});
 
     const parsedValue = borderProperties.includes(prop) ? value.split(' ').slice(2).join(' ') : value;
 

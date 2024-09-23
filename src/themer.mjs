@@ -46,12 +46,29 @@ ${constructRootPseudo(itemsArr)}
 /* End: ${name} */\n\n` : '';
 }
 
+const zeroValues = ['0', '0px', '0rem', '0 auto', '0em', '0 auto 0'];
+
+// properties with special cases
+// font-weight
+// margin
+
+
 const recordAndReassignCustomProps = (declaration, recordArray) => {
 
     const {prop, value, important, parent} = declaration;
 
     /* Do not continue if we see a var() in the value */
-    if (value.trim().includes('var')) {
+    if (value.trim().includes('var') || value === 'currentColor') {
+        return;
+    }
+
+    /* Line heights of 1 aren't useful */
+    if (prop === 'line-height' && value === '1') {
+        return;
+    }
+
+    /* Do not include zero values */
+    if (zeroValues.includes(value)) {
         return;
     }
 
@@ -62,7 +79,13 @@ const recordAndReassignCustomProps = (declaration, recordArray) => {
         return;
     }
 
-    recordArray.push(variable);
+    const existsAlready = recordArray.some((record) => {
+        return record.name === variable.name;
+    })
+
+    if (!existsAlready) {
+        recordArray.push(variable);
+    }
 
     declaration.assign({ 
         prop, 

@@ -16,7 +16,7 @@ export const declarationSpacingRegex = /^(padding(-\w+)?|margin(-\w+)?|gap|row-g
 /**
  * Searches declaration for properties which font related properties will likely occur.
  */
-export const declarationFontRegex = /^(font(-\w+)?|line-height|letter-spacing)/;
+export const declarationFontRegex = /^(font(-\w+)?|line-height)/;
 
 /**
  * Searches declaration for any border-radius syntax.
