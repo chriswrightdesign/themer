@@ -11,6 +11,17 @@ describe('makeCommentsSafe', () => {
         expect(makeCommentsSafe(cssLine)).not.toContain('//');
     });
 
+    it('should not damage the // comment line', () => {
+        const cssLine = `
+        // this is my selector
+        .selector {
+            margin: 0;
+        }`;
+
+        expect(makeCommentsSafe(cssLine)).toContain('/* this is my selector */');
+
+    })
+
     it('should not replace a url in a comment', () => {
         const comment = `/*
         * http://harvesthq.github.com/chosen/

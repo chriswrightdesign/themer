@@ -44,7 +44,7 @@ export const getParentAtRule = (parent) => {
  * @returns {string}
  */
 export const makeCommentsSafe = (cssFile) => {
-    return cssFile.toString().replace(/(\/\/\s).(.+)/gi, `/* $2 */`);
+    return cssFile.toString().replace(/(\/\/\s)(.+)/gi, `/* $2 */`);
 }
 
 /**
