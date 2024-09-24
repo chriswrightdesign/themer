@@ -49,8 +49,8 @@
 
 /* Start: Typography */
 :root {
-	--themer-cat-font-size: 12px;
-	--themer-dog-font-size: 16px;
+	--themer-font-size-12px: 12px;
+	--themer-font-size-16px: 16px;
 	--themer-font-stack-lucida: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	--themer-snake-line-height: 1.2;
 	--themer-font-weight-400: 400;
@@ -62,12 +62,12 @@
 
 @media (min-width: 600px) {
     :root {
-	--themer-dog-font-size: 17px;
+	--themer-font-size-17px: 17px;
     }
 }
 @media (min-width: 980px) {
     :root {
-	--themer-dog-font-size: 18px;
+	--themer-font-size-18px: 18px;
     }
 }
 
@@ -96,13 +96,13 @@
 .dog {
     background: var(--themer-dog-background);
     border: 1px solid var(--themer-dog-border-color);
-    font-size: var(--themer-dog-font-size);
+    font-size: var(--themer-font-size-16px);
     margin: var(--themer-spacing-2px);
 }
 
 @media (min-width: 600px){
     .dog {
-        font-size: var(--themer-dog-font-size);
+        font-size: var(--themer-font-size-17px);
         margin: var(--themer-spacing-4px);
     }
 }
@@ -110,7 +110,7 @@
 @media (min-width: 980px) {
     .dog {
         background: var(--themer-dog-background);
-        font-size: var(--themer-dog-font-size);
+        font-size: var(--themer-font-size-18px);
     }
 }
 
@@ -118,7 +118,7 @@
     border: 1px solid;
     border-radius: var(--themer-border-radius-6px);
     padding: var(--themer-spacing-4px);
-    font-size: var(--themer-cat-font-size);
+    font-size: var(--themer-font-size-12px);
     background: none;
 }
 
