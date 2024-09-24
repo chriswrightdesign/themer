@@ -76,6 +76,7 @@
 /* Start: Spacing */
 :root {
 	--themer-icon-margin: -10px 0 21px;
+	--themer-spacing-negative-16px: -16px;
 	--themer-spacing-1pt3em: 1.3em;
 	--themer-spacing-16px: 16px;
 	--themer-spacing-2px: 2px;
@@ -154,7 +155,7 @@
     color: currentColor;
     background: transparent;
     background-position-y: 0;
-    padding: var(--themer-spacing-16px);
+    padding: var(--themer-spacing-negative-16px);
     font-family: var(--themer-font-stack-arial);
 }
 
