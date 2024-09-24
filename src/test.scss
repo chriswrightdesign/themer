@@ -74,10 +74,11 @@
     stroke: blue;
     border-color: #f0f #d2d7df transparent;
     border-radius: 50%;
+    margin: -10px 0 21px;
 }
 
 .complex-shadow {
-    border-radius: 100%;
+    border-radius: 100px/10px;
     box-shadow: inset 0 -3em 3em rgb(0 200 0 / 30%),
     0 0 0 2px white,
     0.3em 0.3em 1em rgb(200 0 0 / 60%);

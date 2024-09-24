@@ -102,7 +102,7 @@ export const parseSelector = (selector) => {
 };
 
 const removeIllegalCharactersFromProperyName = (property) => {
-    return property.replace(/%/, '-percent');
+    return property.replace(/%/, '-percent').replace(/\//, '-');
 }
 
 /**
@@ -120,8 +120,8 @@ export const createCustomPropertyName = ({prefix, selector, prop, parent, value}
         return `--${prefix}-border-radius-${removeIllegalCharactersFromProperyName(value)}`;
     }
 
-    if (parsedProp.match(/^(padding(-\w+)?|margin(-\w+)?)/)) {
-        return `--${prefix}-spacing-${value}`;
+    if (parsedProp.match(/^(padding(-\w+)?|margin(-\w+)?)/) && !value.includes(' ')) {
+        return `--${prefix}-spacing-${removeIllegalCharactersFromProperyName(value)}`;
     }
 
     if (parsedProp === 'font-weight' || parsedProp === 'font-style') {

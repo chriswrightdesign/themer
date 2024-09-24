@@ -41,7 +41,7 @@
 /* Start: Border-radius */
 :root {
 	--themer-snake-border-radius: 0px 0px 4px;
-	--themer-border-radius-100-percent: 100%;
+	--themer-border-radius-100px-10px: 100px/10px;
 	--themer-border-radius-50-percent: 50%;
 	--themer-border-radius-6px: 6px;
 }
@@ -75,6 +75,7 @@
 
 /* Start: Spacing */
 :root {
+	--themer-icon-margin: -10px 0 21px;
 	--themer-spacing-16px: 16px;
 	--themer-spacing-2px: 2px;
 	--themer-spacing-4px: 4px;
@@ -165,9 +166,10 @@
     stroke: var(--themer-icon-stroke);
     border-color: var(--themer-icon-border-color);
     border-radius: var(--themer-border-radius-50-percent);
+    margin: var(--themer-icon-margin);
 }
 
 .complex-shadow {
-    border-radius: var(--themer-border-radius-100-percent);
+    border-radius: var(--themer-border-radius-100px-10px);
     box-shadow: var(--themer-complex-shadow-box-shadow);
 }
