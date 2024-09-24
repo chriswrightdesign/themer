@@ -76,6 +76,7 @@
 /* Start: Spacing */
 :root {
 	--themer-icon-margin: -10px 0 21px;
+	--themer-spacing-1pt3em: 1.3em;
 	--themer-spacing-16px: 16px;
 	--themer-spacing-2px: 2px;
 	--themer-spacing-4px: 4px;
@@ -159,6 +160,7 @@
 
 .zebra {
     color: var(--themer-zebra-color);
+    padding: var(--themer-spacing-1pt3em);
 }
 
 .icon {

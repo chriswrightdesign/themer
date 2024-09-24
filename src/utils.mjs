@@ -102,7 +102,7 @@ export const parseSelector = (selector) => {
 };
 
 const removeIllegalCharactersFromProperyName = (property) => {
-    return property.replace(/%/, '-percent').replace(/\//, '-');
+    return property.replace(/%/, '-percent').replace(/\//, '-').replace(/\./, 'pt');
 }
 
 /**
