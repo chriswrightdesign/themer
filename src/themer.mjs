@@ -5,7 +5,18 @@ import fs from 'fs';
 import path from 'path';
 import {Command, Option} from 'commander';
 import {constructRootPseudo, makeCommentsSafe, createCustomPropertyObject, generatePropertyValue} from './utils.mjs';
-import {declarationColorRegex, declarationBackgroundRegex, declarationBorderRegex, declarationBoxShadowRegex, declarationSpacingRegex, declarationFontRegex, declarationRadiusRegex} from './regexHelpers.mjs';
+import {
+    declarationColorRegex, 
+    declarationBackgroundRegex, 
+    declarationBorderRegex, 
+    declarationBoxShadowRegex,
+    declarationSpacingRegex, 
+    declarationFontSizeRegex,
+    declarationFontFamilyRegex,
+    declarationLineHeightRegex,
+    declarationRadiusRegex,
+    declarationBackgroundImageRegex
+} from './regexHelpers.mjs';
 
 const cwd = process.cwd();
 const program = new Command();
@@ -35,7 +46,9 @@ const safeContent = makeCommentsSafe(content);
 const colorVarItems = [];
 const boxShadowVarItems = [];
 const spacingRootVarItems = [];
-const fontRootVarItems = [];
+const fontFamilyVarItems = [];
+const fontSizeVarItems = [];
+const fontLineHeightVarItems = [];
 const radiusRootVarItems = [];
 const backgroundImageVarItems = [];
 const backgroundVarItems = [];
@@ -123,9 +136,19 @@ export const themer = () => {
             recordAndReassignCustomProps(declaration, spacingRootVarItems);
         });
 
-        // fonts
-        rule.walkDecls(declarationFontRegex, function(declaration) {
-            recordAndReassignCustomProps(declaration, fontRootVarItems);
+        // font family
+        rule.walkDecls(declarationFontFamilyRegex, function(declaration) {
+            recordAndReassignCustomProps(declaration, fontFamilyVarItems);
+        });
+
+        // font size
+        rule.walkDecls(declarationFontSizeRegex, function(declaration) {
+            recordAndReassignCustomProps(declaration, fontSizeVarItems);
+        });
+
+        // line-height
+        rule.walkDecls(declarationLineHeightRegex, function(declaration) {
+            recordAndReassignCustomProps(declaration, fontLineHeightVarItems);
         });
 
         // border-radius
@@ -133,7 +156,7 @@ export const themer = () => {
             recordAndReassignCustomProps(declaration, radiusRootVarItems);
         });
 
-        rule.walkDecls(/^background-image$/, function(declaration) {
+        rule.walkDecls(declarationBackgroundImageRegex, function(declaration) {
             recordAndReassignCustomProps(declaration, backgroundImageVarItems);
         });
     });

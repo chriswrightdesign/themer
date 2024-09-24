@@ -4,8 +4,7 @@ import {
     declarationBorderRegex, 
     declarationBackgroundRegex, 
     declarationBoxShadowRegex,
-    declarationColorRegex, 
-    declarationFontRegex, 
+    declarationColorRegex,
     declarationSpacingRegex
 } from './regexHelpers.mjs';
 
@@ -46,21 +45,6 @@ describe('declarationColorRegex', () => {
         expect(declarationColorRegexMatch('stroke')).toContain('stroke');
         expect(declarationColorRegexMatch('fill')).toContain('fill');
         expect(declarationColorRegexMatch('color')).toContain('color');
-    });
-});
-
-describe('declarationFontRegex', () => {
-    const declarationFontRegexMatch = regexTest(declarationFontRegex);
-
-    it('should identify font-family, font, font-weight, font-size', () => {
-        expect(declarationFontRegexMatch('font')).toContain('font');
-        expect(declarationFontRegexMatch('font-family')).toContain('font-family');
-        expect(declarationFontRegexMatch('font-weight')).toContain('font-weight');
-        expect(declarationFontRegexMatch('font-size')).toContain('font-size');
-    });
-
-    it('should identify line-height', () => {
-        expect(declarationFontRegexMatch('line-height')).toContain('line-height');
     });
 });
 

@@ -5,6 +5,8 @@ export const declarationColorRegex = /^(fill$|stroke$|color)/;
 
 export const declarationBackgroundRegex = /^(background-color|background$)/;
 
+export const declarationBackgroundImageRegex = /^(background-image$)/;
+
 export const declarationBorderRegex = /^(border$|border-color|border-\w+-color|border-(bottom$|top$|left$|right$))/;
 
 export const declarationBoxShadowRegex = /^(box-shadow$)/;
@@ -16,7 +18,12 @@ export const declarationSpacingRegex = /^(padding(-\w+)?|margin(-\w+)?|gap|row-g
 /**
  * Searches declaration for properties which font related properties will likely occur.
  */
-export const declarationFontRegex = /^(font(-\w+)?|line-height)/;
+
+export const declarationLineHeightRegex = /^(line-height)/;
+
+export const declarationFontFamilyRegex = /^(font-family)/;
+
+export const declarationFontSizeRegex = /^(font-size)/;
 
 /**
  * Searches declaration for any border-radius syntax.
