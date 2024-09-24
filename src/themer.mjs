@@ -13,7 +13,7 @@ const program = new Command();
 program
 .addOption(new Option('-i, --input <file>', 'file to process'))
 .addOption(new Option('-o, --outputdir <dir>', 'directory output').default(cwd))
-.addOption(new Option('-r, --replace [type]', 'replace existing file').default('false'))
+.addOption(new Option('-r, --replace [type]', 'replace existing file'))
 .addOption(new Option('-p, --prefix <string>', 'prefix for all variables').default('themer'));
 
 program.parse();
