@@ -1,6 +1,6 @@
 {
   "name": "@chriswrightdesign/themer",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "A project to help extract values into custom properties in CSS",
   "main": "src/themer.mjs",
   "type": "module",
@@ -15,8 +15,8 @@
     "src/themer.mjs"
   ],
   "bin": {
-    "themer": "./src/themer.mjs",
-    "reporter": "./src/reporter.mjs"
+    "themer": "src/themer.mjs",
+    "reporter": "src/reporter.mjs"
   },
   "repository": {
     "type": "git",
