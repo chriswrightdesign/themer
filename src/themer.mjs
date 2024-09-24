@@ -3,6 +3,7 @@
 import postcss from 'postcss';
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import {Command, Option} from 'commander';
 import {constructRootPseudo, makeCommentsSafe, createCustomPropertyObject, generatePropertyValue} from './utils.mjs';
 import {
@@ -18,12 +19,17 @@ import {
     declarationBackgroundImageRegex
 } from './regexHelpers.mjs';
 
-const cwd = process.cwd();
 const program = new Command();
+
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const rootDir = __dirname;
+
 
 program
 .addOption(new Option('-i, --input <file>', 'file to process'))
-.addOption(new Option('-o, --outputdir <dir>', 'directory output').default(cwd))
+.addOption(new Option('-o, --outputdir <dir>', 'directory output').default(rootDir))
 .addOption(new Option('-r, --replace [type]', 'replace existing file'))
 .addOption(new Option('-p, --prefix <string>', 'prefix for all variables').default('themer'));
 
@@ -37,7 +43,9 @@ const fileOutput = options.replace ? fileInput : fileInput.replace(/.((s|p?)css)
 const prefix = options.prefix;
 const outputDir = options.outputdir;
 
-const srcPath = path.resolve(process.cwd(), fileInput);
+
+
+const srcPath = path.resolve(rootDir, fileInput);
 const content = fs.readFileSync(srcPath);
 
 // Replace any // with /* */ because postcss hates it
@@ -60,8 +68,9 @@ ${constructRootPseudo(itemsArr)}
 /* End: ${name} */\n\n` : '';
 }
 
-const zeroValues = ['0', '0px', '0rem', '0 auto', '0em', '0 auto 0'];
+const shorthandSpacingProps = ['margin', 'padding'];
 
+const zeroValues = ['0', '0px', '0rem', '0 auto', '0em', '0 auto 0'];
 
 const recordAndReassignCustomProps = (declaration, recordArray) => {
 
@@ -81,6 +90,8 @@ const recordAndReassignCustomProps = (declaration, recordArray) => {
     if (zeroValues.includes(value)) {
         return;
     }
+
+    // handle the value
 
     const variable = createCustomPropertyObject({prefix, prop, value, important, parent});
 
