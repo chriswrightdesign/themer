@@ -20,8 +20,6 @@ program.parse();
 
 const options = program.opts();
 
-console.log('options: ', options);
-
 const fileInput = options.input;
 const fileOutput = options.replace ? fileInput : fileInput.replace(/.((s|p?)css)/, `.processed.$1`);
 
