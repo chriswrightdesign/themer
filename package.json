@@ -1,6 +1,6 @@
 {
   "name": "@chriswrightdesign/themer",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "A project to help extract values into custom properties in CSS",
   "main": "src/themer.mjs",
   "type": "module",
