@@ -1,0 +1,84 @@
+
+.dog {
+    background: #f0f;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    font-size: 16px;
+    margin: 2px;
+}
+
+@media (min-width: 600px){
+    .dog {
+        font-size: 17px;
+        margin: 4px;
+    }
+}
+
+@media (min-width: 980px) {
+    .dog {
+        background: green;
+        font-size: 18px;
+    }
+}
+
+.cat {
+    border: 1px solid;
+    border-radius: 6px;
+    padding: 4px;
+    font-size: 12px;
+    background: none;
+}
+
+.llama {
+    background: purple;
+    color: #fafafb;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.dog.dog--large {
+    background: purple !important;
+    width: 300px;
+    line-height: 1;
+    margin: 8px;
+    font-weight: 400;
+    margin-left: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.snake {
+    margin: 0;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0px;
+    font-weight: 500;
+    line-height: 1.2;
+    box-shadow: none;
+    color: purple;
+    border-radius: 0px 0px 4px;
+}
+
+.giraffe {
+    font-weight: 400;
+    color: currentColor;
+    background: transparent;
+    background-position-y: 0;
+    padding: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.zebra {
+    color: #ff0;
+}
+
+.icon {
+    fill: red;
+    stroke: blue;
+    border-color: #f0f #d2d7df transparent;
+    border-radius: 50%;
+}
+
+.complex-shadow {
+    border-radius: 100%;
+    box-shadow: inset 0 -3em 3em rgb(0 200 0 / 30%),
+    0 0 0 2px white,
+    0.3em 0.3em 1em rgb(200 0 0 / 60%);
+}

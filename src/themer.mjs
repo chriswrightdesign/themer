@@ -13,14 +13,17 @@ const program = new Command();
 program
 .addOption(new Option('-i, --input <file>', 'file to process'))
 .addOption(new Option('-o, --outputdir <dir>', 'directory output').default(cwd))
+.addOption(new Option('-r, --replace [type]', 'replace existing file').default('false'))
 .addOption(new Option('-p, --prefix <string>', 'prefix for all variables').default('themer'));
 
 program.parse();
 
 const options = program.opts();
 
+console.log('options: ', options);
+
 const fileInput = options.input;
-const fileOutput = fileInput.replace(/.((s?)css)/, `.processed.$1`);
+const fileOutput = options.replace ? fileInput : fileInput.replace(/.((s|p?)css)/, `.processed.$1`);
 
 const prefix = options.prefix;
 const outputDir = options.outputdir;
@@ -47,10 +50,6 @@ ${constructRootPseudo(itemsArr)}
 }
 
 const zeroValues = ['0', '0px', '0rem', '0 auto', '0em', '0 auto 0'];
-
-// properties with special cases
-// font-weight
-// margin
 
 
 const recordAndReassignCustomProps = (declaration, recordArray) => {
