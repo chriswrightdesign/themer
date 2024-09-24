@@ -294,7 +294,7 @@ export const getPropertiesByMediaQueryParams = (customPropertyList, params) => {
  */
 const createComparisonValue = (value, propertyType) => {
 
-    const matchNumber = value.match((/d+/));
+    const matchNumber = value.match((/\d+/));
 
     if (!matchNumber) {
         return value;

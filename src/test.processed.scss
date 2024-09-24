@@ -1,9 +1,9 @@
 /* Start: Colors */
 :root {
 	--themer-llama-color: #fafafb;
+	--themer-snake-color: purple;
 	--themer-zebra-color: #ff0;
 	--themer-icon-stroke: blue;
-	--themer-snake-color: purple;
 	--themer-icon-fill: red;
 }
 /* End: Colors */
@@ -41,23 +41,16 @@
 /* Start: Border-radius */
 :root {
 	--themer-snake-border-radius: 0px 0px 4px;
-	--themer-border-radius-100px-10px: 100px/10px;
-	--themer-border-radius-50-percent: 50%;
 	--themer-border-radius-6px: 6px;
+	--themer-border-radius-50-percent: 50%;
+	--themer-border-radius-100px-10px: 100px/10px;
 }
 /* End: Border-radius */
 
-/* Start: Typography */
+/* Start: Typography: Font-size */
 :root {
 	--themer-font-size-12px: 12px;
 	--themer-font-size-16px: 16px;
-	--themer-font-stack-lucida: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-	--themer-snake-line-height: 1.2;
-	--themer-font-weight-400: 400;
-	--themer-font-weight-500: 500;
-	--themer-font-stack-arial: Arial, Helvetica, sans-serif;
-	--themer-font-stack-georgia: Georgia, 'Times New Roman', Times, serif;
-	--themer-font-style-italic: italic;
 }
 
 @media (min-width: 600px) {
@@ -71,17 +64,31 @@
     }
 }
 
-/* End: Typography */
+/* End: Typography: Font-size */
+
+/* Start: Typography: Font-family */
+:root {
+	--themer-font-stack-lucida: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	--themer-font-stack-arial: Arial, Helvetica, sans-serif;
+	--themer-font-stack-georgia: Georgia, 'Times New Roman', Times, serif;
+}
+/* End: Typography: Font-family */
+
+/* Start: Typography: Line-height */
+:root {
+	--themer-snake-line-height: 1.2;
+}
+/* End: Typography: Line-height */
 
 /* Start: Spacing */
 :root {
-	--themer-icon-margin: -10px 0 21px;
-	--themer-spacing-negative-16px: -16px;
 	--themer-spacing-1pt3em: 1.3em;
-	--themer-spacing-16px: 16px;
 	--themer-spacing-2px: 2px;
 	--themer-spacing-4px: 4px;
 	--themer-spacing-8px: 8px;
+	--themer-icon-margin: -10px 0 21px;
+	--themer-spacing-16px: 16px;
+	--themer-spacing-negative-16px: -16px;
 }
 
 @media (min-width: 600px) {
@@ -133,17 +140,17 @@
     width: 300px;
     line-height: 1;
     margin: var(--themer-spacing-8px);
-    font-weight: var(--themer-font-weight-400);
+    font-weight: 400;
     margin-left: var(--themer-spacing-16px);
     font-family: var(--themer-font-stack-georgia);
 }
 
 .snake {
     margin: 0;
-    font-style: var(--themer-font-style-italic);
+    font-style: italic;
     font-family: var(--themer-font-stack-arial);
     padding: 0px;
-    font-weight: var(--themer-font-weight-500);
+    font-weight: 500;
     line-height: var(--themer-snake-line-height);
     box-shadow: none;
     color: var(--themer-snake-color);
@@ -151,7 +158,7 @@
 }
 
 .giraffe {
-    font-weight: var(--themer-font-weight-400);
+    font-weight: 400;
     color: currentColor;
     background: transparent;
     background-position-y: 0;
