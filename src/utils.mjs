@@ -110,6 +110,9 @@ const removeIllegalCharactersFromName = (value) => {
         
 }
 
+
+let boxShadowVariant = 1;
+
 /**
  * Takes a series of PostCSS inputs and produces a custom property name with a prefix.
  * @param {{prefix: string, selector: string, prop: string, value: string, parent: {parent: {selector: string}}}} props
@@ -123,6 +126,12 @@ export const createCustomPropertyName = ({prefix, selector, prop, parent, value}
     if (parsedProp.match(declarationRadiusRegex) && !value.includes(' ')) {
 
         return `--${prefix}-border-radius-${removeIllegalCharactersFromName(value)}`;
+    }
+
+    if (parsedProp.match(/^(box-shadow)/)) {
+        const namedBoxshadowVariant = `--${prefix}-box-shadow-${boxShadowVariant}`;
+        boxShadowVariant++;
+        return namedBoxshadowVariant;
     }
 
     if (parsedProp.match(/^(padding(-\w+)?|^gap$|^grid-(column-|row-)?gap$|margin(-\w+)?)/) && !value.includes(' ')) {
@@ -147,6 +156,7 @@ export const createCustomPropertyName = ({prefix, selector, prop, parent, value}
 
     return customPropertyName;
 }
+
 
 /**
  * Takes a series of postCSS inputs and produces an object with a parsed value and custom property name.

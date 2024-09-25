@@ -23,7 +23,6 @@ const program = new Command();
 
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 const rootDir = process.cwd();
 
 
@@ -72,7 +71,7 @@ const spacingProps = ['margin', 'padding', 'gap'];
 
 const zeroValues = ['0', '0px', '0rem', '0 auto', '0em', '0 auto 0'];
 
-const recordNewValue = (variable, recordArray) => {
+const recordNewValue = (variable, prop, recordArray) => {
 
     const existsAlready = recordArray.some((record) => {
         return record.name === variable.name && record.value === variable.value;
@@ -92,36 +91,24 @@ const recordAndReassignCustomProps = (declaration, recordArray) => {
         return;
     }
 
-    /* Line heights of 1 aren't useful */
-    if (prop === 'line-height' && value === '1') {
-        return;
-    }
-
     /* Do not include zero values */
     if (zeroValues.includes(value)) {
         return;
     }
 
-    if (prop === 'border-radius') {
-        // special case
-    }
-
-    // temporarily make these props handled differently so we don't have to deal with functions
-    // duplicate the logic for now
-    if (spacingProps.includes(prop)) {
+    // it's possible the / in border radius might cause issues
+    if ((prop === 'border-radius' || spacingProps.includes(prop)) && value.includes(' ')) {
         const valuesSplit = value.trim().split(' ');
 
         const newValues = valuesSplit.map((individualValue) => {
             const variable = createCustomPropertyObject({prefix, prop, value: individualValue, important, parent});
-           
-            if (variable !== null) {
-                recordNewValue(variable, recordArray);
-            }
 
             return variable;
         });
 
         const newValueString = newValues.filter((variable) => Boolean(variable)).reduce((acc, curr) => {
+
+            recordNewValue(curr, prop, recordArray);
             return `${acc} var(${curr.name})`;
         },'');
 
@@ -141,7 +128,7 @@ const recordAndReassignCustomProps = (declaration, recordArray) => {
         return;
     }
 
-    recordNewValue(variable, recordArray);
+    recordNewValue(variable, prop, recordArray);
 
     declaration.assign({ 
         prop, 
