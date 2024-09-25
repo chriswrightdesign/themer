@@ -129,8 +129,8 @@ export const createCustomPropertyName = ({prefix, selector, prop, parent, value}
         return `--${prefix}-spacing-${removeIllegalCharactersFromName(value)}`;
     }
 
-    if (parsedProp === 'font-weight' || parsedProp === 'font-style' || parsedProp === 'font-size') {
-        return `--${prefix}-${parsedProp}-${value}`;
+    if (parsedProp === 'font-weight' || parsedProp === 'font-style' || parsedProp === 'font-size' || parsedProp === 'line-height') {
+        return `--${prefix}-${parsedProp}-${removeIllegalCharactersFromName(value)}`;
     }
 
     if (parsedProp === 'font-family') {
