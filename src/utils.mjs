@@ -129,7 +129,13 @@ export const createCustomPropertyName = ({prefix, selector, prop, parent, value}
     }
 
     if (parsedProp.match(/^(box-shadow)/)) {
+
+        if (valueDisallowList.includes(value)) {
+            return ;
+        }
+
         const namedBoxshadowVariant = `--${prefix}-box-shadow-${boxShadowVariant}`;
+
         boxShadowVariant++;
         return namedBoxshadowVariant;
     }
@@ -177,6 +183,8 @@ export const createCustomPropertyObject = ({prefix, prop, value, important, pare
     if (parsedValue === '' || isDisallowed) {
         return null;
     }
+
+
 
     return {
         name: objKey,
@@ -328,11 +336,16 @@ export const constructRootPseudo = (customPropertyList) => {
         return customProperty.parentAtRule === null || customProperty.name.includes('spacing');
     }).sort((a, b) => {
 
-        const {value: aValue, propertyType} = a;
-        const {value: bValue} = b;
+        const {value: aValue, propertyType: propertyTypeA} = a;
+        const {value: bValue, propertyType: propertyTypeB} = b;
 
-        const comparableValueA = createComparisonValue(aValue, propertyType); 
-        const comparableValueB = createComparisonValue(bValue, propertyType);
+        // don't try to sort box shadows
+        if (propertyTypeA === 'box-shadow') {
+            return 0;
+        }
+
+        const comparableValueA = createComparisonValue(aValue, propertyTypeA); 
+        const comparableValueB = createComparisonValue(bValue, propertyTypeB);
 
         if (comparableValueA > comparableValueB) { 
             return 1;

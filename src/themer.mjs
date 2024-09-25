@@ -208,6 +208,7 @@ export const themer = () => {
     const stringified = root.toResult().css;
 
     try {
+
         fs.writeFileSync(path.resolve(outputDir, fileOutput), `${renderIfPresent(colorVarItems, 'Colors')}${renderIfPresent(borderVarItems, 'Border')}${renderIfPresent(backgroundVarItems, 'Background')}${renderIfPresent(boxShadowVarItems, 'Box-shadow')}${renderIfPresent(radiusRootVarItems, 'Border-radius')}${renderIfPresent(fontSizeVarItems, 'Typography: Font-size')}${renderIfPresent(fontFamilyVarItems, 'Typography: Font-family')}${renderIfPresent(fontLineHeightVarItems, 'Typography: Line-height')}${renderIfPresent(spacingRootVarItems, 'Spacing')}${renderIfPresent(backgroundImageVarItems, 'Background images')}${stringified}`);
         console.log(`File written: ${fileOutput}`); 
     } catch(err) {
