@@ -7,7 +7,8 @@
   "private": false,
   "scripts": {
     "test": "yarn node --experimental-vm-modules $(yarn bin jest)",
-    "themer:complex": "node src/themer.mjs -i src/complextest.scss -p cm"
+    "themer:complex": "node src/themer.mjs -i src/complextest.scss -p cm",
+    "themer:simple":  "node src/themer.mjs -i src/test.scss"
   },
   "files": [
     "src/regexHelpers.mjs",

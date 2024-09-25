@@ -68,9 +68,20 @@ ${constructRootPseudo(itemsArr)}
 /* End: ${name} */\n\n` : '';
 }
 
-const shorthandSpacingProps = ['margin', 'padding'];
+const spacingProps = ['margin', 'padding', 'gap'];
 
 const zeroValues = ['0', '0px', '0rem', '0 auto', '0em', '0 auto 0'];
+
+const recordNewValue = (variable, recordArray) => {
+
+    const existsAlready = recordArray.some((record) => {
+        return record.name === variable.name && record.value === variable.value;
+    })
+
+    if (!existsAlready) {
+        recordArray.push(variable);
+    }
+}
 
 const recordAndReassignCustomProps = (declaration, recordArray) => {
 
@@ -91,7 +102,37 @@ const recordAndReassignCustomProps = (declaration, recordArray) => {
         return;
     }
 
-    // handle the value
+    if (prop === 'border-radius') {
+        // special case
+    }
+
+    // temporarily make these props handled differently so we don't have to deal with functions
+    // duplicate the logic for now
+    if (spacingProps.includes(prop)) {
+        const valuesSplit = value.trim().split(' ');
+
+        const newValues = valuesSplit.map((individualValue) => {
+            const variable = createCustomPropertyObject({prefix, prop, value: individualValue, important, parent});
+           
+            if (variable !== null) {
+                recordNewValue(variable, recordArray);
+            }
+
+            return variable;
+        });
+
+        const newValueString = newValues.filter((variable) => Boolean(variable)).reduce((acc, curr) => {
+            return `${acc} var(${curr.name})`;
+        },'');
+
+        // construct a new value to assign to the declaration
+        declaration.assign({ 
+            prop, 
+            value: newValueString.trimStart(), 
+        });
+
+        return;
+    } 
 
     const variable = createCustomPropertyObject({prefix, prop, value, important, parent});
 
@@ -100,13 +141,7 @@ const recordAndReassignCustomProps = (declaration, recordArray) => {
         return;
     }
 
-    const existsAlready = recordArray.some((record) => {
-        return record.name === variable.name && record.value === variable.value;
-    })
-
-    if (!existsAlready) {
-        recordArray.push(variable);
-    }
+    recordNewValue(variable, recordArray);
 
     declaration.assign({ 
         prop, 
@@ -116,6 +151,7 @@ const recordAndReassignCustomProps = (declaration, recordArray) => {
             originalValue: variable.originalValue,
         }) 
     });
+
 }
 
 export const themer = () => {
