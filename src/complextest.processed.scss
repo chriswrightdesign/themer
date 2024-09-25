@@ -2019,10 +2019,6 @@
 	--cm-timeline-table-status-before-margin: -4px 0 0 -6px;
 	--cm-wv_imagelessInfoWindow-wv_modalContent-padding: 4px 12px 5px 9px;
 	--cm-wv_imageInfoWindow-wv_modalContent-padding: 4px 12px 5px 41px;
-	--cm-transactional-regSubject-box-wrap-gap: 4px;
-	--cm-transactional-differentDomainEntry-gap: 4px;
-	--cm-c-currency-name-gap: 4px;
-	--cm-c-domain-clarifier-gap: 4px;
 	--cm-spacing-5px: 5px;
 	--cm-contenteditable-padding: 5px 6px;
 	--cm-p-bread-margin: 5px 0;
@@ -2122,9 +2118,6 @@
 	--cm-timeline-li-list-clicks-li-padding: 8px 0;
 	--cm-timeline-header-padding: 8px 0;
 	--cm-timeline-table-tool-tip-toop-top__infoblue-padding: 8px 12px;
-	--cm-transactional-regFrom-box-wrap-gap: 8px;
-	--cm-body-ng-app-drafts-box-input-wrap-gap: 8px;
-	--cm-body-ng-app-drafts-authenticatedDomain-gap: 8px;
 	--cm-spacing-9px: 9px;
 	--cm-exampleExtended-padding: 9px 5px 5px;
 	--cm-table-border-th-padding: 9px 0 7px 9px;
@@ -2216,7 +2209,6 @@
 	--cm-subscriber_detail-aside-section-map-figcaption-padding: 12px 20px 12px 23px;
 	--cm-button-large-padding: 12px 24px;
 	--cm-info-balloon-padding: 12px 16px;
-	--cm-c-legacy-alert-box-alert-box-gap: 12px;
 	--cm-table-header-large-padding: 12px 11px 9px;
 	--cm-table-header-large-class-link-icon-margin: 12px 0 0 20px;
 	--cm-search-box-auto-map-wrap-link-icon-info-margin: 12px auto;
@@ -2357,7 +2349,6 @@
 	--cm-spacing-32px: 32px;
 	--cm-sentLists-padding: 32px 16px 16px;
 	--cm-spacing-negative-32px: -32px;
-	--cm-c-campaign-report-ui-refresh-content-grid-gap: 32px;
 	--cm-spacing-33px: 33px;
 	--cm-spacing-negative-33px: -33px;
 	--cm-spacing-34px: 34px;
@@ -14715,7 +14706,7 @@ h1.inline {
     align-items: flex-start;
     background: var(--cm-c-legacy-alert-box-alert-box-background); /* remove image */
     display: flex;
-    gap: var(--cm-c-legacy-alert-box-alert-box-gap);
+    gap: var(--cm-spacing-12px);
     padding: var(--cm-c-legacy-alert-box-alert-box-padding);
 }
 .c-legacy-alert-box.alert-box.warning {
@@ -18295,7 +18286,7 @@ follow the page layout rules of the newer pages
 .c-campaign-report-ui-refresh #content {
     display: grid;
     grid-template-columns: 208px 1fr;
-    grid-gap: var(--cm-c-campaign-report-ui-refresh-content-grid-gap);
+    grid-gap: var(--cm-spacing-32px);
     padding-top: var(--cm-spacing-48px);
 }
 /* remove the shadow */
@@ -18984,7 +18975,7 @@ body.reports-view {
 
 #transactional #regSubject .box-wrap {
     display: flex;
-    gap: var(--cm-transactional-regSubject-box-wrap-gap);
+    gap: var(--cm-spacing-4px);
 }
 
 #transactional .primary-form .selector {
@@ -19007,7 +18998,7 @@ body.reports-view {
 #transactional #regFrom .box-wrap {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--cm-transactional-regFrom-box-wrap-gap);
+    gap: var(--cm-spacing-8px);
 }
 
 #transactional #regFrom .ng-hide {
@@ -19036,7 +19027,7 @@ body.reports-view {
 #transactional #differentDomainEntry,
 #transactional #authenticatedDomain {
     display: flex;
-    gap: var(--cm-transactional-differentDomainEntry-gap);
+    gap: var(--cm-spacing-4px);
 }
 
 #transactional #authenticatedDomain .with-email {
@@ -19183,7 +19174,7 @@ h1 ~ p {
 .c-currency-name {
     display: flex;
     font-size: var(--cm-font-size-14px);
-    gap: var(--cm-c-currency-name-gap);
+    gap: var(--cm-spacing-4px);
 }
 
 /* Legacy select aimed at following CMDS styles */
@@ -19232,7 +19223,7 @@ h1 ~ p {
 
 .c-domain-clarifier {
     display: flex;
-    gap: var(--cm-c-domain-clarifier-gap);
+    gap: var(--cm-spacing-4px);
     margin-top: var(--cm-spacing-8px);
 }
 
@@ -19307,7 +19298,7 @@ body[ng-app="drafts"] .primary-form button.inside-input.inside-input {
 
 body[ng-app="drafts"] .box-input-wrap {
     display: flex;
-    gap: var(--cm-body-ng-app-drafts-box-input-wrap-gap);
+    gap: var(--cm-spacing-8px);
 }
 /* correct the positioning of the select box in transactional */
 body[ng-app="drafts"] .primary-form .selector.inside-input {
@@ -19342,7 +19333,7 @@ body[ng-app="drafts"] #authenticatedDomain,
 body[ng-app="drafts"] #differentDomainEntry {
     display: flex;
     width: 100% !important;
-    gap: var(--cm-body-ng-app-drafts-authenticatedDomain-gap);
+    gap: var(--cm-spacing-8px);
 }
 
 body[ng-app="drafts"] .primary-form .selector.inside-input--not-inside-box-wrap {

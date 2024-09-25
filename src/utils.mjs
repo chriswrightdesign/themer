@@ -125,7 +125,7 @@ export const createCustomPropertyName = ({prefix, selector, prop, parent, value}
         return `--${prefix}-border-radius-${removeIllegalCharactersFromName(value)}`;
     }
 
-    if (parsedProp.match(/^(padding(-\w+)?|margin(-\w+)?)/) && !value.includes(' ')) {
+    if (parsedProp.match(/^(padding(-\w+)?|^gap$|^grid-(column-|row-)?gap$|margin(-\w+)?)/) && !value.includes(' ')) {
         return `--${prefix}-spacing-${removeIllegalCharactersFromName(value)}`;
     }
 
