@@ -3,7 +3,7 @@ import fs from 'fs';
 import {declarationRadiusRegex} from './regexHelpers.mjs';
 
 const borderProperties = ['border', 'border-top', 'border-bottom', 'border-left', 'border-right'];
-const valueDisallowList = ['transparent', 'none', 'initial', 'auto', 'inherit'];
+const valueDisallowList = ['none', 'initial', 'auto', 'inherit'];
 
 /**
  * Ensure any props passed in match their output.
