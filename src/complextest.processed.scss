@@ -554,22 +554,17 @@
 
 /* Start: Border */
 :root {
-	--cm-table-snapshotStats-td-border-bottom-color: #dcdcdc;
 	--cm-pipe-border-left-color: #dedede;
 	--cm-p-midPadLine-border-bottom-color: #e0e0e0;
 	--cm-credits-border-color: rgba(0, 0, 0, 0.1);
 	--cm-table-tableHeader-th-border-bottom-color: #c0dae7;
+	--cm-bar-top-is-fixed-border-bottom-color: rgba(0, 0, 0, 0.2);
+	--cm-timeline-table-expanded-clicks-td-border-top-color: #f1f1f1;
 	--cm-button-not-cmds-g-button-border-color: #d2d7df;
 	--cm-table-li-border-top-color: #e2e2e2;
 	--cm-leftcol-title-box-border-bottom-color: #eee;
-	--cm-au_problems-border-color: #f0d1ca;
-	--cm-au_problems-theirs-border-color: #dac0c0;
-	--cm-block-options-label-before-border-bottom-color: rgba(0, 0, 0, 0.1);
-	--cm-bar-top-is-fixed-border-bottom-color: rgba(0, 0, 0, 0.2);
 	--cm-bigCustomizeAlert-border-top-color: #f1df95;
 	--cm-bigCustomizeAlert-border-bottom-color: #f1df95;
-	--cm-ar_alert-border-top-color: #f1df95;
-	--cm-ar_alert-border-bottom-color: #f1df95;
 	--cm-formContainer-border-color: #d2d7df;
 	--cm-radioContainer-border-color: #d2d7df;
 	--cm-confirmCase-border-color: #d2d7df;
@@ -590,14 +585,14 @@
 	--cm-wrap-modal-template-description-thumbs-header-border-top-color: #2a2e35;
 	--cm-error-balloon-big-border-color: #d2d7df;
 	--cm-error-balloon-big-after-border-right-color: #d2d7df;
+	--cm-info-balloon-note-border-color: #e2d9cb;
 	--cm-bigAlert-border-color: #e3ddb7;
 	--cm-th-headerDarkGreyLeft-border-bottom-color: #d3d3d3;
-	--cm-cs_dark-a-border-left-color: #d3d3d3;
-	--cm-cs_dark-a-border-top-color: #d3d3d3;
 	--cm-covert-input-focus-border-color: #d3d3d3;
 	--cm-info-box-wrap-border-color: #cbe4f1;
 	--cm-info-balloon-border-color: #d4d4d4;
-	--cm-info-balloon-after-border-color: #d4d4d4 transparent;
+	--cm-info-balloon-after-border-color-vertical: #d4d4d4;
+	--cm-info-balloon-points-left-after-border-right-color: #d4d4d4;
 	--cm-success2-border-top-color: #c5f8ac;
 	--cm-success2-border-bottom-color: #c5f8ac;
 	--cm-bigEarning-border-top-color: #c5f8ac;
@@ -606,9 +601,6 @@
 	--cm-th-headerDarkGreyLeft-border-top-color: #e5e5e5;
 	--cm-th-headerDarkGreyLeft-border-left-color: #e5e5e5;
 	--cm-th-headerDarkGreyRight-border-right-color: #e5e5e5;
-	--cm-overlay_header-border-top-color: #e5e5e5;
-	--cm-overlay_header-border-right-color: #e5e5e5;
-	--cm-overlay_header-border-left-color: #e5e5e5;
 	--cm-note-border-color: #e5dfd6;
 	--cm-error-balloon-big-points-up-before-border-bottom-color: #fbe5b9;
 	--cm-code-border-color: #d6d6d6;
@@ -628,13 +620,10 @@
 	--cm-success-border-color: #c8e5be;
 	--cm-successBig-border-color: #c8e5be;
 	--cm-table-grid-light-li-border-bottom-color: #e8e8e8;
-	--cm-au_problems-textarea-correct-border-color: #8e9aad;
-	--cm-cs_dark-border-left-color: #8e9aad;
-	--cm-info-balloon-before-border-color: #f8f8f8 transparent;
+	--cm-table-colorPicker-border-color: #8e9aad;
+	--cm-info-balloon-before-border-color-vertical: #f8f8f8;
 	--cm-table-tableTabsHeader-td-border-bottom-color: #e9ebef;
 	--cm-table-subscriberStats-td-border-bottom-color: #e9ebef;
-	--cm-au_verified-border-color: #cfe9d0;
-	--cm-au_verified-textarea-border-color: #cfe9d0;
 	--cm-covert-input-focus-border-top-color: #c9c9c9;
 	--cm-primary-form-contenteditable-highlight-border-bottom-color: #9ebdd1;
 	--cm-covert-input-border-bottom-color: #434d5d;
@@ -642,28 +631,24 @@
 	--cm-table-border-th-border-bottom-color: #717a8a;
 	--cm-input-error-border-color: #f77171;
 	--cm-overlay-box-points-left-after-border-right-color: #bebebe;
-	--cm-timeline-new-items-border-color: #bfdbed;
-	--cm-ar_yellowAlert-border-color: #cecece;
-	--cm-cs_dark-border-bottom-color: #dadada;
-	--cm-cs_dark-border-right-color: #dadada;
-	--cm-cs_white-border-color: #dbdbdb;
+	--cm-table-snapshotStats-td-border-bottom-color: #dcdcdc;
 	--cm-table-snapshotStats-th-border-bottom-color: #dcdcdc;
-	--cm-overlay_header-border-bottom-color: #ddd;
-	--cm-overlay_box-border-left-color: #ddd;
-	--cm-overlay_box-border-right-color: #ddd;
-	--cm-overlay_box-border-bottom-color: #ddd;
 	--cm-table-tableTabsHeader-th-tabHeaderRight-border-right-color: #dedede;
 	--cm-table-tableTabsHeader-th-tabHeaderLeft-border-left-color: #dedede;
 	--cm-bar-top-border-bottom-color: #eaeaea;
 	--cm-bar-top-nav-with-icons-li-current-before-border-top-color: #eaeaea;
 	--cm-gridLight-td-border-bottom-color: #ececec;
-	--cm-info-balloon-points-left-before-border-right-color: #fafafb;
 	--cm-overlay-box-points-left-before-border-right-color: #fcfcfc;
 	--cm-failureMessage-border-color: #fddcdc;
 	--cm-failureMessage-border-top-color: #fddcdc;
+	--cm-table-sidebar-td-border-bottom-color: #d9d9d9;
+	--cm-table-tableHeader-last-row-has-border-tr-last-child-td-border-bottom-color: #e9ebef;
+	--cm-table-tableHeader-tr-lastRow-td-border-bottom-color: #fff;
 	--cm-abSlider-b-border-color: rgba(0, 0, 0, 0.1);
 	--cm-ul-listing-border-color: #e0e0e0;
 	--cm-pp_notok-border-color: #f0d1ca;
+	--cm-au_problems-border-color: #f0d1ca;
+	--cm-au_problems-theirs-border-color: #dac0c0;
 	--cm-st_bigAlert-border-top-color: #f1df95;
 	--cm-st_bigAlert-border-bottom-color: #f1df95;
 	--cm-customize_bigAlert-border-top-color: #f1df95;
@@ -678,6 +663,7 @@
 	--cm-blankSlateIntro-border-bottom-color: #c5f8ac;
 	--cm-contentNavs-current-a-border-bottom-color: #f5f6f8;
 	--cm-cs_monthly_price-cs_monthly_prices-border-bottom-color: #f5f6f8;
+	--cm-overlay_header-border-top-color: #e5e5e5;
 	--cm-abResults-border-color: #e6e6e6;
 	--cm-leftBox-border-color: #e6e6e6;
 	--cm-cs_hline-border-bottom-color: #e6e6e6;
@@ -686,15 +672,14 @@
 	--cm-addHighlight-border-color: #ebebc7;
 	--cm-timeleft-border-color: #ebebc7;
 	--cm-pagination-a-border-color: #d7d7d7;
-	--cm-table-colorPicker-border-color: #8e9aad;
 	--cm-showAverages-border-top-color: #b8b8b8;
 	--cm-new-slate-new-template-figure-border-color: #8e9aad;
 	--cm-pagination-a-hover-border-color: #8e9aad;
 	--cm-JT-border-color: #8e9aad;
 	--cm-JT_copy-img-border-color: #8e9aad;
-	--cm-cs_dark-border-top-color: #8e9aad;
-	--cm-table-sidebar-td-border-bottom-color: #d9d9d9;
-	--cm-table-tableHeader-last-row-has-border-tr-last-child-td-border-bottom-color: #e9ebef;
+	--cm-cs_form-cs_help_box-border-color: #8e9aad;
+	--cm-table-tableHeader-td-border-bottom-color: #e9ebef;
+	--cm-table-tableHeader-tr-segmentCondition-td-border-bottom-color: #e9ebef;
 	--cm-table-activity-td-border-bottom-color: #e9ebef;
 	--cm-blankSlateOptions-border-top-color: #e9ebef;
 	--cm-blankSlateOptions-border-bottom-color: #e9ebef;
@@ -702,6 +687,22 @@
 	--cm-cs_hline-border-top-color: #cacaca;
 	--cm-cs_monthly_price-cs_monthly_table-border-color: #cecece;
 	--cm-cs_monthly_table-border-color: #cecece;
+	--cm-overlay_header-border-bottom-color: #ddd;
+	--cm-ar_infoAlert-border-top-color: #e3e3b3;
+	--cm-overlay_header-border-right-color: #e5e5e5;
+	--cm-overlay_header-border-left-color: #e5e5e5;
+	--cm-overlay_box-border-left-color: #ddd;
+	--cm-overlay_box-border-right-color: #ddd;
+	--cm-overlay_box-border-bottom-color: #ddd;
+	--cm-cs_dark-border-left-color: #8e9aad;
+	--cm-cs_dark-border-top-color: #8e9aad;
+	--cm-ar_rightArrow-border-color-right: #cecece;
+	--cm-ar_yellowAlert-border-color: #cecece;
+	--cm-cs_dark-border-bottom-color: #dadada;
+	--cm-cs_dark-border-right-color: #dadada;
+	--cm-cs_dark-a-border-left-color: #d3d3d3;
+	--cm-cs_dark-a-border-top-color: #d3d3d3;
+	--cm-cs_white-border-color: #dbdbdb;
 	--cm-cr_edit_html-border-color: #ddd;
 	--cm-cs_tactive-border-top-color: #ddd;
 	--cm-cs_tactive-border-bottom-color: #ddd;
@@ -718,104 +719,118 @@
 	--cm-exampleExtended-border-color: #dedede;
 	--cm-cs_credits_markup-border-color: #dedede;
 	--cm-cs_trow-border-top-color: #dedede;
-	--cm-ar_email_name-border-bottom-color: #eaeaea;
 	--cm-ds_clients-border-left-color: #ebebeb;
 	--cm-ds_link-border-top-color: #ebebeb;
 	--cm-ds_right_spam-border-bottom-color: #ebebeb;
 	--cm-ds_right_spam-border-left-color: #ebebeb;
-	--cm-ar_gray_line-border-top-color: #eee;
-	--cm-ar_gray_line_one-border-top-color: #eee;
-	--cm-table-importSummary-td-border-top-color: #efefef;
-	--cm-ar_right-border-color: #efefef;
-	--cm-table-tableHeader-tr-lastRow-td-border-bottom-color: #fff;
-	--cm-contentNavs-a-border-bottom-color: #fff;
-	--cm-cs_form-cs_help_box-border-color: #8e9aad;
-	--cm-table-tableHeader-td-border-bottom-color: #e9ebef;
-	--cm-table-tableHeader-tr-segmentCondition-td-border-bottom-color: #e9ebef;
-	--cm-pp_ok-border-color: #cfe9d0;
-	--cm-au_alert-border-color: #cfe9d0;
 	--cm-cs_dark-a-border-bottom-color: #fff;
 	--cm-cs_white-a-border-color: #fff;
 	--cm-ds_link-border-bottom-color: #fff;
 	--cm-ds_link-border-left-color: #fff;
+	--cm-ar_alert-border-top-color: #f1df95;
+	--cm-ar_alert-border-bottom-color: #f1df95;
 	--cm-ar_dash_rline-border-right-color: #e1e1e1;
 	--cm-ar_dash_table-border-color: #e1e1e1;
-	--cm-ar_report_body-border-color: #e1e1e1;
-	--cm-ao_commentContainer-staff-border-color: #d2e8fa;
-	--cm-ar_infoAlert-border-top-color: #e3e3b3;
-	--cm-ar_infoAlert-border-bottom-color: #e3e3b3;
-	--cm-ar_snapGroup-border-color: #e4e4e4;
-	--cm-ar_optionAlert-border-top-color: #d7d6d6;
-	--cm-ar_optionAlert-border-bottom-color: #d7d6d6;
 	--cm-ds_right_header-border-top-color: #d8eaf1;
 	--cm-ds_right_header-border-left-color: #d8eaf1;
 	--cm-ds_right_header-border-bottom-color: #d8eaf1;
+	--cm-ar_email_name-border-bottom-color: #eaeaea;
+	--cm-ar_gray_line-border-top-color: #eee;
+	--cm-ar_gray_line_one-border-top-color: #eee;
+	--cm-ar_left-border-color: #efefef;
+	--cm-ds_screen_frame-img-border-left-color: #fff;
+	--cm-ar_report_body-border-color: #e1e1e1;
+	--cm-ar_infoAlert-border-bottom-color: #e3e3b3;
+	--cm-ar_snapGroup-border-color: #e4e4e4;
+	--cm-ds_tempReason-border-color: #8e9aad;
 	--cm-wv_backBar-border-color: #bababb;
 	--cm-subscriber_detail-aside-section-fields-edit-border-top-color: #ddd;
 	--cm-subscriber_detail-article-body-activity-a-border-bottom-color: #ddd;
 	--cm-ao_commentContainer-border-color: #dddbdb;
-	--cm-ul-countriesHeader-border-top-color: #dedede;
 	--cm-ul-countriesHeader-border-right-color: #dedede;
-	--cm-ul-countriesHeader-border-left-color: #dedede;
 	--cm-mo_payment_bottom-border-top-color: #ebebeb;
+	--cm-subscriber_detail-article-body-activity-border-bottom-color: #ededed;
+	--cm-sharingTimeline-ul-timeline-li-last-child-border-bottom-color: #eee;
+	--cm-ar_right-border-color: #efefef;
+	--cm-h3-ao_paddingLeft-border-top-color: #efefef;
+	--cm-ar_rightArrow-border-color-right: #fff;
+	--cm-ar_rightArrow-after-border-color-right: #fff;
+	--cm-ar_rightArrow-border-color-top: transparent;
+	--cm-ar_rightArrow-border-color-left: transparent;
+	--cm-ar_rightArrow-border-color-bottom: transparent;
+	--cm-ar_rightArrow-after-border-color-top: transparent;
+	--cm-ar_rightArrow-after-border-color-left: transparent;
+	--cm-ar_rightArrow-after-border-color-bottom: transparent;
+	--cm-block-options-label-before-border-bottom-color: rgba(0, 0, 0, 0.1);
+	--cm-ao_commentContainer-staff-border-color: #d2e8fa;
 	--cm-a-ao_fileAttachment-border-top-color: #eee;
 	--cm-sharingTimeline-ul-timeline-li-border-top-color: #eee;
-	--cm-sharingTimeline-ul-timeline-li-last-child-border-bottom-color: #eee;
-	--cm-h3-ao_paddingLeft-border-top-color: #efefef;
-	--cm-ds_screen_frame-img-border-left-color: #fff;
+	--cm-table-importSummary-td-border-top-color: #efefef;
+	--cm-contentNavs-a-border-bottom-color: #fff;
 	--cm-subscriber_detail-subscriber-border-color: #d2d7df;
 	--cm-subscriber_detail-article-body-select-border-top-color: #e2e3e2;
 	--cm-subscriber_detail-aside-div-error-border-color: #d2d7df;
-	--cm-error-balloon-after-border-color: #d2d7df transparent;
-	--cm-success-balloon-border-color: #d2d7df;
-	--cm-success-balloon-after-border-color: #d2d7df transparent;
+	--cm-error-balloon-after-border-color-vertical: #d2d7df;
+	--cm-success-balloon-after-border-color-vertical: #d2d7df;
 	--cm-info-balloon-points-left-after-border-right-color: #d2d7df;
 	--cm-button-border-color: #d2d7df;
 	--cm-block-options-border-color: #e2e2e2;
+	--cm-block-options-li-border-top-color: #e2e2e2;
 	--cm-noContent-border-color: #e3e3e3;
+	--cm-segmented-buttons-button-selected-border-bottom-color: #d3d3d3;
 	--cm-ul-countriesHeader-border-bottom-color: #c6c6c6;
-	--cm-ds_tempReason-border-color: #8e9aad;
-	--cm-ar_left-border-color: #efefef;
-	--cm-ar_rightArrow-border-color: transparent transparent transparent #cecece;
-	--cm-ar_rightArrow-border-color: transparent transparent transparent #fff;
+	--cm-ar_optionAlert-border-top-color: #d7d6d6;
+	--cm-ar_optionAlert-border-bottom-color: #d7d6d6;
+	--cm-segmented-buttons-button-selected-border-color: #c7c7c7;
+	--cm-au_problems-textarea-correct-border-color: #8e9aad;
+	--cm-pp_ok-border-color: #cfe9d0;
+	--cm-au_alert-border-color: #cfe9d0;
+	--cm-au_verified-border-color: #cfe9d0;
+	--cm-au_verified-textarea-border-color: #cfe9d0;
 	--cm-ul-countryListing-border-bottom-color: #e9ebef;
-	--cm-button-is-temporary-feedback-border-color: #c9c9c9;
 	--cm-span-shareBadge-border-right-color: #f14c0e;
+	--cm-cs_monthly_price-cs_tactive-border-top-color: #35a70d;
 	--cm-span-openBadge-border-right-color: #269e00;
-	--cm-campaignindex-duly-noted-label-span-border-bottom-color: #717a8a;
 	--cm-span-clickBadge-border-right-color: #2882de;
 	--cm-button-in-table-before-border-right-color: #bdbdbd;
+	--cm-info-balloon-after-border-color-vertical: #cacaca;
 	--cm-segmented-buttons-button-selected-border-top-color: #cacaca;
-	--cm-info-balloon-after-border-color: #cacaca transparent;
 	--cm-ul-dropDown-li-border-top-color: #ddd;
+	--cm-ul-countriesHeader-border-top-color: #dedede;
+	--cm-ul-countriesHeader-border-left-color: #dedede;
 	--cm-button-disabled-border-color: #ececed;
-	--cm-subscriber_detail-article-body-activity-border-bottom-color: #ededed;
 	--cm-button-in-table-after-border-right-color: #fafafb;
+	--cm-error-balloon-before-border-color-vertical: #fff;
 	--cm-error-balloon-points-left-before-border-right-color: #fff;
+	--cm-success-balloon-before-border-color-vertical: #fff;
 	--cm-bar-top-nav-with-icons-li-current-after-border-top-color: #fff;
 	--cm-bar-top-nav-with-icons-li-new-icon-flag-animated-border-color: #fff;
 	--cm-error-balloon-big-before-border-right-color: #fff;
-	--cm-error-balloon-before-border-color: #fff transparent;
-	--cm-success-balloon-before-border-color: #fff transparent;
+	--cm-error-balloon-before-border-color-horizontal: transparent;
+	--cm-error-balloon-after-border-color-horizontal: transparent;
 	--cm-error-balloon-points-left-before-border-color: transparent;
 	--cm-error-balloon-points-left-after-border-color: transparent;
-	--cm-block-options-li-border-top-color: #e2e2e2;
+	--cm-success-balloon-border-color: #d2d7df;
+	--cm-button-is-temporary-feedback-border-color: #c9c9c9;
 	--cm-error-balloon-points-left-after-border-right-color: #cfbc97;
+	--cm-success-balloon-before-border-color-horizontal: transparent;
+	--cm-success-balloon-after-border-color-horizontal: transparent;
+	--cm-info-balloon-after-border-color-horizontal: transparent;
+	--cm-campaignindex-duly-noted-label-span-border-bottom-color: #717a8a;
 	--cm-button-in-table-after-border-color: transparent;
 	--cm-button-in-table-before-border-color: transparent;
+	--cm-button-primary-border-color: #61962b;
 	--cm-selector-border-color: transparent;
 	--cm-bar-top-nav-with-icons-li-current-before-border-left-color: transparent;
 	--cm-bar-top-nav-with-icons-li-current-before-border-right-color: transparent;
 	--cm-bar-top-nav-with-icons-li-current-after-border-left-color: transparent;
 	--cm-bar-top-nav-with-icons-li-current-after-border-right-color: transparent;
-	--cm-ar_rightArrow-after-border-color: transparent transparent transparent #fff;
-	--cm-segmented-buttons-button-selected-border-bottom-color: #d3d3d3;
-	--cm-segmented-buttons-button-selected-border-color: #c7c7c7;
+	--cm-info-balloon-note-after-border-color-vertical: #d3c6b1;
 	--cm-wrap-browser-border-color: #c7d0d7;
 	--cm-wrap-browser-chrome-bar-border-bottom-color: #c7d0d7;
 	--cm-wrap-browser-chrome-bar-chrome-controls-border-color: #c7d0d7;
 	--cm-wrap-browser-chrome-bar-chrome-controls-after-border-color: #c7d0d7;
-	--cm-cs_monthly_price-cs_tactive-border-top-color: #35a70d;
+	--cm-info-balloon-points-left-before-border-right-color: #fafafb;
 	--cm-overlay-box-points-left-before-border-color: transparent;
 	--cm-overlay-box-points-left-after-border-color: transparent;
 	--cm-error-balloon-big-before-border-color: transparent;
@@ -823,42 +838,35 @@
 	--cm-error-balloon-big-points-up-before-border-color: transparent;
 	--cm-error-balloon-big-points-up-after-border-color: transparent;
 	--cm-error-balloon-big-points-up-after-border-bottom-color: #ad9a79;
+	--cm-info-balloon-before-border-color-horizontal: transparent;
 	--cm-info-balloon-points-left-before-border-color: transparent;
 	--cm-info-balloon-points-left-after-border-color: transparent;
-	--cm-info-balloon-note-before-border-color: #fefbf0 transparent;
+	--cm-info-balloon-note-after-border-color-horizontal: transparent;
+	--cm-info-balloon-note-before-border-color-vertical: #fefbf0;
+	--cm-info-balloon-note-before-border-color-horizontal: transparent;
+	--cm-info-balloon-note-points-left-after-border-color: transparent;
+	--cm-search-box-auto-map-wrap-map-border-color: rgba(0, 0, 0, 0.2);
+	--cm-info-balloon-note-points-left-after-border-right-color: #d3c6b1;
+	--cm-info-balloon-note-points-left-before-border-color: transparent;
 	--cm-info-balloon-note-points-left-before-border-right-color: #fefbf0;
-	--cm-alert-box-snapshot-thumb-border-color: rgba(0, 0, 0, 0.1);
-	--cm-info-balloon-note-border-color: #e2d9cb;
+	--cm-notification-box-notification-info-border-color: transparent;
 	--cm-tooltip-border-color: #d2d7df;
 	--cm-tooltip-before-border-color: #d2d7df;
-	--cm-table-header-large-border-bottom-color: #d2d7df;
-	--cm-table-footer-jagged-footer-border-color: #d2d7df;
-	--cm-table-empty-message-border-bottom-color: #d2d7df;
-	--cm-info-balloon-note-after-border-color: #d3c6b1 transparent;
-	--cm-discount-message-big-border-color: #e3e3e3;
-	--cm-info-balloon-points-left-after-border-right-color: #d4d4d4;
-	--cm-message-cross-linking-border-top-color: #ddd;
-	--cm-search-box-auto-map-wrap-border-color: #ddd;
-	--cm-message-cross-linking-wrapper-message-illustration-gallery-class-img-border-color: #dedede;
-	--cm-timeline-li-border-bottom-color: #eaeaea;
-	--cm-timeline-li-list-clicks-active-before-border-bottom-color: #eaeaea;
-	--cm-grey-links-menu-top-separator-border-top-color: #eee;
-	--cm-info-balloon-note-points-left-after-border-color: transparent;
-	--cm-info-balloon-note-points-left-after-border-right-color: #d3c6b1;
-	--cm-table-avatar-border-color: #ddd;
-	--cm-table-header-large-border-color: #dedede;
-	--cm-timeline-li-list-clicks-li-border-top-color: #efefef;
-	--cm-timeline-li-list-clicks-active-after-border-bottom-color: #fafafa;
-	--cm-info-balloon-note-points-left-before-border-color: transparent;
-	--cm-notification-box-notification-info-border-color: transparent;
 	--cm-alert-box-successful-border-color: transparent;
 	--cm-alert-box-warning-border-color: transparent;
 	--cm-alert-box-info-border-color: transparent;
-	--cm-search-box-auto-map-wrap-map-border-color: rgba(0, 0, 0, 0.2);
+	--cm-alert-box-snapshot-thumb-border-color: rgba(0, 0, 0, 0.1);
 	--cm-blank-slate-border-color: #d2d7df;
 	--cm-message-center-footer-border-top-color: #d2d8dc;
-	--cm-timeline-li-hover-list-clicks-active-after-border-bottom-color: #f2f2f2;
+	--cm-discount-message-big-border-color: #e3e3e3;
 	--cm-info-alert-border-color: #e3e3e3;
+	--cm-table-header-large-border-color: #dedede;
+	--cm-table-header-large-border-bottom-color: #d2d7df;
+	--cm-table-footer-jagged-footer-border-color: #d2d7df;
+	--cm-table-empty-message-border-bottom-color: #d2d7df;
+	--cm-table-avatar-border-color: #ddd;
+	--cm-timeline-li-hover-list-clicks-active-after-border-bottom-color: #f2f2f2;
+	--cm-timeline-table-td-border-top-color: #d2d7df;
 	--cm-timeline-li-hover-list-clicks-active-border-top-color: #e6e6e6;
 	--cm-timeline-li-hover-list-clicks-active-before-border-bottom-color: #e6e6e6;
 	--cm-timeline-li-hover-list-clicks-li-border-top-color: #e6e6e6;
@@ -872,57 +880,68 @@
 	--cm-table-silver-fox-td-first-child-border-left-color: #e9ebef;
 	--cm-table-silver-fox-td-last-child-border-right-color: #e9ebef;
 	--cm-option-grid-li-strong-border-bottom-color: #9d9d9d;
-	--cm-accordion-list-item-border-top-color: #e9e9e9;
 	--cm-blank-slate-before-border-color: #ecb14a;
+	--cm-timeline-new-items-border-color: #bfdbed;
+	--cm-message-cross-linking-border-top-color: #ddd;
+	--cm-search-box-auto-map-wrap-border-color: #ddd;
 	--cm-message-cross-linking-welcome-to-the-app-wrapper-message-illustration-border-color: #dedede;
+	--cm-message-cross-linking-wrapper-message-illustration-gallery-class-img-border-color: #dedede;
 	--cm-timeline-header-border-color: #dedede;
-	--cm-timeline-table-expanded-clicks-td-border-top-color: #f1f1f1;
-	--cm-timeline-table-td-border-top-color: #d2d7df;
+	--cm-grey-links-menu-top-separator-border-top-color: #eee;
 	--cm-timeline-table-th-border-bottom-color: #d2d7df;
 	--cm-timeline-header-border-bottom-color: #c6c6c6;
 	--cm-timeline-table-timeline-table__footer-timeline-table__footer__faux-cell-border-color: #d7d7d7;
+	--cm-accordion-list-item-border-top-color: #e9e9e9;
 	--cm-timeline-table-expanded-clicks-li-border-bottom-color: #e9ebef;
-	--cm-timeline-table-expanded-clicks-email-clicks-before-border-color: transparent transparent #e9ebef;
-	--cm-accordion-list-item-grey-aside-disclosure-triangle-border-bottom-color: #717a8a;
 	--cm-timeline-table-tableHeaderFixed-before-border-bottom-color: #cbcbcb;
 	--cm-timeline-table-vertical-dashed-line-border-left-color: #cbcbcb;
 	--cm-timeline-table-tool-tip-border-color: #cecece;
+	--cm-timeline-table-tool-tip-before-border-color-right: #cecece;
 	--cm-list-tooltip-border-color: #dedede;
-	--cm-list-tooltip-before-border-bottom-color: #dedede;
 	--cm-list-menu-li-border-right-color: #dedede;
 	--cm-list-menu-li-border-left-color: #dedede;
-	--cm-list-menu-li-first-child-border-top-color: #dedede;
-	--cm-list-menu-li-last-child-border-bottom-color: #dedede;
 	--cm-list-menu-popup-li-border-right-color: #dedede;
 	--cm-list-menu-popup-li-border-left-color: #dedede;
+	--cm-list-menu-popup-before-border-top-color: #dedede;
+	--cm-list-tooltip-li-a-border-top-color: #eee;
+	--cm-timeline-table-expanded-clicks-email-clicks-after-border-color-bottom: #fafafb;
+	--cm-timeline-table-expanded-clicks-email-clicks-before-border-color-top: transparent;
+	--cm-timeline-table-expanded-clicks-email-clicks-before-border-color-horizontal: transparent;
+	--cm-timeline-table-expanded-clicks-email-clicks-before-border-color-bottom: #e9ebef;
+	--cm-accordion-list-item-grey-aside-disclosure-triangle-border-bottom-color: #717a8a;
+	--cm-list-tooltip-before-border-bottom-color: #dedede;
+	--cm-list-menu-li-first-child-border-top-color: #dedede;
+	--cm-list-menu-li-last-child-border-bottom-color: #dedede;
 	--cm-list-menu-popup-li-first-child-border-top-color: #dedede;
 	--cm-list-menu-popup-li-last-child-border-bottom-color: #dedede;
-	--cm-list-menu-popup-before-border-top-color: #dedede;
-	--cm-list-menu-popup-top-before-border-bottom-color: #dedede;
-	--cm-list-tooltip-li-a-border-top-color: #eee;
+	--cm-timeline-li-border-bottom-color: #eaeaea;
+	--cm-timeline-li-list-clicks-active-before-border-bottom-color: #eaeaea;
 	--cm-list-menu-li-border-top-color: #eee;
 	--cm-list-menu-popup-li-border-top-color: #eee;
+	--cm-timeline-li-list-clicks-li-border-top-color: #efefef;
 	--cm-table-with-left-col-pricing-li-border-top-color: #efefef;
 	--cm-table-with-left-col-pricing-li-total-border-top-color: #efefef;
 	--cm-list-clean-sub-border-top-color: #efefef;
 	--cm-list-rounded-li-border-top-color: #efefef;
+	--cm-timeline-li-list-clicks-active-after-border-bottom-color: #fafafa;
+	--cm-timeline-table-tool-tip-after-border-color-right: #fff;
 	--cm-list-tooltip-after-border-bottom-color: #fff;
-	--cm-list-menu-popup-after-border-top-color: #fff;
-	--cm-list-menu-popup-top-after-border-bottom-color: #fff;
 	--cm-timeline-li-list-clicks-active-after-border-left-color: transparent;
 	--cm-timeline-li-list-clicks-active-after-border-right-color: transparent;
+	--cm-timeline-table-expanded-clicks-email-clicks-after-border-color-top: transparent;
+	--cm-timeline-table-expanded-clicks-email-clicks-after-border-color-horizontal: transparent;
 	--cm-timeline-table-tableHeaderFixed-th-border-bottom-color: transparent;
 	--cm-timeline-table-tableHeaderFixed-th-first-child-border-left-color: transparent;
 	--cm-timeline-table-tableHeaderFixed-th-last-child-border-right-color: transparent;
+	--cm-timeline-table-tool-tip-before-border-color-top: transparent;
+	--cm-timeline-table-tool-tip-before-border-color-left: transparent;
+	--cm-timeline-table-tool-tip-before-border-color-bottom: transparent;
+	--cm-timeline-table-tool-tip-after-border-color-top: transparent;
+	--cm-timeline-table-tool-tip-after-border-color-left: transparent;
+	--cm-timeline-table-tool-tip-after-border-color-bottom: transparent;
+	--cm-timeline-table-tool-tip-toop-top__infoblue-border-color: #cce0eb;
 	--cm-list-tooltip-after-border-left-color: transparent;
 	--cm-list-tooltip-after-border-right-color: transparent;
-	--cm-list-menu-popup-before-border-left-color: transparent;
-	--cm-list-menu-popup-before-border-right-color: transparent;
-	--cm-list-menu-popup-after-border-left-color: transparent;
-	--cm-timeline-table-expanded-clicks-email-clicks-after-border-color: transparent transparent #fafafb;
-	--cm-timeline-table-tool-tip-before-border-color: transparent transparent transparent #cecece;
-	--cm-timeline-table-tool-tip-after-border-color: transparent transparent transparent #fff;
-	--cm-timeline-table-tool-tip-toop-top__infoblue-border-color: #cce0eb;
 	--cm-list-clean-sub-li-border-top-color: #d2d7df;
 	--cm-list-tooltip-error-after-border-bottom-color: #fbe5b9;
 	--cm-list-tooltip-error-border-color: #cfbc97;
@@ -930,13 +949,20 @@
 	--cm-list-menu-li-a-border-color: transparent;
 	--cm-list-menu-li-a-hover-border-color: #2393da;
 	--cm-list-menu-popup-li-a-border-color: transparent;
+	--cm-list-menu-popup-li-a-hover-border-color: #2393da;
+	--cm-list-menu-popup-top-before-border-bottom-color: #dedede;
+	--cm-list-menu-popup-after-border-top-color: #fff;
+	--cm-list-menu-popup-top-after-border-bottom-color: #fff;
+	--cm-list-menu-popup-before-border-left-color: transparent;
+	--cm-list-menu-popup-before-border-right-color: transparent;
+	--cm-list-menu-popup-after-border-left-color: transparent;
+	--cm-list-menu-popup-after-border-right-color: transparent;
 	--cm-list-timeline-li-border-color: #e4e4e4;
 	--cm-list-timeline-li-row-border-left-color: #e4e4e4;
 	--cm-list-timeline-li-row-border-top-color: #e4e4e4;
-	--cm-list-menu-popup-li-a-hover-border-color: #2393da;
 	--cm-list-timeline-add-border-color: #cbcbcb;
+	--cm-content-item-media__item-img-frame-border-color: #dedede;
 	--cm-list-timeline-li-before-border-top-color: #eaeaea;
-	--cm-list-menu-popup-after-border-right-color: transparent;
 	--cm-list-timeline-li-before-border-left-color: transparent;
 	--cm-list-timeline-li-before-border-right-color: transparent;
 	--cm-list-timeline-li-after-border-left-color: transparent;
@@ -954,21 +980,22 @@
 	--cm-thumb-grid-with-bar-li-bar-description-span-editable-hover-border-color: #d2d7df;
 	--cm-workflow-types-list-li-a-border-color: #e2e2e2;
 	--cm-c-design-and-spam-test-text-box-border-color: #d2d7df;
-	--cm-zoomControls-span-zoomOut-border-color: #d2d7df;
-	--cm-step3_1Div-primary-form-border-top-color: #d2d7df;
 	--cm-workflow-types-list-li-a-selected-border-color: #5ea846;
 	--cm-list-timeline-li-after-border-top-color: #f7f7f7;
 	--cm-toggletab-li-a-border-color: #8e9aad;
 	--cm-toggletab-li-a-active-border-top-color: #8e9aad;
 	--cm-ul-counts-border-color: #ddd;
-	--cm-content-item-media__item-img-frame-border-color: #dedede;
-	--cm-list-form-separator-arrow-after-border-color: #fff transparent transparent;
 	--cm-thumb-grid-with-bar-li-bar-description-span-border-bottom-color: transparent;
-	--cm-wv_imageInfoWindow-border-color: #8e9aad;
 	--cm-workflow-types-list-li-a-focus-border-color: #c9c9c9;
-	--cm-list-form-separator-arrow-after-border-color: #edecec transparent transparent;
+	--cm-list-form-separator-arrow-after-border-color-top: #edecec;
+	--cm-list-form-separator-arrow-after-border-color-top: #fff;
+	--cm-list-form-separator-arrow-after-border-color-horizontal: transparent;
+	--cm-list-form-separator-arrow-after-border-color-bottom: transparent;
 	--cm-zoomControls-span-zoomIn-border-color: #d2d7df;
+	--cm-zoomControls-span-zoomOut-border-color: #d2d7df;
 	--cm-c-sidebar-note-options-code-border-color: #d2d7df;
+	--cm-step3_1Div-primary-form-border-top-color: #d2d7df;
+	--cm-wv_imageInfoWindow-border-color: #8e9aad;
 	--cm-c-campaign-report-ui-refresh-noContent-input-short_link-border-color: #e9ebef;
 	--cm-ul-counts-border-color: #e9ebef;
 	--cm-ul-counts-li-opens-border-right-color: #e9ebef;
@@ -979,7 +1006,6 @@
 	--cm-table-tableFooter-td-footerLeft-border-top-color: #e9ebef;
 	--cm-ul-countriesHeader-border-bottom-color: rgb(233, 235, 239);
 	--cm-ul-countryListing-border-bottom-color: rgb(233, 235, 239);
-	--cm-button-primary-border-color: #61962b;
 	--cm-wrap-bg-primary-form-box-wrap-notification-info-border-color: transparent;
 }
 /* End: Border */
@@ -7726,8 +7752,8 @@ table#ar_default_table th {
 .ar_rightArrow {
     top: 48px;
     right: -6px;
-    border-color: var(--cm-ar_rightArrow-border-color);
-    border-color: var(--cm-ar_rightArrow-border-color);
+    border-color: var(--cm-ar_rightArrow-border-color-top) var(--cm-ar_rightArrow-border-color-left) var(--cm-ar_rightArrow-border-color-bottom) var(--cm-ar_rightArrow-border-color-right);
+    border-color: var(--cm-ar_rightArrow-border-color-top) var(--cm-ar_rightArrow-border-color-left) var(--cm-ar_rightArrow-border-color-bottom) var(--cm-ar_rightArrow-border-color-right);
 }
 .ar_rightArrow,
 .ar_rightArrow::after {
@@ -7742,7 +7768,7 @@ table#ar_default_table th {
     content: '';
     top: -5px;
     left: -7px;
-    border-color: var(--cm-ar_rightArrow-after-border-color);
+    border-color: var(--cm-ar_rightArrow-after-border-color-top) var(--cm-ar_rightArrow-after-border-color-left) var(--cm-ar_rightArrow-after-border-color-bottom) var(--cm-ar_rightArrow-after-border-color-right);
 }
 .ar_yellowAlert {
     float: right;
@@ -9934,7 +9960,7 @@ table .refunded td {
     background-color: var(--cm-error-balloon-no-glyph-background-color);
 }
 .error-balloon::before {
-    border-color: var(--cm-error-balloon-before-border-color);
+    border-color: var(--cm-error-balloon-before-border-color-vertical) var(--cm-error-balloon-before-border-color-horizontal);
     top: -8px;
     z-index: 19;
 }
@@ -9950,7 +9976,7 @@ table .refunded td {
     left: 9px;
 }
 .error-balloon::after {
-    border-color: var(--cm-error-balloon-after-border-color);
+    border-color: var(--cm-error-balloon-after-border-color-vertical) var(--cm-error-balloon-after-border-color-horizontal);
     top: -9px;
     z-index: 18;
 }
@@ -10009,7 +10035,7 @@ input.pass {
 }
 
 .success-balloon::before {
-    border-color: var(--cm-success-balloon-before-border-color);
+    border-color: var(--cm-success-balloon-before-border-color-vertical) var(--cm-success-balloon-before-border-color-horizontal);
     top: -4px;
     z-index: 19;
 }
@@ -10025,7 +10051,7 @@ input.pass {
     left: 9px;
 }
 .success-balloon::after {
-    border-color: var(--cm-success-balloon-after-border-color);
+    border-color: var(--cm-success-balloon-after-border-color-vertical) var(--cm-success-balloon-after-border-color-horizontal);
     top: -5px;
     z-index: 18;
 }
@@ -10040,7 +10066,7 @@ input.pass {
     bottom: -5px;
 }
 .info-balloon::after {
-    border-color: var(--cm-info-balloon-after-border-color);
+    border-color: var(--cm-info-balloon-after-border-color-vertical) var(--cm-info-balloon-after-border-color-horizontal);
 }
 .info-balloon.points-left::after,
 .info-balloon.points-left::before {
@@ -13870,7 +13896,7 @@ h1.inline {
     padding: var(--cm-spacing-20px) var(--cm-spacing-26px);
 }
 .info-balloon::before {
-    border-color: var(--cm-info-balloon-before-border-color);
+    border-color: var(--cm-info-balloon-before-border-color-vertical) var(--cm-info-balloon-before-border-color-horizontal);
     top: -4px;
     z-index: 19;
 }
@@ -13886,7 +13912,7 @@ h1.inline {
     left: 9px;
 }
 .info-balloon::after {
-    border-color: var(--cm-info-balloon-after-border-color);
+    border-color: var(--cm-info-balloon-after-border-color-vertical) var(--cm-info-balloon-after-border-color-horizontal);
     top: -5px;
     z-index: 18;
 }
@@ -13924,10 +13950,10 @@ h1.inline {
     border-color: var(--cm-info-balloon-note-border-color);
 }
 .info-balloon.note::after {
-    border-color: var(--cm-info-balloon-note-after-border-color);
+    border-color: var(--cm-info-balloon-note-after-border-color-vertical) var(--cm-info-balloon-note-after-border-color-horizontal);
 }
 .info-balloon.note::before {
-    border-color: var(--cm-info-balloon-note-before-border-color);
+    border-color: var(--cm-info-balloon-note-before-border-color-vertical) var(--cm-info-balloon-note-before-border-color-horizontal);
 }
 .info-balloon.note.points-left::after {
     border-color: var(--cm-info-balloon-note-points-left-after-border-color);
@@ -15768,7 +15794,7 @@ a.hidden-link {
     height: 0;
     border-style: solid;
     border-width: 0 8px 8px;
-    border-color: var(--cm-timeline-table-expanded-clicks-email-clicks-before-border-color);
+    border-color: var(--cm-timeline-table-expanded-clicks-email-clicks-before-border-color-top) var(--cm-timeline-table-expanded-clicks-email-clicks-before-border-color-horizontal) var(--cm-timeline-table-expanded-clicks-email-clicks-before-border-color-bottom);
 }
 .timeline-table .expanded-clicks .email-clicks::after {
     content: '';
@@ -15782,7 +15808,7 @@ a.hidden-link {
     height: 0;
     border-style: solid;
     border-width: 0 6px 6px;
-    border-color: var(--cm-timeline-table-expanded-clicks-email-clicks-after-border-color);
+    border-color: var(--cm-timeline-table-expanded-clicks-email-clicks-after-border-color-top) var(--cm-timeline-table-expanded-clicks-email-clicks-after-border-color-horizontal) var(--cm-timeline-table-expanded-clicks-email-clicks-after-border-color-bottom);
 }
 .timeline-table .tableHeaderFixed::before {
     content: '';
@@ -15909,7 +15935,7 @@ a.hidden-link {
 }
 .timeline-table .tool-tip::before {
     border-width: 6px 0 6px 6px;
-    border-color: var(--cm-timeline-table-tool-tip-before-border-color);
+    border-color: var(--cm-timeline-table-tool-tip-before-border-color-top) var(--cm-timeline-table-tool-tip-before-border-color-left) var(--cm-timeline-table-tool-tip-before-border-color-bottom) var(--cm-timeline-table-tool-tip-before-border-color-right);
 }
 .timeline-table .tool-tip::after,
 .timeline-table .tool-tip::before {
@@ -15925,7 +15951,7 @@ a.hidden-link {
 }
 .timeline-table .tool-tip::after {
     border-width: 5px 0 5px 5px;
-    border-color: var(--cm-timeline-table-tool-tip-after-border-color);
+    border-color: var(--cm-timeline-table-tool-tip-after-border-color-top) var(--cm-timeline-table-tool-tip-after-border-color-left) var(--cm-timeline-table-tool-tip-after-border-color-bottom) var(--cm-timeline-table-tool-tip-after-border-color-right);
 }
 .timeline-table .tool-tip h3 {
     color: var(--cm-timeline-table-tool-tip-h3-color);
@@ -17478,14 +17504,14 @@ a.hidden-link {
     height: 0;
     border-style: solid;
     border-width: 10px 9px 0;
-    border-color: var(--cm-list-form-separator-arrow-after-border-color);
+    border-color: var(--cm-list-form-separator-arrow-after-border-color-top) var(--cm-list-form-separator-arrow-after-border-color-horizontal) var(--cm-list-form-separator-arrow-after-border-color-bottom);
     left: 50%;
     margin-left: var(--cm-spacing-negative-9px);
     bottom: -9px;
 }
 .list-form-separator .arrow::after {
     border-width: 8px 8px 0;
-    border-color: var(--cm-list-form-separator-arrow-after-border-color);
+    border-color: var(--cm-list-form-separator-arrow-after-border-color-top) var(--cm-list-form-separator-arrow-after-border-color-horizontal) var(--cm-list-form-separator-arrow-after-border-color-bottom);
     margin-left: var(--cm-spacing-negative-8px);
     bottom: -7px;
 }

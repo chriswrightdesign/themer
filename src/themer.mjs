@@ -109,6 +109,46 @@ const recordAndReassignCustomProps = (declaration, recordArray) => {
         }
     }
 
+    if (prop === 'border-color' && value.includes(' ')) {
+        const valuesSplit = value.trim().split(' ');
+
+        const getBorderDirection = (shortHandLength, currIndex) => {
+            const shortHandMap = {
+                1: [''],
+                2: ['vertical', 'horizontal'],
+                3: ['top', 'horizontal', 'bottom'],
+                4: ['top', 'left', 'bottom', 'right'],
+            }
+            const direction = shortHandMap[shortHandLength][currIndex];
+
+            return direction;
+        }
+
+        const newValues = valuesSplit.map((individualValue, index) => {
+
+            const variable = createCustomPropertyObject({prefix, prop, value: individualValue, important, parent});
+
+            return {
+                ...variable,
+                name: `${variable.name}-${getBorderDirection(valuesSplit.length, index)}`
+            };
+        });
+
+        const newValueString = newValues.filter((variable) => Boolean(variable)).reduce((acc, curr) => {
+
+            recordNewValue(curr, prop, recordArray);
+            return `${acc} var(${curr.name})`;
+        },'');
+
+        declaration.assign({ 
+            prop, 
+            value: newValueString.trimStart(), 
+        });
+
+        return;
+
+    }
+
     if ((prop === 'border-radius' || spacingProps.includes(prop)) && value.includes(' ')) {
         const valuesSplit = value.trim().split(' ');
 
