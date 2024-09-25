@@ -69,8 +69,6 @@ ${constructRootPseudo(itemsArr)}
 
 const spacingProps = ['margin', 'padding', 'gap'];
 
-const zeroValues = ['0', '0px', '0rem', '0 auto', '0em', '0 auto 0'];
-
 const recordNewValue = (variable, prop, recordArray) => {
 
     const existsAlready = recordArray.some((record) => {
@@ -91,12 +89,26 @@ const recordAndReassignCustomProps = (declaration, recordArray) => {
         return;
     }
 
-    /* Do not include zero values */
-    if (zeroValues.includes(value)) {
-        return;
+    if (prop === 'box-shadow') {
+        const boxShadowValue = recordArray.find((record) => {
+            return record.value.trim() === value.trim();
+        });
+
+        // if it's not present continue, if it is present use the existing to do the declaration
+        if (boxShadowValue) {
+
+            console.log(boxShadowValue);
+            // declaration.assign({ 
+            //     prop, 
+            //     value: generatePropertyValue({
+            //         name: boxShadowValue.name,
+            //         prop,
+            //         originalValue: boxShadowValue.originalValue,
+            //     }) 
+            // });
+        }
     }
 
-    // it's possible the / in border radius might cause issues
     if ((prop === 'border-radius' || spacingProps.includes(prop)) && value.includes(' ')) {
         const valuesSplit = value.trim().split(' ');
 
