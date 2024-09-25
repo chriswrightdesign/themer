@@ -97,15 +97,15 @@ const recordAndReassignCustomProps = (declaration, recordArray) => {
         // if it's not present continue, if it is present use the existing to do the declaration
         if (boxShadowValue) {
 
-            console.log(boxShadowValue);
-            // declaration.assign({ 
-            //     prop, 
-            //     value: generatePropertyValue({
-            //         name: boxShadowValue.name,
-            //         prop,
-            //         originalValue: boxShadowValue.originalValue,
-            //     }) 
-            // });
+            declaration.assign({ 
+                prop, 
+                value: generatePropertyValue({
+                    name: boxShadowValue.name,
+                    prop,
+                    originalValue: boxShadowValue.originalValue,
+                }) 
+            });
+            return;
         }
     }
 
