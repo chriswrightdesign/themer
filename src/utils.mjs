@@ -360,14 +360,17 @@ export const constructRootPseudo = (customPropertyList) => {
 
    const mediaQueries = getMediaQueries(customPropertyList);
 
+   console.log(mediaQueries);
+
     return `:root {
 ${generateCustomProperties(customPropertiesWithNoAtRules)}
 }${mediaQueries.length > 0 ? `\n\n${mediaQueries.reduce((acc, mq) => {
-    return `${acc}@media ${mq} {
+    const currentMqContents = getPropertiesByMediaQueryParams(customPropertyList, mq);
+    return currentMqContents.length > 0 ? `${acc}@media ${mq} {
     :root {
-${generateCustomProperties(getPropertiesByMediaQueryParams(customPropertyList, mq))}
+${generateCustomProperties(currentMqContents)}
     }
-}\n`;
+}\n` : '';
     }, '')}` : ``}`
 }
 
