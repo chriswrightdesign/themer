@@ -15,7 +15,8 @@
     "src/regexHelpers.mjs",
     "src/reporter.mjs",
     "src/utils.mjs",
-    "src/themer.mjs"
+    "src/themer.mjs",
+    "src/themeFile.mjs"
   ],
   "bin": {
     "themer": "src/themer.mjs",
