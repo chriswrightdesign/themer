@@ -365,7 +365,7 @@ ${generateCustomProperties(customPropertiesWithNoAtRules)}
 }${mediaQueries.length > 0 ? `\n\n${mediaQueries.reduce((acc, mq) => {
     const currentMqContents = getPropertiesByMediaQueryParams(customPropertyList, mq);
     return currentMqContents.length > 0 ? `${acc}@media ${mq} {
-:root {
+    :root {
 ${generateCustomProperties(currentMqContents)}
     }
 }\n` : '';
