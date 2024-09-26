@@ -79,6 +79,35 @@ ${constructRootPseudo(itemsArr)}
             return;
         }
 
+        // handle background: #fff url('')
+        if(prop === 'background' && value.includes(' ')) {
+
+            const valuesSplit = value.match(colorSyntaxRegex);
+
+            if (valuesSplit !== null) {
+
+                const [colorValue] = valuesSplit;
+
+                const colorVariable = createCustomPropertyObject({prefix, prop: 'background-color', value: colorValue, important, parent, store: boxShadowStore});
+
+                const colorVariableName = colorVariable.name;
+                const colorVariableValue = colorVariable.value;
+
+                const newValue = value.replace(colorVariableValue, `var(${colorVariableName})`);
+
+                recordNewValue(colorVariable, 'background-color', recordArray);
+
+                declaration.assign({ 
+                    prop, 
+                    value: newValue,
+                });
+                return;
+
+            }
+
+            
+        }
+
         if (prop === 'box-shadow') {
             const boxShadowValue = recordArray.find((record) => {
                 return record.value.trim() === value.trim();
