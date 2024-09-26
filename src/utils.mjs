@@ -106,7 +106,9 @@ const removeIllegalCharactersFromName = (value) => {
         .replace(/-/, 'negative-')
         .replace(/%/, '-percent')
         .replace(/\//, '-')
-        .replace(/\./, 'pt');
+        .replace(/\./, 'pt')
+        .replace(/\(/, '_')
+        .replace(/\)/, '_');
         
 }
 

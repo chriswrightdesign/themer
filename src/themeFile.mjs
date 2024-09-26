@@ -15,9 +15,10 @@ import {
     declarationBackgroundImageRegex
 } from './regexHelpers.mjs';
 
+import {colorSyntaxRegex} from './regexHelpers.mjs';
+
 const rootDir = process.cwd();
 
-// outputDir, fileOutput
 export const themeFile = ({fileInput, fileOutput, outputDir, prefix}) => {
 
     const srcPath = path.resolve(rootDir, fileInput);
@@ -86,15 +87,21 @@ ${constructRootPseudo(itemsArr)}
         }
 
         if (prop === 'border-color' && value.includes(' ')) {
-            const valuesSplit = value.trim().split(' ');
+
+            const valuesSplit = value.match(colorSyntaxRegex);
 
             const getBorderDirection = (shortHandLength, currIndex) => {
+                if (currIndex === 0 && shortHandLength === undefined) {
+                    return undefined;
+                }
                 const shortHandMap = {
-                    1: [''],
+                    0: undefined,
+                    1: undefined,
                     2: ['vertical', 'horizontal'],
                     3: ['top', 'horizontal', 'bottom'],
                     4: ['top', 'left', 'bottom', 'right'],
                 }
+
                 const direction = shortHandMap[shortHandLength][currIndex];
 
                 return direction;
@@ -104,9 +111,19 @@ ${constructRootPseudo(itemsArr)}
 
                 const variable = createCustomPropertyObject({prefix, prop, value: individualValue, important, parent});
 
+                if (valuesSplit.length <= 1) {
+                    return {
+                        ...variable,
+                        name: `${variable.name}`
+                    };
+                }
+                const borderDirection = getBorderDirection(valuesSplit.length, index);
+
+                const borderSuffix = borderDirection !== '' ? `-${borderDirection}`: '';
+
                 return {
                     ...variable,
-                    name: `${variable.name}-${getBorderDirection(valuesSplit.length, index)}`
+                    name: `${variable.name}${borderSuffix}`
                 };
             });
 
@@ -170,66 +187,65 @@ ${constructRootPseudo(itemsArr)}
     }
 
 
+    const root = postcss.parse(safeContent);
 
-        const root = postcss.parse(safeContent);
-
-        root.walkRules(function(rule) {
-            // colors
-            rule.walkDecls(declarationColorRegex, function(declaration) {
-                recordAndReassignCustomProps(declaration, colorVarItems);
-            });
-
-            rule.walkDecls(declarationBackgroundRegex, function(declaration) {
-                recordAndReassignCustomProps(declaration, backgroundVarItems);
-            });
-
-            rule.walkDecls(declarationBoxShadowRegex, function(declaration) {
-                recordAndReassignCustomProps(declaration, boxShadowVarItems);
-            });
-
-            rule.walkDecls(declarationBorderRegex, function(declaration) {
-                recordAndReassignCustomProps(declaration, borderVarItems);
-            });
-
-            // spacings
-            rule.walkDecls(declarationSpacingRegex, function(declaration) {
-                recordAndReassignCustomProps(declaration, spacingRootVarItems);
-            });
-
-            // font family
-            rule.walkDecls(declarationFontFamilyRegex, function(declaration) {
-                recordAndReassignCustomProps(declaration, fontFamilyVarItems);
-            });
-
-            // font size
-            rule.walkDecls(declarationFontSizeRegex, function(declaration) {
-                recordAndReassignCustomProps(declaration, fontSizeVarItems);
-            });
-
-            // line-height
-            rule.walkDecls(declarationLineHeightRegex, function(declaration) {
-                recordAndReassignCustomProps(declaration, fontLineHeightVarItems);
-            });
-
-            // border-radius
-            rule.walkDecls(declarationRadiusRegex, function(declaration) {
-                recordAndReassignCustomProps(declaration, radiusRootVarItems);
-            });
-
-            rule.walkDecls(declarationBackgroundImageRegex, function(declaration) {
-                recordAndReassignCustomProps(declaration, backgroundImageVarItems);
-            });
+    root.walkRules(function(rule) {
+        // colors
+        rule.walkDecls(declarationColorRegex, function(declaration) {
+            recordAndReassignCustomProps(declaration, colorVarItems);
         });
 
-        const stringified = root.toResult().css;
+        rule.walkDecls(declarationBackgroundRegex, function(declaration) {
+            recordAndReassignCustomProps(declaration, backgroundVarItems);
+        });
 
-        try {
+        rule.walkDecls(declarationBoxShadowRegex, function(declaration) {
+            recordAndReassignCustomProps(declaration, boxShadowVarItems);
+        });
 
-            fs.writeFileSync(path.resolve(outputDir, fileOutput), `${renderIfPresent(colorVarItems, 'Colors')}${renderIfPresent(borderVarItems, 'Border')}${renderIfPresent(backgroundVarItems, 'Background')}${renderIfPresent(boxShadowVarItems, 'Box-shadow')}${renderIfPresent(radiusRootVarItems, 'Border-radius')}${renderIfPresent(fontSizeVarItems, 'Typography: Font-size')}${renderIfPresent(fontFamilyVarItems, 'Typography: Font-family')}${renderIfPresent(fontLineHeightVarItems, 'Typography: Line-height')}${renderIfPresent(spacingRootVarItems, 'Spacing')}${renderIfPresent(backgroundImageVarItems, 'Background images')}${stringified}`);
-            console.log(`File written: ${fileOutput}`); 
-        } catch(err) {
-            console.log('Error writing file: ', err);
-        }
+        rule.walkDecls(declarationBorderRegex, function(declaration) {
+            recordAndReassignCustomProps(declaration, borderVarItems);
+        });
+
+        // spacings
+        rule.walkDecls(declarationSpacingRegex, function(declaration) {
+            recordAndReassignCustomProps(declaration, spacingRootVarItems);
+        });
+
+        // font family
+        rule.walkDecls(declarationFontFamilyRegex, function(declaration) {
+            recordAndReassignCustomProps(declaration, fontFamilyVarItems);
+        });
+
+        // font size
+        rule.walkDecls(declarationFontSizeRegex, function(declaration) {
+            recordAndReassignCustomProps(declaration, fontSizeVarItems);
+        });
+
+        // line-height
+        rule.walkDecls(declarationLineHeightRegex, function(declaration) {
+            recordAndReassignCustomProps(declaration, fontLineHeightVarItems);
+        });
+
+        // border-radius
+        rule.walkDecls(declarationRadiusRegex, function(declaration) {
+            recordAndReassignCustomProps(declaration, radiusRootVarItems);
+        });
+
+        rule.walkDecls(declarationBackgroundImageRegex, function(declaration) {
+            recordAndReassignCustomProps(declaration, backgroundImageVarItems);
+        });
+    });
+
+    const stringified = root.toResult().css;
+
+    try {
+
+        fs.writeFileSync(path.resolve(outputDir, fileOutput), `${renderIfPresent(colorVarItems, 'Colors')}${renderIfPresent(borderVarItems, 'Border')}${renderIfPresent(backgroundVarItems, 'Background')}${renderIfPresent(boxShadowVarItems, 'Box-shadow')}${renderIfPresent(radiusRootVarItems, 'Border-radius')}${renderIfPresent(fontSizeVarItems, 'Typography: Font-size')}${renderIfPresent(fontFamilyVarItems, 'Typography: Font-family')}${renderIfPresent(fontLineHeightVarItems, 'Typography: Line-height')}${renderIfPresent(spacingRootVarItems, 'Spacing')}${renderIfPresent(backgroundImageVarItems, 'Background images')}${stringified}`);
+        console.log(`File written: ${fileOutput}`); 
+    } catch(err) {
+        console.log('Error writing file: ', err);
+    }
         
         
 
