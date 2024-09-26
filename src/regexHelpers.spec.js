@@ -1,4 +1,4 @@
-import {describe, expect, test} from '@jest/globals';
+import { describe, expect, test } from 'vitest'
 import {
     colorSyntaxRegex, 
     declarationBorderRegex, 
@@ -12,13 +12,13 @@ const regexTest = (regEx) => (str) => str.match(regEx) || [];
 
 describe('declarationBoxShadowRegex', () => {
     const declarationBoxShadowRegexMatch = regexTest(declarationBoxShadowRegex);
-    it('should identify box-shadow correctly', () => {
+    test('should identify box-shadow correctly', () => {
         expect(declarationBoxShadowRegexMatch('box-shadow')).toContain('box-shadow');
     });
 });
 describe('declarationBorderRegex', () => {
     const declarationBorderRegexMatch = regexTest(declarationBorderRegex);
-    it('should identify border, border-bottom-color, and border-color, but not border-style', () => {
+    test('should identify border, border-bottom-color, and border-color, but not border-style', () => {
         expect(declarationBorderRegexMatch('border')).toContain('border');
         expect(declarationBorderRegexMatch('border-color')).toContain('border-color');
         expect(declarationBorderRegexMatch('border-bottom-color')).toContain('border-bottom-color');
@@ -30,7 +30,7 @@ describe('declarationBorderRegex', () => {
 
 describe('declarationBackgroundRegex', () => {
     const declarationBackgroundRegexMatch = regexTest(declarationBackgroundRegex);
-      it('should identify background, background-color, but not background-image', () => {
+      test('should identify background, background-color, but not background-image', () => {
         expect(declarationBackgroundRegexMatch('background')).toContain('background');
         expect(declarationBackgroundRegexMatch('background-color')).toContain('background-color');
         expect(declarationBackgroundRegexMatch('background-image')).not.toContain('background-image');
@@ -41,7 +41,7 @@ describe('declarationBackgroundRegex', () => {
 describe('declarationColorRegex', () => {
     const declarationColorRegexMatch = regexTest(declarationColorRegex);
 
-    it('should identify stroke, fill, color', () => {
+    test('should identify stroke, fill, color', () => {
         expect(declarationColorRegexMatch('stroke')).toContain('stroke');
         expect(declarationColorRegexMatch('fill')).toContain('fill');
         expect(declarationColorRegexMatch('color')).toContain('color');
@@ -52,7 +52,7 @@ describe('declarationSpacingRegex', () => {
 
     const declarationSpacingRegexMatch = regexTest(declarationSpacingRegex);
 
-    it('should identify padding, padding-left', () => {
+    test('should identify padding, padding-left', () => {
         expect(declarationSpacingRegexMatch('padding')).toContain('padding');
         expect(declarationSpacingRegexMatch('padding-left')).toContain('padding-left');
         expect(declarationSpacingRegexMatch('padding-right')).toContain('padding-right');
@@ -60,7 +60,7 @@ describe('declarationSpacingRegex', () => {
         expect(declarationSpacingRegexMatch('padding-right')).toContain('padding-right');
     });
 
-    it('should identify margin, margin-right', () => {
+    test('should identify margin, margin-right', () => {
         expect(declarationSpacingRegexMatch('margin')).toContain('margin');
         expect(declarationSpacingRegexMatch('margin-left')).toContain('margin-left');
         expect(declarationSpacingRegexMatch('margin-right')).toContain('margin-right');
@@ -68,7 +68,7 @@ describe('declarationSpacingRegex', () => {
         expect(declarationSpacingRegexMatch('margin-right')).toContain('margin-right');
     });
 
-    it('should identify gap', () => {
+    test('should identify gap', () => {
         expect(declarationSpacingRegexMatch('gap')).toContain('gap');
         expect(declarationSpacingRegexMatch('row-gap')).toContain('row-gap');
         expect(declarationSpacingRegexMatch('column-gap')).toContain('column-gap');

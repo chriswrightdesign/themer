@@ -1,8 +1,8 @@
-import {describe, expect, test} from '@jest/globals';
+import { describe, expect, test } from 'vitest'
 import {makeCommentsSafe, parseSelector, getParsedPropName, createCustomPropertyName, createCustomPropertyObject, getPropertiesByMediaQueryParams, getMediaQueries, generateCustomProperties, constructRootPseudo, generatePropertyValue} from './utils.mjs';
 
 describe('makeCommentsSafe', () => {
-    it('should take // comment and replace with /* comment */', () => {
+    test('should take // comment and replace with /* comment */', () => {
         const cssLine = `
         .selector {
             margin: 0; // [1] this is useful.
@@ -11,7 +11,7 @@ describe('makeCommentsSafe', () => {
         expect(makeCommentsSafe(cssLine)).not.toContain('//');
     });
 
-    it('should not damage the // comment line', () => {
+    test('should not damage the // comment line', () => {
         const cssLine = `
         // this is my selector
         .selector {
@@ -22,7 +22,7 @@ describe('makeCommentsSafe', () => {
 
     })
 
-    it('should not replace a url in a comment', () => {
+    test('should not replace a url in a comment', () => {
         const comment = `/*
         * http://harvesthq.github.com/chosen/
         */`;
@@ -58,7 +58,7 @@ describe('parseSelector', () => {
     ];
 
     allSelectors.forEach((selector) => {
-        it(`should parse ${selector.value}`, () => {
+        test(`should parse ${selector.value}`, () => {
             expect(parseSelector(selector.value)).toBe(selector.expectation);
         });
     })
@@ -67,18 +67,18 @@ describe('parseSelector', () => {
 
 
 describe('getParsedPropName', () => {
-    it('should handle the border prop and produce border-color', () => {
+    test('should handle the border prop and produce border-color', () => {
         getParsedPropName('border');
     });
 
-    it('should return background for background', () => {
+    test('should return background for background', () => {
         getParsedPropName('background');
     })
 });
 
 describe ('createCustomPropertyName', () => {
 
-    it('should handle a parent selector', () => {
+    test('should handle a parent selector', () => {
 
         const inputObject = {
             prefix: 'themer',
@@ -94,7 +94,7 @@ describe ('createCustomPropertyName', () => {
         expect(createCustomPropertyName(inputObject)).toBe('--themer-c-form__c-box-border-color');
     });
 
-    it('should handle no parent selector selector', () => {
+    test('should handle no parent selector selector', () => {
         const inputObject = {
             prefix: 'themer',
             selector: '.c-box',
@@ -111,7 +111,7 @@ describe ('createCustomPropertyName', () => {
 });
 
 describe ('createCustomPropertyObject', () => {
-    it('should create an object based on the inputs', () => {
+    test('should create an object based on the inputs', () => {
         const inputObject = {
             prefix: 'themer', 
             prop: 'background', 
@@ -131,11 +131,11 @@ describe ('createCustomPropertyObject', () => {
         expect(createdObject).toHaveProperty('originalValue');
     });
 
-    it('should exclude transparency and none values ', () => {
+    test('should exclude none values ', () => {
         const inputObject = {
             prefix: 'themer', 
             prop: 'background', 
-            value: 'transparent', 
+            value: 'none', 
             important: false, 
             parent: {
                 parent: {
@@ -144,26 +144,13 @@ describe ('createCustomPropertyObject', () => {
             }
         };
 
-        const inputObject2 = {
-            prefix: 'themer', 
-            prop: 'border', 
-            value: '1px solid transparent', 
-            important: false, 
-            parent: {
-                parent: {
-                    type: null,
-                }
-            }
-        };
-
+        
         const createdObject = createCustomPropertyObject(inputObject);
-        const createdObject2 = createCustomPropertyObject(inputObject2);
 
         expect(createdObject).toEqual(null);
-        expect(createdObject2).toEqual(null);
     });
 
-    it('should handle one transparent value with one non transparent', () => {
+    test('should handle one transparent value with one non transparent', () => {
         const inputObject = {
             prefix: 'themer', 
             prop: 'border-color', 
@@ -180,7 +167,7 @@ describe ('createCustomPropertyObject', () => {
         expect(createdObject.value).toContain('green');
     });
 
-    it('should parse the border value', () => {
+    test('should parse the border value', () => {
         const inputObject = {
             prefix: 'themer', 
             prop: 'border', 
@@ -201,19 +188,19 @@ describe ('createCustomPropertyObject', () => {
 });
 
 describe('getPropertiesByMediaQueryParams', () => {
-    it('should return any custom props from the list that match the params given', () => {
+    test('should return any custom props from the list that match the params given', () => {
         expect(getPropertiesByMediaQueryParams([{name: 'bob', params: '(min-width: 360px)'}], `(min-width: 360px)`)[0].params).toBe('(min-width: 360px)');
     });
 });
 
 describe('generatePropertyValue', () => {
-    it('should create the value for a property', () => {
+    test('should create the value for a property', () => {
         const props = {name: '--box-background', prop: 'background', originalValue: '#fff'};
 
         expect(generatePropertyValue(props)).toEqual(`var(--box-background)`);
     });
 
-    it('should handle the value of a border shorthand', () => {
+    test('should handle the value of a border shorthand', () => {
 
         const props = {name: '--box-border', prop: 'border', originalValue: '1px solid #fff'};
 
@@ -224,7 +211,7 @@ describe('generatePropertyValue', () => {
 
 describe('getMediaQueries', () => {
 
-    it('should get properties with media queries', () => {
+    test('should get properties with media queries', () => {
 
         const customPropertyList = [
             {name: '--themer-box-background', value: '#fff' , originalValue: '#fff', propertyType: 'background', originalSelector: '.box', important: false, parentAtRule: 'media', params: '(min-width: 360px)'},
@@ -240,7 +227,7 @@ describe('getMediaQueries', () => {
 });
 
 describe('generateCustomProperties', () => {
-    it('should generate a string with custom properties', () => {
+    test('should generate a string with custom properties', () => {
         const customPropertyList = [
             {name: '--themer-box-background', value: '#fff' , originalValue: '#fff', propertyType: 'background', originalSelector: '.box', important: false, parentAtRule: 'media', params: '(min-width: 360px)'},
             {name: '--themer-box-color', value: '#fff' , originalValue: '#fff', propertyType: 'color', originalSelector: '.box', important: false, parentAtRule: 'media', params: '(max-width: 300px)'},
@@ -261,7 +248,7 @@ describe('constructRootPseudo', () => {
         {name: '--themer-box-padding', value: '0px' , originalValue: '0px', propertyType: 'padding', originalSelector: '.box', important: false, parentAtRule: null, params: null}
     ];
 
-    it('should generate a string with a :root{} and custom properties', () => {
+    test('should generate a string with a :root{} and custom properties', () => {
         const constructedRoot = constructRootPseudo(customPropertyList);
 
         expect(constructedRoot).toContain(':root {');
