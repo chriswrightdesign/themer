@@ -88,7 +88,9 @@ export const parseSelector = (selector) => {
         return '';
     }
 
-    const [firstSelector] = selector.split(',');
+    const selectorSplit = selector.split(',');
+
+    const [firstSelector] = selectorSplit;
 
     const starReplacementRegex = /\*/gi;
 
@@ -98,7 +100,7 @@ export const parseSelector = (selector) => {
 
     const selectorWithoutStar = selectorNormalized.replace(starReplacementRegex, '_all_');
 
-    return selectorWithoutStar;
+    return `${selectorWithoutStar}${selectorSplit.length > 1 ? '-comma' : ''}`;
 };
 
 const removeIllegalCharactersFromName = (value) => {
