@@ -21,7 +21,7 @@ const options = program.opts();
 
 const inputPattern = options.input;
 
-const cssFiles = globSync([inputPattern], { 
+const cssFiles = globSync([`${inputPattern}`], { 
     ignore: {
         ignored: p => /\.processed.scss$/.test(p.name),
 } });
