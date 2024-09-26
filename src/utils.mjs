@@ -112,15 +112,12 @@ const removeIllegalCharactersFromName = (value) => {
         
 }
 
-
-let boxShadowVariant = 1;
-
 /**
  * Takes a series of PostCSS inputs and produces a custom property name with a prefix.
  * @param {{prefix: string, selector: string, prop: string, value: string, parent: {parent: {selector: string}}}} props
  * @returns string
  */
-export const createCustomPropertyName = ({prefix, selector, prop, parent, value}) => {
+export const createCustomPropertyName = ({prefix, selector, prop, parent, value, store}) => {
 
     const parsedProp = getParsedPropName(prop);
 
@@ -136,9 +133,12 @@ export const createCustomPropertyName = ({prefix, selector, prop, parent, value}
             return ;
         }
 
-        const namedBoxshadowVariant = `--${prefix}-box-shadow-${boxShadowVariant}`;
+        const previousShadows = store.get();    
 
-        boxShadowVariant++;
+        const namedBoxshadowVariant = `--${prefix}-box-shadow-${previousShadows.length + 1}`;
+
+        store.add(namedBoxshadowVariant);
+
         return namedBoxshadowVariant;
     }
 
@@ -171,12 +171,12 @@ export const createCustomPropertyName = ({prefix, selector, prop, parent, value}
  * @param {{prefix: string, prop: sting, value: string, important: boolean, parent: {parentAtRule: string, params: string}}} props
  * @returns {{name: string, value: string, originalValue: string, originalSelector: string, important: boolean, parentAtRule: string, params: string}}
  */
-export const createCustomPropertyObject = ({prefix, prop, value, important, parent}) => {
+export const createCustomPropertyObject = ({prefix, prop, value, important, parent, store}) => {
     const {parentAtRule, params} = getParentAtRule(parent);
 
     const {selector} = parent;
 
-    const objKey = createCustomPropertyName({prefix, selector, prop, parent, value});
+    const objKey = createCustomPropertyName({prefix, selector, prop, parent, value, store});
 
     const parsedValue = borderProperties.includes(prop) ? value.split(' ').slice(2).join(' ') : value;
 

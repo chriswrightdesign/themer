@@ -19,7 +19,20 @@ import {colorSyntaxRegex} from './regexHelpers.mjs';
 
 const rootDir = process.cwd();
 
+function store() {
+    const savedValues = [];
+
+    return {
+        add: (item) => {
+            savedValues.push(item);
+        },
+        get: () => savedValues,
+    }
+}
+
 export const themeFile = ({fileInput, fileOutput, outputDir, prefix}) => {
+
+    const boxShadowStore = store();
 
     const srcPath = path.resolve(rootDir, fileInput);
     const content = fs.readFileSync(srcPath);
@@ -109,7 +122,7 @@ ${constructRootPseudo(itemsArr)}
 
             const newValues = valuesSplit.map((individualValue, index) => {
 
-                const variable = createCustomPropertyObject({prefix, prop, value: individualValue, important, parent});
+                const variable = createCustomPropertyObject({prefix, prop, value: individualValue, important, parent, store: boxShadowStore});
 
                 if (valuesSplit.length <= 1) {
                     return {
@@ -146,7 +159,7 @@ ${constructRootPseudo(itemsArr)}
             const valuesSplit = value.trim().split(' ');
 
             const newValues = valuesSplit.map((individualValue) => {
-                const variable = createCustomPropertyObject({prefix, prop, value: individualValue, important, parent});
+                const variable = createCustomPropertyObject({prefix, prop, value: individualValue, important, parent, store: boxShadowStore});
 
                 return variable;
             });
@@ -166,7 +179,7 @@ ${constructRootPseudo(itemsArr)}
             return;
         } 
 
-        const variable = createCustomPropertyObject({prefix, prop, value, important, parent});
+        const variable = createCustomPropertyObject({prefix, prop, value, important, parent, store: boxShadowStore});
 
         /* Handle when we get nothing back in return */
         if (variable === null) {
