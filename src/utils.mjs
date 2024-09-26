@@ -360,8 +360,6 @@ export const constructRootPseudo = (customPropertyList) => {
 
    const mediaQueries = getMediaQueries(customPropertyList);
 
-   console.log(mediaQueries);
-
     return `:root {
 ${generateCustomProperties(customPropertiesWithNoAtRules)}
 }${mediaQueries.length > 0 ? `\n\n${mediaQueries.reduce((acc, mq) => {
