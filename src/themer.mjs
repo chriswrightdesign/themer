@@ -31,11 +31,18 @@ if (cssFiles.length === 0) {
     process.exit(0);
 }
 
-const fileInput = cssFiles[0];
-
-const fileOutput = options.replace ? fileInput : fileInput.replace(/.((s|p?)css)/, `.processed.$1`);
-
 const prefix = options.prefix;
 const outputDir = options.outputdir;
 
-themeFile({fileInput, fileOutput, outputDir, prefix});
+cssFiles.forEach((cssFile) => {
+    const fileInput = cssFile;
+
+    const fileOutput = options.replace ? fileInput : fileInput.replace(/.((s|p?)css)/, `.processed.$1`);
+
+    themeFile({fileInput, fileOutput, outputDir, prefix});
+})
+
+
+
+
+
