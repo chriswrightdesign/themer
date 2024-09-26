@@ -109,6 +109,7 @@ describe('colorSyntaxRegex', () => {
     ];
 
     const backgroundTests = [
+        {value: `background: url('something-grey.gif') repeat-x`, expected: [], exclusions: []},
         {value: `background: content-box radial-gradient(crimson, skyblue);`, expected: [], exclusions: ['content-box']},
         {value: `background: left 5% / 15% repeat-x url('../../');`, expected: [], exclusions: ['repeat-x', 'left', `url('../../')`]},
         {value: `background: center / contain no-repeat #eee 35% url('../../');`, expected: ['#eee'], exclusions: ['center', 'contain', 'no-repeat', `url('../../')`, '35%']},

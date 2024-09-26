@@ -82,7 +82,9 @@ ${constructRootPseudo(itemsArr)}
         // handle background: #fff url('')
         if(prop === 'background' && value.includes(' ')) {
 
-            const valuesSplit = value.match(colorSyntaxRegex);
+            const valueWithoutUrl = value.replace(/url\(.+\)/, '');
+
+            const valuesSplit = valueWithoutUrl.match(colorSyntaxRegex);
 
             if (valuesSplit !== null) {
 
