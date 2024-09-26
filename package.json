@@ -8,7 +8,8 @@
   "scripts": {
     "test": "yarn node --experimental-vm-modules $(yarn bin jest)",
     "themer:complex": "node src/themer.mjs -i src/complextest.scss -p cm",
-    "themer:simple":  "node src/themer.mjs -i src/test.scss"
+    "themer:test": "node src/themer.mjs",
+    "themer:simple": "node src/themer.mjs -i src/test.scss"
   },
   "files": [
     "src/regexHelpers.mjs",
@@ -32,6 +33,7 @@
   "homepage": "https://github.com/chriswrightdesign/themer#readme",
   "dependencies": {
     "commander": "^12.1.0",
+    "glob": "^11.0.0",
     "jest": "^29.7.0",
     "postcss": "^8.4.41"
   }

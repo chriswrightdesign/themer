@@ -11,7 +11,9 @@
 /* Start: Border */
 :root {
 	--themer-dog-border-color: rgba(0, 0, 0, 0.5);
-	--themer-icon-border-color: #f0f #d2d7df transparent;
+	--themer-icon-border-color-top: #f0f;
+	--themer-icon-border-color-horizontal: #d2d7df;
+	--themer-icon-border-color-bottom: transparent;
 }
 /* End: Border */
 
@@ -20,6 +22,7 @@
 	--themer-dog-background: #f0f;
 	--themer-llama-background: purple;
 	--themer-dog-dog-large-background: purple;
+	--themer-giraffe-background: transparent;
 }
 
 @media (min-width: 980px) {
@@ -32,7 +35,7 @@
 
 /* Start: Box-shadow */
 :root {
-	--themer-complex-shadow-box-shadow: inset 0 -3em 3em rgb(0 200 0 / 30%),
+	--themer-box-shadow-1: inset 0 -3em 3em rgb(0 200 0 / 30%),
     0 0 0 2px white,
     0.3em 0.3em 1em rgb(200 0 0 / 60%);
 }
@@ -40,7 +43,8 @@
 
 /* Start: Border-radius */
 :root {
-	--themer-snake-border-radius: 0px 0px 4px;
+	--themer-border-radius-0px: 0px;
+	--themer-border-radius-4px: 4px;
 	--themer-border-radius-6px: 6px;
 	--themer-border-radius-50-percent: 50%;
 	--themer-border-radius-100px-10px: 100px/10px;
@@ -76,26 +80,25 @@
 
 /* Start: Typography: Line-height */
 :root {
-	--themer-snake-line-height: 1.2;
+	--themer-line-height-1: 1;
+	--themer-line-height-1pt2: 1.2;
 }
 /* End: Typography: Line-height */
 
 /* Start: Spacing */
 :root {
+	--themer-spacing-0: 0;
+	--themer-spacing-0px: 0px;
 	--themer-spacing-1pt3em: 1.3em;
 	--themer-spacing-2px: 2px;
 	--themer-spacing-4px: 4px;
 	--themer-spacing-8px: 8px;
-	--themer-icon-margin: -10px 0 21px;
+	--themer-spacing-negative-10px: -10px;
 	--themer-spacing-16px: 16px;
 	--themer-spacing-negative-16px: -16px;
+	--themer-spacing-21px: 21px;
 }
 
-@media (min-width: 600px) {
-    :root {
-
-    }
-}
 
 /* End: Spacing */
 
@@ -138,7 +141,7 @@
 .dog.dog--large {
     background: var(--themer-dog-dog-large-background) !important;
     width: 300px;
-    line-height: 1;
+    line-height: var(--themer-line-height-1);
     margin: var(--themer-spacing-8px);
     font-weight: 400;
     margin-left: var(--themer-spacing-16px);
@@ -146,21 +149,21 @@
 }
 
 .snake {
-    margin: 0;
+    margin: var(--themer-spacing-0);
     font-style: italic;
     font-family: var(--themer-font-stack-arial);
-    padding: 0px;
+    padding: var(--themer-spacing-0px);
     font-weight: 500;
-    line-height: var(--themer-snake-line-height);
+    line-height: var(--themer-line-height-1pt2);
     box-shadow: none;
     color: var(--themer-snake-color);
-    border-radius: var(--themer-snake-border-radius);
+    border-radius: var(--themer-border-radius-0px) var(--themer-border-radius-0px) var(--themer-border-radius-4px);
 }
 
 .giraffe {
     font-weight: 400;
     color: currentColor;
-    background: transparent;
+    background: var(--themer-giraffe-background);
     background-position-y: 0;
     padding: var(--themer-spacing-negative-16px);
     font-family: var(--themer-font-stack-arial);
@@ -174,12 +177,12 @@
 .icon {
     fill: var(--themer-icon-fill);
     stroke: var(--themer-icon-stroke);
-    border-color: var(--themer-icon-border-color);
+    border-color: var(--themer-icon-border-color-top) var(--themer-icon-border-color-horizontal) var(--themer-icon-border-color-bottom);
     border-radius: var(--themer-border-radius-50-percent);
-    margin: var(--themer-icon-margin);
+    margin: var(--themer-spacing-negative-10px) var(--themer-spacing-0) var(--themer-spacing-21px);
 }
 
 .complex-shadow {
     border-radius: var(--themer-border-radius-100px-10px);
-    box-shadow: var(--themer-complex-shadow-box-shadow);
+    box-shadow: var(--themer-box-shadow-1);
 }

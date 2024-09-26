@@ -5,6 +5,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import {Command, Option} from 'commander';
+import {globSync} from 'glob';
 import {constructRootPseudo, makeCommentsSafe, createCustomPropertyObject, generatePropertyValue} from './utils.mjs';
 import {
     declarationColorRegex, 
@@ -25,7 +26,6 @@ const program = new Command();
 const __filename = fileURLToPath(import.meta.url);
 const rootDir = process.cwd();
 
-
 program
 .addOption(new Option('-i, --input <file>', 'file to process'))
 .addOption(new Option('-o, --outputdir <dir>', 'directory output').default(rootDir))
@@ -36,12 +36,24 @@ program.parse();
 
 const options = program.opts();
 
-const fileInput = options.input;
+const inputPattern = options.input;
+
+const cssFiles = globSync([inputPattern], { 
+    ignore: {
+        ignored: p => /\.processed.scss$/.test(p.name),
+} });
+
+if (cssFiles.length === 0) {
+    console.log('No files found.');
+    process.exit(0);
+}
+
+const fileInput = cssFiles[0];
+
 const fileOutput = options.replace ? fileInput : fileInput.replace(/.((s|p?)css)/, `.processed.$1`);
 
 const prefix = options.prefix;
 const outputDir = options.outputdir;
-
 
 
 const srcPath = path.resolve(rootDir, fileInput);
