@@ -6,15 +6,16 @@
 	--themer-icon-stroke: blue;
 	--themer-icon-fill: red;
 }
+
 /* End: Colors */
 
 /* Start: Border */
 :root {
 	--themer-dog-border-color: rgba(0, 0, 0, 0.5);
-	--themer-icon-border-color-top: #f0f;
+	--themer-icon-border-color-vertical: #f0f;
 	--themer-icon-border-color-horizontal: #d2d7df;
-	--themer-icon-border-color-bottom: transparent;
 }
+
 /* End: Border */
 
 /* Start: Background */
@@ -24,6 +25,7 @@
 	--themer-dog-dog-large-background: purple;
 	--themer-giraffe-background: transparent;
 }
+
 
 @media (min-width: 980px) {
     :root {
@@ -39,6 +41,7 @@
     0 0 0 2px white,
     0.3em 0.3em 1em rgb(200 0 0 / 60%);
 }
+
 /* End: Box-shadow */
 
 /* Start: Border-radius */
@@ -49,6 +52,7 @@
 	--themer-border-radius-50-percent: 50%;
 	--themer-border-radius-100px-10px: 100px/10px;
 }
+
 /* End: Border-radius */
 
 /* Start: Typography: Font-size */
@@ -56,6 +60,7 @@
 	--themer-font-size-12px: 12px;
 	--themer-font-size-16px: 16px;
 }
+
 
 @media (min-width: 600px) {
     :root {
@@ -76,6 +81,7 @@
 	--themer-font-stack-arial: Arial, Helvetica, sans-serif;
 	--themer-font-stack-georgia: Georgia, 'Times New Roman', Times, serif;
 }
+
 /* End: Typography: Font-family */
 
 /* Start: Typography: Line-height */
@@ -83,6 +89,7 @@
 	--themer-line-height-1: 1;
 	--themer-line-height-1pt2: 1.2;
 }
+
 /* End: Typography: Line-height */
 
 /* Start: Spacing */
@@ -98,6 +105,7 @@
 	--themer-spacing-negative-16px: -16px;
 	--themer-spacing-21px: 21px;
 }
+
 
 
 /* End: Spacing */
@@ -177,7 +185,7 @@
 .icon {
     fill: var(--themer-icon-fill);
     stroke: var(--themer-icon-stroke);
-    border-color: var(--themer-icon-border-color-top) var(--themer-icon-border-color-horizontal) var(--themer-icon-border-color-bottom);
+    border-color: var(--themer-icon-border-color-vertical) var(--themer-icon-border-color-horizontal);
     border-radius: var(--themer-border-radius-50-percent);
     margin: var(--themer-spacing-negative-10px) var(--themer-spacing-0) var(--themer-spacing-21px);
 }

@@ -2,15 +2,6 @@
 :root {
 	--themer-status-label-color: #fff;
 	--themer-radioSelected-color: #fff;
-	--themer-white-color: #fff;
-	--themer-listPill-a-color: #fff;
-	--themer-formContainer-a-red-color: $cmds-g-color-link-destructive;
-	--themer-input-searchField-focus-color: $cmds-g-color-text-primary;
-	--themer-div-bigRadio-label-segment-color: $cmds-g-color-text-primary;
-	--themer-content-h1-span-clientHeader-color: $cmds-g-color-text-primary;
-	--themer-rightcol-sidebarCTA-a-color: $cmds-g-color-text-primary;
-	--themer-s-sidebar__heading-color: $cmds-g-color-text-primary;
-	--themer-s-sidebar__list-item-no-link-color: $cmds-g-color-text-primary;
 	--themer-a-alt-link-color: $cmds-g-color-text-secondary;
 	--themer-webkit-input-placeholder-color: rgba(0, 0, 0, 0.3);
 	--themer-focus-webkit-input-placeholder-color: rgba(0, 0, 0, 0.2);
@@ -35,47 +26,56 @@
 	--themer-p-titleSummary-span-color: $cmds-g-color-text-secondary;
 	--themer-p-titleSummary-span-right-color: $cmds-g-color-text-secondary;
 	--themer-with-filter-color: $cmds-g-color-text-secondary;
-	--themer-red-color: #bb3e22;
-	--themer-formBGCSS-h3-notok-color: #bb3e22;
+	--themer-table-tableHeader-th-headerGrey-color: #5daa64;
+	--themer-bigAlert-h1-color: #6a5f43;
+	--themer-failure-h3-color: #8d3f3f;
 	--themer-h2-verified-color: #17a421;
 	--themer-brightRed-color: #f30;
 	--themer-green-color: #42a808;
 	--themer-formBGCSS-h3-ok-color: #42a808;
+	--themer-alert-color: #443b1b;
+	--themer-alert-h1-color: #443b1b;
+	--themer-failureMessage-color: #664b4b;
 	--themer-div-pending-color: #717a8a;
 	--themer-h2-pending-color: #ff9308;
-	--themer-div-pending-h3-color: $cmds-g-color-text-primary;
 	--themer-input-searchField-color: #64748d;
+	--themer-red-color: #bb3e22;
+	--themer-formBGCSS-h3-notok-color: #bb3e22;
+	--themer-white-color: #fff;
+	--themer-listPill-a-color: #fff;
+	--themer-formContainer-a-red-color: $cmds-g-color-link-destructive;
+	--themer-div-pending-h3-color: $cmds-g-color-text-primary;
+	--themer-input-searchField-focus-color: $cmds-g-color-text-primary;
+	--themer-div-bigRadio-label-segment-color: $cmds-g-color-text-primary;
+	--themer-content-h1-span-clientHeader-color: $cmds-g-color-text-primary;
+	--themer-rightcol-sidebarCTA-a-color: $cmds-g-color-text-primary;
+	--themer-s-sidebar__heading-color: $cmds-g-color-text-primary;
+	--themer-s-sidebar__list-item-no-link-color: $cmds-g-color-text-primary;
+	--themer-fromAndToIsTheSameDiv-h3-color: $cmds-g-color-text-primary;
 	--themer-span-formcancel-color: $cmds-g-color-text-secondary;
 	--themer-span-buttonOr-color: $cmds-g-color-text-secondary;
 	--themer-textareaNote-color: $cmds-g-color-text-secondary;
 	--themer-verified-h3-span-color: $cmds-g-color-text-secondary;
 	--themer-pending-span-color: $cmds-g-color-text-secondary;
-	--themer-successBig-h1-color: #4e983c;
-	--themer-successBig-p-inline-color: #4e983c;
 	--themer-unauthenticatedModal-p-color: #b57d39;
 	--themer-unauthenticatedModal-a-switchAuthenticated-color: #b57d39;
 	--themer-h3checkboxOff-color: $cmds-g-color-text-secondary;
 	--themer-a-grey-return-color: $cmds-g-color-text-secondary;
 	--themer-a-grey-return-focus-color: $cmds-g-color-text-secondary;
-	--themer-success-s-success-box-billing-a-color: #4e983c;
-	--themer-successBig-color: #4e983c;
-	--themer-successBig-heading-color: #4e983c;
-	--themer-removeDomain-color: #82a581;
 	--themer-button_left-meta-em-color: #449137;
-	--themer-fromAndToIsTheSameDiv-h3-color: $cmds-g-color-text-primary;
 	--themer-button_left-meta-span-color: $cmds-g-color-text-secondary;
 	--themer-s-sidebar__highlight-s-sidebar__highlight-cta-color: $cmds-g-color-text-secondary;
 	--themer-s-sidebar__heading-span-color: #d1d1d1;
 	--themer-s-sidebar__list-item-color: $cmds-g-color-text-secondary;
 	--themer-a-manage-color: $cmds-g-color-text-secondary;
+	--themer-removeDomain-color: #82a581;
+	--themer-success-s-success-box-billing-a-color: #4e983c;
 	--themer-success2-h3-color: #4e983c;
+	--themer-successBig-color: #4e983c;
+	--themer-successBig-heading-color: #4e983c;
+	--themer-successBig-h1-color: #4e983c;
 	--themer-bigEarning-h2-color: #4e983c;
-	--themer-table-tableHeader-th-headerGrey-color: #5daa64;
-	--themer-bigAlert-h1-color: #6a5f43;
-	--themer-failure-h3-color: #8d3f3f;
-	--themer-alert-color: #443b1b;
-	--themer-alert-h1-color: #443b1b;
-	--themer-failureMessage-color: #664b4b;
+	--themer-successBig-p-inline-color: #4e983c;
 	--themer-bigCustomizeAlert-h1-color: $cmds-g-color-text-primary;
 	--themer-alert-p-color: #443b1b;
 	--themer-bigAlert-p-color: #b39772;
@@ -111,57 +111,29 @@
 	--themer-table-tableHeader-td-color: $cmds-g-color-text-primary;
 	--themer-table-tableHeader-empty-state-cell-color: #64748d;
 	--themer-td-activityType-div-color: #fff;
-	--themer-table-tableHeader-tr-segmentCondition-td-color: $cmds-g-color-text-primary;
-	--themer-table-tableHeader-tr-segmentConditionAdd-td-color: $cmds-g-color-text-primary;
-	--themer-table-tableHeader-tr-td-span-big-color: $cmds-g-color-text-primary;
-	--themer-table-tableHeader-tr-td-avgLabel-color: $cmds-g-color-text-primary;
-	--themer-table-tableHeader-td-span-dark-grey-color: $cmds-g-color-text-primary;
-	--themer-table-tableHeader-tr-big-td-rowLeft-span-color: $cmds-g-color-text-primary;
-	--themer-table-tableStats-td-color: $cmds-g-color-text-primary;
-	--themer-table-snapshotStats-td-color: $cmds-g-color-text-primary;
-	--themer-aside-color: $cmds-g-color-text-secondary;
-	--themer-table-tableHeader-td-a-light-color: #64748d;
-	--themer-table-tableTabsHeader-td-alertRow-color: #64748d;
-	--themer-table-tableStats-td-span-color: #64748d;
-	--themer-table-subscriberStats-td-color: $cmds-g-color-text-primary;
-	--themer-table-performance-td-color: $cmds-g-color-text-primary;
-	--themer-table-performance-th-color: $cmds-g-color-text-primary;
-	--themer-table-tableStats-td-span-statmeta-color: $cmds-g-color-text-secondary;
 	--themer-abSlider-a-color: #ecb0b0;
-	--themer-table-subscriberStats-td-rowLeft-color: #64748d;
-	--themer-table-darkFooter-th-color: #64748d;
 	--themer-ar_dash_table-span-ar_viewActivitySpan-color: #64748d;
-	--themer-table-goalSummary-td-div-color: #346720;
 	--themer-label-color: #fff;
-	--themer-noData-p-color: $cmds-g-color-text-primary;
-	--themer-table-activity-td-color: $cmds-g-color-text-primary;
 	--themer-compareOptions-h3-color: $cmds-g-color-text-primary;
 	--themer-compareOptions-p-color: $cmds-g-color-text-primary;
-	--themer-table-goalSummary-td-div-secondary-color: $cmds-g-color-text-secondary;
-	--themer-table-goalSummary-td-goalDescription-color: $cmds-g-color-text-secondary;
-	--themer-table-goalSummary-td-goalDescription-h2-color: $cmds-g-color-text-secondary;
-	--themer-table-snapshotStats-td-span-color: $cmds-g-color-text-secondary;
-	--themer-table-snapshotStats-td-span-howJoined-color: $cmds-g-color-text-secondary;
-	--themer-table-snapshotStats-th-color: $cmds-g-color-text-secondary;
-	--themer-headVA-color: #ce3e3e;
+	--themer-headVB-color: #428cf4;
 	--themer-td-versionAAndB-strong-color: #434d5d;
 	--themer-pieLegend-color: #717a8a;
-	--themer-td-activityAction-span-color: #64748d;
 	--themer-pieLegend-h3-color: $cmds-g-color-text-primary;
 	--themer-pieLegend-h3-span-color: $cmds-g-color-text-primary;
 	--themer-rightContent-p-color: #717a8a;
 	--themer-h1-reportTitle-span-color: $cmds-g-color-text-primary;
-	--themer-bigA-color: #ce3e3e;
 	--themer-blankSlateIntro-p-color: #7d8977;
 	--themer-new-slate-secondary-slate-section-arrowed-bullets-a-color: #428cf4;
 	--themer-bigB-color: #428cf4;
-	--themer-headVB-color: #428cf4;
 	--themer-h2-campaignName-color: #717a8a;
 	--themer-h2-campaignName-span-color: #717a8a;
 	--themer-new-slate-small-color: #717a8a;
 	--themer-bLight-color: #717a8a;
 	--themer-senditnow-color: #717a8a;
 	--themer-dataHighlight-h2-worst-color: #963a30;
+	--themer-bigA-color: #ce3e3e;
+	--themer-headVA-color: #ce3e3e;
 	--themer-dataHighlight-h2-best-color: #33861a;
 	--themer-td-versionAAndB-color: #64748d;
 	--themer-new-slate-p-color: #64748d;
@@ -171,17 +143,32 @@
 	--themer-blankSlateIntro-h1-a-color: #499524;
 	--themer-aBig-color: #fff;
 	--themer-abSlider-class-letter-big-color: #fff;
+	--themer-table-tableHeader-tr-segmentCondition-td-color: $cmds-g-color-text-primary;
+	--themer-table-tableHeader-tr-segmentConditionAdd-td-color: $cmds-g-color-text-primary;
+	--themer-table-tableHeader-tr-td-span-big-color: $cmds-g-color-text-primary;
+	--themer-table-tableHeader-tr-td-avgLabel-color: $cmds-g-color-text-primary;
+	--themer-table-tableHeader-td-span-dark-grey-color: $cmds-g-color-text-primary;
+	--themer-table-tableHeader-tr-big-td-rowLeft-span-color: $cmds-g-color-text-primary;
+	--themer-table-tableStats-td-color: $cmds-g-color-text-primary;
+	--themer-table-snapshotStats-td-color: $cmds-g-color-text-primary;
 	--themer-new-slate-h1-color: $cmds-g-color-text-primary;
 	--themer-new-slate-p-strong-color: $cmds-g-color-text-primary;
+	--themer-aside-color: $cmds-g-color-text-secondary;
 	--themer-gaAlert-color: #2a2941;
 	--themer-abSlider-c-color: #717a8a;
 	--themer-pagination-li-dots-color: #717a8a;
 	--themer-campaignStage-h1-span-campaignName-color: #717a8a;
+	--themer-table-tableHeader-td-a-light-color: #64748d;
+	--themer-table-tableTabsHeader-td-alertRow-color: #64748d;
+	--themer-table-tableStats-td-span-color: #64748d;
 	--themer-new-slate-span-or-color: #64748d;
 	--themer-abSlider-winning-version-color: #64748d;
 	--themer-abSlider-b-color: #fff;
 	--themer-pagination-active-color: #fff;
 	--themer-h1-aBig-color: #fff;
+	--themer-table-subscriberStats-td-color: $cmds-g-color-text-primary;
+	--themer-table-performance-td-color: $cmds-g-color-text-primary;
+	--themer-table-performance-th-color: $cmds-g-color-text-primary;
 	--themer-new-slate-secondary-slate-section-h3-color: $cmds-g-color-text-primary;
 	--themer-authenticationTick-color: $cmds-g-color-text-primary;
 	--themer-table-importSummary-td-color: $cmds-g-color-text-primary;
@@ -191,7 +178,6 @@
 	--themer-snapshotAlert-color: $cmds-g-color-text-primary;
 	--themer-h1-span-extras-color: $cmds-g-color-text-primary;
 	--themer-cr_test_comment-color: #c01f1f;
-	--themer-cr_send_confirm-color: #4e983c;
 	--themer-spamWaiting-span-status-color: #ff8d00;
 	--themer-CodeMirror-line-numbers-color: #717a8a;
 	--themer-contentNavs-a-span-color: #717a8a;
@@ -200,6 +186,8 @@
 	--themer-versA-color: #64748d;
 	--themer-cr_messageResponse-color: #64748d;
 	--themer-cr_or_other-color: #64748d;
+	--themer-ul-grid-li-info-text-color: #64748d;
+	--themer-cr_send_confirm-color: #4e983c;
 	--themer-div-segmentDivider-span-color: #fff;
 	--themer-span-conditionDivider-color: #fff;
 	--themer-contentNavs-a-hover-span-color: $cmds-g-color-text-primary;
@@ -207,7 +195,6 @@
 	--themer-div-segmentCount-span-color: $cmds-g-color-text-primary;
 	--themer-ul-grid-li-label-option-aside-color: #64748d;
 	--themer-ul-grid-li-blurb-color: #64748d;
-	--themer-ul-grid-li-info-text-color: #64748d;
 	--themer-ul-grid-li-blurb-strong-color: $cmds-g-color-text-primary;
 	--themer-authenticated-domains-h5-color: $cmds-g-color-text-primary;
 	--themer-JT_copy-color: $cmds-g-color-text-primary;
@@ -237,33 +224,35 @@
 	--themer-au_problems-h4-color: $cmds-g-color-text-primary;
 	--themer-au_problems-textarea-correct-color: $cmds-g-color-text-primary;
 	--themer-in_address_desc-color: $cmds-g-color-text-secondary;
-	--themer-pp_ok-ok-color: #4e6f1c;
 	--themer-pp_text-color: #434d5d;
 	--themer-au_explained-color: #434d5d;
+	--themer-au_add-color: #434d5d;
 	--themer-pp_notok-notok-color: #930;
+	--themer-pp_ok-ok-color: #4e6f1c;
 	--themer-au_forms-color: $cmds-g-color-text-primary;
 	--themer-au_forms-strong-color: $cmds-g-color-text-primary;
-	--themer-au_add-color: #434d5d;
 	--themer-au_problems-theirs-color: $cmds-g-color-text-primary;
 	--themer-au_problems-theirs-okay-color: $cmds-g-color-text-primary;
 	--themer-au_problems-theirs-probDel-color: $cmds-g-color-text-primary;
 	--themer-au_problems-desc-color: $cmds-g-color-text-primary;
 	--themer-au_problems-pending-h3-color: $cmds-g-color-text-primary;
-	--themer-ds_spam_filters-div-spamFail-color: #fc2e23;
 	--themer-ds_spam_filters-div-spamPass-color: #434d5d;
+	--themer-ds_screen_box-loadingScreen-color: #717a8a;
+	--themer-overlay_header-color: #64748d;
 	--themer-au_remove-color: #b93300;
 	--themer-au_textareaNote-color: $cmds-g-color-text-primary;
-	--themer-au_verified-h2-color: #4e6f1c;
+	--themer-table-tableStats-td-span-statmeta-color: $cmds-g-color-text-secondary;
 	--themer-au_verified-p-color: #434d5d;
-	--themer-au_verified-textarea-color: $cmds-g-color-text-primary;
-	--themer-overlay_header-color: #64748d;
-	--themer-overlay_header-hline-color: #64748d;
-	--themer-overlays-color: #fff;
+	--themer-table-subscriberStats-td-rowLeft-color: #64748d;
+	--themer-table-darkFooter-th-color: #64748d;
+	--themer-ds_client_name-color: #64748d;
+	--themer-ds_spam_filters-div-spamWaiting-color: #64748d;
+	--themer-au_verified-h2-color: #4e6f1c;
 	--themer-overlays-a-color: #fff;
-	--themer-cs_dark-a-color: #434d5d;
-	--themer-cs_white-a-color: #434d5d;
-	--themer-ds_active-div-color: #fff;
-	--themer-ds_available-color: $cmds-g-color-text-primary;
+	--themer-au_verified-textarea-color: $cmds-g-color-text-primary;
+	--themer-overlay_header-hline-color: #64748d;
+	--themer-table-goalSummary-td-div-color: #346720;
+	--themer-overlays-color: #fff;
 	--themer-subscriber_detail-aside-div-error-color: #2a2941;
 	--themer-error-balloon-alert-color: #2a2941;
 	--themer-success-balloon-color: #2a2941;
@@ -273,22 +262,6 @@
 	--themer-table-refunded-td-color: #717a8a;
 	--themer-button-tiny-color: #717a8a;
 	--themer-button-tiny-focus-color: #717a8a;
-	--themer-ds_client_name-color: #64748d;
-	--themer-ds_loading-color: #64748d;
-	--themer-ds_right_header-color: $cmds-g-color-text-primary;
-	--themer-ds_screen_box-loadingScreen-color: #717a8a;
-	--themer-ds_spam_filters-div-spamWaiting-color: #64748d;
-	--themer-ds_spam_filters-div-spamBroken-color: #64748d;
-	--themer-ds_spam_filter_fail-color: $cmds-g-color-text-primary;
-	--themer-ds_tempReason-color: $cmds-g-color-text-primary;
-	--themer-ar_alert-h1-color: $cmds-g-color-text-primary;
-	--themer-bigAbAlert-p-color: #64748d;
-	--themer-ar_chart_loading-color: $cmds-g-color-text-primary;
-	--themer-ar_chart_stats-h3-color: $cmds-g-color-text-primary;
-	--themer-ar_clients_show-color: $cmds-g-color-text-primary;
-	--themer-ar_dash-td-span-color: #717a8a;
-	--themer-table-activity-td-activityTime-color: #64748d;
-	--themer-ar_dash-td-color: #64748d;
 	--themer-ar_email_name-color: #64748d;
 	--themer-ar_email_stats-color: $cmds-g-color-text-primary;
 	--themer-ar_notstarted-div-color: $cmds-g-color-text-primary;
@@ -327,14 +300,28 @@
 	--themer-noContent-h2-color: #64748d;
 	--themer-options-p-smallPad-span-importantSidebar-color: #fff;
 	--themer-wv_progressData-color: #fff;
+	--themer-noData-p-color: $cmds-g-color-text-primary;
+	--themer-table-activity-td-color: $cmds-g-color-text-primary;
 	--themer-noContent-p-color: $cmds-g-color-text-primary;
 	--themer-noContent-input-short_link-color: $cmds-g-color-text-primary;
 	--themer-wv_campaignDetails-h2-color: $cmds-g-color-text-primary;
+	--themer-table-goalSummary-td-div-secondary-color: $cmds-g-color-text-secondary;
+	--themer-table-goalSummary-td-goalDescription-color: $cmds-g-color-text-secondary;
+	--themer-table-goalSummary-td-goalDescription-h2-color: $cmds-g-color-text-secondary;
+	--themer-table-snapshotStats-td-span-color: $cmds-g-color-text-secondary;
+	--themer-table-snapshotStats-td-span-howJoined-color: $cmds-g-color-text-secondary;
+	--themer-table-snapshotStats-th-color: $cmds-g-color-text-secondary;
 	--themer-wv_queuing-color: #e5af1f;
+	--themer-cs_dark-a-color: #434d5d;
+	--themer-cs_white-a-color: #434d5d;
 	--themer-wv_timeKey-color: #717a8a;
 	--themer-ul-countriesHeader-color: #717a8a;
+	--themer-td-activityAction-span-color: #64748d;
+	--themer-table-activity-td-activityTime-color: #64748d;
 	--themer-wv_status-h3-color: #64748d;
 	--themer-clicksZZ-color: #bbb;
+	--themer-ds_active-div-color: #fff;
+	--themer-ds_available-color: $cmds-g-color-text-primary;
 	--themer-wv_queued-color: $cmds-g-color-text-primary;
 	--themer-ul-countryListing-li-color: $cmds-g-color-text-primary;
 	--themer-div-mostPopularLinks-td-rowLeft-a-linkurl-color: $cmds-g-color-text-primary;
@@ -346,9 +333,11 @@
 	--themer-subscriber_detail-article-body-stat-opened-span-color: #75a962;
 	--themer-subscriber_detail-article-body-stat-sent-span-color: #428cf4;
 	--themer-subscriber_detail-article-body-stat-clicks-span-color: #428cf4;
+	--themer-ar_dash-td-span-color: #717a8a;
 	--themer-subscriber_detail-article-body-stat-sent-strong-color: #717a8a;
 	--themer-subscriber_detail-article-body-stat-clicks-strong-color: #717a8a;
 	--themer-subscriber_detail-article-body-stat-forwards-span-color: #e0835f;
+	--themer-ds_loading-color: #64748d;
 	--themer-subscriber_detail-aside-section-header-reads-color: #64748d;
 	--themer-subscriber_detail-aside-section-row-label-color: $cmds-g-color-text-primary;
 	--themer-subscriber_detail-aside-section-header-subtitle-input-untruncated-color: gray;
@@ -364,6 +353,7 @@
 	--themer-button-primary-color: #fff;
 	--themer-button-cancel-cancel-color: $cmds-g-color-link-secondary;
 	--themer-button-cancel-cancel-a-color: $cmds-g-color-link-secondary;
+	--themer-ds_right_header-color: $cmds-g-color-text-primary;
 	--themer-ul-dropDown-color: $cmds-g-color-text-primary;
 	--themer-ul-dropDown-li-a-color: $cmds-g-color-text-primary;
 	--themer-ul-dropDown-li-unHover-a-color: $cmds-g-color-text-primary;
@@ -396,23 +386,42 @@
 	--themer-primary-form-cr_test_comment-color: #c01f1f;
 	--themer-progress-bar-percentage-color: #1b57aa;
 	--themer-primary-form-primary-form__box-box-heading-pending-color: #2a2941;
+	--themer-blank-slate-color: #2a2941;
+	--themer-blank-slate-h2-color: #2a2941;
+	--themer-table-li-changed-before-color: #7ec037;
+	--themer-list-tooltip-error-color: #a48b5e;
+	--themer-blank-slate-green-a-color: #63a54e;
+	--themer-progress-bar-error-percentage-color: #a02e2e;
 	--themer-info-box-wrap-color: #428cf4;
 	--themer-primary-form-contenteditable-highlight-color: #428cf4;
 	--themer-wrap-modal-template-description-thumbs-header-color: #717a8a;
+	--themer-ds_spam_filters-div-spamBroken-color: #64748d;
+	--themer-ar_dash-td-color: #64748d;
 	--themer-primary-form-box-wrap-url-before-color: #64748d;
 	--themer-primary-form-selector-email-after-color: #64748d;
 	--themer-box-wrap-white-confirm-box-p-color: #64748d;
 	--themer-primary-form-wrap-p-indent-color: #64748d;
 	--themer-new-form-checkbox-description-description-color: #64748d;
 	--themer-primary-form-box-wrap-warning-text-color: #f77171;
+	--themer-ds_spam_filters-div-spamFail-color: #fc2e23;
 	--themer-secondary-cta-area-section-h3-color: #ccc;
 	--themer-bi_saving_card_screen-bi_saving-h2-color: #fff;
+	--themer-ds_spam_filter_fail-color: $cmds-g-color-text-primary;
+	--themer-ds_tempReason-color: $cmds-g-color-text-primary;
+	--themer-ar_alert-h1-color: $cmds-g-color-text-primary;
 	--themer-new-form-light-labels-label-color: $cmds-g-color-text-primary;
 	--themer-new-form-label-follows-checkbox-color: $cmds-g-color-text-primary;
 	--themer-selector-color: $cmds-g-color-text-primary;
+	--themer-message-center-p-color: #717a8a;
+	--themer-accordion-list-item-grey-aside-color: #717a8a;
+	--themer-progress-bar-hgroup-h2-color: #5284ca;
+	--themer-bigAbAlert-p-color: #64748d;
 	--themer-selector-span-number-color: #64748d;
 	--themer-bar-top-nav-with-icons-li-new-icon-flag-animated-color: #fff;
 	--themer-wrap-modal-template-description-h2-color: #fff;
+	--themer-ar_chart_loading-color: $cmds-g-color-text-primary;
+	--themer-ar_chart_stats-h3-color: $cmds-g-color-text-primary;
+	--themer-ar_clients_show-color: $cmds-g-color-text-primary;
 	--themer-dark-color: $cmds-g-color-text-primary;
 	--themer-bar-top-h1-color: $cmds-g-color-text-primary;
 	--themer-bar-top-nav-with-icons-li-text-color: $cmds-g-color-text-primary;
@@ -423,63 +432,47 @@
 	--themer-lighter-color: $cmds-g-color-text-secondary;
 	--themer-bar-top-h1-span-color: $cmds-g-color-text-secondary;
 	--themer-side-bar-color: #64748d;
+	--themer-option-grid-li-p-color: #64748d;
+	--themer-blank-slate-p-color: #64748d;
 	--themer-heading-feature-highlight-color: #124988;
-	--themer-subscriber_detail-article-body-stat-forwards-strong-color: #593325;
 	--themer-bi_saving_card_screen-bi_saving-p-color: #919499;
+	--themer-accordion-list-item-strong-name-color: $cmds-g-color-link;
 	--themer-note-heading-color: $cmds-g-color-text-primary;
 	--themer-notification-box-notification-info-color: #1f2a4e;
 	--themer-notification-box-color: #2a2941;
 	--themer-note-li-color: #717a8a;
 	--themer-animated-tick-valid-tick-icon-fill: #fff;
 	--themer-tick-icon-blur-fill: #000;
-	--themer-tick-icon-fill: #e5e5e5;
-	--themer-tooltip-title-color: #fff;
-	--themer-error-balloon-big-color: $cmds-g-color-text-primary;
-	--themer-tooltip-color: $cmds-g-color-text-primary;
-	--themer-alert-box-info-color: #1f2a4e;
-	--themer-alert-box-info-regular-color: #5e8fa9;
-	--themer-alert-box-warning-color: #443b1b;
-	--themer-tooltip-details-color: #64748d;
-	--themer-sentLists-light-color: $cmds-g-color-text-primary;
 	--themer-discount-message-big-color: #717a8a;
 	--themer-info-alert-color: #717a8a;
 	--themer-table-silver-fox-th-color: #717a8a;
 	--themer-discount-message-small-color: #826dbd;
 	--themer-discount-message-small-nonpartner-color: #b0965e;
+	--themer-discount-message-big-p-color: #64748d;
+	--themer-table-top-light-color: #64748d;
+	--themer-tick-icon-fill: #e5e5e5;
+	--themer-tooltip-title-color: #fff;
+	--themer-error-balloon-big-color: $cmds-g-color-text-primary;
+	--themer-tooltip-color: $cmds-g-color-text-primary;
+	--themer-alert-box-info-color: #1f2a4e;
+	--themer-alert-box-warning-color: #443b1b;
+	--themer-tooltip-details-color: #64748d;
+	--themer-sentLists-light-color: $cmds-g-color-text-primary;
 	--themer-alert-box-successful-color: #32431a;
 	--themer-alert-box-successful-regular-color: #32431a;
 	--themer-secondary-cta-area-section-p-color: #64748d;
-	--themer-discount-message-big-p-color: #64748d;
-	--themer-table-header-large-color: $cmds-g-color-text-secondary;
-	--themer-blank-slate-color: #2a2941;
-	--themer-blank-slate-h2-color: #2a2941;
-	--themer-progress-bar-error-percentage-color: #a02e2e;
-	--themer-progress-bar-complete-percentage-color: #4e983c;
-	--themer-blank-slate-green-a-color: #63a54e;
-	--themer-message-center-p-color: #717a8a;
-	--themer-accordion-list-item-grey-aside-color: #717a8a;
-	--themer-progress-bar-hgroup-h2-color: #5284ca;
-	--themer-table-footer-jagged-footer-color: #64748d;
-	--themer-option-grid-li-p-color: #64748d;
-	--themer-blank-slate-p-color: #64748d;
-	--themer-accordion-list-item-strong-name-color: $cmds-g-color-link;
+	--themer-alert-box-info-regular-color: #5e8fa9;
 	--themer-option-grid-li-strong-color: $cmds-g-color-text-primary;
+	--themer-table-header-large-color: $cmds-g-color-text-secondary;
+	--themer-table-footer-jagged-footer-color: #64748d;
 	--themer-message-center-h3-color: $cmds-g-color-text-primary;
 	--themer-message-cross-linking-wrapper-message-h3-dark-color: $cmds-g-color-text-primary;
-	--themer-timeline-li-primary-color: $cmds-g-color-text-primary;
-	--themer-timeline-table-tool-tip-h3-color: $cmds-g-color-text-primary;
-	--themer-list-tooltip-li-a-color: $cmds-g-color-text-primary;
+	--themer-timeline-table-th-color: $cmds-g-color-text-primary;
 	--themer-table-footer-jagged-a-color: $cmds-g-color-text-secondary;
-	--themer-table-empty-message-color: $cmds-g-color-text-secondary;
 	--themer-grey-links-menu-li-color: $cmds-g-color-text-secondary;
-	--themer-timeline-table-tool-tip-toop-top__infoblue-color: #5e8fa9;
-	--themer-table-li-changed-before-color: #7ec037;
-	--themer-list-tooltip-error-color: #a48b5e;
 	--themer-timeline-new-items-hover-color: #67a8d0;
 	--themer-timeline-new-items-color: #69abd4;
-	--themer-wv_info-twitter-color: #428cf4;
 	--themer-timeline-header-color: #717a8a;
-	--themer-table-top-light-color: #64748d;
 	--themer-message-cross-linking-wrapper-message-p-color: #64748d;
 	--themer-accordion-list-item-delete-with-text-color: #64748d;
 	--themer-progress-bar-hgroup-p-color: silver;
@@ -487,10 +480,14 @@
 	--themer-timeline-li-secondary-color: #64748d;
 	--themer-timeline-li-list-clicks-color: #64748d;
 	--themer-timeline-li-list-clicks-a-color: #64748d;
-	--themer-timeline-table-th-color: $cmds-g-color-text-primary;
-	--themer-timeline-table-td-color: $cmds-g-color-text-secondary;
 	--themer-timeline-table-day-grouping-td-color: #64748d;
 	--themer-timeline-table-tool-tip-color: #64748d;
+	--themer-timeline-table-tool-tip-toop-top__infoblue-color: #5e8fa9;
+	--themer-progress-bar-complete-percentage-color: #4e983c;
+	--themer-timeline-li-primary-color: $cmds-g-color-text-primary;
+	--themer-timeline-table-tool-tip-h3-color: $cmds-g-color-text-primary;
+	--themer-list-tooltip-li-a-color: $cmds-g-color-text-primary;
+	--themer-wv_info-twitter-color: #428cf4;
 	--themer-table-with-left-col-with-select-li-col-text-inline-color: #64748d;
 	--themer-table-with-left-col-pricing-li-total-col-first-child-color: $cmds-g-color-text-primary;
 	--themer-list-clean-sub-li-exclude-light-i-color: #c9c9c9;
@@ -514,8 +511,8 @@
 	--themer-list-timeline-li-actions-color: #64748d;
 	--themer-toggletab-li-a-color: $cmds-g-color-text-primary;
 	--themer-toggletab-li-a-active-color: $cmds-g-color-text-primary;
-	--themer-wv_info-forwarded-color: #259e01;
 	--themer-wv_info-clicked-color: #428cf4;
+	--themer-wv_info-forwarded-color: #259e01;
 	--themer-thumb-grid-li-thumb-link-hover-content-text-color: #64748d;
 	--themer-thumb-grid-li-thumb-link-content-text-color: #64748d;
 	--themer-thumb-grid-with-bar-li-bar-description-color: #64748d;
@@ -542,25 +539,80 @@
 	--themer-side-bar-cap-color: #2a2941;
 	--themer-zoomControls-span-zoomIn-color: #a5afbe;
 	--themer-zoomControls-span-zoomIn-active-color: $cmds-g-color-text-primary;
+	--themer-table-empty-message-color: $cmds-g-color-text-secondary;
+	--themer-timeline-table-td-color: $cmds-g-color-text-secondary;
 	--themer-c-campaign-report-ui-refresh-totalna-color: #428cf4;
 	--themer-c-campaign-report-ui-refresh-table-tableHeader-th-color: #64748d;
 	--themer-c-campaign-report-ui-refresh-table-tableHeader-td-color: $cmds-g-color-text-primary;
 	--themer-transactional-primary-form__box-snapshot-text-a-color: #1a6ee4;
 	--themer-table-tableHeader-th-color: #64748d;
+	--themer-subscriber_detail-article-body-stat-forwards-strong-color: #593325;
 	--themer-h1-p-color: $cmds-g-color-text-secondary;
 	--themer-ga_containerDark-color: $cmds-g-color-text-secondary;
 }
+
 /* End: Colors */
 
 /* Start: Border */
 :root {
+	--themer-table-snapshotStats-td-border-bottom-color: #dcdcdc;
+	--themer-table-snapshotStats-th-border-bottom-color: #dcdcdc;
 	--themer-pipe-border-left-color: #dedede;
 	--themer-p-midPadLine-border-bottom-color: #e0e0e0;
 	--themer-credits-border-color: rgba(0, 0, 0, 0.1);
 	--themer-table-tableHeader-th-border-bottom-color: #c0dae7;
+	--themer-abSlider-b-border-color: rgba(0, 0, 0, 0.1);
+	--themer-ul-listing-border-color: #e0e0e0;
+	--themer-pp_notok-border-color: #f0d1ca;
+	--themer-block-options-label-before-border-bottom-color: rgba(0, 0, 0, 0.1);
 	--themer-bar-top-is-fixed-border-bottom-color: rgba(0, 0, 0, 0.2);
-	--themer-timeline-table-expanded-clicks-td-border-top-color: #f1f1f1;
+	--themer-st_bigAlert-border-top-color: #f1df95;
+	--themer-st_bigAlert-border-bottom-color: #f1df95;
+	--themer-customize_bigAlert-border-top-color: #f1df95;
+	--themer-customize_bigAlert-border-bottom-color: #f1df95;
 	--themer-button-not-cmds-g-button-border-color: #d2d7df;
+	--themer-primary-form-primary-form__box-notification-bottom-border-top-color: #d2d7df;
+	--themer-primary-form-primary-form__box-notification-positive-border-right-color: #d2d7df;
+	--themer-primary-form-primary-form__box-notification-positive-border-bottom-color: #d2d7df;
+	--themer-primary-form-primary-form__box-notification-positive-border-left-color: #d2d7df;
+	--themer-primary-form-box-wrap-border-color: #d2d7df;
+	--themer-box-wrap-white-border-color: #d2d7df;
+	--themer-wrap-modal-template-description-thumbs-header-border-top-color: #2a2e35;
+	--themer-error-balloon-big-border-color: #d2d7df;
+	--themer-error-balloon-big-after-border-right-color: #d2d7df;
+	--themer-authenticated-domains-tbody-tr-border-bottom-color: #d3d3d3;
+	--themer-covert-input-focus-border-color: #d3d3d3;
+	--themer-info-box-wrap-border-color: #cbe4f1;
+	--themer-info-balloon-border-color: #d4d4d4;
+	--themer-info-balloon-after-border-color: #d4d4d4;
+	--themer-blankSlateIntro-border-top-color: #c5f8ac;
+	--themer-blankSlateIntro-border-bottom-color: #c5f8ac;
+	--themer-contentNavs-current-a-border-bottom-color: #f5f6f8;
+	--themer-cs_monthly_price-cs_monthly_prices-border-bottom-color: #f5f6f8;
+	--themer-note-border-color: #e5dfd6;
+	--themer-error-balloon-big-points-up-before-border-bottom-color: #fbe5b9;
+	--themer-dataHighlight-border-color: #ebebc7;
+	--themer-dataHighlight-h2-border-bottom-color: #ebebc7;
+	--themer-addHighlight-border-color: #ebebc7;
+	--themer-timeleft-border-color: #ebebc7;
+	--themer-pagination-a-border-color: #d7d7d7;
+	--themer-covert-input-focus-border-color: #aec7df;
+	--themer-selector-focus-border-color: #aec7df;
+	--themer-wrap-browser-border-color: #c7d0d7;
+	--themer-wrap-browser-chrome-bar-border-bottom-color: #c7d0d7;
+	--themer-wrap-browser-chrome-bar-chrome-controls-border-color: #c7d0d7;
+	--themer-wrap-browser-chrome-bar-chrome-controls-after-border-color: #c7d0d7;
+	--themer-showAverages-border-top-color: #b8b8b8;
+	--themer-info-balloon-before-border-color: #f8f8f8;
+	--themer-table-activity-td-border-bottom-color: #e9ebef;
+	--themer-blankSlateOptions-border-top-color: #e9ebef;
+	--themer-blankSlateOptions-border-bottom-color: #e9ebef;
+	--themer-pp_ok-border-color: #cfe9d0;
+	--themer-au_alert-border-color: #cfe9d0;
+	--themer-covert-input-focus-border-top-color: #c9c9c9;
+	--themer-primary-form-contenteditable-highlight-border-bottom-color: #9ebdd1;
+	--themer-error-balloon-big-points-up-after-border-bottom-color: #ad9a79;
+	--themer-cs_monthly_price-cs_tactive-border-top-color: #35a70d;
 	--themer-table-li-border-top-color: #e2e2e2;
 	--themer-leftcol-title-box-border-bottom-color: #eee;
 	--themer-bigCustomizeAlert-border-top-color: #f1df95;
@@ -568,43 +620,13 @@
 	--themer-formContainer-border-color: #d2d7df;
 	--themer-radioContainer-border-color: #d2d7df;
 	--themer-confirmCase-border-color: #d2d7df;
-	--themer-table-tableHeader-th-border-top-color: #d2e7f8;
-	--themer-table-tableHeader-th-headerLeft-border-left-color: #d2e7f8;
-	--themer-primary-form-primary-form__box-border-color: #e2e2e2;
-	--themer-primary-form-primary-form__box-box-divide-border-top-color: #e2e2e2;
-	--themer-primary-form-primary-form__box-notification-bottom-border-top-color: #d2d7df;
-	--themer-primary-form-primary-form__box-notification-positive-border-right-color: #d2d7df;
-	--themer-primary-form-primary-form__box-notification-positive-border-bottom-color: #d2d7df;
-	--themer-primary-form-primary-form__box-notification-positive-border-left-color: #d2d7df;
-	--themer-primary-form-box-wrap-border-color: #d2d7df;
-	--themer-primary-form-box-wrap-multiple-row-border-top-color: #e2e2e2;
-	--themer-primary-form-box-wrap-box-inline-border-top-color: #e2e2e2;
-	--themer-primary-form-li-checkbox-group-border-bottom-color: #e2e2e2;
-	--themer-box-wrap-white-border-color: #d2d7df;
-	--themer-primary-form-wrap-editCard-border-color: #e2e2e2;
-	--themer-wrap-modal-template-description-thumbs-header-border-top-color: #2a2e35;
-	--themer-error-balloon-big-border-color: #d2d7df;
-	--themer-error-balloon-big-after-border-right-color: #d2d7df;
-	--themer-info-balloon-note-border-color: #e2d9cb;
 	--themer-bigAlert-border-color: #e3ddb7;
 	--themer-th-headerDarkGreyLeft-border-bottom-color: #d3d3d3;
-	--themer-covert-input-focus-border-color: #d3d3d3;
-	--themer-info-box-wrap-border-color: #cbe4f1;
-	--themer-info-balloon-border-color: #d4d4d4;
-	--themer-info-balloon-after-border-color-vertical: #d4d4d4;
-	--themer-info-balloon-points-left-after-border-right-color: #d4d4d4;
 	--themer-success2-border-top-color: #c5f8ac;
 	--themer-success2-border-bottom-color: #c5f8ac;
 	--themer-bigEarning-border-top-color: #c5f8ac;
 	--themer-bigEarning-border-bottom-color: #c5f8ac;
-	--themer-table-border-td-border-bottom-color: #e5e5e5;
-	--themer-th-headerDarkGreyLeft-border-top-color: #e5e5e5;
-	--themer-th-headerDarkGreyLeft-border-left-color: #e5e5e5;
-	--themer-th-headerDarkGreyRight-border-right-color: #e5e5e5;
-	--themer-note-border-color: #e5dfd6;
-	--themer-error-balloon-big-points-up-before-border-bottom-color: #fbe5b9;
 	--themer-code-border-color: #d6d6d6;
-	--themer-content-h1-bottomLine-border-bottom-color: #e6e6e6;
 	--themer-table-tableTabsHeader-th-border-bottom-color: #c6c6c6;
 	--themer-tr-clients_themselves-th-border-bottom-color: #bde6ae;
 	--themer-tr-clients_themselves-th-border-top-color: #d6f0cd;
@@ -615,93 +637,73 @@
 	--themer-table-tableHeader-th-headerGreyLeft-border-left-color: #d6f0cd;
 	--themer-table-tableHeader-th-headerGreyRight-border-right-color: #d6f0cd;
 	--themer-table-goalSummary-td-border-bottom-color: #ebebc7;
-	--themer-covert-input-focus-border-color: #aec7df;
-	--themer-selector-focus-border-color: #aec7df;
-	--themer-success-border-color: #c8e5be;
-	--themer-successBig-border-color: #c8e5be;
-	--themer-table-grid-light-li-border-bottom-color: #e8e8e8;
-	--themer-table-colorPicker-border-color: #8e9aad;
-	--themer-info-balloon-before-border-color-vertical: #f8f8f8;
-	--themer-table-tableTabsHeader-td-border-bottom-color: #e9ebef;
-	--themer-table-subscriberStats-td-border-bottom-color: #e9ebef;
-	--themer-covert-input-focus-border-top-color: #c9c9c9;
-	--themer-primary-form-contenteditable-highlight-border-bottom-color: #9ebdd1;
-	--themer-covert-input-border-bottom-color: #434d5d;
-	--themer-unauthenticatedModal-a-switchAuthenticated-border-color: #cda574;
-	--themer-table-border-th-border-bottom-color: #717a8a;
-	--themer-input-error-border-color: #f77171;
-	--themer-overlay-box-points-left-after-border-right-color: #bebebe;
-	--themer-table-snapshotStats-td-border-bottom-color: #dcdcdc;
-	--themer-table-snapshotStats-th-border-bottom-color: #dcdcdc;
-	--themer-table-tableTabsHeader-th-tabHeaderRight-border-right-color: #dedede;
-	--themer-table-tableTabsHeader-th-tabHeaderLeft-border-left-color: #dedede;
-	--themer-bar-top-border-bottom-color: #eaeaea;
-	--themer-bar-top-nav-with-icons-li-current-before-border-top-color: #eaeaea;
-	--themer-gridLight-td-border-bottom-color: #ececec;
-	--themer-overlay-box-points-left-before-border-right-color: #fcfcfc;
-	--themer-failureMessage-border-color: #fddcdc;
-	--themer-failureMessage-border-top-color: #fddcdc;
 	--themer-table-sidebar-td-border-bottom-color: #d9d9d9;
+	--themer-table-tableTabsHeader-td-border-bottom-color: #e9ebef;
 	--themer-table-tableHeader-last-row-has-border-tr-last-child-td-border-bottom-color: #e9ebef;
-	--themer-table-tableHeader-tr-lastRow-td-border-bottom-color: #fff;
-	--themer-abSlider-b-border-color: rgba(0, 0, 0, 0.1);
-	--themer-ul-listing-border-color: #e0e0e0;
-	--themer-pp_notok-border-color: #f0d1ca;
-	--themer-au_problems-border-color: #f0d1ca;
-	--themer-au_problems-theirs-border-color: #dac0c0;
-	--themer-st_bigAlert-border-top-color: #f1df95;
-	--themer-st_bigAlert-border-bottom-color: #f1df95;
-	--themer-customize_bigAlert-border-top-color: #f1df95;
-	--themer-customize_bigAlert-border-bottom-color: #f1df95;
+	--themer-table-tableHeader-td-border-bottom-color: #e9ebef;
+	--themer-table-tableHeader-tr-segmentCondition-td-border-bottom-color: #e9ebef;
+	--themer-table-subscriberStats-td-border-bottom-color: #e9ebef;
 	--themer-abVersions-iframe-border-color: #e2e2e2;
 	--themer-abSlider-c-border-top-color: #e2e2e2;
 	--themer-abSlider-c-border-bottom-color: #e2e2e2;
 	--themer-abSlider-c-border-right-color: #e2e2e2;
-	--themer-authenticated-domains-tbody-tr-border-bottom-color: #d3d3d3;
+	--themer-primary-form-primary-form__box-border-color: #e2e2e2;
+	--themer-primary-form-primary-form__box-box-divide-border-top-color: #e2e2e2;
+	--themer-primary-form-box-wrap-multiple-row-border-top-color: #e2e2e2;
+	--themer-primary-form-box-wrap-box-inline-border-top-color: #e2e2e2;
+	--themer-primary-form-li-checkbox-group-border-bottom-color: #e2e2e2;
+	--themer-primary-form-wrap-editCard-border-color: #e2e2e2;
+	--themer-covert-input-border-bottom-color: #434d5d;
+	--themer-unauthenticatedModal-a-switchAuthenticated-border-color: #cda574;
+	--themer-table-border-th-border-bottom-color: #717a8a;
+	--themer-abSlider-a-border-color: #ac3132;
 	--themer-spamWaiting-border-bottom-color: #e4e4e4;
-	--themer-blankSlateIntro-border-top-color: #c5f8ac;
-	--themer-blankSlateIntro-border-bottom-color: #c5f8ac;
-	--themer-contentNavs-current-a-border-bottom-color: #f5f6f8;
-	--themer-cs_monthly_price-cs_monthly_prices-border-bottom-color: #f5f6f8;
-	--themer-overlay_header-border-top-color: #e5e5e5;
+	--themer-input-error-border-color: #f77171;
+	--themer-table-border-td-border-bottom-color: #e5e5e5;
+	--themer-th-headerDarkGreyLeft-border-top-color: #e5e5e5;
+	--themer-th-headerDarkGreyLeft-border-left-color: #e5e5e5;
+	--themer-success-border-color: #c8e5be;
+	--themer-successBig-border-color: #c8e5be;
+	--themer-content-h1-bottomLine-border-bottom-color: #e6e6e6;
+	--themer-table-tableTabsHeader-th-tabHeaderRight-border-right-color: #dedede;
+	--themer-table-tableTabsHeader-th-tabHeaderLeft-border-left-color: #dedede;
+	--themer-gridLight-td-border-bottom-color: #ececec;
+	--themer-failureMessage-border-color: #fddcdc;
+	--themer-failureMessage-border-top-color: #fddcdc;
+	--themer-th-headerDarkGreyRight-border-right-color: #e5e5e5;
 	--themer-abResults-border-color: #e6e6e6;
 	--themer-leftBox-border-color: #e6e6e6;
 	--themer-cs_hline-border-bottom-color: #e6e6e6;
-	--themer-dataHighlight-border-color: #ebebc7;
-	--themer-dataHighlight-h2-border-bottom-color: #ebebc7;
-	--themer-addHighlight-border-color: #ebebc7;
-	--themer-timeleft-border-color: #ebebc7;
-	--themer-pagination-a-border-color: #d7d7d7;
-	--themer-showAverages-border-top-color: #b8b8b8;
+	--themer-table-tableHeader-th-border-top-color: #d2e7f8;
+	--themer-table-tableHeader-th-headerLeft-border-left-color: #d2e7f8;
+	--themer-table-grid-light-li-border-bottom-color: #e8e8e8;
+	--themer-table-colorPicker-border-color: #8e9aad;
 	--themer-new-slate-new-template-figure-border-color: #8e9aad;
 	--themer-pagination-a-hover-border-color: #8e9aad;
-	--themer-JT-border-color: #8e9aad;
-	--themer-JT_copy-img-border-color: #8e9aad;
-	--themer-cs_form-cs_help_box-border-color: #8e9aad;
-	--themer-table-tableHeader-td-border-bottom-color: #e9ebef;
-	--themer-table-tableHeader-tr-segmentCondition-td-border-bottom-color: #e9ebef;
-	--themer-table-activity-td-border-bottom-color: #e9ebef;
-	--themer-blankSlateOptions-border-top-color: #e9ebef;
-	--themer-blankSlateOptions-border-bottom-color: #e9ebef;
-	--themer-abSlider-a-border-color: #ac3132;
 	--themer-cs_hline-border-top-color: #cacaca;
 	--themer-cs_monthly_price-cs_monthly_table-border-color: #cecece;
 	--themer-cs_monthly_table-border-color: #cecece;
-	--themer-overlay_header-border-bottom-color: #ddd;
-	--themer-ar_infoAlert-border-top-color: #e3e3b3;
+	--themer-au_problems-border-color: #f0d1ca;
+	--themer-au_problems-theirs-border-color: #dac0c0;
+	--themer-au_verified-border-color: #cfe9d0;
+	--themer-au_verified-textarea-border-color: #cfe9d0;
+	--themer-overlay_header-border-top-color: #e5e5e5;
 	--themer-overlay_header-border-right-color: #e5e5e5;
 	--themer-overlay_header-border-left-color: #e5e5e5;
+	--themer-au_problems-textarea-correct-border-color: #8e9aad;
+	--themer-overlay-box-points-left-after-border-right-color: #bebebe;
+	--themer-ar_rightArrow-border-color: #cecece;
+	--themer-cs_dark-border-bottom-color: #dadada;
+	--themer-cs_dark-border-right-color: #dadada;
+	--themer-overlay_header-border-bottom-color: #ddd;
 	--themer-overlay_box-border-left-color: #ddd;
 	--themer-overlay_box-border-right-color: #ddd;
 	--themer-overlay_box-border-bottom-color: #ddd;
-	--themer-cs_dark-border-left-color: #8e9aad;
-	--themer-cs_dark-border-top-color: #8e9aad;
-	--themer-ar_rightArrow-border-color-right: #cecece;
-	--themer-ar_yellowAlert-border-color: #cecece;
-	--themer-cs_dark-border-bottom-color: #dadada;
-	--themer-cs_dark-border-right-color: #dadada;
 	--themer-cs_dark-a-border-left-color: #d3d3d3;
 	--themer-cs_dark-a-border-top-color: #d3d3d3;
+	--themer-cs_dark-border-left-color: #8e9aad;
+	--themer-cs_dark-border-top-color: #8e9aad;
+	--themer-ar_yellowAlert-border-color: #cecece;
 	--themer-cs_white-border-color: #dbdbdb;
 	--themer-cr_edit_html-border-color: #ddd;
 	--themer-cs_tactive-border-top-color: #ddd;
@@ -718,28 +720,35 @@
 	--themer-ar_chart_loading-border-right-color: #ddd;
 	--themer-exampleExtended-border-color: #dedede;
 	--themer-cs_credits_markup-border-color: #dedede;
-	--themer-cs_trow-border-top-color: #dedede;
+	--themer-ar_email_name-border-bottom-color: #eaeaea;
+	--themer-bar-top-border-bottom-color: #eaeaea;
+	--themer-bar-top-nav-with-icons-li-current-before-border-top-color: #eaeaea;
 	--themer-ds_clients-border-left-color: #ebebeb;
 	--themer-ds_link-border-top-color: #ebebeb;
 	--themer-ds_right_spam-border-bottom-color: #ebebeb;
 	--themer-ds_right_spam-border-left-color: #ebebeb;
+	--themer-ar_gray_line-border-top-color: #eee;
+	--themer-ar_gray_line_one-border-top-color: #eee;
+	--themer-ar_left-border-color: #efefef;
+	--themer-ar_right-border-color: #efefef;
+	--themer-info-balloon-points-left-before-border-right-color: #fafafb;
+	--themer-overlay-box-points-left-before-border-right-color: #fcfcfc;
 	--themer-cs_dark-a-border-bottom-color: #fff;
 	--themer-cs_white-a-border-color: #fff;
 	--themer-ds_link-border-bottom-color: #fff;
 	--themer-ds_link-border-left-color: #fff;
 	--themer-ar_alert-border-top-color: #f1df95;
 	--themer-ar_alert-border-bottom-color: #f1df95;
-	--themer-ar_dash_rline-border-right-color: #e1e1e1;
-	--themer-ar_dash_table-border-color: #e1e1e1;
+	--themer-ar_optionAlert-border-top-color: #d7d6d6;
+	--themer-ar_optionAlert-border-bottom-color: #d7d6d6;
 	--themer-ds_right_header-border-top-color: #d8eaf1;
 	--themer-ds_right_header-border-left-color: #d8eaf1;
 	--themer-ds_right_header-border-bottom-color: #d8eaf1;
-	--themer-ar_email_name-border-bottom-color: #eaeaea;
-	--themer-ar_gray_line-border-top-color: #eee;
-	--themer-ar_gray_line_one-border-top-color: #eee;
-	--themer-ar_left-border-color: #efefef;
 	--themer-ds_screen_frame-img-border-left-color: #fff;
+	--themer-ar_dash_rline-border-right-color: #e1e1e1;
+	--themer-ar_dash_table-border-color: #e1e1e1;
 	--themer-ar_report_body-border-color: #e1e1e1;
+	--themer-ar_infoAlert-border-top-color: #e3e3b3;
 	--themer-ar_infoAlert-border-bottom-color: #e3e3b3;
 	--themer-ar_snapGroup-border-color: #e4e4e4;
 	--themer-ds_tempReason-border-color: #8e9aad;
@@ -747,131 +756,100 @@
 	--themer-subscriber_detail-aside-section-fields-edit-border-top-color: #ddd;
 	--themer-subscriber_detail-article-body-activity-a-border-bottom-color: #ddd;
 	--themer-ao_commentContainer-border-color: #dddbdb;
+	--themer-ul-countriesHeader-border-top-color: #dedede;
 	--themer-ul-countriesHeader-border-right-color: #dedede;
+	--themer-ul-countriesHeader-border-left-color: #dedede;
 	--themer-mo_payment_bottom-border-top-color: #ebebeb;
 	--themer-subscriber_detail-article-body-activity-border-bottom-color: #ededed;
-	--themer-sharingTimeline-ul-timeline-li-last-child-border-bottom-color: #eee;
-	--themer-ar_right-border-color: #efefef;
-	--themer-h3-ao_paddingLeft-border-top-color: #efefef;
-	--themer-ar_rightArrow-border-color-right: #fff;
-	--themer-ar_rightArrow-after-border-color-right: #fff;
-	--themer-ar_rightArrow-border-color-top: transparent;
-	--themer-ar_rightArrow-border-color-left: transparent;
-	--themer-ar_rightArrow-border-color-bottom: transparent;
-	--themer-ar_rightArrow-after-border-color-top: transparent;
-	--themer-ar_rightArrow-after-border-color-left: transparent;
-	--themer-ar_rightArrow-after-border-color-bottom: transparent;
-	--themer-block-options-label-before-border-bottom-color: rgba(0, 0, 0, 0.1);
-	--themer-ao_commentContainer-staff-border-color: #d2e8fa;
 	--themer-a-ao_fileAttachment-border-top-color: #eee;
 	--themer-sharingTimeline-ul-timeline-li-border-top-color: #eee;
-	--themer-table-importSummary-td-border-top-color: #efefef;
-	--themer-contentNavs-a-border-bottom-color: #fff;
+	--themer-h3-ao_paddingLeft-border-top-color: #efefef;
+	--themer-ar_rightArrow-border-color: #fff;
 	--themer-subscriber_detail-subscriber-border-color: #d2d7df;
-	--themer-subscriber_detail-article-body-select-border-top-color: #e2e3e2;
 	--themer-subscriber_detail-aside-div-error-border-color: #d2d7df;
-	--themer-error-balloon-after-border-color-vertical: #d2d7df;
-	--themer-success-balloon-after-border-color-vertical: #d2d7df;
+	--themer-error-balloon-after-border-color: #d2d7df;
+	--themer-success-balloon-border-color: #d2d7df;
+	--themer-success-balloon-after-border-color: #d2d7df;
 	--themer-info-balloon-points-left-after-border-right-color: #d2d7df;
 	--themer-button-border-color: #d2d7df;
-	--themer-block-options-border-color: #e2e2e2;
-	--themer-block-options-li-border-top-color: #e2e2e2;
-	--themer-noContent-border-color: #e3e3e3;
 	--themer-segmented-buttons-button-selected-border-bottom-color: #d3d3d3;
 	--themer-ul-countriesHeader-border-bottom-color: #c6c6c6;
-	--themer-ar_optionAlert-border-top-color: #d7d6d6;
-	--themer-ar_optionAlert-border-bottom-color: #d7d6d6;
-	--themer-segmented-buttons-button-selected-border-color: #c7c7c7;
-	--themer-au_problems-textarea-correct-border-color: #8e9aad;
-	--themer-pp_ok-border-color: #cfe9d0;
-	--themer-au_alert-border-color: #cfe9d0;
-	--themer-au_verified-border-color: #cfe9d0;
-	--themer-au_verified-textarea-border-color: #cfe9d0;
 	--themer-ul-countryListing-border-bottom-color: #e9ebef;
+	--themer-button-is-temporary-feedback-border-color: #c9c9c9;
 	--themer-span-shareBadge-border-right-color: #f14c0e;
-	--themer-cs_monthly_price-cs_tactive-border-top-color: #35a70d;
-	--themer-span-openBadge-border-right-color: #269e00;
 	--themer-span-clickBadge-border-right-color: #2882de;
+	--themer-ao_commentContainer-staff-border-color: #d2e8fa;
+	--themer-sharingTimeline-ul-timeline-li-last-child-border-bottom-color: #eee;
+	--themer-table-importSummary-td-border-top-color: #efefef;
+	--themer-contentNavs-a-border-bottom-color: #fff;
+	--themer-span-openBadge-border-right-color: #269e00;
+	--themer-campaignindex-duly-noted-label-span-border-bottom-color: #717a8a;
+	--themer-subscriber_detail-article-body-select-border-top-color: #e2e3e2;
+	--themer-noContent-border-color: #e3e3e3;
+	--themer-JT-border-color: #8e9aad;
+	--themer-JT_copy-img-border-color: #8e9aad;
+	--themer-cs_form-cs_help_box-border-color: #8e9aad;
 	--themer-button-in-table-before-border-right-color: #bdbdbd;
-	--themer-info-balloon-after-border-color-vertical: #cacaca;
+	--themer-info-balloon-after-border-color: #cacaca;
 	--themer-segmented-buttons-button-selected-border-top-color: #cacaca;
 	--themer-ul-dropDown-li-border-top-color: #ddd;
-	--themer-ul-countriesHeader-border-top-color: #dedede;
-	--themer-ul-countriesHeader-border-left-color: #dedede;
+	--themer-cs_trow-border-top-color: #dedede;
 	--themer-button-disabled-border-color: #ececed;
 	--themer-button-in-table-after-border-right-color: #fafafb;
-	--themer-error-balloon-before-border-color-vertical: #fff;
+	--themer-table-tableHeader-tr-lastRow-td-border-bottom-color: #fff;
+	--themer-ar_rightArrow-after-border-color: #fff;
+	--themer-error-balloon-before-border-color: #fff;
 	--themer-error-balloon-points-left-before-border-right-color: #fff;
-	--themer-success-balloon-before-border-color-vertical: #fff;
+	--themer-success-balloon-before-border-color: #fff;
 	--themer-bar-top-nav-with-icons-li-current-after-border-top-color: #fff;
 	--themer-bar-top-nav-with-icons-li-new-icon-flag-animated-border-color: #fff;
 	--themer-error-balloon-big-before-border-right-color: #fff;
-	--themer-error-balloon-before-border-color-horizontal: transparent;
-	--themer-error-balloon-after-border-color-horizontal: transparent;
 	--themer-error-balloon-points-left-before-border-color: transparent;
 	--themer-error-balloon-points-left-after-border-color: transparent;
-	--themer-success-balloon-border-color: #d2d7df;
-	--themer-button-is-temporary-feedback-border-color: #c9c9c9;
 	--themer-error-balloon-points-left-after-border-right-color: #cfbc97;
-	--themer-success-balloon-before-border-color-horizontal: transparent;
-	--themer-success-balloon-after-border-color-horizontal: transparent;
-	--themer-info-balloon-after-border-color-horizontal: transparent;
-	--themer-campaignindex-duly-noted-label-span-border-bottom-color: #717a8a;
 	--themer-button-in-table-after-border-color: transparent;
 	--themer-button-in-table-before-border-color: transparent;
+	--themer-segmented-buttons-button-selected-border-color: #c7c7c7;
+	--themer-block-options-border-color: #e2e2e2;
+	--themer-block-options-li-border-top-color: #e2e2e2;
 	--themer-button-primary-border-color: #61962b;
 	--themer-selector-border-color: transparent;
 	--themer-bar-top-nav-with-icons-li-current-before-border-left-color: transparent;
 	--themer-bar-top-nav-with-icons-li-current-before-border-right-color: transparent;
 	--themer-bar-top-nav-with-icons-li-current-after-border-left-color: transparent;
 	--themer-bar-top-nav-with-icons-li-current-after-border-right-color: transparent;
-	--themer-info-balloon-note-after-border-color-vertical: #d3c6b1;
-	--themer-wrap-browser-border-color: #c7d0d7;
-	--themer-wrap-browser-chrome-bar-border-bottom-color: #c7d0d7;
-	--themer-wrap-browser-chrome-bar-chrome-controls-border-color: #c7d0d7;
-	--themer-wrap-browser-chrome-bar-chrome-controls-after-border-color: #c7d0d7;
-	--themer-info-balloon-points-left-before-border-right-color: #fafafb;
 	--themer-overlay-box-points-left-before-border-color: transparent;
 	--themer-overlay-box-points-left-after-border-color: transparent;
 	--themer-error-balloon-big-before-border-color: transparent;
 	--themer-error-balloon-big-after-border-color: transparent;
 	--themer-error-balloon-big-points-up-before-border-color: transparent;
 	--themer-error-balloon-big-points-up-after-border-color: transparent;
-	--themer-error-balloon-big-points-up-after-border-bottom-color: #ad9a79;
-	--themer-info-balloon-before-border-color-horizontal: transparent;
 	--themer-info-balloon-points-left-before-border-color: transparent;
 	--themer-info-balloon-points-left-after-border-color: transparent;
-	--themer-info-balloon-note-after-border-color-horizontal: transparent;
-	--themer-info-balloon-note-before-border-color-vertical: #fefbf0;
-	--themer-info-balloon-note-before-border-color-horizontal: transparent;
-	--themer-info-balloon-note-points-left-after-border-color: transparent;
-	--themer-search-box-auto-map-wrap-map-border-color: rgba(0, 0, 0, 0.2);
-	--themer-info-balloon-note-points-left-after-border-right-color: #d3c6b1;
-	--themer-info-balloon-note-points-left-before-border-color: transparent;
+	--themer-info-balloon-note-before-border-color: #fefbf0;
 	--themer-info-balloon-note-points-left-before-border-right-color: #fefbf0;
-	--themer-notification-box-notification-info-border-color: transparent;
+	--themer-alert-box-snapshot-thumb-border-color: rgba(0, 0, 0, 0.1);
+	--themer-info-balloon-note-border-color: #e2d9cb;
 	--themer-tooltip-border-color: #d2d7df;
 	--themer-tooltip-before-border-color: #d2d7df;
+	--themer-timeline-li-hover-list-clicks-active-after-border-bottom-color: #f2f2f2;
+	--themer-info-balloon-note-after-border-color: #d3c6b1;
+	--themer-info-balloon-points-left-after-border-right-color: #d4d4d4;
+	--themer-table-header-large-border-color: #dedede;
+	--themer-info-balloon-note-points-left-after-border-color: transparent;
+	--themer-info-balloon-note-points-left-after-border-right-color: #d3c6b1;
+	--themer-info-balloon-note-points-left-before-border-color: transparent;
+	--themer-notification-box-notification-info-border-color: transparent;
 	--themer-alert-box-successful-border-color: transparent;
 	--themer-alert-box-warning-border-color: transparent;
 	--themer-alert-box-info-border-color: transparent;
-	--themer-alert-box-snapshot-thumb-border-color: rgba(0, 0, 0, 0.1);
-	--themer-blank-slate-border-color: #d2d7df;
-	--themer-message-center-footer-border-top-color: #d2d8dc;
-	--themer-discount-message-big-border-color: #e3e3e3;
-	--themer-info-alert-border-color: #e3e3e3;
-	--themer-table-header-large-border-color: #dedede;
+	--themer-search-box-auto-map-wrap-map-border-color: rgba(0, 0, 0, 0.2);
 	--themer-table-header-large-border-bottom-color: #d2d7df;
 	--themer-table-footer-jagged-footer-border-color: #d2d7df;
 	--themer-table-empty-message-border-bottom-color: #d2d7df;
-	--themer-table-avatar-border-color: #ddd;
-	--themer-timeline-li-hover-list-clicks-active-after-border-bottom-color: #f2f2f2;
-	--themer-timeline-table-td-border-top-color: #d2d7df;
-	--themer-timeline-li-hover-list-clicks-active-border-top-color: #e6e6e6;
-	--themer-timeline-li-hover-list-clicks-active-before-border-bottom-color: #e6e6e6;
-	--themer-timeline-li-hover-list-clicks-li-border-top-color: #e6e6e6;
+	--themer-blank-slate-border-color: #d2d7df;
+	--themer-message-center-footer-border-top-color: #d2d8dc;
 	--themer-blank-slate-green-before-border-color: #7bb36a;
-	--themer-timeline-li-border-left-color: #8e9aad;
 	--themer-table-silver-fox-th-border-top-color: #d9d9d9;
 	--themer-table-silver-fox-th-border-bottom-color: #d9d9d9;
 	--themer-table-silver-fox-th-first-child-border-left-color: #d9d9d9;
@@ -881,64 +859,65 @@
 	--themer-table-silver-fox-td-last-child-border-right-color: #e9ebef;
 	--themer-option-grid-li-strong-border-bottom-color: #9d9d9d;
 	--themer-blank-slate-before-border-color: #ecb14a;
-	--themer-timeline-new-items-border-color: #bfdbed;
+	--themer-discount-message-big-border-color: #e3e3e3;
+	--themer-info-alert-border-color: #e3e3e3;
+	--themer-table-avatar-border-color: #ddd;
 	--themer-message-cross-linking-border-top-color: #ddd;
 	--themer-search-box-auto-map-wrap-border-color: #ddd;
 	--themer-message-cross-linking-welcome-to-the-app-wrapper-message-illustration-border-color: #dedede;
 	--themer-message-cross-linking-wrapper-message-illustration-gallery-class-img-border-color: #dedede;
-	--themer-timeline-header-border-color: #dedede;
 	--themer-grey-links-menu-top-separator-border-top-color: #eee;
+	--themer-accordion-list-item-grey-aside-disclosure-triangle-border-bottom-color: #717a8a;
+	--themer-timeline-li-hover-list-clicks-active-border-top-color: #e6e6e6;
+	--themer-timeline-li-hover-list-clicks-active-before-border-bottom-color: #e6e6e6;
+	--themer-timeline-li-hover-list-clicks-li-border-top-color: #e6e6e6;
+	--themer-timeline-li-border-left-color: #8e9aad;
+	--themer-accordion-list-item-border-top-color: #e9e9e9;
+	--themer-timeline-new-items-border-color: #bfdbed;
+	--themer-timeline-header-border-color: #dedede;
+	--themer-timeline-li-border-bottom-color: #eaeaea;
+	--themer-timeline-li-list-clicks-active-before-border-bottom-color: #eaeaea;
+	--themer-timeline-li-list-clicks-li-border-top-color: #efefef;
+	--themer-timeline-li-list-clicks-active-after-border-bottom-color: #fafafa;
+	--themer-timeline-li-list-clicks-active-after-border-left-color: transparent;
+	--themer-timeline-table-expanded-clicks-td-border-top-color: #f1f1f1;
+	--themer-timeline-table-td-border-top-color: #d2d7df;
 	--themer-timeline-table-th-border-bottom-color: #d2d7df;
 	--themer-timeline-header-border-bottom-color: #c6c6c6;
 	--themer-timeline-table-timeline-table__footer-timeline-table__footer__faux-cell-border-color: #d7d7d7;
-	--themer-accordion-list-item-border-top-color: #e9e9e9;
 	--themer-timeline-table-expanded-clicks-li-border-bottom-color: #e9ebef;
+	--themer-timeline-table-expanded-clicks-email-clicks-before-border-color: #e9ebef;
 	--themer-timeline-table-tableHeaderFixed-before-border-bottom-color: #cbcbcb;
 	--themer-timeline-table-vertical-dashed-line-border-left-color: #cbcbcb;
 	--themer-timeline-table-tool-tip-border-color: #cecece;
-	--themer-timeline-table-tool-tip-before-border-color-right: #cecece;
+	--themer-timeline-table-tool-tip-before-border-color: #cecece;
 	--themer-list-tooltip-border-color: #dedede;
+	--themer-list-tooltip-before-border-bottom-color: #dedede;
 	--themer-list-menu-li-border-right-color: #dedede;
 	--themer-list-menu-li-border-left-color: #dedede;
-	--themer-list-menu-popup-li-border-right-color: #dedede;
-	--themer-list-menu-popup-li-border-left-color: #dedede;
-	--themer-list-menu-popup-before-border-top-color: #dedede;
-	--themer-list-tooltip-li-a-border-top-color: #eee;
-	--themer-timeline-table-expanded-clicks-email-clicks-after-border-color-bottom: #fafafb;
-	--themer-timeline-table-expanded-clicks-email-clicks-before-border-color-top: transparent;
-	--themer-timeline-table-expanded-clicks-email-clicks-before-border-color-horizontal: transparent;
-	--themer-timeline-table-expanded-clicks-email-clicks-before-border-color-bottom: #e9ebef;
-	--themer-accordion-list-item-grey-aside-disclosure-triangle-border-bottom-color: #717a8a;
-	--themer-list-tooltip-before-border-bottom-color: #dedede;
 	--themer-list-menu-li-first-child-border-top-color: #dedede;
 	--themer-list-menu-li-last-child-border-bottom-color: #dedede;
+	--themer-list-menu-popup-li-border-right-color: #dedede;
+	--themer-list-menu-popup-li-border-left-color: #dedede;
 	--themer-list-menu-popup-li-first-child-border-top-color: #dedede;
 	--themer-list-menu-popup-li-last-child-border-bottom-color: #dedede;
-	--themer-timeline-li-border-bottom-color: #eaeaea;
-	--themer-timeline-li-list-clicks-active-before-border-bottom-color: #eaeaea;
+	--themer-list-menu-popup-before-border-top-color: #dedede;
+	--themer-list-menu-popup-top-before-border-bottom-color: #dedede;
+	--themer-list-tooltip-li-a-border-top-color: #eee;
 	--themer-list-menu-li-border-top-color: #eee;
 	--themer-list-menu-popup-li-border-top-color: #eee;
-	--themer-timeline-li-list-clicks-li-border-top-color: #efefef;
 	--themer-table-with-left-col-pricing-li-border-top-color: #efefef;
 	--themer-table-with-left-col-pricing-li-total-border-top-color: #efefef;
 	--themer-list-clean-sub-border-top-color: #efefef;
 	--themer-list-rounded-li-border-top-color: #efefef;
-	--themer-timeline-li-list-clicks-active-after-border-bottom-color: #fafafa;
-	--themer-timeline-table-tool-tip-after-border-color-right: #fff;
+	--themer-timeline-table-expanded-clicks-email-clicks-after-border-color: #fafafb;
+	--themer-timeline-table-tool-tip-after-border-color: #fff;
 	--themer-list-tooltip-after-border-bottom-color: #fff;
-	--themer-timeline-li-list-clicks-active-after-border-left-color: transparent;
+	--themer-list-menu-popup-after-border-top-color: #fff;
 	--themer-timeline-li-list-clicks-active-after-border-right-color: transparent;
-	--themer-timeline-table-expanded-clicks-email-clicks-after-border-color-top: transparent;
-	--themer-timeline-table-expanded-clicks-email-clicks-after-border-color-horizontal: transparent;
 	--themer-timeline-table-tableHeaderFixed-th-border-bottom-color: transparent;
 	--themer-timeline-table-tableHeaderFixed-th-first-child-border-left-color: transparent;
 	--themer-timeline-table-tableHeaderFixed-th-last-child-border-right-color: transparent;
-	--themer-timeline-table-tool-tip-before-border-color-top: transparent;
-	--themer-timeline-table-tool-tip-before-border-color-left: transparent;
-	--themer-timeline-table-tool-tip-before-border-color-bottom: transparent;
-	--themer-timeline-table-tool-tip-after-border-color-top: transparent;
-	--themer-timeline-table-tool-tip-after-border-color-left: transparent;
-	--themer-timeline-table-tool-tip-after-border-color-bottom: transparent;
 	--themer-timeline-table-tool-tip-toop-top__infoblue-border-color: #cce0eb;
 	--themer-list-tooltip-after-border-left-color: transparent;
 	--themer-list-tooltip-after-border-right-color: transparent;
@@ -950,19 +929,16 @@
 	--themer-list-menu-li-a-hover-border-color: #2393da;
 	--themer-list-menu-popup-li-a-border-color: transparent;
 	--themer-list-menu-popup-li-a-hover-border-color: #2393da;
-	--themer-list-menu-popup-top-before-border-bottom-color: #dedede;
-	--themer-list-menu-popup-after-border-top-color: #fff;
 	--themer-list-menu-popup-top-after-border-bottom-color: #fff;
 	--themer-list-menu-popup-before-border-left-color: transparent;
 	--themer-list-menu-popup-before-border-right-color: transparent;
 	--themer-list-menu-popup-after-border-left-color: transparent;
-	--themer-list-menu-popup-after-border-right-color: transparent;
 	--themer-list-timeline-li-border-color: #e4e4e4;
 	--themer-list-timeline-li-row-border-left-color: #e4e4e4;
 	--themer-list-timeline-li-row-border-top-color: #e4e4e4;
 	--themer-list-timeline-add-border-color: #cbcbcb;
-	--themer-content-item-media__item-img-frame-border-color: #dedede;
 	--themer-list-timeline-li-before-border-top-color: #eaeaea;
+	--themer-list-menu-popup-after-border-right-color: transparent;
 	--themer-list-timeline-li-before-border-left-color: transparent;
 	--themer-list-timeline-li-before-border-right-color: transparent;
 	--themer-list-timeline-li-after-border-left-color: transparent;
@@ -978,24 +954,21 @@
 	--themer-thumb-grid-with-bar-li-thumb-border-color: #d2d7df;
 	--themer-thumb-grid-with-bar-li-bar-border-color: #d2d7df;
 	--themer-thumb-grid-with-bar-li-bar-description-span-editable-hover-border-color: #d2d7df;
-	--themer-workflow-types-list-li-a-border-color: #e2e2e2;
-	--themer-c-design-and-spam-test-text-box-border-color: #d2d7df;
+	--themer-zoomControls-span-zoomOut-border-color: #d2d7df;
+	--themer-c-sidebar-note-options-code-border-color: #d2d7df;
+	--themer-step3_1Div-primary-form-border-top-color: #d2d7df;
 	--themer-workflow-types-list-li-a-selected-border-color: #5ea846;
 	--themer-list-timeline-li-after-border-top-color: #f7f7f7;
 	--themer-toggletab-li-a-border-color: #8e9aad;
 	--themer-toggletab-li-a-active-border-top-color: #8e9aad;
 	--themer-ul-counts-border-color: #ddd;
+	--themer-content-item-media__item-img-frame-border-color: #dedede;
+	--themer-list-form-separator-arrow-after-border-color: #edecec;
+	--themer-list-form-separator-arrow-after-border-color: #fff;
 	--themer-thumb-grid-with-bar-li-bar-description-span-border-bottom-color: transparent;
-	--themer-workflow-types-list-li-a-focus-border-color: #c9c9c9;
-	--themer-list-form-separator-arrow-after-border-color-top: #edecec;
-	--themer-list-form-separator-arrow-after-border-color-top: #fff;
-	--themer-list-form-separator-arrow-after-border-color-horizontal: transparent;
-	--themer-list-form-separator-arrow-after-border-color-bottom: transparent;
+	--themer-c-design-and-spam-test-text-box-border-color: #d2d7df;
 	--themer-zoomControls-span-zoomIn-border-color: #d2d7df;
-	--themer-zoomControls-span-zoomOut-border-color: #d2d7df;
-	--themer-c-sidebar-note-options-code-border-color: #d2d7df;
-	--themer-step3_1Div-primary-form-border-top-color: #d2d7df;
-	--themer-wv_imageInfoWindow-border-color: #8e9aad;
+	--themer-workflow-types-list-li-a-focus-border-color: #c9c9c9;
 	--themer-c-campaign-report-ui-refresh-noContent-input-short_link-border-color: #e9ebef;
 	--themer-ul-counts-border-color: #e9ebef;
 	--themer-ul-counts-li-opens-border-right-color: #e9ebef;
@@ -1004,10 +977,13 @@
 	--themer-c-campaign-report-ui-refresh-table-tableFooter-td-footerLeft-border-top-color: #e9ebef;
 	--themer-table-tableHeader-th-border-bottom-color: #e9ebef;
 	--themer-table-tableFooter-td-footerLeft-border-top-color: #e9ebef;
+	--themer-workflow-types-list-li-a-border-color: #e2e2e2;
 	--themer-ul-countriesHeader-border-bottom-color: rgb(233, 235, 239);
 	--themer-ul-countryListing-border-bottom-color: rgb(233, 235, 239);
+	--themer-wv_imageInfoWindow-border-color: #8e9aad;
 	--themer-wrap-bg-primary-form-box-wrap-notification-info-border-color: transparent;
 }
+
 /* End: Border */
 
 /* Start: Background */
@@ -1029,25 +1005,6 @@
 	--themer-div-pending-background: url(/img/icons/orangeLoader.gif) no-repeat 0 0;
 	--themer-importResultsFrame-background: #f0f0f0;
 	--themer-case-shadowWrap-shadowMidLeft-background: transparent url(/img/bg/mr.png) repeat-y right 0;
-	--themer-case-rightcol-background: url(/img/bg/2col.png?v=1) repeat-y -40px;
-	--themer-credits-background: #fffbd4 none repeat scroll 0 0;
-	--themer-formContainer-tr-light-background: #f5f6f8;
-	--themer-radioSelected-background: #8e9aad;
-	--themer-code-background: #f9f9f9;
-	--themer-unauthenticatedModal-a-switchAuthenticated-background-color: #f9d38a;
-	--themer-unauthenticatedModal-a-switchAuthenticated-hover-background-color: #f9d999;
-	--themer-clearMyHead-background: #fff url(/img/bg/clearHead.png) no-repeat 100% 0;
-	--themer-h2-grey-background: url(/img/bg/grey-heading-right.gif) no-repeat 100% 0;
-	--themer-formBG-background: #fff;
-	--themer-formContainer-background: #fff;
-	--themer-radioContainer-background: #fff;
-	--themer-confirmCase-background: #fff;
-	--themer-billingSettings-background: #fff;
-	--themer-twocol-background-color: #fff;
-	--themer-activityBG-background-color: #fff;
-	--themer-case-shadowWrap-background: #fff;
-	--themer-case-shadowWrap-shadowMidLeft-shadowMidContent-background: #fff;
-	--themer-unauthenticatedModal-background: url(/img/unauthenticatedModal.png) no-repeat;
 	--themer-case-shadowBottomLeft-background: transparent url(/img/bg/bl.png) no-repeat 0 0;
 	--themer-case-shadowBottomLeft-shadowMidLeft-background: transparent url(/img/bg/br.png) no-repeat right 0;
 	--themer-ul-tick-li-background: url(/img/icons/smallTick.png) no-repeat 0 4px;
@@ -1057,37 +1014,6 @@
 	--themer-table-tableTabs-td-tabOffLeftOfOn-background: url(/img/bg/table-tab-off-left-of-on.gif) no-repeat 0 100%;
 	--themer-table-tableTabs-td-tabOffFarRightNoneSelected-div-background: url(/img/bg/table-tab-right-none.gif) no-repeat 0 100%;
 	--themer-table-tableHeader-td-footerMiddle-background: url(/img/bg/table-footer-middle.gif) repeat-x 0 0;
-	--themer-success2-background: #e1ffd1 url(/img/icons/alert-success.gif) no-repeat 11px 12px;
-	--themer-bigEarning-background: #e1ffd1 url(/img/icons/massiveCash.gif) no-repeat 21px 16px;
-	--themer-failureMessage-background: #fff1f1;
-	--themer-success-background: #e2ffd1 url(/img/icons/alert-success-small.png) no-repeat 11px
-        11px;
-	--themer-success-s-success-box-billing-background: #e2ffd1 url(/img/icons/alert-success-small.png) no-repeat 11px
-        21px;
-	--themer-successBig-background: #e2ffd1 url(/img/icons/alert-success.png?v=2) no-repeat 18px
-        15px;
-	--themer-th-inForm-background: #d3d3d3;
-	--themer-td-inForm-background: #e4e4e4;
-	--themer-listPill-a-background: #c5c5c5;
-	--themer-bigReportAlert-background: #fff5ca url(/img/icons/reportsAlert.gif) no-repeat 16px 18px;
-	--themer-bigCustomizeAlert-background: #fff5ca url(/img/icons/customize-alert.png) no-repeat 16px 18px;
-	--themer-alert_payment_reminder-background: #fff5ca url(/img/icons/alert_payment_reminder.gif) no-repeat
-        15px 15px;
-	--themer-bigAlert-background: #fbf7dd url(/img/icons/alert-warning.png) no-repeat 15px 15px;
-	--themer-alert-background: #fbf7ea;
-	--themer-table-border-th-background: #a8a8a8 url(/img/bg/table-head.gif) repeat-x;
-	--themer-table-border-td-tableFooter-background: #e8e8e8 url(/img/bg/table-footer.gif) repeat-x;
-	--themer-fromAndToIsTheSameDiv-background: #E9EBEF;
-	--themer-failure-background: #ffdede url(/img/icons/alert-failure.png) no-repeat 15px 19px;
-	--themer-table-sidebar-th-background: #cfcfcf;
-	--themer-tr-clickRow-hover-background-color: #fafafb;
-	--themer-div-failureMessage-table-sidebar-td-background: #fff;
-	--themer-table-tableTabs-td-tabOnRight-background: url(/img/bg/table-tab-right.gif) no-repeat 100% 0;
-	--themer-table-tableTabs-td-tabOffMiddle-background: url(/img/bg/table-tab-off.gif) no-repeat 100% 100%;
-	--themer-table-tableTabs-td-tabOffFarRight-background: url(/img/bg/table-tab-off-right.gif) no-repeat 100% 100%;
-	--themer-table-tableTabs-td-tableHeaderCap-background: url(/img/bg/table-tab-header-cap.gif) no-repeat 100% 100%;
-	--themer-table-tableTabsHeader-tr-hover-background: #fafafb;
-	--themer-table-tableTabsHeader-tr-tabRowSelected-background: #fafafb;
 	--themer-tr-clients_themselves-th-background: url(/img/bg/dash_sending_themselves.jpg) repeat-x 0 0;
 	--themer-table-tableHeader-th-headerGrey-background: url(/img/bg/dash_sending_themselves.jpg) repeat-x 0 0;
 	--themer-th-headerDarkGreyLeft-background: url(/img/bg/dash_latest_activity.jpg) repeat-x 0 0;
@@ -1113,22 +1039,52 @@
 	--themer-new-slate-scheduled-background: url(/img/blank-slate/icon-scheduled.png) no-repeat 0 0;
 	--themer-new-slate-segments-background: url(/img/blank-slate/icon-segments.png) no-repeat 0 0;
 	--themer-timeleft-background: url(/img/icons/time_left.gif) 0 0 no-repeat #fafafb;
+	--themer-success2-background: #e1ffd1 url(/img/icons/alert-success.gif) no-repeat 11px 12px;
+	--themer-bigEarning-background: #e1ffd1 url(/img/icons/massiveCash.gif) no-repeat 21px 16px;
+	--themer-failureMessage-background: #fff1f1;
 	--themer-div-activityAutoresponder-background: #1a5591;
 	--themer-deliverPercentBG-background: #d1d1d1;
 	--themer-blankSlateIntro-background: #e1ffd1;
+	--themer-case-rightcol-background: url(/img/bg/2col.png?v=1) repeat-y -40px;
+	--themer-success-background: #e2ffd1 url(/img/icons/alert-success-small.png) no-repeat 11px
+        11px;
+	--themer-success-s-success-box-billing-background: #e2ffd1 url(/img/icons/alert-success-small.png) no-repeat 11px
+        21px;
+	--themer-successBig-background: #e2ffd1 url(/img/icons/alert-success.png?v=2) no-repeat 18px
+        15px;
 	--themer-clickCountDark-background: #2a8bc9;
 	--themer-new-slate-templates-background: url(/img/blank-slate/icon-templates.png?v=2) no-repeat 0 0;
 	--themer-new-slate-secondary-slate-background: url(/img/blank-slate/secondary-slate-divider.png?v=2) no-repeat
         0 0;
-	--themer-table-tableTabsHeader-td-alertRow-background: #e3e3e3;
+	--themer-th-inForm-background: #d3d3d3;
+	--themer-table-goalSummary-td-div-secondary-background: #d3d4c0;
 	--themer-aBig-background: #ce3b3b;
+	--themer-credits-background: #fffbd4 none repeat scroll 0 0;
 	--themer-clickCount-background: #4ba9e5;
 	--themer-new-slate-billing-sapling-background: url(/img/blank-slate/sapling.png) no-repeat 4px top;
+	--themer-formContainer-tr-light-background: #f5f6f8;
+	--themer-bigReportAlert-background: #fff5ca url(/img/icons/reportsAlert.gif) no-repeat 16px 18px;
+	--themer-bigCustomizeAlert-background: #fff5ca url(/img/icons/customize-alert.png) no-repeat 16px 18px;
+	--themer-alert_payment_reminder-background: #fff5ca url(/img/icons/alert_payment_reminder.gif) no-repeat
+        15px 15px;
 	--themer-table-tableHeader-tr-w_dropdown-th-background: #d5ecfa;
+	--themer-bigAlert-background: #fbf7dd url(/img/icons/alert-warning.png) no-repeat 15px 15px;
+	--themer-alert-background: #fbf7ea;
+	--themer-table-border-th-background: #a8a8a8 url(/img/bg/table-head.gif) repeat-x;
+	--themer-code-background: #f9f9f9;
+	--themer-fromAndToIsTheSameDiv-background: #E9EBEF;
+	--themer-failure-background: #ffdede url(/img/icons/alert-failure.png) no-repeat 15px 19px;
+	--themer-clearMyHead-background: #fff url(/img/bg/clearHead.png) no-repeat 100% 0;
+	--themer-h2-grey-background: url(/img/bg/grey-heading-right.gif) no-repeat 100% 0;
+	--themer-table-sidebar-th-background: #cfcfcf;
+	--themer-tr-clickRow-hover-background-color: #fafafb;
 	--themer-table-subscriberStats-tr-hover-background: #fafafb;
 	--themer-table-tableHeader-tr-tabRowSelected-background: #fafafb;
+	--themer-formBG-background: #fff;
+	--themer-formContainer-background: #fff;
+	--themer-radioContainer-background: #fff;
 	--themer-div-activityTest-background: #eead2f;
-	--themer-table-goalSummary-td-div-secondary-background: #d3d4c0;
+	--themer-listPill-a-background: #c5c5c5;
 	--themer-table-tableHeader-tr-segmentHighlight-background: #f5f6f8;
 	--themer-table-tableHeader-td-highlightCell-background: #f5f6f8;
 	--themer-blankSlateOptions-background: #f5f6f8;
@@ -1136,26 +1092,46 @@
 	--themer-abResults-background: #f5f6f8;
 	--themer-abload-background: #f5f6f8;
 	--themer-abSlider-c-background: #f5f6f8;
-	--themer-clickCountBG-background: #e7e7e7;
 	--themer-div-activityRSS-background: #8d78c9;
+	--themer-unauthenticatedModal-a-switchAuthenticated-background-color: #f9d38a;
+	--themer-unauthenticatedModal-a-switchAuthenticated-hover-background-color: #f9d999;
 	--themer-table-goalSummary-td-div-background: #9ddb84;
 	--themer-div-activityImport-background: #d9c855;
 	--themer-clickCountFull-background: #47a0d9;
 	--themer-deliverPercent-background: #50b432;
-	--themer-table-tableStats-td-statRight-background: url(/img/bg/table-stats-right.gif) no-repeat 100% 0;
-	--themer-addHighlight-background: #fafafb;
-	--themer-leftBox-background: #fafafb;
-	--themer-dataHighlight-background: #feffde;
-	--themer-table-colorPicker-background: #fff;
 	--themer-div-activityABSent-background: #63be7a;
 	--themer-div-activityProfit-background: #64cb7c;
+	--themer-table-tableTabs-td-tabOnRight-background: url(/img/bg/table-tab-right.gif) no-repeat 100% 0;
+	--themer-table-tableTabs-td-tabOffMiddle-background: url(/img/bg/table-tab-off.gif) no-repeat 100% 100%;
+	--themer-table-tableTabs-td-tabOffFarRight-background: url(/img/bg/table-tab-off-right.gif) no-repeat 100% 100%;
+	--themer-table-tableStats-td-statRight-background: url(/img/bg/table-stats-right.gif) no-repeat 100% 0;
 	--themer-table-darkFooter-th-footerRight-background: url(/img/bg/footer-dark-grey-right.gif) no-repeat 100% 0;
 	--themer-bBig-background: #218fda;
 	--themer-div-activitySent-background: #379b3c;
 	--themer-div-activityNews-background: #434d5d;
 	--themer-div-activityDraft-background: #629fcf;
 	--themer-div-activityCredit-background: #717a8a;
+	--themer-table-tableTabsHeader-td-alertRow-background: #e3e3e3;
+	--themer-table-border-td-tableFooter-background: #e8e8e8 url(/img/bg/table-footer.gif) repeat-x;
+	--themer-radioSelected-background: #8e9aad;
+	--themer-table-tableTabsHeader-tr-tabRowSelected-background: #fafafb;
+	--themer-confirmCase-background: #fff;
+	--themer-billingSettings-background: #fff;
+	--themer-twocol-background-color: #fff;
+	--themer-activityBG-background-color: #fff;
+	--themer-case-shadowWrap-background: #fff;
+	--themer-case-shadowWrap-shadowMidLeft-shadowMidContent-background: #fff;
+	--themer-div-failureMessage-table-sidebar-td-background: #fff;
+	--themer-table-tableTabs-td-tableHeaderCap-background: url(/img/bg/table-tab-header-cap.gif) no-repeat 100% 100%;
+	--themer-td-inForm-background: #e4e4e4;
+	--themer-table-tableTabsHeader-tr-hover-background: #fafafb;
+	--themer-table-colorPicker-background: #fff;
+	--themer-clickCountBG-background: #e7e7e7;
+	--themer-addHighlight-background: #fafafb;
+	--themer-leftBox-background: #fafafb;
+	--themer-dataHighlight-background: #feffde;
 	--themer-plChart-background: #fff;
+	--themer-unauthenticatedModal-background: url(/img/unauthenticatedModal.png) no-repeat;
 	--themer-abSlider-b-background: #428cf4;
 	--themer-abSlider-a-background: #cd4041;
 	--themer-div-activityAlert-background: #bd4646;
@@ -1173,11 +1149,8 @@
 	--themer-st_bigAlert-background: #fff5ca url(/img/icons/mid_alert.gif) no-repeat 13px 13px;
 	--themer-customize_bigAlert-background: #fff5ca url(/img/icons/mid_alert.gif) no-repeat 13px 13px;
 	--themer-gaAlert-background: #fafafb url(/img/icons/google-ana.png) no-repeat 6px 5px;
-	--themer-div-segmentDivider-span-background: #8e9aad;
-	--themer-span-conditionDivider-background: #8e9aad;
-	--themer-JT_close_left-background-color: #8e9aad;
 	--themer-snapshotAlert-background: #fff9d7 url(/img/icons/alert.gif) no-repeat 8px 16px;
-	--themer-spamWaiting-background: url(/img/icons/spamWaiting.gif) 9px 11px no-repeat;
+	--themer-label-important-background-color: #b94a48;
 	--themer-contentNavs-a-span-background: url(/img/navigation/content-right_both.gif) no-repeat 100% 0;
 	--themer-h1-bBig-background: #218fda;
 	--themer-CodeMirror-line-numbers-background-color: #eee;
@@ -1185,21 +1158,23 @@
 	--themer-ul-listing-li-background-color: #eee;
 	--themer-Createsend-billing-background-color: #fafafb;
 	--themer-cr_edit_html-background: #fff;
-	--themer-authenticated-domains-tbody-tr-td-inForm-background: #fff;
-	--themer-authenticated-domains-thead-th-inForm-background: transparent;
-	--themer-label-background-color: #8e9aad;
-	--themer-suppression_count-span-background: #8e9aad url(/img/icons/supressed_glyph.png) no-repeat 2px 1px;
-	--themer-label-important-background-color: #b94a48;
+	--themer-spamWaiting-background: url(/img/icons/spamWaiting.gif) 9px 11px no-repeat;
 	--themer-strong-important-background-color: #ffec98;
-	--themer-label-positive-background-color: #276b2b;
+	--themer-div-segmentDivider-span-background: #8e9aad;
+	--themer-span-conditionDivider-background: #8e9aad;
 	--themer-cs_credits_markup-cs_thead-background: #dedede;
 	--themer-exampleExtended-background: #eee;
+	--themer-authenticated-domains-tbody-tr-td-inForm-background: #fff;
 	--themer-JT-background-color: #fff;
 	--themer-cs_monthly_price-cs_thead-background: #fff;
 	--themer-cs_monthly_price-cs_trow-background: #fff;
 	--themer-cs_trow-background: #fff;
 	--themer-exampleExtended-background: #fff url(/img/bg/calculate_bg.jpg) repeat-x;
+	--themer-authenticated-domains-thead-th-inForm-background: transparent;
 	--themer-cs_form-cs_help_box-background: hsla(0, 0%, 100%, 0.9);
+	--themer-label-positive-background-color: #276b2b;
+	--themer-label-background-color: #8e9aad;
+	--themer-JT_close_left-background-color: #8e9aad;
 	--themer-cs_form-cs_help_box-div-background: url(/img/icons/form_help_hover.gif) no-repeat;
 	--themer-pp_notok-cross-li-background: url(../img/icons/approval_notok.gif) 0 2px no-repeat;
 	--themer-pp_ok-tick-li-background: url(../img/icons/approval_ok.gif) 0 2px no-repeat;
@@ -1227,6 +1202,7 @@
 	--themer-au_verified-textarea-background: #f9fcf8;
 	--themer-overlay_header-background: url(/img/bg/overlay_header.jpg) repeat-x;
 	--themer-overlays-background: #434d5d;
+	--themer-suppression_count-span-background: #8e9aad url(/img/icons/supressed_glyph.png) no-repeat 2px 1px;
 	--themer-ro_activity_btn-background: url(/img/buttons/link_activity_left_down.jpg) no-repeat;
 	--themer-ro_overlay_btn-background: url(/img/buttons/link_activity_right_up.jpg) no-repeat;
 	--themer-ds_tempReason-background-color: hsla(0, 0%, 100%, 0.9);
@@ -1236,7 +1212,6 @@
 	--themer-ar_status_paused-background: url(/img/icons/status_paused.png) no-repeat 0 2px;
 	--themer-ar_alert-background: #fff5ca url(/img/icons/bigAlert.gif) no-repeat 15px 15px;
 	--themer-ar_chart_loading-background: #f5f6f8;
-	--themer-ar_snapGroup-background: url(../img/bg/ar_snapBg.jpg) repeat-x #e6e6e6;
 	--themer-cs_dark-background: #f7f7f7;
 	--themer-ds_right_header-background: #e7f2f7;
 	--themer-ar_report_body-background: #f7f7f7;
@@ -1257,9 +1232,16 @@
 	--themer-ds_result_header-background: #fafafb;
 	--themer-ds_right_spam-background: #fafafb;
 	--themer-ds_screen_frame-background: #fafafb;
-	--themer-ar_optionAlert-background: #fafafb;
-	--themer-ar_yellowAlert-background: #fff;
+	--themer-ar_snapLeft-background: url(../img/bg/ar_snap_left_Bg.jpg) no-repeat #dcdcdc;
 	--themer-ds_screen_shade-background: url(/img/icons/ds_top_shade.png) repeat-x;
+	--themer-ds_spam_filters-div-spamWaiting-background: url(/img/icons/ds_loading.gif) 149px 8px no-repeat;
+	--themer-ds_spam_filters-div-spamFail-background: url(/img/icons/ds_icon_failed.gif) 149px 8px no-repeat;
+	--themer-ds_spam_filters-div-spamPass-background: url(/img/icons/ds_icon_passed.gif) 149px 8px no-repeat;
+	--themer-ds_spam_filters-div-spamBroken-background: url(/img/icons/ds_icon_alert.png) 149px 8px no-repeat;
+	--themer-ar_optionAlert-background: #fafafb;
+	--themer-ar_dash_table-background: #fff;
+	--themer-ar_yellowAlert-background: #fff;
+	--themer-ds_tempReason-div-background: url(/img/icons/ds_filter_warning_tip.png) no-repeat;
 	--themer-ar_infoAlert-background: #feffe0 url(/img/icons/info_glyph.png) no-repeat 18px;
 	--themer-ao_replyContainer-reply-ao_commentText-background: #fff url(../img/bg/new_approval_textarea.png) no-repeat right 0;
 	--themer-a-ao_under_review-background: url(/img/exclamation-small.png) no-repeat left 0;
@@ -1270,18 +1252,19 @@
 	--themer-sharingTimeline-ul-timeline-li-quickLinks-li-a-background: url(/img/reports/icons/miniIcons.png) no-repeat 0 0;
 	--themer-share_modal-input-short_link-background-color: #e0e0e0;
 	--themer-share_modal-input-short_link-background: #e0e0e0 url(/img/reports/icon_link.png) no-repeat 10px;
+	--themer-ao_commentContainer-staff-background: #f5fafe url(/img/bg/ao_campMon.png) no-repeat 100% 100%;
+	--themer-barChart-ul-linkedInShares-li-background-color: #007bb6;
+	--themer-share_modal-background-color: #f7f6f6;
+	--themer-sharingTimeline-ul-timeline-li-background-color: #f8f7f7;
+	--themer-sharingTimeline-ul-timeline-li-quickLinks-h5-counter-background-color: #79c;
+	--themer-barChart-ul-mailForwards-li-background-color: #259e01;
 	--themer-ar_glyphSubscriber-background: #e4e4e4 url(/img/icons/subscriber_glyph.png) no-repeat;
 	--themer-ar_glyphAnniversary-background: #e4e4e4 url(/img/icons/anniversary_glyph.png) no-repeat;
 	--themer-ar_glyphExactDate-background: #e4e4e4 url(/img/icons/exactDate_glyph.png) no-repeat;
-	--themer-ao_commentContainer-staff-background: #f5fafe url(/img/bg/ao_campMon.png) no-repeat 100% 100%;
-	--themer-ds_spam_filters-div-spamWaiting-background: url(/img/icons/ds_loading.gif) 149px 8px no-repeat;
-	--themer-ds_spam_filters-div-spamFail-background: url(/img/icons/ds_icon_failed.gif) 149px 8px no-repeat;
-	--themer-ds_spam_filters-div-spamPass-background: url(/img/icons/ds_icon_passed.gif) 149px 8px no-repeat;
-	--themer-ds_spam_filters-div-spamBroken-background: url(/img/icons/ds_icon_alert.png) 149px 8px no-repeat;
 	--themer-barChart-ul-background: #efefef;
-	--themer-ar_dash_table-background: #fff;
 	--themer-ao_replyContainer-reply-ao_commentTextStandard-background: #fff;
-	--themer-ar_snapLeft-background: url(../img/bg/ar_snap_left_Bg.jpg) no-repeat #dcdcdc;
+	--themer-sharingTimeline-ul-timeline-li-loadingMore-background-color: #fff;
+	--themer-sharingTimeline-ul-timeline-li-loadingMore-background: #fff;
 	--themer-h5-ao_status-background: url(/img/ao_trafficLights.png) no-repeat;
 	--themer-ao_commentText-span-ao_commentReplyText-background: url(/img/spinner.gif) no-repeat;
 	--themer-barChart-ul-service-background: url(/img/reports/icons/serviceIcons.png) no-repeat 0 4px;
@@ -1290,72 +1273,42 @@
 	--themer-noContent-input-short_link-background-color: #e0e0e0;
 	--themer-noContent-input-short_link-background: #e0e0e0 url(/img/reports/icon_link.png) no-repeat 10px;
 	--themer-options-p-smallPad-span-importantSidebar-background: url(/img/bannerBackground.png) no-repeat 0 0;
+	--themer-span-fullscreen-background: url(/img/worldview/fullscreen_control.png) no-repeat 0 0;
 	--themer-subscriber_detail-article-body-activity-em-background: url(/img/subscribers/grey_pin.png) no-repeat 0 0;
 	--themer-subscriber_detail-article-body-grey-loading-background: url(/img/spinner.gif) no-repeat 0 0;
 	--themer-wrap-modal-template-wrap-browser-shadow-background-color: #000;
-	--themer-curtain-background: #e1e1e1;
 	--themer-switch-nib-background: url(/img/switch.png) no-repeat left -2px;
 	--themer-wv_progressBar-background-color: #3fb113;
 	--themer-button-as-link-focus-background-color: #e3e0d1;
 	--themer-subscriber_detail-aside-section-map-figure-background: #e4dfd4 url(/img/subscribers/map-default.jpg) no-repeat 0 0;
-	--themer-wv_backBar-background-color: #e6e6e7;
 	--themer-subscriber_detail-article-body-sent-before-background-color: #7f8d9e;
-	--themer-subscriber_detail-article-body-unsub-before-background-color: #8e9aad;
-	--themer-span-shareBadge-background-color: #f14c0e;
+	--themer-curtain-background: #e1e1e1;
 	--themer-subscriber_detail-article-body-forwards-before-background-color: #f24f10;
 	--themer-subscriber_detail-article-body-opened-before-background-color: #30a106;
 	--themer-options-p-smallPad-span-importantSidebar-background-color: #40b040;
+	--themer-span-clickBadgeIcon-background: url(/img/worldview/clickGlyph.png) no-repeat 50%;
+	--themer-span-facebookBadgeIcon-background: url(/img/worldview/facebookGlyph.png) no-repeat 50%;
 	--themer-map-div-background-color: #98b3cc;
 	--themer-wv_topBar-background-color: #eaeaec;
-	--themer-wv_counter-span-wv_horizontal-background: url(/img/worldview/counterDivider.png) repeat-x;
-	--themer-span-fullscreen-background: url(/img/worldview/fullscreen_control.png) no-repeat 0 0;
 	--themer-span-shareModal-background: url(/img/worldview/share_control.png) no-repeat 0 0;
 	--themer-zoomControls-span-zoomIn-background: url(/img/worldview/zoom_controls.png) no-repeat 0 0;
-	--themer-subscriber_detail-aside-section-map-background-color: #e5e5e5;
 	--themer-span-openBadgeIcon-background: url(/img/worldview/openGlyph.png) no-repeat 50%;
-	--themer-span-clickBadgeIcon-background: url(/img/worldview/clickGlyph.png) no-repeat 50%;
 	--themer-span-twitterBadgeIcon-background: url(/img/worldview/twitterGlyph.png) no-repeat 50%;
-	--themer-span-facebookBadgeIcon-background: url(/img/worldview/facebookGlyph.png) no-repeat 50%;
 	--themer-span-forwardBadgeIcon-background: url(/img/worldview/forwardGlyph.png) no-repeat 50%;
 	--themer-ul-countriesHeader-li-opensHeader-span-before-background-color: #60c775;
 	--themer-span-openBadge-background-color: #269e00;
 	--themer-ul-countriesHeader-li-clicksHeader-span-before-background-color: #509cf6;
 	--themer-span-clickBadge-background-color: #2882de;
-	--themer-ul-countryListing-hover-background-color: #fafafb;
-	--themer-ul-countriesHeader-li-sharesHeader-span-before-background-color: #d63838;
+	--themer-wv_backBar-background-color: #e6e6e7;
 	--themer-button-group-button-active-background: #eee;
+	--themer-ul-countryListing-hover-background-color: #fafafb;
 	--themer-hider-background: #fff;
 	--themer-subscriber_detail-aside-section-background-color: #fff;
 	--themer-subscriber_detail-aside-section-header-input-untruncated-background-color: #fff;
 	--themer-subscriber_detail-article-body-activity-before-background-color: pink;
 	--themer-subscriber_detail-article-body-background-color: transparent;
 	--themer-subscriber_detail-aside-section-header-avatar-background: url(/img/sallysparrow.png) no-repeat;
-	--themer-subscriber_detail-article-body-clicks-before-background-color: #3385e0;
-	--themer-button-disabled-background: #ececed;
-	--themer-table-refunded-background-color: #fafafa;
-	--themer-button-zeroclipboard-is-hover-background: #fafafb;
-	--themer-subscriber_detail-article-body-activity-nth-child-odd-background-color: #fcfcfc;
-	--themer-table-refund-background-color: #ffeaea;
-	--themer-subscriber_detail-article-body-h3-background: #fff;
-	--themer-subscriber_detail-article-body-h4-background-color: #fff;
-	--themer-subscriber_detail-aside-div-error-background-color: #fff;
-	--themer-error-balloon-alert-background: #fff;
-	--themer-error-balloon-no-glyph-background-color: #fff;
-	--themer-subscriber_detail-input-error-background-color: #fff;
-	--themer-subscriber_detail-input-error-focus-background-color: #fff;
-	--themer-success-balloon-background-color: #fff;
-	--themer-ul-dropDown-background-color: #fff;
-	--themer-button-background-color: #fff;
-	--themer-switch-nib-after-background-color: transparent;
-	--themer-has-recurring-emails-background: url(/img/icons/recurring-rss.png) no-repeat;
-	--themer-ul-dropDown-before-background: url(/img/topPoint.png) no-repeat 0 0;
-	--themer-input-pass-background: #f3fcf0 url(/img/small-green-tick.png?v=2) no-repeat 100%;
-	--themer-ul-dropDown-li-hover-a-background-color: #3aacec;
-	--themer-ul-dropDown-li-unHover-a-background-color: #fff;
-	--themer-button-not-cmds-g-button-background: transparent;
-	--themer-button-as-link-background: transparent;
-	--themer-button-exclude-before-background: url(/img/icons/icon-exclude.png) no-repeat;
-	--themer-button-export-before-background: url(/img/icons/icon-export.png) no-repeat;
+	--themer-wv_counter-span-wv_horizontal-background: url(/img/worldview/counterDivider.png) repeat-x;
 	--themer-segmented-buttons-button-selected-background-color: #f0f0f0;
 	--themer-link-light-medium-spinner-background: url(../img/spinner.gif) 0 0 no-repeat;
 	--themer-link-light-large-import-background: url(../img/icons/icon-link-import.png) 0 0 no-repeat;
@@ -1369,9 +1322,27 @@
 	--themer-block-options-li-background-color: #f6f6f6;
 	--themer-block-options-li-selected-background-color: #dfe8dc;
 	--themer-block-options-li-selected-price-background-color: #dfe8dc;
-	--themer-button-primary-background-color: #61962b;
+	--themer-span-shareBadge-background-color: #f14c0e;
+	--themer-subscriber_detail-article-body-clicks-before-background-color: #3385e0;
+	--themer-ul-countriesHeader-li-sharesHeader-span-before-background-color: #d63838;
+	--themer-subscriber_detail-article-body-unsub-before-background-color: #8e9aad;
+	--themer-button-disabled-background: #ececed;
+	--themer-table-refunded-background-color: #fafafa;
+	--themer-button-zeroclipboard-is-hover-background: #fafafb;
 	--themer-primary-form-primary-form__box-notification-positive-background-color: #fafafb;
+	--themer-subscriber_detail-article-body-activity-nth-child-odd-background-color: #fcfcfc;
 	--themer-primary-form-primary-form__box-background-color: #fcfcfc;
+	--themer-table-refund-background-color: #ffeaea;
+	--themer-subscriber_detail-article-body-h3-background: #fff;
+	--themer-subscriber_detail-article-body-h4-background-color: #fff;
+	--themer-subscriber_detail-aside-div-error-background-color: #fff;
+	--themer-error-balloon-alert-background: #fff;
+	--themer-error-balloon-no-glyph-background-color: #fff;
+	--themer-subscriber_detail-input-error-background-color: #fff;
+	--themer-subscriber_detail-input-error-focus-background-color: #fff;
+	--themer-success-balloon-background-color: #fff;
+	--themer-ul-dropDown-background-color: #fff;
+	--themer-button-background-color: #fff;
 	--themer-covert-input-focus-background-color: #fff;
 	--themer-wrap-bg-primary-form-box-wrap-background: #fff;
 	--themer-primary-form-box-wrap-background: #fff;
@@ -1383,15 +1354,22 @@
 	--themer-primary-form-box-wrap-jagged-before-background: #fff url(../img/misc/jagged-double.png) bottom no-repeat;
 	--themer-primary-form-contenteditable-highlight-background: #e6f3fb;
 	--themer-box-wrap-white-background: #fff;
+	--themer-switch-nib-after-background-color: transparent;
+	--themer-has-recurring-emails-background: url(/img/icons/recurring-rss.png) no-repeat;
+	--themer-ul-dropDown-before-background: url(/img/topPoint.png) no-repeat 0 0;
 	--themer-wrap-modal-template-wrap-mobile-shadow-background-color: #000;
 	--themer-wrap-mobile-dark-content-mobile-background: #000;
 	--themer-heading-feature-highlight-background: #d1f1ff;
+	--themer-input-pass-background: #f3fcf0 url(/img/small-green-tick.png?v=2) no-repeat 100%;
+	--themer-ul-dropDown-li-hover-a-background-color: #3aacec;
+	--themer-ul-dropDown-li-unHover-a-background-color: #fff;
+	--themer-button-not-cmds-g-button-background: transparent;
+	--themer-button-as-link-background: transparent;
+	--themer-button-exclude-before-background: url(/img/icons/icon-exclude.png) no-repeat;
+	--themer-button-export-before-background: url(/img/icons/icon-export.png) no-repeat;
 	--themer-bi_saving_card_screen-bi_saving-background: url(/img/misc/loader-spinner.gif?v=3) 175px 0 no-repeat;
-	--themer-h1-large-mid-separator-before-background-color: #e5e5e5;
-	--themer-bar-top-nav-with-icons-li-animate-new-new-icon-flag-animated-background: #7ebd26;
-	--themer-h1-large-mid-separator-text-background-color: #fff;
-	--themer-animated-tick-background-color: #e5e5e5;
 	--themer-bar-top-nav-with-icons-li-new-icon-flag-fixed-background: #7ebd26;
+	--themer-bar-top-nav-with-icons-li-animate-new-new-icon-flag-animated-background: #7ebd26;
 	--themer-wrap-browser-chrome-bar-background-color: #fbfaf9;
 	--themer-selector-consecutive-dropdown-first-before-background: url(/img/dropdown_separator.png) no-repeat 50%;
 	--themer-selector-before-background: url(/img/OpenDropDownIcon.svg) no-repeat 50%;
@@ -1399,16 +1377,21 @@
 	--themer-wrap-modal-template-description-thumbs-small-li-before-background: rgba(55, 60, 68, 0.7) url(../img/icons/icon-small/magnify.png)
         47px 27px no-repeat;
 	--themer-wrap-modal-template-background: #434d5d;
+	--themer-wrap-mobile-after-background: #434d5d;
+	--themer-button-primary-background-color: #61962b;
+	--themer-subscriber_detail-aside-section-map-background-color: #e5e5e5;
+	--themer-h1-large-mid-separator-before-background-color: #e5e5e5;
 	--themer-notification-box-notification-info-background: #eaeefb;
 	--themer-info-balloon-background: #fafafb;
 	--themer-overlay-box-background-color: #fcfcfc;
 	--themer-notification-box-background-color: #fcfcfc;
 	--themer-bar-top-background: #fff;
+	--themer-h1-large-mid-separator-text-background-color: #fff;
 	--themer-modal-background-color: #fff;
 	--themer-wrap-browser-background: #fff;
 	--themer-wrap-mobile-content-mobile-background: #fff;
-	--themer-note-background: #fff;
 	--themer-animated-tick__inner-background-color: #fff;
+	--themer-error-balloon-big-background: #fff;
 	--themer-tooltip-background: #fff;
 	--themer-tooltip-before-background: #fff;
 	--themer-tooltip-after-background: #fff;
@@ -1432,58 +1415,72 @@
         15px no-repeat;
 	--themer-table-li-changed-background: #efffde;
 	--themer-table-footer-jagged-footer-background: #fafafa;
+	--themer-timeline-li-hover-background-color: #fafafa;
 	--themer-accordion-list-item-hover-background: #fafafb;
 	--themer-table-secondary-th-background: #fcfcfc;
 	--themer-table-silver-fox-striped-tbody-tr-nth-child-2n-td-background-color: #fcfcfc;
+	--themer-search-box-auto-map-wrap-background: #fcfcfc;
 	--themer-table-silver-fox-background: #fff;
 	--themer-blank-slate-background-color: #fff;
-	--themer-discount-message-big-before-background: url(/img/partner-ribbon.png) no-repeat;
-	--themer-arrowed-bullets-li-before-background: url(/img/arrow-bullet-blue.png) no-repeat 0;
-	--themer-search-box-icon-search-background: url(/img/icons/icon-search.png) 0 0 no-repeat;
-	--themer-progress-bar-error-bar-background-color: #a02e2e;
-	--themer-progress-bar-complete-bar-background-color: #4e983c;
-	--themer-message-center-footer-background: #e5e9ec;
-	--themer-message-center-background: #f6f7f8 url(/img/icons/message-sad-browser.png) no-repeat center
-        40px;
-	--themer-blank-slate-green-before-background-color: #8fc07e;
-	--themer-tableHeader__alertValueChange-background-color: rgba(25, 169, 229, 0.2);
-	--themer-table-header-large-background-color: #fff;
-	--themer-table-avatar-background: url(/img/icons/avatar-24x24.jpg);
-	--themer-example-badge-after-background: url(/img/example-badge.png) no-repeat;
-	--themer-blank-slate-before-background-color: #edb76b;
-	--themer-blank-slate-close-background: url(/img/close-tiny.png) no-repeat;
-	--themer-accordion-list-item-grey-aside-disclosure-triangle-before-background: url(/img/icons/disclosure-triangle-grey.png) no-repeat;
-	--themer-accordion-list-item-delete-background: url(/img/icons/trashNew.png) no-repeat;
-	--themer-progress-bar-background-well-background-color: #e8e8e8;
-	--themer-progress-bar-background-well-bar-background-color: #5284ca;
-	--themer-timeline-li-hover-background-color: #fafafa;
-	--themer-search-box-auto-map-wrap-background: #fcfcfc;
 	--themer-table-top-search-box-auto-search-input-background-color: #fff;
 	--themer-timeline-background: #fff;
 	--themer-timeline-li-background-color: #fff;
+	--themer-discount-message-big-before-background: url(/img/partner-ribbon.png) no-repeat;
+	--themer-arrowed-bullets-li-before-background: url(/img/arrow-bullet-blue.png) no-repeat 0;
 	--themer-timeline-header-background-color: #f0f0f0;
 	--themer-timeline-new-items-hover-background-color: #e1eef6;
 	--themer-timeline-li-hover-list-clicks-li-background: #f2f2f2;
 	--themer-list-tooltip-error-background-color: #fbe5b9;
+	--themer-message-center-background: #f6f7f8 url(/img/icons/message-sad-browser.png) no-repeat center
+        40px;
 	--themer-timeline-new-items-background-color: #e6f3fb;
 	--themer-timeline-table-tool-tip-toop-top__infoblue-background: #f6fcff;
+	--themer-blank-slate-green-before-background-color: #8fc07e;
 	--themer-timeline-table-dot-before-background-color: #e9ebef;
 	--themer-dot-placeholder-before-background-color: #e9ebef;
+	--themer-tableHeader__alertValueChange-background-color: rgba(25, 169, 229, 0.2);
+	--themer-table-header-large-background-color: #fff;
+	--themer-table-avatar-background: url(/img/icons/avatar-24x24.jpg);
+	--themer-example-badge-after-background: url(/img/example-badge.png) no-repeat;
 	--themer-timeline-table-timeline-table__loader-td-background: url(/img/spinner.gif) no-repeat 50%;
+	--themer-blank-slate-before-background-color: #edb76b;
+	--themer-blank-slate-close-background: url(/img/close-tiny.png) no-repeat;
+	--themer-search-box-icon-search-background: url(/img/icons/icon-search.png) 0 0 no-repeat;
 	--themer-timeline-li-status-before-background: #96cc5a;
+	--themer-progress-bar-error-bar-background-color: #a02e2e;
+	--themer-progress-bar-background-well-bar-background-color: #5284ca;
 	--themer-bounce-hard-timeline-li-status-before-background: #e9455a;
+	--themer-progress-bar-background-well-background-color: #e8e8e8;
+	--themer-message-center-footer-background: #e5e9ec;
 	--themer-timeline-li-status-after-background: #fff;
+	--themer-accordion-list-item-grey-aside-disclosure-triangle-before-background: url(/img/icons/disclosure-triangle-grey.png) no-repeat;
+	--themer-accordion-list-item-delete-background: url(/img/icons/trashNew.png) no-repeat;
 	--themer-timeline-li-rejected-status-before-background: #c5c5c5;
 	--themer-timeline-li-bounce-soft-status-before-background: #ffc058;
 	--themer-timeline-li-bounce-hard-status-before-background: #e9455a;
 	--themer-timeline-li-list-clicks-li-background: #fafafa;
 	--themer-table-with-left-col-pricing-li-total-background: #fafafa;
+	--themer-timeline-table-tr-not-noHighlight-hover-background-color: #fafafb;
+	--themer-timeline-table-expanded-clicks-background-color: #fafafb;
+	--themer-timeline-table-tableHeaderFixed-before-background-color: #fcfcfc;
+	--themer-timeline-table-th-background-color: #fff;
+	--themer-timeline-table-status-after-background: #fff;
+	--themer-timeline-table-tool-tip-background-color: #fff;
+	--themer-timeline-table-tableHeaderFixed-th-background-color: transparent;
 	--themer-wv_imageInfoWindow-background: -moz-linear-gradient(0 100% 90deg, #e8e8eb, #fafafa);
 	--themer-list-clean-sub-li-dynamic-content-before-background-color: #3bbff2;
 	--themer-list-clean-sub-li-hover-background: #f5fafe;
+	--themer-timeline-table-status-before-background: #96cc5a;
+	--themer-timeline-table-status-bounced-before-background: #ef5500;
+	--themer-timeline-table-status-bounced-after-background: #ef5500;
+	--themer-bounce-hard-timeline-table-status-before-background: #e9455a;
+	--themer-timeline-table-status-queued-before-background: #8e9aad;
+	--themer-timeline-table-status-queued-after-background: #8e9aad;
+	--themer-progress-bar-complete-bar-background-color: #4e983c;
 	--themer-list-rounded-li-background: #fafafb;
 	--themer-toggletab-li-a-background-color: #fcfcfc;
 	--themer-toggletab-li-a-hover-background-color: #fcfcfc;
+	--themer-list-tooltip-background: #fff;
 	--themer-list-clean-sub-background: #fff;
 	--themer-list-rounded-background: #fff;
 	--themer-list-menu-li-a-hover-background-color: #38a9e9;
@@ -1501,58 +1498,38 @@
 	--themer-thumb-grid-with-bar-li-bar-background: #fff;
 	--themer-thumb-grid-with-bar-li-thumb-background: transparent;
 	--themer-wv_imagelessInfoWindow-background: -moz-linear-gradient(0 100% 90deg, #e8e8eb, #fafafa);
-	--themer-class-abtest-background: #ce3e3e;
 	--themer-alert-box-successful-background: #f4fbea url(/img/global-elements/success-glyph-large.png?v=2)
         15px 15px no-repeat;
 	--themer-sentLists-list-rounded-li-indent-background: #f5f6f8;
-	--themer-barChart-ul-linkedInShares-li-background-color: #007bb6;
-	--themer-share_modal-background-color: #f7f6f6;
+	--themer-alert-box-warning-background-color: #fbf7ea;
 	--themer-span-closeInfoWindow-background: url(/img/worldview/closeGlyph.png) no-repeat 7px 3px;
-	--themer-sharingTimeline-ul-timeline-li-background-color: #f8f7f7;
+	--themer-bar-top-nav-with-icons-li-new-icon-flag-animated-background: #434d5d;
+	--themer-bi_saving_card_screen-background: #434d5d;
+	--themer-wrap-mobile-background: #15171a;
 	--themer-wv_imagelessInfoWindow-background-color: #e8e8eb;
 	--themer-wv_imageInfoWindow-background-color: #e8e8eb;
-	--themer-barChart-ul-twitterMentions-li-background-color: #27b9f2;
-	--themer-barChart-ul-facebookLikesRelikes-relikes-background-color: #79c;
-	--themer-barChart-ul-mailForwards-li-background-color: #259e01;
-	--themer-barChart-ul-facebookLikesRelikes-likes-background-color: #428cf4;
 	--themer-c-campaign-report-ui-refresh-noContent-background-color: #fafafa;
-	--themer-timeline-table-tr-not-noHighlight-hover-background-color: #fafafb;
-	--themer-timeline-table-expanded-clicks-background-color: #fafafb;
 	--themer-rightcol-s-sidebar-c-sidebar-note-background-color: #fafafb;
-	--themer-timeline-table-tableHeaderFixed-before-background-color: #fcfcfc;
-	--themer-sharingTimeline-ul-timeline-li-loadingMore-background-color: #fff;
-	--themer-sharingTimeline-ul-timeline-li-loadingMore-background: #fff;
-	--themer-timeline-table-th-background-color: #fff;
-	--themer-timeline-table-status-after-background: #fff;
-	--themer-timeline-table-tool-tip-background-color: #fff;
+	--themer-note-background: #fff;
 	--themer-c-campaign-report-ui-refresh-noContent-input-short_link-background: #fff;
 	--themer-ul-counts-background: #fff;
 	--themer-zoomControls-span-zoomIn-background: #fff;
-	--themer-timeline-table-tableHeaderFixed-th-background-color: transparent;
-	--themer-ds_tempReason-div-background: url(/img/icons/ds_filter_warning_tip.png) no-repeat;
-	--themer-sharingTimeline-ul-timeline-li-fbRelikes-background: url(/img/reports/fbRelike_bg.png) repeat-x bottom;
 	--themer-zoomControls-span-zoomIn-hover-background-color: #f5f6f8;
 	--themer-zoomControls-span-zoomIn-active-background-color: #f5f6f8;
-	--themer-alert-box-warning-background-color: #fbf7ea;
-	--themer-timeline-table-status-queued-before-background: #8e9aad;
-	--themer-timeline-table-status-queued-after-background: #8e9aad;
 	--themer-thumb-grid-with-bar-li-bar-description-span-editable-hover-background: #fff9cd;
 	--themer-graph-loading-background: #f9f9f9;
-	--themer-sharingTimeline-ul-timeline-li-quickLinks-h5-counter-background-color: #79c;
-	--themer-timeline-table-status-before-background: #96cc5a;
+	--themer-list-form-separator-background: #f9f9f9;
+	--themer-barChart-ul-twitterMentions-li-background-color: #27b9f2;
+	--themer-barChart-ul-facebookLikesRelikes-relikes-background-color: #79c;
 	--themer-ul-counts-li-opens-span-key-background: url(/img/worldview/opens.png) no-repeat 100%;
 	--themer-ul-counts-li-clicks-span-key-background: url(/img/worldview/clicks.png) no-repeat 100%;
+	--themer-ul-counts-li-shares-span-key-background: url(/img/worldview/shares.png) no-repeat 100%;
+	--themer-barChart-ul-facebookLikesRelikes-likes-background-color: #428cf4;
 	--themer-class-abtest-class-b-background: #428cf4;
-	--themer-bar-top-nav-with-icons-li-new-icon-flag-animated-background: #434d5d;
-	--themer-wrap-mobile-after-background: #434d5d;
-	--themer-bi_saving_card_screen-background: #434d5d;
-	--themer-timeline-table-status-bounced-before-background: #ef5500;
-	--themer-timeline-table-status-bounced-after-background: #ef5500;
-	--themer-bounce-hard-timeline-table-status-before-background: #e9455a;
-	--themer-wrap-mobile-background: #15171a;
+	--themer-class-abtest-background: #ce3e3e;
+	--themer-animated-tick-background-color: #e5e5e5;
+	--themer-ar_snapGroup-background: url(../img/bg/ar_snapBg.jpg) repeat-x #e6e6e6;
 	--themer-wrap-bg-primary-form-box-wrap-notification-info-background-color: #eaeefb;
-	--themer-error-balloon-big-background: #fff;
-	--themer-list-tooltip-background: #fff;
 	--themer-workflow-types-list-li-background-color: #fff;
 	--themer-c-sidebar-note-options-code-background: #fff;
 	--themer-c-sidebar-note-options-code-pre-background: #fff;
@@ -1563,14 +1540,14 @@
 	--themer-table-tableHeader-th-background-color: transparent;
 	--themer-secondary-cta-area-background: url(/img/global-elements/section-divider.png) no-repeat top;
 	--themer-button-resend-before-background: url(/img/icons/icon-resend.png) no-repeat;
+	--themer-sharingTimeline-ul-timeline-li-fbRelikes-background: url(/img/reports/fbRelike_bg.png) repeat-x bottom;
 	--themer-side-bar-cap-background: #f5f6f8;
-	--themer-list-form-separator-background: #f9f9f9;
 	--themer-transactional-selector-before-background: url(/img/OpenDropDownIcon.svg) no-repeat 50%;
-	--themer-ul-counts-li-shares-span-key-background: url(/img/worldview/shares.png) no-repeat 100%;
 	--themer-step3_1Div-primary-form-background: #fff;
 	--themer-wv_infoWindow_point-background: url(/img/worldview/infoWindow_point.png) no-repeat bottom;
 	--themer-wv_infoWindow_point-background: url(/img/worldview/infoWindow_pointIE.gif) no-repeat bottom;
 }
+
 
 @media (-webkit-min-device-pixel-ratio: 1.5) {
     :root {
@@ -1582,130 +1559,131 @@
 
 /* Start: Box-shadow */
 :root {
-	--themer-box-shadow-3: inset 0 0 0 1px #d2d7df;
-	--themer-box-shadow-4: inset 0 0 0 1px #d2d7df, 0 0 0 2px #fff, 0 0 0 4px #509cf6;
-	--themer-box-shadow-5: inset 0 1px 4px 0 rgba(0, 0, 0, 0.12);
-	--themer-box-shadow-6: 0 2px 0 0 rgba(142,154,173,0.1);
-	--themer-box-shadow-7: 0 0 0 1px #dd362a, 0 0 4px 0 #e85244, 0 0 2px -2px #e85244;
-	--themer-box-shadow-8: 0 2px 0 0 rgba(142,154,173,.1);
-	--themer-box-shadow-9: inset 0 0 1px hsla(0, 0%, 100%, 0.1),
+	--themer-box-shadow-1: inset 0 0 0 1px #d2d7df;
+	--themer-box-shadow-2: inset 0 0 0 1px #d2d7df, 0 0 0 2px #fff, 0 0 0 4px #509cf6;
+	--themer-box-shadow-3: inset 0 1px 4px 0 rgba(0, 0, 0, 0.12);
+	--themer-box-shadow-4: 0 2px 0 0 rgba(142,154,173,0.1);
+	--themer-box-shadow-5: 0 0 0 1px #dd362a, 0 0 4px 0 #e85244, 0 0 2px -2px #e85244;
+	--themer-box-shadow-6: 0 2px 0 0 rgba(142,154,173,.1);
+	--themer-box-shadow-7: inset 0 0 1px hsla(0, 0%, 100%, 0.1),
         inset 0 1px 0 hsla(0, 0%, 100%, 0.2);
-	--themer-box-shadow-10: 0 2px 0 0 rgba(0, 0, 0, 0.05);
-	--themer-box-shadow-11: inset 0 0 0 1px hsla(0, 0%, 100%, 0.05),
+	--themer-box-shadow-8: 0 2px 0 0 rgba(0, 0, 0, 0.05);
+	--themer-box-shadow-9: inset 0 0 0 1px hsla(0, 0%, 100%, 0.05),
         inset 0 1px 0 0 hsla(0, 0%, 100%, 0.2), 0 2px 3px rgba(0, 0, 0, 0.16);
-	--themer-box-shadow-12: 0 1px 0 0 #fff;
-	--themer-box-shadow-13: inset 0 2px 0 0 hsla(0, 0%, 100%, 0.2);
-	--themer-box-shadow-14: 0 1px 0 0 #eee;
-	--themer-box-shadow-15: inset 0 0 0 1px #bfc7cf, 0 0 0 6px transparent;
-	--themer-box-shadow-16: 0 2px 8px rgba(0, 0, 0, 0.2);
-	--themer-box-shadow-17: 0, -1px, 0, 0, #fff, inset;
-	--themer-box-shadow-18: inset 0 1px 2px 0 rgba(0, 0, 0, 0.35),
+	--themer-box-shadow-10: 0 1px 0 0 #fff;
+	--themer-box-shadow-11: inset 0 2px 0 0 hsla(0, 0%, 100%, 0.2);
+	--themer-box-shadow-12: 0 1px 0 0 #eee;
+	--themer-box-shadow-13: inset 0 0 0 1px #bfc7cf, 0 0 0 6px transparent;
+	--themer-box-shadow-14: 0 2px 8px rgba(0, 0, 0, 0.2);
+	--themer-box-shadow-15: 0, -1px, 0, 0, #fff, inset;
+	--themer-box-shadow-16: inset 0 1px 2px 0 rgba(0, 0, 0, 0.35),
         inset 0 0 0 1px rgba(0, 0, 0, 0.05);
-	--themer-box-shadow-19: inset 0 0 0 1px #d9d9d9, 0 4px 10px 0 rgba(0, 0, 0, 0.25);
-	--themer-box-shadow-20: inset 0 0 0 1px rgba(0, 0, 0, 0.02),
+	--themer-box-shadow-17: inset 0 0 0 1px #d9d9d9, 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+	--themer-box-shadow-18: inset 0 0 0 1px rgba(0, 0, 0, 0.02),
         inset 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 hsla(0, 0%, 100%, 0.8);
-	--themer-box-shadow-21: inset 0 1px 0 0 #fff;
-	--themer-box-shadow-22: inset 0 -1px 0 0 rgba(0, 0, 0, 0.08), inset 0 1px 0 0 #fff,
+	--themer-box-shadow-19: inset 0 1px 0 0 #fff;
+	--themer-box-shadow-20: inset 0 -1px 0 0 rgba(0, 0, 0, 0.08), inset 0 1px 0 0 #fff,
         0 2px 5px 0 rgba(0, 0, 0, 0.25);
-	--themer-box-shadow-23: inset 0 1px 5px 0 rgba(0, 0, 0, 0.2),
+	--themer-box-shadow-21: inset 0 1px 5px 0 rgba(0, 0, 0, 0.2),
         inset 0 0 0 1px rgba(0, 0, 0, 0.06), 0 1px 0 0 #fff;
-	--themer-box-shadow-24: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25),
+	--themer-box-shadow-22: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25),
         inset 0 0 0 1px rgba(0, 0, 0, 0.03), 0 1px 0 0 hsla(0, 0%, 100%, 0.25);
-	--themer-box-shadow-25: 0 2px 0 0 rgba(142, 154, 173, 0.1);
-	--themer-box-shadow-26: 0 1px 1px hsla(0, 0%, 100%, 0.7);
-	--themer-box-shadow-27: inset 0 2px 2px rgba(0, 0, 0, 0.05);
-	--themer-box-shadow-28: inset -1px 0 0 rgba(0, 0, 0, 0.1);
-	--themer-box-shadow-29: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-	--themer-box-shadow-30: inset 0 1px 1px rgba(0, 0, 0, 0.3);
-	--themer-box-shadow-31: 0 -1px 0 rgba(0, 0, 0, 0.06), 0 1px 1px #fff;
-	--themer-box-shadow-32: inset 1px 0 0 #418901, inset 3px 0 2px rgba(0, 0, 0, 0.1),
+	--themer-box-shadow-23: 0 2px 0 0 rgba(142, 154, 173, 0.1);
+	--themer-box-shadow-24: 0 1px 1px hsla(0, 0%, 100%, 0.7);
+	--themer-box-shadow-25: inset 0 2px 2px rgba(0, 0, 0, 0.05);
+	--themer-box-shadow-26: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+	--themer-box-shadow-27: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+	--themer-box-shadow-28: inset 0 1px 1px rgba(0, 0, 0, 0.3);
+	--themer-box-shadow-29: 0 -1px 0 rgba(0, 0, 0, 0.06), 0 1px 1px #fff;
+	--themer-box-shadow-30: inset 1px 0 0 #418901, inset 3px 0 2px rgba(0, 0, 0, 0.1),
         inset -1px 0 0 #c96f3c, inset -3px 0 2px rgba(0, 0, 0, 0.1);
-	--themer-box-shadow-33: inset 0 3px 1px rgba(0, 0, 0, 0.2),
+	--themer-box-shadow-31: inset 0 3px 1px rgba(0, 0, 0, 0.2),
         0 1px 0 hsla(0, 0%, 100%, 0.3);
-	--themer-box-shadow-34: 0 2px 4px 0 rgba(67,77,93, 0.2);
-	--themer-box-shadow-35: 0 2px 25px 4px rgba(0, 0, 0, 0.1),
+	--themer-box-shadow-32: 0 2px 4px 0 rgba(67,77,93, 0.2);
+	--themer-box-shadow-33: 0 2px 25px 4px rgba(0, 0, 0, 0.1),
         0 7px 15px 2px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.15);
-	--themer-box-shadow-36: inset 0 0 0 0 transparent, 0 0 0 2px $cmds-g-form-focus-inner-ring-color,
+	--themer-box-shadow-34: inset 0 0 0 0 transparent, 0 0 0 2px $cmds-g-form-focus-inner-ring-color,
     0 0 0 4px $cmds-g-form-focus-outer-ring-color;
-	--themer-box-shadow-37: 0 4px 16px rgba(17,19,36,0.18);
-	--themer-box-shadow-38: inset 0 0 0 0 transparent, 0 0 0 2px #fff, 0 0 0 4px #63b1f9;
-	--themer-box-shadow-39: 0 1px 1px hsla(0, 0%, 100%, 0.45), 0 0 2px rgba(74, 139, 217, 0),
+	--themer-box-shadow-35: 0 4px 16px rgba(17,19,36,0.18);
+	--themer-box-shadow-36: inset 0 0 0 0 transparent, 0 0 0 2px #fff, 0 0 0 4px #63b1f9;
+	--themer-box-shadow-37: 0 1px 1px hsla(0, 0%, 100%, 0.45), 0 0 2px rgba(74, 139, 217, 0),
         0 -1px 0 rgba(0, 0, 0, 0.02), inset 0 1px 0 rgba(0, 0, 0, 0.04),
         inset 0 2px 0 rgba(0, 0, 0, 0.02), inset 1px 0 0 rgba(0, 0, 0, 0.04),
         inset -1px 0 0 rgba(0, 0, 0, 0.04);
-	--themer-box-shadow-40: 0 1px 1px hsla(0, 0%, 100%, 0.45), 0 6px 1px rgba(0, 0, 0, 0.05),
+	--themer-box-shadow-38: 0 1px 1px hsla(0, 0%, 100%, 0.45), 0 6px 1px rgba(0, 0, 0, 0.05),
         0 1px 7px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(0, 0, 0, 0.04),
         inset 0 2px 0 rgba(0, 0, 0, 0.02), inset 1px 0 0 rgba(0, 0, 0, 0.04),
         inset -1px 0 0 rgba(0, 0, 0, 0.04);
-	--themer-box-shadow-41: inset 0 1px 0 0 #fff, 0 0 0 1px #d2d7df,
+	--themer-box-shadow-39: inset 0 1px 0 0 #fff, 0 0 0 1px #d2d7df,
         0 1px 0 0 rgba(142, 154, 173, 0.1);
-	--themer-box-shadow-42: 0 1px 3px 0 #efefef;
-	--themer-box-shadow-43: 0 0 0 2px rgba(0, 0, 0, 0.2), inset 0 3px 10px #fff,
+	--themer-box-shadow-40: 0 1px 3px 0 #efefef;
+	--themer-box-shadow-41: 0 0 0 2px rgba(0, 0, 0, 0.2), inset 0 3px 10px #fff,
         inset 0 -5px 10px rgba(0, 0, 0, 0.05), 0 20px 10px rgba(0, 0, 0, 0.1),
         0 0 10px 2px rgba(0, 0, 0, 0.05);
-	--themer-box-shadow-44: 1px 0 3px 2px rgba(0, 0, 0, 0.2);
-	--themer-box-shadow-45: hsla(0, 0%, 100%, 0.3), 0, 1px, 0, 0, inset;
-	--themer-box-shadow-46: inset 0 3px 2px hsla(0, 0%, 100%, 0.2),
+	--themer-box-shadow-42: 1px 0 3px 2px rgba(0, 0, 0, 0.2);
+	--themer-box-shadow-43: hsla(0, 0%, 100%, 0.3), 0, 1px, 0, 0, inset;
+	--themer-box-shadow-44: inset 0 3px 2px hsla(0, 0%, 100%, 0.2),
         inset 0 -3px 6px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.05);
-	--themer-box-shadow-47: inset 0 0 0 0 #64b94a;
-	--themer-box-shadow-48: inset 0 2px 1px -1px rgba(0, 0, 0, 0.15);
-	--themer-box-shadow-49: inset 0 0 0 34px #64b94a;
-	--themer-box-shadow-50: inset 0 1px 1px -1px rgba(0, 0, 0, 0.5);
-	--themer-box-shadow-51: 0 1px 1px -1px rgba(0, 0, 0, 0.5);
-	--themer-box-shadow-52: inset 0 2px 2px #fff, inset 0 -5px 6px rgba(0, 0, 0, 0.03),
+	--themer-box-shadow-45: inset 0 0 0 0 #64b94a;
+	--themer-box-shadow-46: inset 0 2px 1px -1px rgba(0, 0, 0, 0.15);
+	--themer-box-shadow-47: inset 0 0 0 34px #64b94a;
+	--themer-box-shadow-48: inset 0 1px 1px -1px rgba(0, 0, 0, 0.5);
+	--themer-box-shadow-49: 0 1px 1px -1px rgba(0, 0, 0, 0.5);
+	--themer-box-shadow-50: inset 0 2px 2px #fff, inset 0 -5px 6px rgba(0, 0, 0, 0.03),
         0 0 0 2px rgba(0, 0, 0, 0.2), 0 15px 10px rgba(0, 0, 0, 0.15),
         0 0 10px 2px rgba(0, 0, 0, 0.1);
-	--themer-box-shadow-53: 0 2px 4px 0 rgba(67,77,93,0.2);
-	--themer-box-shadow-54: 0 1px 3px rgba(0, 0, 0, 0.1);
-	--themer-box-shadow-55: 0 0 0 0 transparent;
-	--themer-box-shadow-56: inset 0 2px 3px rgba(0, 0, 0, 0.1);
-	--themer-box-shadow-57: inset 0 2px 2px #fff, inset 0 0 0 1px hsla(0, 0%, 100%, 0.4),
+	--themer-box-shadow-51: 0 2px 4px 0 rgba(67,77,93,0.2);
+	--themer-box-shadow-52: 0 1px 3px rgba(0, 0, 0, 0.1);
+	--themer-box-shadow-53: 0 0 0 0 transparent;
+	--themer-box-shadow-54: inset 0 2px 3px rgba(0, 0, 0, 0.1);
+	--themer-box-shadow-55: inset 0 2px 2px #fff, inset 0 0 0 1px hsla(0, 0%, 100%, 0.4),
         0 6px 10px rgba(0, 0, 0, 0.12);
-	--themer-box-shadow-58: inset 0 1px 0 hsla(0, 0%, 100%, 0.5),
+	--themer-box-shadow-56: inset 0 1px 0 hsla(0, 0%, 100%, 0.5),
         inset 1px 0 0 hsla(0, 0%, 100%, 0.25), 1px 0 0 hsla(0, 0%, 100%, 0.3);
-	--themer-box-shadow-59: 0 2px 3px rgba(0, 0, 0, 0.8);
-	--themer-box-shadow-60: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
-	--themer-box-shadow-61: inset 0 1px 1px 0 rgba(0, 0, 0, 0.1),
+	--themer-box-shadow-57: 0 2px 3px rgba(0, 0, 0, 0.8);
+	--themer-box-shadow-58: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+	--themer-box-shadow-59: inset 0 1px 1px 0 rgba(0, 0, 0, 0.1),
         inset 0 0 0 1px rgba(0, 0, 0, 0.025), 0 1px 0 0 hsla(0, 0%, 100%, 0.45);
-	--themer-box-shadow-62: inset 0 2px 0 0 hsla(0, 0%, 100%, 0.1),
+	--themer-box-shadow-60: inset 0 2px 0 0 hsla(0, 0%, 100%, 0.1),
         inset 0 0 0 1px rgba(0, 0, 0, 0.15);
-	--themer-box-shadow-63: inset 0 0 0 0 transparent, inset 0 0 0 1px #509cf6,
+	--themer-box-shadow-61: inset 0 0 0 0 transparent, inset 0 0 0 1px #509cf6,
         0 0 0 2px rgba(80, 156, 246, 0.25);
-	--themer-box-shadow-64: inset 0 2px 0 0 rgba(142, 154, 173, 0.1),
+	--themer-box-shadow-62: inset 0 2px 0 0 rgba(142, 154, 173, 0.1),
         inset 0 0 0 1px #d2d7df, 0 1px 0 0 #fff;
-	--themer-box-shadow-65: 2px 2px 3px rgba(0, 0, 0, 0.1);
-	--themer-box-shadow-66: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
-	--themer-box-shadow-67: 0 1px 1px 0 rgba(0, 0, 0, 0.06);
-	--themer-box-shadow-68: inset 0 1px 0 #fff, inset 0 -1px 0 hsla(0, 0%, 100%, 0.3);
-	--themer-box-shadow-69: inset 0 2px 3px 0 rgba(0, 0, 0, 0.15);
-	--themer-box-shadow-70: 0 2px #8e9aad1a;
-	--themer-box-shadow-71: 0 3px 5px 0 rgba(0, 0, 0, 0.05);
-	--themer-box-shadow-72: 0 1px 3px 0 rgba(0, 0, 0, 0.05),
+	--themer-box-shadow-63: 2px 2px 3px rgba(0, 0, 0, 0.1);
+	--themer-box-shadow-64: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+	--themer-box-shadow-65: 0 1px 1px 0 rgba(0, 0, 0, 0.06);
+	--themer-box-shadow-66: inset 0 1px 0 #fff, inset 0 -1px 0 hsla(0, 0%, 100%, 0.3);
+	--themer-box-shadow-67: inset 0 2px 3px 0 rgba(0, 0, 0, 0.15);
+	--themer-box-shadow-68: 0 2px #8e9aad1a;
+	--themer-box-shadow-69: 0 3px 5px 0 rgba(0, 0, 0, 0.05);
+	--themer-box-shadow-70: 0 1px 3px 0 rgba(0, 0, 0, 0.05),
         inset 0 -3px 3px 0 rgba(0, 0, 0, 0.02);
-	--themer-box-shadow-73: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+	--themer-box-shadow-71: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
         inset 0 -3px 3px 0 rgba(0, 0, 0, 0.02);
-	--themer-box-shadow-74: 0 0 6px 0 rgba(95, 169, 71, 0.3),
+	--themer-box-shadow-72: 0 0 6px 0 rgba(95, 169, 71, 0.3),
         0 1px 3px 0 rgba(0, 0, 0, 0.05), inset 0 -3px 3px 0 rgba(0, 0, 0, 0.02);
-	--themer-box-shadow-75: inset 0 -1px 0 #edecec;
-	--themer-box-shadow-76: 0 0 20px rgba(0, 0, 0, 0.07);
-	--themer-box-shadow-77: inset 0 0 0 1px hsla(0, 0%, 100%, 0.06),
+	--themer-box-shadow-73: inset 0 -1px 0 #edecec;
+	--themer-box-shadow-74: 0 0 20px rgba(0, 0, 0, 0.07);
+	--themer-box-shadow-75: inset 0 0 0 1px hsla(0, 0%, 100%, 0.06),
         0 1px 0 0 hsla(0, 0%, 100%, 0.3);
-	--themer-box-shadow-78: inset -1px 0 0 0 #dcdcdc;
-	--themer-box-shadow-79: 0 1px 3px 0 rgba(0, 0, 0, 0.3), inset 0 1px 0 0 #fff,
+	--themer-box-shadow-76: inset -1px 0 0 0 #dcdcdc;
+	--themer-box-shadow-77: 0 1px 3px 0 rgba(0, 0, 0, 0.3), inset 0 1px 0 0 #fff,
         inset 0 0 0 1px hsla(0, 0%, 100%, 0.1);
-	--themer-box-shadow-80: inset 0 1px 0 0 #fff, inset 0 0 0 1px hsla(0, 0%, 100%, 0.1),
+	--themer-box-shadow-78: inset 0 1px 0 0 #fff, inset 0 0 0 1px hsla(0, 0%, 100%, 0.1),
         0 1px 3px 0 rgba(0, 0, 0, 0.3);
-	--themer-box-shadow-81: 0 2px 0 0 rgb(142 154 173 / 10%);
-	--themer-box-shadow-82: inset 0 0 0 1px #bfc7cf,0 0 0 0 rgba(0,0,0,0),0 0 0 0 rgba(0,0,0,0);
-	--themer-box-shadow-83: inset 0 0 0 1px #e9ebef,0 0 0 6px #f5f6f8,0 0 0 0 rgba(0, 0, 0, 0);
-	--themer-box-shadow-84: 0 0 0 1px #1176a0,0 0 0 3px #428cf4, 0 0 0 0 rgba(0, 0, 0, 0);
-	--themer-box-shadow-85: inset 0 0 0 1px #bfc7cf, 0 0 0 2px #fff, 0 0 0 4px #509cf6;
-	--themer-box-shadow-86: inset 0 0 0 1px #bfc7cf;
-	--themer-box-shadow-87: inset 0 0 0 1px #e9ebef, 0 0 0 6px #f5f6f8;
-	--themer-box-shadow-88: inset 0 0 0 1px #509cf6,0 0 0 2px #fff,0 0 0 4px #63b1f9;
-	--themer-box-shadow-89: inset 0 0 0 1px  #d2d7df, 0 0 0 6px transparent;
-	--themer-box-shadow-90: inset 0 0 0 1px #509cf6, 0 0 0 2px #fff, 0 0 0 4px #63b1f9;
+	--themer-box-shadow-79: 0 2px 0 0 rgb(142 154 173 / 10%);
+	--themer-box-shadow-80: inset 0 0 0 1px #bfc7cf,0 0 0 0 rgba(0,0,0,0),0 0 0 0 rgba(0,0,0,0);
+	--themer-box-shadow-81: inset 0 0 0 1px #e9ebef,0 0 0 6px #f5f6f8,0 0 0 0 rgba(0, 0, 0, 0);
+	--themer-box-shadow-82: 0 0 0 1px #1176a0,0 0 0 3px #428cf4, 0 0 0 0 rgba(0, 0, 0, 0);
+	--themer-box-shadow-83: inset 0 0 0 1px #bfc7cf, 0 0 0 2px #fff, 0 0 0 4px #509cf6;
+	--themer-box-shadow-84: inset 0 0 0 1px #bfc7cf;
+	--themer-box-shadow-85: inset 0 0 0 1px #e9ebef, 0 0 0 6px #f5f6f8;
+	--themer-box-shadow-86: inset 0 0 0 1px #509cf6,0 0 0 2px #fff,0 0 0 4px #63b1f9;
+	--themer-box-shadow-87: inset 0 0 0 1px  #d2d7df, 0 0 0 6px transparent;
+	--themer-box-shadow-88: inset 0 0 0 1px #509cf6, 0 0 0 2px #fff, 0 0 0 4px #63b1f9;
 }
+
 /* End: Box-shadow */
 
 /* Start: Border-radius */
@@ -1729,16 +1707,17 @@
 	--themer-border-radius-100-percent: 100%;
 	--themer-border-radius-100px-10px: 100px/10px;
 }
+
 /* End: Border-radius */
 
 /* Start: Typography: Font-size */
 :root {
-	--themer-font-size-0pt8em: 0.8em;
 	--themer-font-size-0: 0;
+	--themer-font-size-0pt8em: 0.8em;
 	--themer-font-size-0pt875rem: 0.875rem;
 	--themer-font-size-1rem: 1rem;
-	--themer-font-size-1pt1em: 1.1em;
 	--themer-font-size-1em: 1em;
+	--themer-font-size-1pt1em: 1.1em;
 	--themer-font-size-8px: 8px;
 	--themer-font-size-9px: 9px;
 	--themer-font-size-10px: 10px;
@@ -1767,6 +1746,7 @@
 	--themer-font-size-40px: 40px;
 	--themer-font-size-120-percent: 120%;
 }
+
 /* End: Typography: Font-size */
 
 /* Start: Typography: Font-family */
@@ -1778,31 +1758,32 @@
 	--themer-font-stack-open: Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
 	--themer-font-stack-monospace: monospace;
 }
+
 /* End: Typography: Font-family */
 
 /* Start: Typography: Line-height */
 :root {
 	--themer-line-height-normal: normal;
 	--themer-line-height-0: 0;
-	--themer-line-height-1pt5: 1.5;
-	--themer-line-height-1pt333: 1.333;
+	--themer-line-height-1: 1;
 	--themer-line-height-1pt1: 1.1;
-	--themer-line-height-1pt57: 1.57;
-	--themer-line-height-1pt6: 1.6;
+	--themer-line-height-1pt125: 1.125;
+	--themer-line-height-1pt15: 1.15;
+	--themer-line-height-1pt17: 1.17;
+	--themer-line-height-1pt2: 1.2;
+	--themer-line-height-1pt3: 1.3;
+	--themer-line-height-1pt31: 1.31;
+	--themer-line-height-1pt33: 1.33;
+	--themer-line-height-1pt333: 1.333;
 	--themer-line-height-1pt34: 1.34;
 	--themer-line-height-1pt35: 1.35;
-	--themer-line-height-1: 1;
-	--themer-line-height-1pt3: 1.3;
-	--themer-line-height-1pt7: 1.7;
 	--themer-line-height-1pt4: 1.4;
-	--themer-line-height-1pt2: 1.2;
-	--themer-line-height-1pt31: 1.31;
-	--themer-line-height-1pt15: 1.15;
-	--themer-line-height-1pt55: 1.55;
-	--themer-line-height-1pt125: 1.125;
 	--themer-line-height-1pt43: 1.43;
-	--themer-line-height-1pt17: 1.17;
-	--themer-line-height-1pt33: 1.33;
+	--themer-line-height-1pt5: 1.5;
+	--themer-line-height-1pt55: 1.55;
+	--themer-line-height-1pt57: 1.57;
+	--themer-line-height-1pt6: 1.6;
+	--themer-line-height-1pt7: 1.7;
 	--themer-line-height-2: 2;
 	--themer-line-height-2pt167: 2.167;
 	--themer-line-height-2pt5: 2.5;
@@ -1835,26 +1816,27 @@
 	--themer-line-height-58px: 58px;
 	--themer-line-height-66px: 66px;
 }
+
 /* End: Typography: Line-height */
 
 /* Start: Spacing */
 :root {
 	--themer-spacing-0: 0;
 	--themer-pipe-margin-left: 0 13px;
-	--themer-spacing-0pt3em: 0.3em;
-	--themer-spacing-0pt4em: 0.4em;
-	--themer-spacing-0pt2em: 0.2em;
-	--themer-spacing-0pt9em: 0.9em;
-	--themer-spacing-0pt8em: 0.8em;
 	--themer-spacing-0px: 0px;
+	--themer-spacing-0pt2em: 0.2em;
+	--themer-spacing-0pt3em: 0.3em;
 	--themer-spacing-0pt32em: 0.32em;
+	--themer-spacing-0pt4em: 0.4em;
+	--themer-spacing-0pt8em: 0.8em;
+	--themer-spacing-0pt9em: 0.9em;
 	--themer-spacing-1px: 1px;
 	--themer-spacing-negative-1px: -1px;
-	--themer-spacing-1pt32em: 1.32em;
 	--themer-spacing-1-percent: 1%;
-	--themer-spacing-1pt47-percent: 1.47%;
 	--themer-spacing-1em: 1em;
 	--themer-spacing-1rem: 1rem;
+	--themer-spacing-1pt32em: 1.32em;
+	--themer-spacing-1pt47-percent: 1.47%;
 	--themer-spacing-2px: 2px;
 	--themer-spacing-negative-2px: -2px;
 	--themer-spacing-2-percent: 2%;
@@ -2014,6 +1996,7 @@
 }
 
 
+
 /* End: Spacing */
 
 /* Start: Background images */
@@ -2123,7 +2106,8 @@
 	--themer-discount-message-big-nonpartner-before-background-image: url(/img/discount-ribbon.png);
 	--themer-ul-counts-background-image: -moz-linear-gradient(0 100% 90deg, #eaeaec, #f1f1f1);
 	--themer-ul-counts-background-image: -moz-linear-gradient(0 100% 90deg, #e8e8eb, #fafafa);
-	--themer-progress-bar-background-well-background-image: linear-gradient(#e5e5e5, #ebebeb);
+	--themer-list-form-separator-background-image: linear-gradient(#f9f9f9 30%, #fff);
+	--themer-list-form-separator-before-background-image: linear-gradient(90deg, #f9f9f9, hsla(0, 0%, 100%, 0));
 	--themer-blank-slate-background-image: linear-gradient(
         180deg,
         hsla(0, 0%, 100%, 0.6) 0,
@@ -2135,12 +2119,12 @@
         hsla(0, 0%, 100%, 0)
     );
 	--themer-arrowed-bullets-grey-li-before-background-image: url(/img/arrow-bullet-grey.png);
-	--themer-list-form-separator-background-image: linear-gradient(#f9f9f9 30%, #fff);
-	--themer-list-form-separator-before-background-image: linear-gradient(90deg, #f9f9f9, hsla(0, 0%, 100%, 0));
 	--themer-list-menu-li-a-hover-background-image: linear-gradient(180deg, #6abfef 20%, #38a9e9 90%);
 	--themer-list-menu-popup-li-a-hover-background-image: linear-gradient(180deg, #6abfef 20%, #38a9e9 90%);
 	--themer-list-form-separator-after-background-image: linear-gradient(270deg, #f9f9f9, hsla(0, 0%, 100%, 0));
+	--themer-progress-bar-background-well-background-image: linear-gradient(#e5e5e5, #ebebeb);
 }
+
 
 @media (-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 124.8dpi) {
     :root {
@@ -2512,7 +2496,7 @@ textarea {
     border: none;
     border-radius: var(--themer-border-radius-3px);
     padding: var(--themer-spacing-5px) var(--themer-spacing-6px);
-    box-shadow: var(--themer-box-shadow-3);
+    box-shadow: var(--themer-box-shadow-1);
     outline: 0;
     transition: box-shadow 0.2s ease;
 }
@@ -2526,7 +2510,7 @@ input[type='search'],
 input[type='text']:focus,
 input[type='url']:focus,
 textarea:focus {
-    box-shadow: var(--themer-box-shadow-4);
+    box-shadow: var(--themer-box-shadow-2);
 }
 input[type='image'] {
     border: 0;
@@ -3095,7 +3079,7 @@ h3.snapshot {
     border: 1px solid var(--themer-code-border-color);
     margin-bottom: var(--themer-spacing-18px);
     border-radius: var(--themer-border-radius-4px);
-    box-shadow: var(--themer-box-shadow-5);
+    box-shadow: var(--themer-box-shadow-3);
 }
 .light i {
     font-style: normal;
@@ -3177,7 +3161,7 @@ input.searchField:focus {
     border: 1px solid var(--themer-formContainer-border-color);
     border-radius: var(--themer-border-radius-8px);
     background: var(--themer-formContainer-background);
-    box-shadow: var(--themer-box-shadow-6);
+    box-shadow: var(--themer-box-shadow-4);
 }
 
 .formContainer tr.light {
@@ -3207,7 +3191,7 @@ input[type='email'].clearfixError,
 input[type='password'].clearfixError,
 input[type='text'].clearfixError,
 textarea.clearfixError {
-    box-shadow: var(--themer-box-shadow-7);
+    box-shadow: var(--themer-box-shadow-5);
 }
 
 .input-validation-error input[type='password'],
@@ -3216,10 +3200,10 @@ input[type='password'].input-validation-error,
 input[type='text'].input-validation-error,
 textarea.input-validation-error {
     padding: var(--themer-spacing-5px) var(--themer-spacing-4px);
-    box-shadow: var(--themer-box-shadow-7);
+    box-shadow: var(--themer-box-shadow-5);
 }
 .clearfixError select {
-    box-shadow: var(--themer-box-shadow-7);
+    box-shadow: var(--themer-box-shadow-5);
     margin: var(--themer-spacing-0);
 }
 .clearfixError textarea.full {
@@ -3287,7 +3271,7 @@ span.buttonOr {
 .radioContainer {
     border: 1px solid var(--themer-radioContainer-border-color);
     border-radius: var(--themer-border-radius-8px);
-    box-shadow: var(--themer-box-shadow-6);
+    box-shadow: var(--themer-box-shadow-4);
     position: relative;
     padding: var(--themer-spacing-16px);
     background: var(--themer-radioContainer-background);
@@ -3332,7 +3316,7 @@ label.bigPad {
     padding: var(--themer-spacing-32px);
     background: var(--themer-confirmCase-background);
     border: 1px solid var(--themer-confirmCase-border-color);
-    box-shadow: var(--themer-box-shadow-8);
+    box-shadow: var(--themer-box-shadow-6);
     border-radius: var(--themer-border-radius-3px);
     margin-bottom: var(--themer-spacing-16px);
 }
@@ -3471,7 +3455,7 @@ p.midPadLine {
     padding: var(--themer-spacing-0) var(--themer-spacing-5px);
     background-color: var(--themer-unauthenticatedModal-a-switchAuthenticated-background-color);
     background-image: var(--themer-unauthenticatedModal-a-switchAuthenticated-background-image);
-    box-shadow: var(--themer-box-shadow-9);
+    box-shadow: var(--themer-box-shadow-7);
     transition: background-color 0.3s;
 }
 .unauthenticatedModal a.switchAuthenticated:hover {
@@ -4419,7 +4403,7 @@ table.tableTabsHeader th {
     color: var(--themer-table-tableTabsHeader-th-color);
     text-transform: uppercase;
     text-shadow: 1px 1px 0 #fff;
-    box-shadow: var(--themer-box-shadow-10);
+    box-shadow: var(--themer-box-shadow-8);
     position: relative;
     z-index: 10;
     text-align: left;
@@ -5476,7 +5460,7 @@ td.versionAAndB strong {
     font-weight: 400;
 }
 #new-slate .button.huge:hover {
-    box-shadow: var(--themer-box-shadow-11);
+    box-shadow: var(--themer-box-shadow-9);
     transition-duration: 0.1s;
 }
 #new-slate #secondary-slate {
@@ -5730,7 +5714,7 @@ td.versionAAndB strong {
 }
 #abSlider #ab {
     width: 100%;
-    box-shadow: var(--themer-box-shadow-12);
+    box-shadow: var(--themer-box-shadow-10);
     height: 100px;
     border-bottom-left-radius: var(--themer-border-radius-4px);
     border-top-left-radius: var(--themer-border-radius-4px);
@@ -5758,7 +5742,7 @@ td.versionAAndB strong {
     border: 1px solid var(--themer-abSlider-a-border-color);
     border-right: 0;
     color: var(--themer-abSlider-a-color);
-    box-shadow: var(--themer-box-shadow-13);
+    box-shadow: var(--themer-box-shadow-11);
 }
 #abSlider .aNumber {
     font-size: var(--themer-font-size-12px) !important;
@@ -5772,7 +5756,7 @@ td.versionAAndB strong {
     background: var(--themer-abSlider-b-background);
     border: 1px solid var(--themer-abSlider-b-border-color);
     color: var(--themer-abSlider-b-color);
-    box-shadow: var(--themer-box-shadow-13);
+    box-shadow: var(--themer-box-shadow-11);
 }
 #abSlider .bNumber {
     font-size: var(--themer-font-size-12px) !important;
@@ -6247,7 +6231,7 @@ ul.listing {
     list-style-type: none;
     margin-bottom: var(--themer-spacing-14px);
     border: 1px solid var(--themer-ul-listing-border-color);
-    box-shadow: var(--themer-box-shadow-14);
+    box-shadow: var(--themer-box-shadow-12);
     max-width: 580px;
     border-radius: var(--themer-border-radius-4px);
 }
@@ -6463,7 +6447,7 @@ footer.button-block {
     width: 600px;
     height: 150px;
     border: none !important;
-    box-shadow: var(--themer-box-shadow-15);
+    box-shadow: var(--themer-box-shadow-13);
 }
 .rssIcon {
     float: right;
@@ -7732,8 +7716,8 @@ table#ar_default_table th {
 .ar_rightArrow {
     top: 48px;
     right: -6px;
-    border-color: var(--themer-ar_rightArrow-border-color-top) var(--themer-ar_rightArrow-border-color-left) var(--themer-ar_rightArrow-border-color-bottom) var(--themer-ar_rightArrow-border-color-right);
-    border-color: var(--themer-ar_rightArrow-border-color-top) var(--themer-ar_rightArrow-border-color-left) var(--themer-ar_rightArrow-border-color-bottom) var(--themer-ar_rightArrow-border-color-right);
+    border-color: var(--themer-ar_rightArrow-border-color);
+    border-color: var(--themer-ar_rightArrow-border-color);
 }
 .ar_rightArrow,
 .ar_rightArrow::after {
@@ -7748,7 +7732,7 @@ table#ar_default_table th {
     content: '';
     top: -5px;
     left: -7px;
-    border-color: var(--themer-ar_rightArrow-after-border-color-top) var(--themer-ar_rightArrow-after-border-color-left) var(--themer-ar_rightArrow-after-border-color-bottom) var(--themer-ar_rightArrow-after-border-color-right);
+    border-color: var(--themer-ar_rightArrow-after-border-color);
 }
 .ar_yellowAlert {
     float: right;
@@ -7764,7 +7748,7 @@ table#ar_default_table th {
     text-align: left;
     top: -6px;
     right: -32px;
-    box-shadow: var(--themer-box-shadow-16);
+    box-shadow: var(--themer-box-shadow-14);
 }
 .ar_yellowAlert strong {
     font-size: var(--themer-font-size-14px);
@@ -8195,7 +8179,7 @@ a.ao_fileAttachment:hover {
     border-top: 1px solid var(--themer-sharingTimeline-ul-timeline-li-border-top-color);
     background-color: var(--themer-sharingTimeline-ul-timeline-li-background-color);
     background-image: var(--themer-sharingTimeline-ul-timeline-li-background-image);
-    box-shadow: var(--themer-box-shadow-17);
+    box-shadow: var(--themer-box-shadow-15);
     position: relative;
     vertical-align: top;
 }
@@ -8310,7 +8294,7 @@ a.ao_fileAttachment:hover {
     background-color: var(--themer-sharingTimeline-ul-timeline-li-quickLinks-h5-counter-background-color);
     -webkit-font-smoothing: antialiased;
     border-radius: var(--themer-border-radius-4px);
-    box-shadow: var(--themer-box-shadow-18);
+    box-shadow: var(--themer-box-shadow-16);
     background-image: var(--themer-sharingTimeline-ul-timeline-li-quickLinks-h5-counter-background-image);
     margin-top: var(--themer-spacing-13px);
 }
@@ -8351,7 +8335,7 @@ a.ao_fileAttachment:hover {
 #worldview_modal {
     background-color: var(--themer-share_modal-background-color);
     background-image: var(--themer-share_modal-background-image);
-    box-shadow: var(--themer-box-shadow-19);
+    box-shadow: var(--themer-box-shadow-17);
     border-radius: var(--themer-border-radius-10px);
     padding: var(--themer-spacing-20px);
     position: fixed;
@@ -8401,7 +8385,7 @@ a.ao_fileAttachment:hover {
     padding: var(--themer-spacing-10px) var(--themer-spacing-10px) var(--themer-spacing-10px) var(--themer-spacing-45px);
     margin: var(--themer-spacing-15px) var(--themer-spacing-0) var(--themer-spacing-10px);
     border-radius: var(--themer-border-radius-4px);
-    box-shadow: var(--themer-box-shadow-20);
+    box-shadow: var(--themer-box-shadow-18);
     text-shadow: 0 1px 0 hsla(0, 0%, 100%, 0.8);
     position: relative;
 }
@@ -8459,7 +8443,7 @@ a.ao_fileAttachment:hover {
 }
 #noContent {
     background-color: var(--themer-noContent-background-color);
-    box-shadow: var(--themer-box-shadow-21);
+    box-shadow: var(--themer-box-shadow-19);
     border: 1px solid var(--themer-noContent-border-color);
     margin-top: var(--themer-spacing-20px);
     padding: var(--themer-spacing-20px);
@@ -8487,7 +8471,7 @@ a.ao_fileAttachment:hover {
     padding: var(--themer-spacing-10px) var(--themer-spacing-10px) var(--themer-spacing-10px) var(--themer-spacing-45px);
     margin: var(--themer-spacing-15px) var(--themer-spacing-0) var(--themer-spacing-0);
     border-radius: var(--themer-border-radius-4px);
-    box-shadow: var(--themer-box-shadow-20);
+    box-shadow: var(--themer-box-shadow-18);
     text-shadow: 0 1px 0 hsla(0, 0%, 100%, 0.8);
     position: relative;
 }
@@ -8628,7 +8612,7 @@ a.ao_fileAttachment:hover {
     min-width: 960px;
     height: 62px;
     text-align: left;
-    box-shadow: var(--themer-box-shadow-22);
+    box-shadow: var(--themer-box-shadow-20);
     z-index: 99999;
     top: 0;
 }
@@ -8682,7 +8666,7 @@ a.ao_fileAttachment:hover {
     background-image: var(--themer-wv_backBar-background-image);
     display: inline-block;
     border-radius: var(--themer-border-radius-4px);
-    box-shadow: var(--themer-box-shadow-23);
+    box-shadow: var(--themer-box-shadow-21);
     height: 32px;
     position: relative;
 }
@@ -8744,7 +8728,7 @@ a.ao_fileAttachment:hover {
     background-image: var(--themer-wv_progressBar-background-image);
     background-repeat: repeat-x, repeat;
     background-position: 0 0, 0 0;
-    box-shadow: var(--themer-box-shadow-24);
+    box-shadow: var(--themer-box-shadow-22);
     width: 0;
     z-index: 2;
     animation-name: move;
@@ -8843,7 +8827,7 @@ ul#countriesHeader {
     border-bottom: 1px solid var(--themer-ul-countriesHeader-border-bottom-color);
     border-right: 1px solid var(--themer-ul-countriesHeader-border-right-color);
     border-left: 1px solid var(--themer-ul-countriesHeader-border-left-color);
-    box-shadow: var(--themer-box-shadow-10);
+    box-shadow: var(--themer-box-shadow-8);
     position: relative;
     z-index: 10;
     padding: var(--themer-spacing-10px) var(--themer-spacing-15px) var(--themer-spacing-9px);
@@ -9277,7 +9261,7 @@ table.link-grey a:hover {
  */
 #subscriber_detail #subscriber {
     border: 1px solid var(--themer-subscriber_detail-subscriber-border-color);
-    box-shadow: var(--themer-box-shadow-25);
+    box-shadow: var(--themer-box-shadow-23);
     border-radius: var(--themer-border-radius-3px);
 }
 
@@ -9303,7 +9287,7 @@ table.link-grey a:hover {
     border-radius: var(--themer-border-radius-3px);
     overflow: hidden;
     position: relative;
-    box-shadow: var(--themer-box-shadow-26);
+    box-shadow: var(--themer-box-shadow-24);
     background: var(--themer-subscriber_detail-aside-section-header-avatar-background);
     width: 70px;
     height: 70px;
@@ -9526,7 +9510,7 @@ table.link-grey a:hover {
     position: absolute;
     width: 100%;
     height: 10px;
-    box-shadow: var(--themer-box-shadow-27);
+    box-shadow: var(--themer-box-shadow-25);
 }
 #subscriber_detail aside section.map figcaption {
     display: block;
@@ -9576,7 +9560,7 @@ table.link-grey a:hover {
     width: 4px;
     height: 100%;
     background-color: var(--themer-subscriber_detail-article-body-activity-before-background-color);
-    box-shadow: var(--themer-box-shadow-28);
+    box-shadow: var(--themer-box-shadow-26);
     background-image: var(--themer-subscriber_detail-article-body-activity-before-background-image);
 }
 #subscriber_detail article.body .sent::before {
@@ -9621,7 +9605,7 @@ table.link-grey a:hover {
     width: 36px;
     height: 36px;
     border-radius: var(--themer-border-radius-100px);
-    box-shadow: var(--themer-box-shadow-29);
+    box-shadow: var(--themer-box-shadow-27);
     text-indent: -9999px;
     color: var(--themer-subscriber_detail-article-body-stat-pie-span-color) !important;
 }
@@ -9812,7 +9796,7 @@ table .refund .amount {
 }
 table .refunded {
     background-color: var(--themer-table-refunded-background-color) !important;
-    box-shadow: var(--themer-box-shadow-30);
+    box-shadow: var(--themer-box-shadow-28);
     transform: translateX(25px);
 }
 table .refunded td {
@@ -9867,7 +9851,7 @@ table .refunded td {
     height: 18px;
     width: 50px;
     overflow: hidden;
-    box-shadow: var(--themer-box-shadow-31);
+    box-shadow: var(--themer-box-shadow-29);
 }
 .switch input {
     position: absolute;
@@ -9895,7 +9879,7 @@ table .refunded td {
     height: 18px;
     width: 50px;
     border-radius: var(--themer-border-radius-100px);
-    box-shadow: var(--themer-box-shadow-32);
+    box-shadow: var(--themer-box-shadow-30);
 }
 .switch .nib::after {
     content: '';
@@ -9907,7 +9891,7 @@ table .refunded td {
     position: relative;
     top: 0;
     border-radius: var(--themer-border-radius-100px);
-    box-shadow: var(--themer-box-shadow-33);
+    box-shadow: var(--themer-box-shadow-31);
 }
 .switch:active .nib::after {
     visibility: visible;
@@ -9920,7 +9904,7 @@ table .refunded td {
     border: 1px solid var(--themer-subscriber_detail-aside-div-error-border-color);
     padding: var(--themer-spacing-16px);
     border-radius: var(--themer-border-radius-4px);
-    box-shadow: var(--themer-box-shadow-34);
+    box-shadow: var(--themer-box-shadow-32);
     font-weight: 400;
     line-height: var(--themer-line-height-1pt5);
     position: absolute;
@@ -9940,7 +9924,7 @@ table .refunded td {
     background-color: var(--themer-error-balloon-no-glyph-background-color);
 }
 .error-balloon::before {
-    border-color: var(--themer-error-balloon-before-border-color-vertical) var(--themer-error-balloon-before-border-color-horizontal);
+    border-color: var(--themer-error-balloon-before-border-color);
     top: -8px;
     z-index: 19;
 }
@@ -9956,7 +9940,7 @@ table .refunded td {
     left: 9px;
 }
 .error-balloon::after {
-    border-color: var(--themer-error-balloon-after-border-color-vertical) var(--themer-error-balloon-after-border-color-horizontal);
+    border-color: var(--themer-error-balloon-after-border-color);
     top: -9px;
     z-index: 18;
 }
@@ -10008,14 +9992,14 @@ input.pass {
     border: 1px solid var(--themer-success-balloon-border-color);
     padding: var(--themer-spacing-16px);
     border-radius: var(--themer-border-radius-4px);
-    box-shadow: var(--themer-box-shadow-34);
+    box-shadow: var(--themer-box-shadow-32);
     font-weight: 400;
     line-height: var(--themer-line-height-1pt5);
     position: absolute;
 }
 
 .success-balloon::before {
-    border-color: var(--themer-success-balloon-before-border-color-vertical) var(--themer-success-balloon-before-border-color-horizontal);
+    border-color: var(--themer-success-balloon-before-border-color);
     top: -4px;
     z-index: 19;
 }
@@ -10031,7 +10015,7 @@ input.pass {
     left: 9px;
 }
 .success-balloon::after {
-    border-color: var(--themer-success-balloon-after-border-color-vertical) var(--themer-success-balloon-after-border-color-horizontal);
+    border-color: var(--themer-success-balloon-after-border-color);
     top: -5px;
     z-index: 18;
 }
@@ -10046,7 +10030,7 @@ input.pass {
     bottom: -5px;
 }
 .info-balloon::after {
-    border-color: var(--themer-info-balloon-after-border-color-vertical) var(--themer-info-balloon-after-border-color-horizontal);
+    border-color: var(--themer-info-balloon-after-border-color);
 }
 .info-balloon.points-left::after,
 .info-balloon.points-left::before {
@@ -10073,7 +10057,7 @@ ul.dropDown {
     right: 3px;
     top: 30px;
     border-radius: var(--themer-border-radius-5px);
-    box-shadow: var(--themer-box-shadow-35);
+    box-shadow: var(--themer-box-shadow-33);
     background-clip: padding-box;
     z-index: 99999 !important;
     -webkit-user-drag: none;
@@ -10873,7 +10857,7 @@ button:not(.cmds-g-button, .cmds-button):not(.primary):hover {
 }
 
 .button:focus {
-    box-shadow: var(--themer-box-shadow-36);
+    box-shadow: var(--themer-box-shadow-34);
 }
 button:not(.cmds-g-button, .cmds-button):not(.primary).cmds-modal__close:focus,
 button:not(.cmds-g-button, .cmds-button):not(.primary).cmds-modal__close:hover {
@@ -11050,13 +11034,13 @@ button.primary {
 a.button:link.primary:hover,
 a.button:visited.primary:hover,
 button.primary:hover {
-    box-shadow: var(--themer-box-shadow-37);
+    box-shadow: var(--themer-box-shadow-35);
 }
 
 .button.primary:focus,
 a.button:active.primary:focus,
 button.primary:focus {
-    box-shadow: var(--themer-box-shadow-38);
+    box-shadow: var(--themer-box-shadow-36);
 }
 
 
@@ -11423,7 +11407,7 @@ textarea.autogrow {
     border-top-color: var(--themer-covert-input-focus-border-top-color);
     border-radius: var(--themer-border-radius-3px);
     padding: var(--themer-spacing-5px) var(--themer-spacing-6px);
-    box-shadow: var(--themer-box-shadow-39);
+    box-shadow: var(--themer-box-shadow-37);
     margin-left: var(--themer-spacing-negative-7px);
     margin-top: var(--themer-spacing-negative-6px);
     margin-bottom: var(--themer-spacing-negative-5px);
@@ -11431,7 +11415,7 @@ textarea.autogrow {
 .covert-input.focus,
 .covert-input:focus {
     outline: none;
-    box-shadow: var(--themer-box-shadow-40);
+    box-shadow: var(--themer-box-shadow-38);
 }
 .covert-input:focus {
     border-color: var(--themer-covert-input-focus-border-color);
@@ -11720,7 +11704,7 @@ textarea.autogrow {
     background: var(--themer-primary-form-box-wrap-background);
     border-radius: var(--themer-border-radius-8px);
     position: relative;
-    box-shadow: var(--themer-box-shadow-8);
+    box-shadow: var(--themer-box-shadow-6);
 }
 .primary-form .box-wrap::after,
 .primary-form .box-wrap::before {
@@ -12320,7 +12304,7 @@ textarea.autogrow {
     background: var(--themer-box-wrap-white-background);
     border: 1px solid var(--themer-box-wrap-white-border-color);
     border-radius: var(--themer-border-radius-3px);
-    box-shadow: var(--themer-box-shadow-25);
+    box-shadow: var(--themer-box-shadow-23);
     margin: var(--themer-spacing-0);
     padding: var(--themer-spacing-24px);
     position: relative;
@@ -12619,7 +12603,7 @@ textarea.autogrow {
     text-decoration: none !important;
     display: inline-block;
     vertical-align: middle;
-    box-shadow: var(--themer-box-shadow-41);
+    box-shadow: var(--themer-box-shadow-39);
     border: 1px solid var(--themer-selector-border-color);
     font-size: var(--themer-font-size-12px);
     padding: var(--themer-spacing-8px) var(--themer-spacing-8px);
@@ -12635,7 +12619,7 @@ textarea.autogrow {
 .selector.focused-select {
     border: 1px solid var(--themer-selector-focus-border-color) !important;
     border-color: var(--themer-selector-focus-border-color);
-    box-shadow: var(--themer-box-shadow-38);
+    box-shadow: var(--themer-box-shadow-36);
     outline: none;
 }
 .selector span {
@@ -12772,7 +12756,7 @@ textarea.autogrow {
     box-sizing: content-box;
     height: 110px;
     border-bottom: 1px solid var(--themer-bar-top-border-bottom-color);
-    box-shadow: var(--themer-box-shadow-42);
+    box-shadow: var(--themer-box-shadow-40);
     background: var(--themer-bar-top-background);
     padding: var(--themer-spacing-0) !important;
     margin-bottom: var(--themer-spacing-50px);
@@ -12783,7 +12767,7 @@ textarea.autogrow {
     width: 100%;
     z-index: 5;
     border-bottom: 1px solid var(--themer-bar-top-is-fixed-border-bottom-color);
-    box-shadow: var(--themer-box-shadow-10);
+    box-shadow: var(--themer-box-shadow-8);
 }
 .bar-top.is-fixed + .content {
     margin-top: var(--themer-spacing-160px);
@@ -13363,7 +13347,7 @@ h1.inline {
     padding: var(--themer-spacing-45px) var(--themer-spacing-55px);
     padding-bottom: var(--themer-spacing-35px);
     text-align: left;
-    box-shadow: var(--themer-box-shadow-43);
+    box-shadow: var(--themer-box-shadow-41);
     width: 460px;
 }
 .modal.centered {
@@ -13409,7 +13393,7 @@ h1.inline {
     width: 100%;
     background: var(--themer-wrap-browser-background);
     border-radius: var(--themer-border-radius-4px);
-    box-shadow: var(--themer-box-shadow-44);
+    box-shadow: var(--themer-box-shadow-42);
     border: 1px solid var(--themer-wrap-browser-border-color);
     overflow: hidden;
 }
@@ -13420,7 +13404,7 @@ h1.inline {
     background-image: var(--themer-wrap-browser-chrome-bar-background-image);
     border-top-left-radius: var(--themer-border-radius-4px);
     border-bottom: 1px solid var(--themer-wrap-browser-chrome-bar-border-bottom-color);
-    box-shadow: var(--themer-box-shadow-45);
+    box-shadow: var(--themer-box-shadow-43);
 }
 .wrap-browser .chrome-bar .chrome-controls {
     position: relative;
@@ -13634,7 +13618,7 @@ h1.inline {
     padding-left: var(--themer-spacing-36px);
     border-radius: var(--themer-border-radius-4px);
     border: 1px solid var(--themer-note-border-color);
-    box-shadow: var(--themer-box-shadow-46);
+    box-shadow: var(--themer-box-shadow-44);
 }
 .note .heading {
     color: var(--themer-note-heading-color);
@@ -13676,7 +13660,7 @@ h1.inline {
     transform: scale(1.5);
 }
 .animated-tick::before {
-    box-shadow: var(--themer-box-shadow-47);
+    box-shadow: var(--themer-box-shadow-45);
     opacity: 0;
     z-index: 1;
 }
@@ -13691,16 +13675,16 @@ h1.inline {
     position: absolute;
 }
 .animated-tick::after {
-    box-shadow: var(--themer-box-shadow-48);
+    box-shadow: var(--themer-box-shadow-46);
     z-index: 2;
 }
 .animated-tick.valid::before {
-    box-shadow: var(--themer-box-shadow-49);
+    box-shadow: var(--themer-box-shadow-47);
     opacity: 1;
     transition: box-shadow 0.8s;
 }
 .animated-tick.valid {
-    box-shadow: var(--themer-box-shadow-50);
+    box-shadow: var(--themer-box-shadow-48);
 }
 .animated-tick.valid .tick-icon {
     fill: var(--themer-animated-tick-valid-tick-icon-fill);
@@ -13731,7 +13715,7 @@ h1.inline {
     width: 100%;
     border-radius: var(--themer-border-radius-100-percent);
     content: '';
-    box-shadow: var(--themer-box-shadow-51);
+    box-shadow: var(--themer-box-shadow-49);
 }
 .overlay-box {
     background-color: var(--themer-overlay-box-background-color);
@@ -13739,7 +13723,7 @@ h1.inline {
     z-index: 1001;
     padding: var(--themer-spacing-14px) var(--themer-spacing-16px);
     border-radius: var(--themer-border-radius-8px);
-    box-shadow: var(--themer-box-shadow-52);
+    box-shadow: var(--themer-box-shadow-50);
 }
 .overlay-box.big-padding {
     padding: var(--themer-spacing-24px) var(--themer-spacing-30px);
@@ -13786,7 +13770,7 @@ h1.inline {
     width: 250px;
     padding: var(--themer-spacing-32px);
     font-weight: 400;
-    box-shadow: var(--themer-box-shadow-53);
+    box-shadow: var(--themer-box-shadow-51);
     background: var(--themer-error-balloon-big-background);
 }
 
@@ -13867,7 +13851,7 @@ h1.inline {
     background: var(--themer-info-balloon-background);
     border: 1px solid var(--themer-info-balloon-border-color);
     border-radius: var(--themer-border-radius-2px);
-    box-shadow: var(--themer-box-shadow-54);
+    box-shadow: var(--themer-box-shadow-52);
     position: relative;
     padding: var(--themer-spacing-12px) var(--themer-spacing-16px);
     padding-bottom: var(--themer-spacing-8px);
@@ -13876,7 +13860,7 @@ h1.inline {
     padding: var(--themer-spacing-20px) var(--themer-spacing-26px);
 }
 .info-balloon::before {
-    border-color: var(--themer-info-balloon-before-border-color-vertical) var(--themer-info-balloon-before-border-color-horizontal);
+    border-color: var(--themer-info-balloon-before-border-color);
     top: -4px;
     z-index: 19;
 }
@@ -13892,7 +13876,7 @@ h1.inline {
     left: 9px;
 }
 .info-balloon::after {
-    border-color: var(--themer-info-balloon-after-border-color-vertical) var(--themer-info-balloon-after-border-color-horizontal);
+    border-color: var(--themer-info-balloon-after-border-color);
     top: -5px;
     z-index: 18;
 }
@@ -13930,10 +13914,10 @@ h1.inline {
     border-color: var(--themer-info-balloon-note-border-color);
 }
 .info-balloon.note::after {
-    border-color: var(--themer-info-balloon-note-after-border-color-vertical) var(--themer-info-balloon-note-after-border-color-horizontal);
+    border-color: var(--themer-info-balloon-note-after-border-color);
 }
 .info-balloon.note::before {
-    border-color: var(--themer-info-balloon-note-before-border-color-vertical) var(--themer-info-balloon-note-before-border-color-horizontal);
+    border-color: var(--themer-info-balloon-note-before-border-color);
 }
 .info-balloon.note.points-left::after {
     border-color: var(--themer-info-balloon-note-points-left-after-border-color);
@@ -13974,7 +13958,7 @@ h1.inline {
     padding: var(--themer-spacing-20px);
     border-radius: var(--themer-border-radius-4px);
     border: 1px solid var(--themer-tooltip-border-color);
-    box-shadow: var(--themer-box-shadow-53);
+    box-shadow: var(--themer-box-shadow-51);
     opacity: 0;
     visibility: hidden;
     font-size: var(--themer-font-size-14px);
@@ -14003,7 +13987,7 @@ h1.inline {
     left: 50%;
     display: block;
     border: 1px solid var(--themer-tooltip-before-border-color);
-    box-shadow: var(--themer-box-shadow-53);
+    box-shadow: var(--themer-box-shadow-51);
     content: '';
     height: 14px;
     left: 50%;
@@ -14458,7 +14442,7 @@ table.tableTabsHeader tr:nth-child(2) td.rowRight {
     z-index: 10;
     border-top-left-radius: var(--themer-border-radius-6px);
     border-top-right-radius: var(--themer-border-radius-6px);
-    box-shadow: var(--themer-box-shadow-55);
+    box-shadow: var(--themer-box-shadow-53);
 }
 .table-header-large .count-large,
 .table-header-large .segment-count {
@@ -14598,7 +14582,7 @@ table .avatar {
     margin-right: var(--themer-spacing-10px);
     border-radius: var(--themer-border-radius-2px);
     vertical-align: middle;
-    box-shadow: var(--themer-box-shadow-56);
+    box-shadow: var(--themer-box-shadow-54);
     border: 1px solid var(--themer-table-avatar-border-color);
     background: var(--themer-table-avatar-background);
 }
@@ -14625,7 +14609,7 @@ table.silver-fox th {
     text-shadow: 1px 1px 0 #fff;
     border-top: 1px solid var(--themer-table-silver-fox-th-border-top-color);
     border-bottom: 1px solid var(--themer-table-silver-fox-th-border-bottom-color);
-    box-shadow: var(--themer-box-shadow-10);
+    box-shadow: var(--themer-box-shadow-8);
 }
 table.silver-fox th:first-child {
     border-top-left-radius: var(--themer-border-radius-6px);
@@ -14712,7 +14696,7 @@ table.silver-fox.hover-rows tbody tr:hover td {
     margin-top: var(--themer-spacing-negative-95px);
     margin-left: var(--themer-spacing-negative-176px);
     background-image: var(--themer-blank-slate-background-image);
-    box-shadow: var(--themer-box-shadow-57);
+    box-shadow: var(--themer-box-shadow-55);
     border-radius: var(--themer-border-radius-4px);
 }
 .blank-slate.example-badge {
@@ -14734,7 +14718,7 @@ table.silver-fox.hover-rows tbody tr:hover td {
     border: 1px solid var(--themer-blank-slate-before-border-color);
     border-top-left-radius: var(--themer-border-radius-4px);
     border-bottom-left-radius: var(--themer-border-radius-4px);
-    box-shadow: var(--themer-box-shadow-58);
+    box-shadow: var(--themer-box-shadow-56);
 }
 .blank-slate.green::before {
     background-color: var(--themer-blank-slate-green-before-background-color);
@@ -14826,7 +14810,7 @@ table.silver-fox.hover-rows tbody tr:hover td {
     bottom: 0;
     right: 0;
     background: var(--themer-message-center-background);
-    box-shadow: var(--themer-box-shadow-59);
+    box-shadow: var(--themer-box-shadow-57);
     border-radius: var(--themer-border-radius-4px);
     text-align: center;
     padding-top: var(--themer-spacing-120px);
@@ -14915,7 +14899,7 @@ table.silver-fox.hover-rows tbody tr:hover td {
 .message-cross-linking.welcome-to-the-app .wrapper-message .illustration {
     border: 1px solid var(--themer-message-cross-linking-welcome-to-the-app-wrapper-message-illustration-border-color);
     border-radius: var(--themer-border-radius-4px);
-    box-shadow: var(--themer-box-shadow-54);
+    box-shadow: var(--themer-box-shadow-52);
     overflow: hidden;
 }
 .message-cross-linking .wrapper-message {
@@ -14944,7 +14928,7 @@ table.silver-fox.hover-rows tbody tr:hover td {
     width: 198px;
     height: 153px;
     border-radius: var(--themer-border-radius-4px);
-    box-shadow: var(--themer-box-shadow-54);
+    box-shadow: var(--themer-box-shadow-52);
     position: absolute;
     top: 0;
     left: 0;
@@ -15039,7 +15023,7 @@ table.silver-fox.hover-rows tbody tr:hover td {
 }
 .accordion-list .item input:read-only:hover,
 .accordion-list .item input:read-only:focus {
-    box-shadow: var(--themer-box-shadow-60);
+    box-shadow: var(--themer-box-shadow-58);
 }
 .accordion-list .item .name.no-border {
     border-bottom: 0 !important;
@@ -15110,7 +15094,7 @@ a.hidden-link {
 }
 .progress-bar .background-well {
     border-radius: var(--themer-border-radius-50px);
-    box-shadow: var(--themer-box-shadow-61);
+    box-shadow: var(--themer-box-shadow-59);
     background-color: var(--themer-progress-bar-background-well-background-color);
     background-image: var(--themer-progress-bar-background-well-background-image);
     display: block;
@@ -15123,7 +15107,7 @@ a.hidden-link {
     top: 0;
     left: 0;
     border-radius: var(--themer-border-radius-50px);
-    box-shadow: var(--themer-box-shadow-62);
+    box-shadow: var(--themer-box-shadow-60);
     background-color: var(--themer-progress-bar-background-well-bar-background-color);
     background-image: var(--themer-progress-bar-background-well-bar-background-image);
     animation: large-stripes 0.5s linear infinite;
@@ -15192,7 +15176,7 @@ a.hidden-link {
 }
 
 .search-box .search-input:focus {
-    box-shadow: var(--themer-box-shadow-63);
+    box-shadow: var(--themer-box-shadow-61);
 }
 
 .search-box .icon-search {
@@ -15219,7 +15203,7 @@ a.hidden-link {
 .table-top .search-box-auto .search-input {
     background-color: var(--themer-table-top-search-box-auto-search-input-background-color);
     border: none;
-    box-shadow: var(--themer-box-shadow-64);
+    box-shadow: var(--themer-box-shadow-62);
     outline: 0;
     transition: box-shadow 0.3s ease;
     width: 170px;
@@ -15263,7 +15247,7 @@ a.hidden-link {
     z-index: 1000;
     border-bottom-left-radius: var(--themer-border-radius-4px);
     border-bottom-right-radius: var(--themer-border-radius-4px);
-    box-shadow: var(--themer-box-shadow-65);
+    box-shadow: var(--themer-box-shadow-63);
 }
 .search-box-auto .map-wrap .link-icon-info {
     width: 180px;
@@ -15638,7 +15622,7 @@ a.hidden-link {
     text-shadow: 1px 1px 0 #fff;
     background-color: var(--themer-timeline-header-background-color);
     background-image: var(--themer-timeline-header-background-image);
-    box-shadow: var(--themer-box-shadow-10);
+    box-shadow: var(--themer-box-shadow-8);
 }
 .timeline-header .time {
     margin-bottom: var(--themer-spacing-0);
@@ -15774,7 +15758,7 @@ a.hidden-link {
     height: 0;
     border-style: solid;
     border-width: 0 8px 8px;
-    border-color: var(--themer-timeline-table-expanded-clicks-email-clicks-before-border-color-top) var(--themer-timeline-table-expanded-clicks-email-clicks-before-border-color-horizontal) var(--themer-timeline-table-expanded-clicks-email-clicks-before-border-color-bottom);
+    border-color: var(--themer-timeline-table-expanded-clicks-email-clicks-before-border-color);
 }
 .timeline-table .expanded-clicks .email-clicks::after {
     content: '';
@@ -15788,7 +15772,7 @@ a.hidden-link {
     height: 0;
     border-style: solid;
     border-width: 0 6px 6px;
-    border-color: var(--themer-timeline-table-expanded-clicks-email-clicks-after-border-color-top) var(--themer-timeline-table-expanded-clicks-email-clicks-after-border-color-horizontal) var(--themer-timeline-table-expanded-clicks-email-clicks-after-border-color-bottom);
+    border-color: var(--themer-timeline-table-expanded-clicks-email-clicks-after-border-color);
 }
 .timeline-table .tableHeaderFixed::before {
     content: '';
@@ -15800,7 +15784,7 @@ a.hidden-link {
     left: 0;
     right: 0;
     z-index: -1;
-    box-shadow: var(--themer-box-shadow-10);
+    box-shadow: var(--themer-box-shadow-8);
 }
 .timeline-table .tableHeaderFixed th {
     background-color: var(--themer-timeline-table-tableHeaderFixed-th-background-color);
@@ -15906,7 +15890,7 @@ a.hidden-link {
     border: 1px solid var(--themer-timeline-table-tool-tip-border-color);
     padding: var(--themer-spacing-19px) var(--themer-spacing-21px) var(--themer-spacing-17px) var(--themer-spacing-25px);
     border-radius: var(--themer-border-radius-5px);
-    box-shadow: var(--themer-box-shadow-66);
+    box-shadow: var(--themer-box-shadow-64);
     min-width: 200px;
     white-space: normal;
     line-height: var(--themer-line-height-normal);
@@ -15915,7 +15899,7 @@ a.hidden-link {
 }
 .timeline-table .tool-tip::before {
     border-width: 6px 0 6px 6px;
-    border-color: var(--themer-timeline-table-tool-tip-before-border-color-top) var(--themer-timeline-table-tool-tip-before-border-color-left) var(--themer-timeline-table-tool-tip-before-border-color-bottom) var(--themer-timeline-table-tool-tip-before-border-color-right);
+    border-color: var(--themer-timeline-table-tool-tip-before-border-color);
 }
 .timeline-table .tool-tip::after,
 .timeline-table .tool-tip::before {
@@ -15931,7 +15915,7 @@ a.hidden-link {
 }
 .timeline-table .tool-tip::after {
     border-width: 5px 0 5px 5px;
-    border-color: var(--themer-timeline-table-tool-tip-after-border-color-top) var(--themer-timeline-table-tool-tip-after-border-color-left) var(--themer-timeline-table-tool-tip-after-border-color-bottom) var(--themer-timeline-table-tool-tip-after-border-color-right);
+    border-color: var(--themer-timeline-table-tool-tip-after-border-color);
 }
 .timeline-table .tool-tip h3 {
     color: var(--themer-timeline-table-tool-tip-h3-color);
@@ -15981,7 +15965,7 @@ a.hidden-link {
     display: none;
     list-style: none;
     border: 1px solid var(--themer-list-tooltip-border-color) !important;
-    box-shadow: var(--themer-box-shadow-65);
+    box-shadow: var(--themer-box-shadow-63);
     border-radius: var(--themer-border-radius-4px);
     background: var(--themer-list-tooltip-background) !important;
     position: absolute;
@@ -16486,7 +16470,7 @@ a.hidden-link {
 }
 .list-menu-popup {
     list-style: none;
-    box-shadow: var(--themer-box-shadow-54);
+    box-shadow: var(--themer-box-shadow-52);
     width: 130px;
     border-radius: var(--themer-border-radius-4px);
     background: var(--themer-list-menu-popup-background);
@@ -16774,7 +16758,7 @@ a.hidden-link {
     display: inline-block;
     margin-bottom: var(--themer-spacing-17px);
     border-radius: var(--themer-border-radius-3px);
-    box-shadow: var(--themer-box-shadow-67);
+    box-shadow: var(--themer-box-shadow-65);
 }
 .toggletab li {
     float: left;
@@ -16793,7 +16777,7 @@ a.hidden-link {
     outline: none;
     background-color: var(--themer-toggletab-li-a-background-color);
     background-image: var(--themer-toggletab-li-a-background-image);
-    box-shadow: var(--themer-box-shadow-68);
+    box-shadow: var(--themer-box-shadow-66);
 }
 .toggletab li a:hover {
     background-color: var(--themer-toggletab-li-a-hover-background-color);
@@ -16808,7 +16792,7 @@ a.hidden-link {
     background-color: var(--themer-toggletab-li-a-active-background-color);
     background-image: none;
     text-shadow: 0 1px 0 hsla(0, 0%, 100%, 0.75);
-    box-shadow: var(--themer-box-shadow-69);
+    box-shadow: var(--themer-box-shadow-67);
 }
 .toggletab li:first-of-type {
     margin-left: var(--themer-spacing-0);
@@ -16869,7 +16853,7 @@ a.hidden-link {
 .thumb-grid > li .thumb {
     border: 1px solid var(--themer-thumb-grid-li-thumb-border-color);
     position: relative;
-    box-shadow: var(--themer-box-shadow-70);
+    box-shadow: var(--themer-box-shadow-68);
     border-radius: var(--themer-border-radius-4px);
     min-height: 390px;
 }
@@ -17275,7 +17259,7 @@ a.hidden-link {
     border: 1px solid var(--themer-content-item-media__item-img-frame-border-color);
     border-radius: var(--themer-border-radius-3px);
     margin-right: var(--themer-spacing-20px);
-    box-shadow: var(--themer-box-shadow-71);
+    box-shadow: var(--themer-box-shadow-69);
     overflow: hidden;
     height: 140px;
     width: 200px;
@@ -17284,7 +17268,7 @@ a.hidden-link {
 .content-item .media__item img {
     border-radius: var(--themer-border-radius-3px);
     margin-right: var(--themer-spacing-20px);
-    box-shadow: var(--themer-box-shadow-71);
+    box-shadow: var(--themer-box-shadow-69);
 }
 .content-item .button.right {
     white-space: nowrap;
@@ -17352,7 +17336,7 @@ a.hidden-link {
     display: block;
     border: 1px solid var(--themer-workflow-types-list-li-a-border-color);
     border-radius: var(--themer-border-radius-4px);
-    box-shadow: var(--themer-box-shadow-72);
+    box-shadow: var(--themer-box-shadow-70);
     text-decoration: none;
     position: absolute;
     top: -1px;
@@ -17364,12 +17348,12 @@ a.hidden-link {
 .workflow-types-list li a:focus,
 .workflow-types-list li a:hover {
     border-color: var(--themer-workflow-types-list-li-a-focus-border-color);
-    box-shadow: var(--themer-box-shadow-73);
+    box-shadow: var(--themer-box-shadow-71);
     outline: none;
 }
 .workflow-types-list li a.selected {
     border: 2px solid var(--themer-workflow-types-list-li-a-selected-border-color);
-    box-shadow: var(--themer-box-shadow-74);
+    box-shadow: var(--themer-box-shadow-72);
     border-radius: var(--themer-border-radius-5px);
     top: -2px;
     right: -2px;
@@ -17445,7 +17429,7 @@ a.hidden-link {
     max-width: 1200px;
     margin: var(--themer-spacing-0);
     position: relative;
-    box-shadow: var(--themer-box-shadow-75);
+    box-shadow: var(--themer-box-shadow-73);
 }
 .list-form-separator::after,
 .list-form-separator::before {
@@ -17468,7 +17452,7 @@ a.hidden-link {
     content: '';
     position: absolute;
     z-index: -1;
-    box-shadow: var(--themer-box-shadow-76);
+    box-shadow: var(--themer-box-shadow-74);
     top: 50%;
     bottom: 0;
     left: 10px;
@@ -17484,14 +17468,14 @@ a.hidden-link {
     height: 0;
     border-style: solid;
     border-width: 10px 9px 0;
-    border-color: var(--themer-list-form-separator-arrow-after-border-color-top) var(--themer-list-form-separator-arrow-after-border-color-horizontal) var(--themer-list-form-separator-arrow-after-border-color-bottom);
+    border-color: var(--themer-list-form-separator-arrow-after-border-color);
     left: 50%;
     margin-left: var(--themer-spacing-negative-9px);
     bottom: -9px;
 }
 .list-form-separator .arrow::after {
     border-width: 8px 8px 0;
-    border-color: var(--themer-list-form-separator-arrow-after-border-color-top) var(--themer-list-form-separator-arrow-after-border-color-horizontal) var(--themer-list-form-separator-arrow-after-border-color-bottom);
+    border-color: var(--themer-list-form-separator-arrow-after-border-color);
     margin-left: var(--themer-spacing-negative-8px);
     bottom: -7px;
 }
@@ -17535,7 +17519,7 @@ ul#wv_fsCounter {
     background-color: var(--themer-ul-counts-background-color);
     background-image: var(--themer-ul-counts-background-image);
     border-radius: var(--themer-border-radius-6px);
-    box-shadow: var(--themer-box-shadow-23);
+    box-shadow: var(--themer-box-shadow-21);
     height: 46px;
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
@@ -17548,7 +17532,7 @@ ul#counts {
     right: 10px !important;
     border: 2px solid var(--themer-ul-counts-border-color) !important;
     background-image: var(--themer-ul-counts-background-image);
-    box-shadow: var(--themer-box-shadow-77);
+    box-shadow: var(--themer-box-shadow-75);
     height: 40px;
     display: none;
     margin-right: var(--themer-spacing-0) !important;
@@ -17567,7 +17551,7 @@ ul#counts li {
 ul#counts li#opens,
 ul#wv_fsCounter li#opens {
     border-right: 1px solid var(--themer-ul-counts-li-opens-border-right-color);
-    box-shadow: var(--themer-box-shadow-78);
+    box-shadow: var(--themer-box-shadow-76);
 }
 ul#counts li#opens span.key,
 ul#wv_fsCounter li#opens span.key {
@@ -17577,7 +17561,7 @@ ul#wv_fsCounter li#opens span.key {
 ul#counts li#clicks,
 ul#wv_fsCounter li#clicks {
     border-right: 1px solid var(--themer-ul-counts-li-clicks-border-right-color);
-    box-shadow: var(--themer-box-shadow-78);
+    box-shadow: var(--themer-box-shadow-76);
     padding-left: var(--themer-spacing-9px);
 }
 ul#counts li#clicks span.key,
@@ -17635,7 +17619,7 @@ body#wv_fullScreenBody ul#wv_fsCounter {
     background-color: var(--themer-wv_imagelessInfoWindow-background-color);
     display: inline-block;
     border-radius: var(--themer-border-radius-5px);
-    box-shadow: var(--themer-box-shadow-79);
+    box-shadow: var(--themer-box-shadow-77);
     text-shadow: 0 1px 0 #fff;
     vertical-align: top;
     position: relative;
@@ -17653,7 +17637,7 @@ body#wv_fullScreenBody ul#wv_fsCounter {
     background-color: var(--themer-wv_imageInfoWindow-background-color);
     display: inline-block;
     border-radius: var(--themer-border-radius-5px);
-    box-shadow: var(--themer-box-shadow-80);
+    box-shadow: var(--themer-box-shadow-78);
     text-shadow: 0 1px 0 #fff;
     position: relative;
     z-index: 1;
@@ -18030,7 +18014,7 @@ ul#counts {
     background: var(--themer-ul-counts-background);
     border: 1px solid var(--themer-ul-counts-border-color) !important;
     border-radius: var(--themer-border-radius-3px);
-    box-shadow: var(--themer-box-shadow-81);
+    box-shadow: var(--themer-box-shadow-79);
 }
 
 ul#counts li#opens,
@@ -18358,16 +18342,16 @@ tr.noHighlight th.cellCenter {
 /* RSS gallery templates focus states */
 .thumb-grid > .template-button {
     border-radius: var(--themer-border-radius-3px);
-    box-shadow: var(--themer-box-shadow-82);
+    box-shadow: var(--themer-box-shadow-80);
     transition: box-shadow .2s cubic-bezier(.17, .67, .83, .67);
 }
 
 .thumb-grid > .template-button:hover {
-    box-shadow: var(--themer-box-shadow-83);
+    box-shadow: var(--themer-box-shadow-81);
 }
 
 .thumb-grid > .template-button:focus-within {
-    box-shadow: var(--themer-box-shadow-84);
+    box-shadow: var(--themer-box-shadow-82);
 }
 
 .thumb-grid > .template-button:focus-within .mask {
@@ -18390,16 +18374,16 @@ tr.noHighlight th.cellCenter {
 
 .thumb-grid.with-bar>li:has(.thumb.link) {
     border-radius: var(--themer-border-radius-3px);
-    box-shadow: var(--themer-box-shadow-82);
+    box-shadow: var(--themer-box-shadow-80);
     transition: box-shadow .2s cubic-bezier(.17, .67, .83, .67);
 }
 
 .thumb-grid.with-bar>li:has(.thumb.link):hover {
-    box-shadow: var(--themer-box-shadow-83);
+    box-shadow: var(--themer-box-shadow-81);
 }
 
 .thumb-grid.with-bar>li:has(.thumb.link):focus-within {
-    box-shadow: var(--themer-box-shadow-84);
+    box-shadow: var(--themer-box-shadow-82);
 }
 
 
@@ -18439,7 +18423,7 @@ tr.noHighlight th.cellCenter {
 
 /* Make it so you can focus the 2 buttons on the top bar for choose list */
 .nav-with-icons a:focus {
-    box-shadow: var(--themer-box-shadow-85);
+    box-shadow: var(--themer-box-shadow-83);
     display: block;
     height: 108px;
     outline: 0;
@@ -18448,7 +18432,7 @@ tr.noHighlight th.cellCenter {
 
 .when .time-group input {
     border: none;
-    box-shadow: var(--themer-box-shadow-86);
+    box-shadow: var(--themer-box-shadow-84);
     border-radius: var(--themer-border-radius-3px);
     font-size: var(--themer-font-size-14px) !important;
     padding: var(--themer-spacing-10px) !important;
@@ -18456,7 +18440,7 @@ tr.noHighlight th.cellCenter {
 }
 
 .when .time-group input:focus {
-    box-shadow: var(--themer-box-shadow-85);
+    box-shadow: var(--themer-box-shadow-83);
 }
 
 body.campaignindex,
@@ -18619,7 +18603,7 @@ body.reports-view {
 .formContainer input[type="email"],
 .formContainer textarea {
     box-sizing: border-box;
-    box-shadow: var(--themer-box-shadow-3);
+    box-shadow: var(--themer-box-shadow-1);
     font-size: var(--themer-font-size-14px);
     border-radius: var(--themer-border-radius-3px);
     line-height: var(--themer-line-height-1pt5);
@@ -18637,7 +18621,7 @@ body.reports-view {
 .formContainer input[type="text"]:hover,
 .formContainer input[type="email"]:hover,
 .formContainer textarea:hover {
-    box-shadow: var(--themer-box-shadow-87);
+    box-shadow: var(--themer-box-shadow-85);
 }
 
 .formContainer textarea {
@@ -18647,7 +18631,7 @@ body.reports-view {
 .formContainer input[type="text"]:focus,
 .formContainer input[type="email"]:focus,
 .formContainer textarea:focus {
-    box-shadow: var(--themer-box-shadow-88);
+    box-shadow: var(--themer-box-shadow-86);
 }
 
 .formContainer .clearfix label {
@@ -18731,7 +18715,7 @@ h1 ~ p {
     background-size: 16px 16px;
     border: 0;
     border-radius: var(--themer-border-radius-3px);
-    box-shadow: var(--themer-box-shadow-89);
+    box-shadow: var(--themer-box-shadow-87);
     box-sizing: border-box;
     color: var(--themer-c-legacy-select-not-selector-color);
     cursor: pointer;
@@ -18746,11 +18730,11 @@ h1 ~ p {
 }
 
 .c-legacy-select:not(.selector):hover {
-    box-shadow: var(--themer-box-shadow-87);
+    box-shadow: var(--themer-box-shadow-85);
 }
 
 .c-legacy-select:not(.selector):focus {
-    box-shadow: var(--themer-box-shadow-90);
+    box-shadow: var(--themer-box-shadow-88);
 }
 
 

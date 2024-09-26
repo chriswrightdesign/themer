@@ -314,7 +314,7 @@ export const getPropertiesByMediaQueryParams = (customPropertyList, params) => {
  */
 const createComparisonValue = (value, propertyType) => {
 
-    const matchNumber = value.match((/\d+/));
+    const matchNumber = value.match((/(\d+(.\d+)?)/ig));
 
     if (!matchNumber) {
         return value;
@@ -322,7 +322,7 @@ const createComparisonValue = (value, propertyType) => {
 
     const [numberValue] = matchNumber;
 
-    const num = Number(numberValue);
+    const num = parseFloat(numberValue);
     return num;
 }
 
@@ -362,9 +362,11 @@ export const constructRootPseudo = (customPropertyList) => {
 
    const mediaQueries = getMediaQueries(customPropertyList);
 
-    return `:root {
+   const customPropertyContents = generateCustomProperties(customPropertiesWithNoAtRules);
+    return `${customPropertyContents.length > 0 ? `:root {
 ${generateCustomProperties(customPropertiesWithNoAtRules)}
-}${mediaQueries.length > 0 ? `\n\n${mediaQueries.reduce((acc, mq) => {
+}` : ``}
+${mediaQueries.length > 0 ? `\n\n${mediaQueries.reduce((acc, mq) => {
     const currentMqContents = getPropertiesByMediaQueryParams(customPropertyList, mq);
     return currentMqContents.length > 0 ? `${acc}@media ${mq} {
     :root {
