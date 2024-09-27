@@ -119,14 +119,14 @@ const removeIllegalCharactersFromName = (value) => {
  * @param {{prefix: string, selector: string, prop: string, value: string, parent: {parent: {selector: string}}}} props
  * @returns string
  */
-export const createCustomPropertyName = ({prefix, selector, prop, parent, value, store}) => {
+export const createPropertyName = ({prefix, selector, prop, parent, value, store}) => {
 
     const parsedProp = getParsedPropName(prop);
 
     // consolidate border-radius, ignore complex border-radius
     if (parsedProp.match(declarationRadiusRegex) && !value.includes(' ')) {
 
-        return `--${prefix}-border-radius-${removeIllegalCharactersFromName(value)}`;
+        return `${prefix}-border-radius-${removeIllegalCharactersFromName(value)}`;
     }
 
     if (parsedProp.match(/^(box-shadow)/)) {
@@ -137,7 +137,7 @@ export const createCustomPropertyName = ({prefix, selector, prop, parent, value,
 
         const previousShadows = store.get();    
 
-        const namedBoxshadowVariant = `--${prefix}-box-shadow-${previousShadows.length + 1}`;
+        const namedBoxshadowVariant = `${prefix}-box-shadow-${previousShadows.length + 1}`;
 
         store.add(namedBoxshadowVariant);
 
@@ -145,24 +145,24 @@ export const createCustomPropertyName = ({prefix, selector, prop, parent, value,
     }
 
     if (parsedProp.match(/^(padding(-\w+)?|^gap$|^grid-(column-|row-)?gap$|margin(-\w+)?)/) && !value.includes(' ')) {
-        return `--${prefix}-spacing-${removeIllegalCharactersFromName(value)}`;
+        return `${prefix}-spacing-${removeIllegalCharactersFromName(value)}`;
     }
 
     if (parsedProp === 'font-weight' || parsedProp === 'font-style' || parsedProp === 'font-size' || parsedProp === 'line-height') {
-        return `--${prefix}-${parsedProp}-${removeIllegalCharactersFromName(value)}`;
+        return `${prefix}-${parsedProp}-${removeIllegalCharactersFromName(value)}`;
     }
 
     if (parsedProp === 'font-family') {
         const fontValueParsed = value.replace(`'`, '');
         const matchedFontWord = fontValueParsed.match(/(\w+)/g);
 
-        return `--${prefix}-font-stack-${matchedFontWord[0].toLowerCase()}`;
+        return `${prefix}-font-stack-${matchedFontWord[0].toLowerCase()}`;
 
     }
 
     const appendedParent = parent.parent.selector ? `${parseSelector(parent.parent.selector)}__` : ``;
 
-    const customPropertyName = `--${prefix}-${appendedParent}${parseSelector(selector)}-${parsedProp}`;
+    const customPropertyName = `${prefix}-${appendedParent}${parseSelector(selector)}-${parsedProp}`;
 
     return customPropertyName;
 }
@@ -173,12 +173,12 @@ export const createCustomPropertyName = ({prefix, selector, prop, parent, value,
  * @param {{prefix: string, prop: sting, value: string, important: boolean, parent: {parentAtRule: string, params: string}}} props
  * @returns {{name: string, value: string, originalValue: string, originalSelector: string, important: boolean, parentAtRule: string, params: string}}
  */
-export const createCustomPropertyObject = ({prefix, prop, value, important, parent, store}) => {
+export const createPropertyObject = ({prefix, prop, value, important, parent, store}) => {
     const {parentAtRule, params} = getParentAtRule(parent);
 
     const {selector} = parent;
 
-    const objKey = createCustomPropertyName({prefix, selector, prop, parent, value, store});
+    const objKey = createPropertyName({prefix, selector, prop, parent, value, store});
 
     const parsedValue = borderProperties.includes(prop) ? value.split(' ').slice(2).join(' ') : value;
 
@@ -187,8 +187,6 @@ export const createCustomPropertyObject = ({prefix, prop, value, important, pare
     if (parsedValue === '' || isDisallowed) {
         return null;
     }
-
-
 
     return {
         name: objKey,
@@ -290,7 +288,7 @@ export const getMediaQueries = (customPropertyList) => {
  */
 export const generateCustomProperties = (customPropsArr, spacingValue = '') => {
     return customPropsArr.reduce((acc, customProperty, index) => {
-        return `${acc}\t${spacingValue}${customProperty.name}: ${customProperty.value};${index === (customPropsArr.length - 1) ? '' : `\n`}`;
+        return `${acc}\t${spacingValue}--${customProperty.name}: ${customProperty.value};${index === (customPropsArr.length - 1) ? '' : `\n`}`;
     }, spacingValue)
 }
 
@@ -378,16 +376,31 @@ ${generateCustomProperties(currentMqContents)}
     }, '')}` : ``}`
 }
 
+
+export const createOutputValue = ({name, outputType}) => {
+
+    const outputTypeDictionary = {
+        props: `var(--${name})`,
+        scss: `$${name}`
+    }
+
+    const outputValue = outputTypeDictionary[outputType] || outputTypeDictionary.props;
+
+    return outputValue;
+}
+
 /**
  * Ensures output of property values match what we expect.
  * @param {{name: string, prop: string, originalValue: string}} props 
  * @returns {string}
  */
-export const generatePropertyValue = ({name, prop, originalValue}) => {
+export const generatePropertyValue = ({name, prop, originalValue, outputType}) => {
+
+    const outputValue = createOutputValue({name, outputType});
 
     if (borderProperties.includes(prop)) {
         const [width, style] = originalValue.split(' ').slice(0, 2);
-        return `${width} ${style} var(${name})`;
+        return `${width} ${style} ${outputValue}`;
     }
-    return `var(${name})`;
+    return outputValue;
 }

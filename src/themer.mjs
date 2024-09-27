@@ -13,6 +13,7 @@ program
 .addOption(new Option('-i, --input <file>', 'file to process'))
 .addOption(new Option('-o, --outputdir <dir>', 'directory output').default(rootDir))
 .addOption(new Option('-r, --replace [type]', 'replace existing file'))
+.addOption(new Option('-t, --type [type]', 'output type').default('props'))
 .addOption(new Option('-p, --prefix <string>', 'prefix for all variables').default('themer'));
 
 program.parse();
@@ -33,13 +34,20 @@ if (cssFiles.length === 0) {
 
 const prefix = options.prefix;
 const outputDir = options.outputdir;
+const outputType = options.type;
 
 cssFiles.forEach((cssFile) => {
     const fileInput = cssFile;
 
     const fileOutput = options.replace ? fileInput : fileInput.replace(/.((s|p?)css)/, `.processed.$1`);
 
-    themeFile({fileInput, fileOutput, outputDir, prefix});
+    themeFile({
+        fileInput, 
+        fileOutput, 
+        outputDir, 
+        prefix, 
+        outputType
+    });
 })
 
 

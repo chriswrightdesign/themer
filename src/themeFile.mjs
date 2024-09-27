@@ -1,7 +1,7 @@
 import postcss from 'postcss';
 import fs from 'fs';
 import path from 'path';
-import {constructRootPseudo, makeCommentsSafe, createCustomPropertyObject, generatePropertyValue} from './utils.mjs';
+import {constructRootPseudo, createOutputValue, makeCommentsSafe, createPropertyObject, generatePropertyValue} from './utils.mjs';
 import {
     declarationColorRegex, 
     declarationBackgroundRegex, 
@@ -30,7 +30,34 @@ function store() {
     }
 }
 
-export const themeFile = ({fileInput, fileOutput, outputDir, prefix}) => {
+const createFile = ({outputDir, fileOutput, outputString}) => {
+    try {
+
+        fs.writeFileSync(path.resolve(outputDir, fileOutput), outputString);
+        console.log(`File written: ${fileOutput}`); 
+    } catch(err) {
+        console.log('Error writing file: ', err);
+    }
+}
+
+const renderIfPresent = (itemsArr, name) => {
+    return itemsArr.length > 0 ? `/* Start: ${name} */
+${constructRootPseudo(itemsArr)}
+/* End: ${name} */\n\n` : '';
+}
+
+const recordNewValue = (variable, prop, recordArray) => {
+
+    const existsAlready = recordArray.some((record) => {
+        return record.name === variable.name && record.value === variable.value;
+    })
+
+    if (!existsAlready) {
+        recordArray.push(variable);
+    }
+}
+
+export const themeFile = ({fileInput, fileOutput, outputDir, prefix, outputType}) => {
 
     const boxShadowStore = store();
 
@@ -51,24 +78,8 @@ export const themeFile = ({fileInput, fileOutput, outputDir, prefix}) => {
     const backgroundVarItems = [];
     const borderVarItems = [];
 
-    const renderIfPresent = (itemsArr, name) => {
-        return itemsArr.length > 0 ? `/* Start: ${name} */
-${constructRootPseudo(itemsArr)}
-/* End: ${name} */\n\n` : '';
-    }
 
     const spacingProps = ['margin', 'padding', 'gap'];
-
-    const recordNewValue = (variable, prop, recordArray) => {
-
-        const existsAlready = recordArray.some((record) => {
-            return record.name === variable.name && record.value === variable.value;
-        })
-
-        if (!existsAlready) {
-            recordArray.push(variable);
-        }
-    }
 
     const recordAndReassignCustomProps = (declaration, recordArray) => {
 
@@ -90,24 +101,30 @@ ${constructRootPseudo(itemsArr)}
 
                 const [colorValue] = valuesSplit;
 
-                const colorVariable = createCustomPropertyObject({prefix, prop: 'background-color', value: colorValue, important, parent, store: boxShadowStore});
+                const colorVariable = createPropertyObject({
+                    prefix, 
+                    prop: 'background-color', 
+                    value: colorValue, 
+                    important, parent, 
+                    store: boxShadowStore
+                });
 
                 const colorVariableName = colorVariable.name;
                 const colorVariableValue = colorVariable.value;
 
-                const newValue = value.replace(colorVariableValue, `var(${colorVariableName})`);
+                const newValue = value.replace(colorVariableValue, createOutputValue({name: colorVariableName, propertyType: outputType}));
 
                 recordNewValue(colorVariable, 'background-color', recordArray);
 
                 declaration.assign({ 
-                    prop, 
+                    prop,
+                    originalValue: newValue,
                     value: newValue,
                 });
                 return;
 
             }
 
-            
         }
 
         if (prop === 'box-shadow') {
@@ -124,6 +141,7 @@ ${constructRootPseudo(itemsArr)}
                         name: boxShadowValue.name,
                         prop,
                         originalValue: boxShadowValue.originalValue,
+                        outputType,
                     }) 
                 });
                 return;
@@ -153,7 +171,14 @@ ${constructRootPseudo(itemsArr)}
 
             const newValues = valuesSplit.map((individualValue, index) => {
 
-                const variable = createCustomPropertyObject({prefix, prop, value: individualValue, important, parent, store: boxShadowStore});
+                const variable = createPropertyObject({
+                    prefix, 
+                    prop, 
+                    value: individualValue, 
+                    important, 
+                    parent, 
+                    store: boxShadowStore
+                });
 
                 if (valuesSplit.length <= 1) {
                     return {
@@ -174,7 +199,7 @@ ${constructRootPseudo(itemsArr)}
             const newValueString = newValues.filter((variable) => Boolean(variable)).reduce((acc, curr) => {
 
                 recordNewValue(curr, prop, recordArray);
-                return `${acc} var(${curr.name})`;
+                return `${acc} ${createOutputValue({name: curr.name, propertyType: outputType})}`;
             },'');
 
             declaration.assign({ 
@@ -190,7 +215,14 @@ ${constructRootPseudo(itemsArr)}
             const valuesSplit = value.trim().split(' ');
 
             const newValues = valuesSplit.map((individualValue) => {
-                const variable = createCustomPropertyObject({prefix, prop, value: individualValue, important, parent, store: boxShadowStore});
+                const variable = createPropertyObject({
+                    prefix, 
+                    prop, 
+                    value: individualValue, 
+                    important, 
+                    parent, 
+                    store: boxShadowStore
+                });
 
                 return variable;
             });
@@ -198,7 +230,7 @@ ${constructRootPseudo(itemsArr)}
             const newValueString = newValues.filter((variable) => Boolean(variable)).reduce((acc, curr) => {
 
                 recordNewValue(curr, prop, recordArray);
-                return `${acc} var(${curr.name})`;
+                return `${acc} ${createOutputValue({name: curr.name, propertyType: outputType})}`;
             },'');
 
             // construct a new value to assign to the declaration
@@ -210,7 +242,14 @@ ${constructRootPseudo(itemsArr)}
             return;
         } 
 
-        const variable = createCustomPropertyObject({prefix, prop, value, important, parent, store: boxShadowStore});
+        const variable = createPropertyObject({
+            prefix, 
+            prop, 
+            value, 
+            important, 
+            parent, 
+            store: boxShadowStore
+        });
 
         /* Handle when we get nothing back in return */
         if (variable === null) {
@@ -225,15 +264,17 @@ ${constructRootPseudo(itemsArr)}
                 name: variable.name,
                 prop,
                 originalValue: variable.originalValue,
+                outputType,
             }) 
         });
 
     }
 
-
     const root = postcss.parse(safeContent);
 
     root.walkRules(function(rule) {
+        // types
+    
         // colors
         rule.walkDecls(declarationColorRegex, function(declaration) {
             recordAndReassignCustomProps(declaration, colorVarItems);
@@ -283,13 +324,11 @@ ${constructRootPseudo(itemsArr)}
 
     const stringified = root.toResult().css;
 
-    try {
-
-        fs.writeFileSync(path.resolve(outputDir, fileOutput), `${renderIfPresent(colorVarItems, 'Colors')}${renderIfPresent(borderVarItems, 'Border')}${renderIfPresent(backgroundVarItems, 'Background')}${renderIfPresent(boxShadowVarItems, 'Box-shadow')}${renderIfPresent(radiusRootVarItems, 'Border-radius')}${renderIfPresent(fontSizeVarItems, 'Typography: Font-size')}${renderIfPresent(fontFamilyVarItems, 'Typography: Font-family')}${renderIfPresent(fontLineHeightVarItems, 'Typography: Line-height')}${renderIfPresent(spacingRootVarItems, 'Spacing')}${renderIfPresent(backgroundImageVarItems, 'Background images')}${stringified}`);
-        console.log(`File written: ${fileOutput}`); 
-    } catch(err) {
-        console.log('Error writing file: ', err);
-    }
+    createFile({
+        outputDir, 
+        fileOutput, 
+        outputString: `${renderIfPresent(colorVarItems, 'Colors')}${renderIfPresent(borderVarItems, 'Border')}${renderIfPresent(backgroundVarItems, 'Background')}${renderIfPresent(boxShadowVarItems, 'Box-shadow')}${renderIfPresent(radiusRootVarItems, 'Border-radius')}${renderIfPresent(fontSizeVarItems, 'Typography: Font-size')}${renderIfPresent(fontFamilyVarItems, 'Typography: Font-family')}${renderIfPresent(fontLineHeightVarItems, 'Typography: Line-height')}${renderIfPresent(spacingRootVarItems, 'Spacing')}${renderIfPresent(backgroundImageVarItems, 'Background images')}${stringified}`
+    });
         
         
 
