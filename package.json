@@ -8,6 +8,7 @@
   "scripts": {
     "test": "vitest --run",
     "themer:complex": "node src/themer.mjs -i \"src/complextest.scss\" -p cm",
+    "themer:complex:sass": "node src/themer.mjs -i \"src/complextest.scss\" -t scss -p cm",
     "themer:test": "node src/themer.mjs",
     "themer:simple": "node src/themer.mjs -i \"src/test.scss\""
   },

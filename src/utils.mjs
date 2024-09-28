@@ -404,3 +404,60 @@ export const generatePropertyValue = ({name, prop, originalValue, outputType}) =
     }
     return outputValue;
 }
+
+
+export function store() {
+    const savedValues = [];
+
+    return {
+        add: (item) => {
+            savedValues.push(item);
+        },
+        get: () => savedValues,
+    }
+}
+
+export const recordNewValue = (variable, prop, recordArray) => {
+
+    const existsAlready = recordArray.some((record) => {
+        return record.name === variable.name && record.value === variable.value;
+    })
+
+    if (!existsAlready) {
+        recordArray.push(variable);
+    }
+}
+
+const constructSassVariables = (itemsArr, spacingValue = '') => {
+    return itemsArr.reduce((acc, property, index) => {
+        return `${acc}\t${spacingValue}$${property.name}: ${property.value};${index === (itemsArr.length - 1) ? '' : `\n`}`;
+    }, '')
+}
+
+
+const outputFunction = (outputType) => {
+
+    const outputTypeDictionary = {
+        'props': constructRootPseudo,
+        'scss': constructSassVariables,
+    }
+
+    return outputTypeDictionary[outputType] || outputTypeDictionary.props;
+}
+
+export const renderIfPresent = (itemsArr, name, outputType = 'props') => {
+    const constructProps = outputFunction(outputType);
+    return itemsArr.length > 0 ? `/* Start: ${name} */
+${constructProps(itemsArr)}
+/* End: ${name} */\n\n` : '';
+}
+
+export const createFile = ({outputDir, fileOutput, outputString}) => {
+    try {
+
+        fs.writeFileSync(path.resolve(outputDir, fileOutput), outputString);
+        console.log(`File written: ${fileOutput}`); 
+    } catch(err) {
+        console.log('Error writing file: ', err);
+    }
+}

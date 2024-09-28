@@ -1,7 +1,6 @@
 import postcss from 'postcss';
 import fs from 'fs';
 import path from 'path';
-import {constructRootPseudo, createOutputValue, makeCommentsSafe, createPropertyObject, generatePropertyValue} from './utils.mjs';
 import {
     declarationColorRegex, 
     declarationBackgroundRegex, 
@@ -12,52 +11,26 @@ import {
     declarationFontFamilyRegex,
     declarationLineHeightRegex,
     declarationRadiusRegex,
-    declarationBackgroundImageRegex
+    declarationBackgroundImageRegex,
+    colorSyntaxRegex
 } from './regexHelpers.mjs';
 
-import {colorSyntaxRegex} from './regexHelpers.mjs';
+import {
+    createFile, 
+    store, 
+    recordNewValue, 
+    renderIfPresent, 
+    createOutputValue, 
+    makeCommentsSafe, 
+    createPropertyObject, 
+    generatePropertyValue
+} from './utils.mjs';
 
 const rootDir = process.cwd();
 
-function store() {
-    const savedValues = [];
+// TOOD: pull out each individual property conversion, without the declaration assign or the prop array.
 
-    return {
-        add: (item) => {
-            savedValues.push(item);
-        },
-        get: () => savedValues,
-    }
-}
-
-const createFile = ({outputDir, fileOutput, outputString}) => {
-    try {
-
-        fs.writeFileSync(path.resolve(outputDir, fileOutput), outputString);
-        console.log(`File written: ${fileOutput}`); 
-    } catch(err) {
-        console.log('Error writing file: ', err);
-    }
-}
-
-const renderIfPresent = (itemsArr, name) => {
-    return itemsArr.length > 0 ? `/* Start: ${name} */
-${constructRootPseudo(itemsArr)}
-/* End: ${name} */\n\n` : '';
-}
-
-const recordNewValue = (variable, prop, recordArray) => {
-
-    const existsAlready = recordArray.some((record) => {
-        return record.name === variable.name && record.value === variable.value;
-    })
-
-    if (!existsAlready) {
-        recordArray.push(variable);
-    }
-}
-
-export const themeFile = ({fileInput, fileOutput, outputDir, prefix, outputType}) => {
+export const themeFile = ({fileInput, fileOutput, outputDir, prefix, outputType = 'props'}) => {
 
     const boxShadowStore = store();
 
@@ -79,6 +52,50 @@ export const themeFile = ({fileInput, fileOutput, outputDir, prefix, outputType}
     const borderVarItems = [];
 
 
+    const ruleTypes = [
+        {
+            pattern: declarationColorRegex,
+            items: colorVarItems,
+        },
+        {
+            pattern: declarationBackgroundRegex,
+            items: backgroundVarItems,
+        },
+        {
+            pattern: declarationBoxShadowRegex,
+            items: boxShadowVarItems,
+        },
+        {
+            pattern: declarationBorderRegex,
+            items: borderVarItems,
+        },
+        {
+            pattern: declarationSpacingRegex,
+            items: spacingRootVarItems,
+        },
+        {
+            pattern: declarationFontFamilyRegex,
+            items: fontFamilyVarItems,
+        },
+        {
+            pattern: declarationFontSizeRegex,
+            items: fontSizeVarItems,
+        },
+        {
+            pattern: declarationLineHeightRegex,
+            items: fontLineHeightVarItems,
+        },
+        {
+            pattern: declarationRadiusRegex,
+            items: radiusRootVarItems,
+        },
+        {
+            pattern: declarationBackgroundImageRegex,
+            items: backgroundImageVarItems,
+
+        }
+    ];
+
     const spacingProps = ['margin', 'padding', 'gap'];
 
     const recordAndReassignCustomProps = (declaration, recordArray) => {
@@ -90,7 +107,7 @@ export const themeFile = ({fileInput, fileOutput, outputDir, prefix, outputType}
             return;
         }
 
-        // handle background: #fff url('')
+        // handle spaced values / background
         if(prop === 'background' && value.includes(' ')) {
 
             const valueWithoutUrl = value.replace(/url\(.+\)/, '');
@@ -127,6 +144,7 @@ export const themeFile = ({fileInput, fileOutput, outputDir, prefix, outputType}
 
         }
 
+        // box shadow is incremented so we just check if any have the same value
         if (prop === 'box-shadow') {
             const boxShadowValue = recordArray.find((record) => {
                 return record.value.trim() === value.trim();
@@ -148,6 +166,7 @@ export const themeFile = ({fileInput, fileOutput, outputDir, prefix, outputType}
             }
         }
 
+        // spaced values and border color
         if (prop === 'border-color' && value.includes(' ')) {
 
             const valuesSplit = value.match(colorSyntaxRegex);
@@ -272,54 +291,13 @@ export const themeFile = ({fileInput, fileOutput, outputDir, prefix, outputType}
 
     const root = postcss.parse(safeContent);
 
+
     root.walkRules(function(rule) {
-        // types
-    
-        // colors
-        rule.walkDecls(declarationColorRegex, function(declaration) {
-            recordAndReassignCustomProps(declaration, colorVarItems);
-        });
-
-        rule.walkDecls(declarationBackgroundRegex, function(declaration) {
-            recordAndReassignCustomProps(declaration, backgroundVarItems);
-        });
-
-        rule.walkDecls(declarationBoxShadowRegex, function(declaration) {
-            recordAndReassignCustomProps(declaration, boxShadowVarItems);
-        });
-
-        rule.walkDecls(declarationBorderRegex, function(declaration) {
-            recordAndReassignCustomProps(declaration, borderVarItems);
-        });
-
-        // spacings
-        rule.walkDecls(declarationSpacingRegex, function(declaration) {
-            recordAndReassignCustomProps(declaration, spacingRootVarItems);
-        });
-
-        // font family
-        rule.walkDecls(declarationFontFamilyRegex, function(declaration) {
-            recordAndReassignCustomProps(declaration, fontFamilyVarItems);
-        });
-
-        // font size
-        rule.walkDecls(declarationFontSizeRegex, function(declaration) {
-            recordAndReassignCustomProps(declaration, fontSizeVarItems);
-        });
-
-        // line-height
-        rule.walkDecls(declarationLineHeightRegex, function(declaration) {
-            recordAndReassignCustomProps(declaration, fontLineHeightVarItems);
-        });
-
-        // border-radius
-        rule.walkDecls(declarationRadiusRegex, function(declaration) {
-            recordAndReassignCustomProps(declaration, radiusRootVarItems);
-        });
-
-        rule.walkDecls(declarationBackgroundImageRegex, function(declaration) {
-            recordAndReassignCustomProps(declaration, backgroundImageVarItems);
-        });
+        ruleTypes.forEach((ruleType) => {
+            rule.walkDecls(ruleType.pattern, function(declaration) {
+                recordAndReassignCustomProps(declaration, ruleType.items);
+            });
+        })
     });
 
     const stringified = root.toResult().css;
@@ -327,7 +305,7 @@ export const themeFile = ({fileInput, fileOutput, outputDir, prefix, outputType}
     createFile({
         outputDir, 
         fileOutput, 
-        outputString: `${renderIfPresent(colorVarItems, 'Colors')}${renderIfPresent(borderVarItems, 'Border')}${renderIfPresent(backgroundVarItems, 'Background')}${renderIfPresent(boxShadowVarItems, 'Box-shadow')}${renderIfPresent(radiusRootVarItems, 'Border-radius')}${renderIfPresent(fontSizeVarItems, 'Typography: Font-size')}${renderIfPresent(fontFamilyVarItems, 'Typography: Font-family')}${renderIfPresent(fontLineHeightVarItems, 'Typography: Line-height')}${renderIfPresent(spacingRootVarItems, 'Spacing')}${renderIfPresent(backgroundImageVarItems, 'Background images')}${stringified}`
+        outputString: `${renderIfPresent(colorVarItems, 'Colors', outputType)}${renderIfPresent(borderVarItems, 'Border', outputType)}${renderIfPresent(backgroundVarItems, 'Background', outputType)}${renderIfPresent(boxShadowVarItems, 'Box-shadow', outputType)}${renderIfPresent(radiusRootVarItems, 'Border-radius', outputType)}${renderIfPresent(fontSizeVarItems, 'Typography: Font-size', outputType)}${renderIfPresent(fontFamilyVarItems, 'Typography: Font-family', outputType)}${renderIfPresent(fontLineHeightVarItems, 'Typography: Line-height', outputType)}${renderIfPresent(spacingRootVarItems, 'Spacing', outputType)}${renderIfPresent(backgroundImageVarItems, 'Background images', outputType)}${stringified}`
     });
         
         
