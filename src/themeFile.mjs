@@ -28,8 +28,6 @@ import {
 
 const rootDir = process.cwd();
 
-// TOOD: pull out each individual property conversion, without the declaration assign or the prop array.
-
 export const themeFile = ({fileInput, fileOutput, outputDir, prefix, outputType = 'props'}) => {
 
     const boxShadowStore = store();
@@ -40,6 +38,7 @@ export const themeFile = ({fileInput, fileOutput, outputDir, prefix, outputType 
     // Replace any // with /* */ because postcss hates it
     const safeContent = makeCommentsSafe(content);
 
+    // temporary arrays for different variables
     const colorVarItems = [];
     const boxShadowVarItems = [];
     const spacingRootVarItems = [];
@@ -291,7 +290,6 @@ export const themeFile = ({fileInput, fileOutput, outputDir, prefix, outputType 
 
     const root = postcss.parse(safeContent);
 
-
     root.walkRules(function(rule) {
         ruleTypes.forEach((ruleType) => {
             rule.walkDecls(ruleType.pattern, function(declaration) {
@@ -299,6 +297,32 @@ export const themeFile = ({fileInput, fileOutput, outputDir, prefix, outputType 
             });
         })
     });
+
+   
+
+    if (outputType === 'js') {
+
+        const allRules = ruleTypes.reduce((acc, ruleType) => {
+            const {items} = ruleType;
+            return [acc, ...items];
+        }, []);
+    
+        const ruleTheme = allRules.reduce((acc, curr) => {
+            return {
+                ...acc,
+                [curr.name]: curr.value,
+            }
+        }, {});
+
+        const stringified = JSON.stringify(ruleTheme);
+
+        createFile({
+            outputDir, 
+            fileOutput, 
+            outputString: `export const theme = ${stringified}`,
+        });
+
+    }
 
     const stringified = root.toResult().css;
 

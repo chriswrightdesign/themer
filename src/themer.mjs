@@ -36,10 +36,19 @@ const prefix = options.prefix;
 const outputDir = options.outputdir;
 const outputType = options.type;
 
+const getFileOutput = (fileInput, outputType) => {
+
+    if (outputType === 'js') {
+        fileInput.replace(/.((s|p?)css)/, `.processed.js`)
+    }
+
+    return fileInput.replace(/.((s|p?)css)/, `.processed.$1`)
+}
+
 cssFiles.forEach((cssFile) => {
     const fileInput = cssFile;
 
-    const fileOutput = options.replace ? fileInput : fileInput.replace(/.((s|p?)css)/, `.processed.$1`);
+    const fileOutput = options.replace && type !== 'js' ? fileInput : getFileOutput(fileInput, outputType);
 
     themeFile({
         fileInput, 
