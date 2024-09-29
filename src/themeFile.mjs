@@ -53,42 +53,52 @@ export const themeFile = ({fileInput, fileOutput, outputDir, prefix, outputType 
 
     const ruleTypes = [
         {
+            name: 'color',
             pattern: declarationColorRegex,
             items: colorVarItems,
         },
         {
+            name: 'background',
             pattern: declarationBackgroundRegex,
             items: backgroundVarItems,
         },
         {
+            name: 'boxShadow',
             pattern: declarationBoxShadowRegex,
             items: boxShadowVarItems,
         },
         {
+            name: 'border',
             pattern: declarationBorderRegex,
             items: borderVarItems,
         },
         {
+            name: 'spacing',
             pattern: declarationSpacingRegex,
             items: spacingRootVarItems,
         },
         {
+            name: 'fontFamily',
             pattern: declarationFontFamilyRegex,
             items: fontFamilyVarItems,
         },
         {
+            name: 'fontSize',
             pattern: declarationFontSizeRegex,
             items: fontSizeVarItems,
         },
         {
+            name: 'fontLineHeight',
             pattern: declarationLineHeightRegex,
             items: fontLineHeightVarItems,
         },
         {
+            name: 'borderRadius',
             pattern: declarationRadiusRegex,
             items: radiusRootVarItems,
         },
         {
+            name: 'backgroundImage',
             pattern: declarationBackgroundImageRegex,
             items: backgroundImageVarItems,
 
@@ -298,23 +308,24 @@ export const themeFile = ({fileInput, fileOutput, outputDir, prefix, outputType 
         })
     });
 
-   
-
     if (outputType === 'js') {
 
         const allRules = ruleTypes.reduce((acc, ruleType) => {
-            const {items} = ruleType;
-            return [acc, ...items];
-        }, []);
-    
-        const ruleTheme = allRules.reduce((acc, curr) => {
+            const {items, name} = ruleType;
+            
             return {
                 ...acc,
-                [curr.name]: curr.value,
+                [name]: items.reduce((itemacc, item) => {
+                    return {
+                        ...itemacc,
+                        [`${item.name}`]: `${item.value}`,
+                    }
+                }, {})
             }
-        }, {});
 
-        const stringified = JSON.stringify(ruleTheme);
+        }, {});
+    
+        const stringified = JSON.stringify(allRules, null, '\t');
 
         createFile({
             outputDir, 
@@ -322,7 +333,10 @@ export const themeFile = ({fileInput, fileOutput, outputDir, prefix, outputType 
             outputString: `export const theme = ${stringified}`,
         });
 
+        return;
+
     }
+    
 
     const stringified = root.toResult().css;
 

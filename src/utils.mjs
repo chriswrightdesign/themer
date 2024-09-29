@@ -332,9 +332,9 @@ const createComparisonValue = (value, propertyType) => {
  * @param {string} cssFile 
  * @returns 
  */
-export const constructRootPseudo = (customPropertyList) => {
+export const constructRootPseudo = ({itemsArr, name}) => {
 
-    const customPropertiesWithNoAtRules = customPropertyList.filter((customProperty) => {
+    const customPropertiesWithNoAtRules = itemsArr.filter((customProperty) => {
         return customProperty.parentAtRule === null || customProperty.name.includes('spacing');
     }).sort((a, b) => {
 
@@ -360,14 +360,14 @@ export const constructRootPseudo = (customPropertyList) => {
         return 0;
     });
 
-   const mediaQueries = getMediaQueries(customPropertyList);
+   const mediaQueries = getMediaQueries(itemsArr);
 
    const customPropertyContents = generateCustomProperties(customPropertiesWithNoAtRules);
     return `${customPropertyContents.length > 0 ? `:root {
 ${generateCustomProperties(customPropertiesWithNoAtRules)}
 }` : ``}
 ${mediaQueries.length > 0 ? `\n\n${mediaQueries.reduce((acc, mq) => {
-    const currentMqContents = getPropertiesByMediaQueryParams(customPropertyList, mq);
+    const currentMqContents = getPropertiesByMediaQueryParams(itemsArr, mq);
     return currentMqContents.length > 0 ? `${acc}@media ${mq} {
     :root {
 ${generateCustomProperties(currentMqContents)}
@@ -376,12 +376,41 @@ ${generateCustomProperties(currentMqContents)}
     }, '')}` : ``}`
 }
 
+const constructSassVariables = ({itemsArr, spacingValue = '', name}) => {
+    return itemsArr.reduce((acc, property, index) => {
+        return `${acc}\t${spacingValue}$${property.name}: ${property.value};${index === (itemsArr.length - 1) ? '' : `\n`}`;
+    }, '')
+}
+
+const constructJsVariables = ({itemsArr, spacingValue = '', name}) => {
+
+    const nameToLowerCase = name.toLowerCase();
+
+    const contents = itemsArr.reduce((acc, property, index) => {
+        return `${acc}\t${spacingValue}'${property.name}': '${property.value}',${index === (itemsArr.length - 1) ? '' : `\n`}`;
+    }, '')
+
+    return `const ${nameToLowerCase} = {${contents}}\n`;
+}
+
+const outputFunction = (outputType) => {
+
+    const outputTypeDictionary = {
+        'props': constructRootPseudo,
+        'scss': constructSassVariables,
+        'js': constructJsVariables,
+    }
+
+    return outputTypeDictionary[outputType] || outputTypeDictionary.props;
+}
+
 
 export const createOutputValue = ({name, outputType}) => {
 
     const outputTypeDictionary = {
         props: `var(--${name})`,
-        scss: `$${name}`
+        scss: `$${name}`,
+        js: name,
     }
 
     const outputValue = outputTypeDictionary[outputType] || outputTypeDictionary.props;
@@ -428,27 +457,10 @@ export const recordNewValue = (variable, prop, recordArray) => {
     }
 }
 
-const constructSassVariables = (itemsArr, spacingValue = '') => {
-    return itemsArr.reduce((acc, property, index) => {
-        return `${acc}\t${spacingValue}$${property.name}: ${property.value};${index === (itemsArr.length - 1) ? '' : `\n`}`;
-    }, '')
-}
-
-
-const outputFunction = (outputType) => {
-
-    const outputTypeDictionary = {
-        'props': constructRootPseudo,
-        'scss': constructSassVariables,
-    }
-
-    return outputTypeDictionary[outputType] || outputTypeDictionary.props;
-}
-
 export const renderIfPresent = (itemsArr, name, outputType = 'props') => {
     const constructProps = outputFunction(outputType);
     return itemsArr.length > 0 ? `/* Start: ${name} */
-${constructProps(itemsArr)}
+${constructProps({itemsArr, name})}
 /* End: ${name} */\n\n` : '';
 }
 
