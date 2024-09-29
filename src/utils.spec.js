@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import {makeCommentsSafe, parseSelector, getParsedPropName, createCustomPropertyName, createCustomPropertyObject, getPropertiesByMediaQueryParams, getMediaQueries, generateCustomProperties, constructRootPseudo, generatePropertyValue} from './utils.mjs';
+import {makeCommentsSafe, parseSelector, getParsedPropName, createPropertyName, createPropertyObject, getPropertiesByMediaQueryParams, getMediaQueries, generateCustomProperties, constructRootPseudo, generatePropertyValue} from './utils.mjs';
 
 describe('makeCommentsSafe', () => {
     test('should take // comment and replace with /* comment */', () => {
@@ -76,7 +76,7 @@ describe('getParsedPropName', () => {
     })
 });
 
-describe ('createCustomPropertyName', () => {
+describe ('createPropertyName', () => {
 
     test('should handle a parent selector', () => {
 
@@ -91,7 +91,7 @@ describe ('createCustomPropertyName', () => {
             }
         }
 
-        expect(createCustomPropertyName(inputObject)).toBe('--themer-c-form__c-box-border-color');
+        expect(createPropertyName(inputObject)).toBe('themer-c-form__c-box-border-color');
     });
 
     test('should handle no parent selector selector', () => {
@@ -105,12 +105,12 @@ describe ('createCustomPropertyName', () => {
             }
         }
 
-        expect(createCustomPropertyName(inputObject)).toBe('--themer-c-box-border-color');
+        expect(createPropertyName(inputObject)).toBe('themer-c-box-border-color');
     });
     
 });
 
-describe ('createCustomPropertyObject', () => {
+describe ('createPropertyObject', () => {
     test('should create an object based on the inputs', () => {
         const inputObject = {
             prefix: 'themer', 
@@ -124,7 +124,7 @@ describe ('createCustomPropertyObject', () => {
             }
         };
 
-        const createdObject = createCustomPropertyObject(inputObject);
+        const createdObject = createPropertyObject(inputObject);
 
         expect(createdObject).toHaveProperty('name');
         expect(createdObject).toHaveProperty('value');
@@ -145,7 +145,7 @@ describe ('createCustomPropertyObject', () => {
         };
 
         
-        const createdObject = createCustomPropertyObject(inputObject);
+        const createdObject = createPropertyObject(inputObject);
 
         expect(createdObject).toEqual(null);
     });
@@ -163,7 +163,7 @@ describe ('createCustomPropertyObject', () => {
             }
         };
 
-        const createdObject = createCustomPropertyObject(inputObject);
+        const createdObject = createPropertyObject(inputObject);
         expect(createdObject.value).toContain('green');
     });
 
@@ -180,7 +180,7 @@ describe ('createCustomPropertyObject', () => {
             }
         };
 
-        const createdObject = createCustomPropertyObject(inputObject);
+        const createdObject = createPropertyObject(inputObject);
 
         expect(createdObject.value).toEqual('#f0f');
 
@@ -195,14 +195,14 @@ describe('getPropertiesByMediaQueryParams', () => {
 
 describe('generatePropertyValue', () => {
     test('should create the value for a property', () => {
-        const props = {name: '--box-background', prop: 'background', originalValue: '#fff'};
+        const props = {name: 'box-background', prop: 'background', originalValue: '#fff'};
 
         expect(generatePropertyValue(props)).toEqual(`var(--box-background)`);
     });
 
     test('should handle the value of a border shorthand', () => {
 
-        const props = {name: '--box-border', prop: 'border', originalValue: '1px solid #fff'};
+        const props = {name: 'box-border', prop: 'border', originalValue: '1px solid #fff'};
 
         expect(generatePropertyValue(props)).toEqual(`1px solid var(--box-border)`);
 
@@ -242,14 +242,14 @@ describe('generateCustomProperties', () => {
 });
 
 describe('constructRootPseudo', () => {
-    const customPropertyList = [
-        {name: '--themer-box-background', value: '#fff' , originalValue: '#fff', propertyType: 'background', originalSelector: '.box', important: false, parentAtRule: 'media', params: '(min-width: 360px)'},
-        {name: '--themer-box-color', value: '#fff' , originalValue: '#fff', propertyType: 'color', originalSelector: '.box', important: false, parentAtRule: 'media', params: '(max-width: 300px)'},
-        {name: '--themer-box-padding', value: '0px' , originalValue: '0px', propertyType: 'padding', originalSelector: '.box', important: false, parentAtRule: null, params: null}
+    const itemsArr = [
+        {name: 'themer-box-background', value: '#fff' , originalValue: '#fff', propertyType: 'background', originalSelector: '.box', important: false, parentAtRule: 'media', params: '(min-width: 360px)'},
+        {name: 'themer-box-color', value: '#fff' , originalValue: '#fff', propertyType: 'color', originalSelector: '.box', important: false, parentAtRule: 'media', params: '(max-width: 300px)'},
+        {name: 'themer-box-padding', value: '0px' , originalValue: '0px', propertyType: 'padding', originalSelector: '.box', important: false, parentAtRule: null, params: null}
     ];
 
     test('should generate a string with a :root{} and custom properties', () => {
-        const constructedRoot = constructRootPseudo(customPropertyList);
+        const constructedRoot = constructRootPseudo({itemsArr});
 
         expect(constructedRoot).toContain(':root {');
         expect(constructedRoot).toContain('--themer-box-background: #fff;');
